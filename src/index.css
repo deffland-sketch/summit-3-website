@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-indigo: #4b4b96;
+  --color-teal: #508278;
+  --color-orange: #f6aa40;
+  --color-peach: #ffd2b4;
+  --color-light-blue: #96d2dc;
+  --color-brown: #503c2d;
+  --color-red: #e6553c;
+  --color-tan-grey: #96a0ab;
+  --font-sans: 'Arimo', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
