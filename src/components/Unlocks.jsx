@@ -333,8 +333,7 @@ export default function Unlocks() {
           <p className="text-black/70 leading-relaxed mb-4">
             A school can be most simply thought of as three things: a group of young people,
             a package of outcomes and competencies, and a set of available resources.
-            <span className="font-bold text-indigo"> A school is kids, outcomes, and resources.</span>{' '}
-            The industrial model locked those three elements into a rigid configuration — same
+            {' '}The industrial model locked those three elements into a rigid configuration — same
             students, same outcomes, same resources, same schedule, every day. That's what made
             it complete. It's also what made it increasingly ineffective.
           </p>

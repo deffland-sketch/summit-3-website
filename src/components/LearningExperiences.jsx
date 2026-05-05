@@ -375,25 +375,14 @@ export default function LearningExperiences() {
           transition={{ delay: 0.3 }}
           className="mt-14 max-w-3xl mx-auto"
         >
-          <p className="text-center text-black/50 leading-relaxed text-sm mb-6">
+          <p className="text-center text-black/50 leading-relaxed text-sm">
             These eight experience types are grounded in research from the science of learning and
-            development, including work by Carl Hendrick, Paul Kirschner, and Michelene Chi, as
-            well as Transcend Education and Deans for Impact. The research identifies specific
-            conditions under which learning is most effective: when practice is spaced and feedback
-            is immediate, when students build on each other's thinking, when new knowledge connects
-            to prior experience, and when learners have agency over their own process. Each
-            experience type is designed to activate these conditions.
+            development — Hendrick & Kirschner, Chi, Kolb, Lave & Wenger, Deci & Ryan, Transcend
+            Education, and Deans for Impact. Each experience type is designed to activate the
+            conditions under which learning is most effective: spaced practice, immediate feedback,
+            students building on each other's thinking, new knowledge connecting to prior experience,
+            and learner agency.
           </p>
-          {/* References */}
-          <div className="mt-6 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[11px] text-black/30">
-            <span>Hendrick & Kirschner, <em>How Learning Happens</em></span>
-            <span>Chi & Wylie (2014), ICAP Framework</span>
-            <span>Kolb (1984), Experiential Learning</span>
-            <span>Lave & Wenger (1991), Situated Learning</span>
-            <span>Transcend Education, <em>Designing for Learning</em></span>
-            <span>Deci & Ryan (1985, 2000), Self-Determination Theory</span>
-            <span>Deans for Impact, <em>The Science of Learning</em></span>
-          </div>
         </motion.div>
       </div>
 

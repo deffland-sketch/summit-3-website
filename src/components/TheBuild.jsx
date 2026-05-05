@@ -5,12 +5,12 @@ const phases = [
   {
     label: 'Phase 1',
     title: 'Build the foundations',
-    body: 'Sierra proves the data-to-schedule engine: an adaptive platform generates real-time learner data within core academics, and teachers begin using that data to differentiate within the existing schedule. Prep / Summit 780 proves the pathway experience: PLP-driven mentoring, student-designed pathway projects, and ASU dual enrollment create a coherent journey for an 11th grade cohort. Pilots across the network test specific elements in different contexts. Network-wide curriculum and platform adoption builds the foundation every school will need.',
+    body: 'Sierra proves the data-to-schedule engine: an adaptive platform generates real-time learner data within core academics, and teachers use that data to differentiate within the existing schedule. Prep / Summit 780 proves the pathway experience through PLP-driven mentoring, student-designed pathway projects, and ASU dual enrollment for an 11th grade cohort. Pilots across the network test specific elements. Network-wide curriculum and platform adoption builds the foundation every school will need.',
   },
   {
     label: 'Phase 2',
     title: 'Cross-pollinate and extend',
-    body: 'Sierra begins flexing the schedule based on proven data — students start moving between experience types based on what the system recommends, not just what the bell schedule dictates. Prep extends the redesigned pathway model beyond the initial cohort and integrates the data-driven scheduling logic Sierra has proven. Pilot findings inform what\u2019s codified. Cross-site design sprints merge the two lines of development.',
+    body: 'Sierra flexes the schedule based on proven data — students move between experience types based on what the system recommends, not what the bell schedule dictates. Prep extends the pathway model beyond the initial cohort and integrates Sierra\u2019s scheduling logic. Pilot findings inform what gets codified. Cross-site design sprints merge the two lines of development.',
   },
   {
     label: 'Phase 3',
@@ -68,8 +68,8 @@ export default function TheBuild() {
             </p>
             <p>
               Summit built the strongest single-school version of personalized learning the field
-              has seen. Summit Learning then reached 400 schools in 40 states — and we learned, in
-              detail, what does and doesn't transfer when a fully designed model meets systems that
+              has seen. Summit Learning then reached 400 schools in 40 states — and we learned
+              what does and doesn't transfer when a fully designed model meets systems that
               haven't built the muscles to receive it. The bright spot is necessary. It is not
               sufficient.
             </p>
@@ -83,19 +83,18 @@ export default function TheBuild() {
           <div className="space-y-4 mt-5">
             <div className="bg-indigo/5 border border-indigo/10 rounded-xl p-5">
               <p className="text-sm text-black/70 leading-relaxed">
-                <span className="font-bold text-indigo">Sierra</span> has the conditions to test
-                the data-and-scheduling engine. Washington's flexibility with instructional minutes
-                lets us flex the schedule. Sierra's small size lets us iterate quickly on adaptive
-                curriculum, multi-grade communities, and an evolving teacher role.
+                <span className="font-bold text-indigo">Sierra</span> tests the
+                data-and-scheduling engine. Washington's instructional-minute flexibility lets us
+                flex the schedule, and Sierra's size lets us iterate quickly on adaptive curriculum,
+                multi-grade communities, and the evolving teacher role.
               </p>
             </div>
             <div className="bg-teal/5 border border-teal/10 rounded-xl p-5">
               <p className="text-sm text-black/70 leading-relaxed">
-                <span className="font-bold text-teal">Prep / Summit 780</span> has the conditions
-                to test the pathway and human guidance experience. Prep's mentoring strength, the
-                community's appetite for dual enrollment, and California's regulatory context shape
-                an 11th grade cohort built around a redesigned PLP, pathway projects, ASU dual
-                enrollment, and interdisciplinary collaboration.
+                <span className="font-bold text-teal">Prep / Summit 780</span> tests the pathway
+                and human guidance experience. Prep's mentoring strength and California's regulatory
+                context shape an 11th grade cohort built around a redesigned PLP, pathway projects,
+                ASU dual enrollment, and interdisciplinary collaboration.
               </p>
             </div>
             <div className="bg-orange/5 border border-orange/10 rounded-xl p-5">
@@ -164,10 +163,8 @@ export default function TheBuild() {
             ))}
           </div>
           <p className="text-sm text-black/50 mt-4 leading-relaxed">
-            That listening shaped the vision. Now Summit brings its community into the design
-            process itself. Students, families, and educators are co-designers — not recipients of
-            a finished product. This is deliberate. It takes more time. We believe it produces
-            better results.
+            That listening shaped the vision. Students, families, and educators are co-designers —
+            not recipients of a finished product.
           </p>
         </motion.div>
 

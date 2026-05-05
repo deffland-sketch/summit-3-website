@@ -232,17 +232,12 @@ export default function Throughline() {
           <p className="text-sm text-black/60 leading-relaxed mb-3">
             Summit 3.0 runs on a different theory. When the pathway connects to a future a student
             is genuinely building toward, their existing drive has somewhere to go. When the system
-            matches them to work at their actual level, it treats their current knowledge as a
-            foundation rather than a gap — and two sources of demotivation disappear: being
-            perpetually lost and being perpetually bored. When a human guide helps them see how
-            their experiences connect into a coherent story about who they're becoming, they
-            recognize the author as themselves.
+            matches them to work at their level, it treats their current knowledge as a foundation
+            rather than a gap. When a human guide helps them see how their experiences connect into
+            a coherent story about who they're becoming, they recognize the author as themselves.
           </p>
           <p className="text-sm text-black/60 leading-relaxed">
-            Relevance through the pathway. Precision that honors what they already know. Human
-            guidance that names and builds on their strengths. Three conditions that reinforce
-            each other — and weaken if any one is missing. That is why Summit 3.0 builds all
-            three together.
+            Three conditions that reinforce each other — and weaken if any one is missing.
           </p>
         </motion.div>
       </div>
