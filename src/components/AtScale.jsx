@@ -28,7 +28,7 @@ const needs = [
     question: 'How do we meet students where they are?',
     color: '#96d2dc',
     industrial: 'Grade levels based on age. Everyone moves through the same sequence regardless of where they actually are. Students who don\'t fit are forced into special programming.',
-    summit: 'A personalized pathway responds to each student\'s actual position — academically, socially, and in terms of real-world readiness. A 9th grader and a 12th grader in the same experience type may be doing very different work.',
+    summit: 'A personalized pathway builds on what each student already knows, where they are socially, and what real-world experiences they bring. A 9th grader and a 12th grader in the same experience type may be doing very different work.',
   },
   {
     name: 'Meaningful adult employment',
@@ -122,9 +122,10 @@ export default function AtScale() {
             it works well — but because it works completely. Its motivational model, however, has run
             out of gas — grades, credits, and consequences work for students who are already bought
             in, and they fail everyone else. It addresses five fundamental needs
-            that any school system must address. Most new models solve for one or two of these needs
-            while leaving the rest unaddressed. Summit 3.0 is designed to match the industrial
-            model's completeness while surpassing its quality on every dimension.
+            that any school system must address. Most attempts to replace it solve for one or two
+            of these needs and leave the rest unaddressed. The industrial model eats them. Summit
+            3.0 is designed to match the industrial model's completeness while surpassing its
+            quality on every dimension.
           </p>
         </motion.div>
 

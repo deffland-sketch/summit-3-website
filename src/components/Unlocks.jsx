@@ -339,8 +339,9 @@ export default function Unlocks() {
             it complete. It's also what made it increasingly ineffective.
           </p>
           <p className="text-black/70 leading-relaxed mb-4">
-            All children are different. They need different types, frequencies, and amounts of
-            learning resources to develop any given competency. Time is the only truly scarce
+            All children arrive with different knowledge, experiences, and interests. They need
+            different types, frequencies, and amounts of learning resources to build on what they
+            already bring. Time is the only truly scarce
             resource in education, and the industrial model wastes it at scale. A redesign this
             comprehensive has to start from these fundamentals — and then build an operating system
             that makes something better actually work.

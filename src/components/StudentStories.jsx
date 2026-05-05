@@ -75,7 +75,7 @@ const students = [
         time: '10:00',
         title: 'Independent work and creation: Documentary project studio',
         description: 'Week 3 of 5 on her mini-documentary about local housing. Facilitator pushes back on her framing — she revises her central argument.',
-        annotation: 'Sustained creation time is how the documentary moves from idea to argument.',
+        annotation: 'Sustained creation time is how Amara\'s developing voice sharpens into argument.',
         type: 'independent',
       },
       {
@@ -131,7 +131,7 @@ const students = [
         time: '11:30',
         title: 'Presentation and performance: Peer teaching session',
         description: 'Leads a biology review for two juniors. Data-matched — David demonstrated mastery last semester and teaching deepens his own understanding.',
-        annotation: 'Teaching biology to juniors deepens his own mastery. The data showed he was ready for this role.',
+        annotation: 'Teaching biology to juniors builds on the mastery he\'s already demonstrated. The data showed he was ready for this role.',
         type: 'community',
       },
       {
@@ -231,8 +231,8 @@ export default function StudentStories() {
             What school feels like
           </h2>
           <p className="text-lg text-black/70 max-w-2xl">
-            Three students. Three different pathways. Each schedule built around where they
-            are and where they're headed.
+            Three students. Three different pathways. Each schedule built around what they
+            bring and where they're headed.
           </p>
         </motion.div>
 

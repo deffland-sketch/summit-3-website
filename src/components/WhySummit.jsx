@@ -110,6 +110,19 @@ export default function WhySummit() {
           </motion.div>
         </div>
 
+        {/* Pull-quote */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.45 }}
+          className="max-w-3xl mx-auto mb-10 border-l-4 border-indigo pl-6 py-2"
+        >
+          <p className="text-2xl md:text-3xl font-bold text-indigo leading-snug">
+            Summit built the strongest version of a post-industrial school model it could a decade
+            ago — without the technology to fully realize it.
+          </p>
+        </motion.div>
+
         {/* Framing */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -118,8 +131,7 @@ export default function WhySummit() {
           className="max-w-3xl mx-auto"
         >
           <p className="text-lg text-black/70 leading-relaxed text-center">
-            Summit built the strongest version of a post-industrial school model it could a decade
-            ago — without the technology to fully realize it. Summit Learning reached 400+ schools
+            Summit Learning reached 400+ schools
             because the model worked. The core vision has always been: every student on a
             personalized pathway within a strong community. The technology to make that vision fully
             operational exists now. Summit is the organization with the track record, the

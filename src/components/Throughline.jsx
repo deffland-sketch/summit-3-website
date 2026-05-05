@@ -22,139 +22,176 @@ export default function Throughline() {
           </h2>
         </motion.div>
 
-        {/* LARGE VISUAL DIAGRAM — the centerpiece */}
+        {/* DIAGRAM — HTML/Tailwind layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="flex justify-center mb-8"
+          className="max-w-4xl mx-auto mb-8 relative"
         >
-          <svg viewBox="0 0 800 680" className="w-full max-w-4xl" fill="none">
+          {/* Decorative sparks */}
+          <svg className="absolute -top-2 -left-1 w-4 h-4 pointer-events-none" viewBox="0 0 16 16" fill="none">
+            <Spark cx={8} cy={8} size={8} color="#f6aa40" />
+          </svg>
+          <svg className="absolute -top-2 -right-1 w-4 h-4 pointer-events-none" viewBox="0 0 16 16" fill="none">
+            <Spark cx={8} cy={8} size={7} color="#4b4b96" />
+          </svg>
+          <svg className="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 pointer-events-none" viewBox="0 0 12 12" fill="none">
+            <Spark cx={6} cy={6} size={5} color="#508278" />
+          </svg>
 
-            {/* ===== COMMUNITY FOUNDATION ===== */}
-            <ellipse cx="400" cy="622" rx="370" ry="44" fill="#f6aa40" opacity="0.1" />
-            <ellipse cx="400" cy="622" rx="340" ry="36" fill="#f6aa40" opacity="0.08" />
-            <text x="400" y="626" textAnchor="middle" fill="#f6aa40" fontWeight="700" fontSize="18" fontFamily="Arimo, sans-serif">Rooted in Community</text>
-            <text x="400" y="648" textAnchor="middle" fill="#000" opacity="0.25" fontSize="12" fontFamily="Arimo, sans-serif">Students belong. Adults share purpose. Families are partners.</text>
+          {/* Two-column layout */}
+          <div className="grid md:grid-cols-2 gap-5">
 
             {/* ===== THE PATHWAY — left column ===== */}
-            {/* Pathway header bar */}
-            <rect x="30" y="30" width="350" height="46" rx="12" fill="#4b4b96" />
-            <text x="205" y="58" textAnchor="middle" fill="white" fontWeight="700" fontSize="20" fontFamily="Arimo, sans-serif">The Pathway</text>
+            <div className="flex flex-col">
+              <div className="bg-indigo text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
+                The Pathway
+              </div>
 
-            {/* Step 1 */}
-            <rect x="30" y="86" width="350" height="136" rx="12" fill="#4b4b96" opacity="0.05" stroke="#4b4b96" strokeWidth="1" opacity="0.12" />
-            <circle cx="58" cy="112" r="16" fill="#96d2dc" />
-            <text x="58" y="117" textAnchor="middle" fill="white" fontWeight="700" fontSize="14" fontFamily="Arimo, sans-serif">1</text>
-            <text x="82" y="112" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">Who is the student, and what</text>
-            <text x="82" y="128" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">do they want for their life?</text>
-            <text x="82" y="150" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">Data, history, interests, goals, developmental needs</text>
-            <text x="82" y="164" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">and aspirations for the life they want to build.</text>
-            {/* Agency sub-rows */}
-            <line x1="50" y1="176" x2="370" y2="176" stroke="#4b4b96" strokeWidth="0.5" opacity="0.1" />
-            <text x="50" y="192" fill="#508278" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.6">THE SYSTEM</text>
-            <text x="120" y="192" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Surfaces data, history, and patterns. Asks the right questions.</text>
-            <text x="50" y="208" fill="#96d2dc" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.8">THE STUDENT</text>
-            <text x="126" y="208" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Reflects on who they are and what they want. Shares what matters.</text>
+              {/* Step 1 */}
+              <div className="bg-indigo/5 border border-indigo/12 rounded-xl p-4">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-light-blue flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">1</div>
+                  <div>
+                    <p className="font-bold text-[13px] text-black/80 leading-snug">Who is the student, and what do they want for their life?</p>
+                    <p className="text-[11px] text-black/40 mt-1.5 leading-relaxed">Existing knowledge, interests, lived experience, goals, developmental needs, and aspirations for the life they want to build.</p>
+                  </div>
+                </div>
+                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Surfaces data, history, and patterns. Asks the right questions.</span>
+                  </div>
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Brings knowledge, experience, and aspirations the system is built to honor.</span>
+                  </div>
+                </div>
+              </div>
 
-            {/* Arrow 1→2 */}
-            <path d="M205 222 L205 240" stroke="#4b4b96" strokeWidth="2" opacity="0.2" />
-            <path d="M200 236 L205 244 L210 236" fill="#4b4b96" opacity="0.2" />
+              {/* Arrow 1→2 */}
+              <div className="flex justify-center py-1 text-indigo/20">
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M5 0v14M1 11l4 5 4-5" stroke="currentColor" strokeWidth="2" /></svg>
+              </div>
 
-            {/* Step 2 */}
-            <rect x="30" y="248" width="350" height="136" rx="12" fill="#4b4b96" opacity="0.05" stroke="#4b4b96" strokeWidth="1" opacity="0.12" />
-            <circle cx="58" cy="274" r="16" fill="#508278" />
-            <text x="58" y="279" textAnchor="middle" fill="white" fontWeight="700" fontSize="14" fontFamily="Arimo, sans-serif">2</text>
-            <text x="82" y="274" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">What outcomes will support their</text>
-            <text x="82" y="290" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">launch into the life they want?</text>
-            <text x="82" y="312" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">College-ready academic foundations and durable</text>
-            <text x="82" y="326" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">skills like collaboration, communication,</text>
-            <text x="82" y="340" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">and interpersonal awareness.</text>
-            {/* Agency sub-rows */}
-            <line x1="50" y1="350" x2="370" y2="350" stroke="#4b4b96" strokeWidth="0.5" opacity="0.1" />
-            <text x="50" y="366" fill="#508278" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.6">THE SYSTEM</text>
-            <text x="120" y="366" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Maps academic foundations and durable skills to the life the student is building toward.</text>
-            <text x="50" y="382" fill="#96d2dc" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.8">THE STUDENT</text>
-            <text x="126" y="382" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Co-owns the goals. Adjusts them as self-knowledge grows.</text>
+              {/* Step 2 */}
+              <div className="bg-indigo/5 border border-indigo/12 rounded-xl p-4">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">2</div>
+                  <div>
+                    <p className="font-bold text-[13px] text-black/80 leading-snug">What outcomes will support their launch into the life they want?</p>
+                    <p className="text-[11px] text-black/40 mt-1.5 leading-relaxed">College-ready academic foundations and durable skills like collaboration, communication, and interpersonal awareness.</p>
+                  </div>
+                </div>
+                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Maps academic foundations and durable skills to the life the student is building toward.</span>
+                  </div>
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Co-owns the goals. Adjusts them as self-knowledge grows.</span>
+                  </div>
+                </div>
+              </div>
 
-            {/* Arrow 2→3 */}
-            <path d="M205 384 L205 402" stroke="#4b4b96" strokeWidth="2" opacity="0.2" />
-            <path d="M200 398 L205 406 L210 398" fill="#4b4b96" opacity="0.2" />
+              {/* Arrow 2→3 */}
+              <div className="flex justify-center py-1 text-indigo/20">
+                <svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M5 0v14M1 11l4 5 4-5" stroke="currentColor" strokeWidth="2" /></svg>
+              </div>
 
-            {/* Step 3 */}
-            <rect x="30" y="410" width="350" height="136" rx="12" fill="#4b4b96" opacity="0.05" stroke="#4b4b96" strokeWidth="1" opacity="0.12" />
-            <circle cx="58" cy="436" r="16" fill="#4b4b96" />
-            <text x="58" y="441" textAnchor="middle" fill="white" fontWeight="700" fontSize="14" fontFamily="Arimo, sans-serif">3</text>
-            <text x="82" y="436" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">What experiences will</text>
-            <text x="82" y="452" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.8">prepare them?</text>
-            <text x="82" y="474" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">Eight experience types across context, content,</text>
-            <text x="82" y="488" fill="#000" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.4">and discipline, the right combination for each student.</text>
-            {/* Agency sub-rows */}
-            <line x1="50" y1="500" x2="370" y2="500" stroke="#4b4b96" strokeWidth="0.5" opacity="0.1" />
-            <text x="50" y="516" fill="#508278" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.6">THE SYSTEM</text>
-            <text x="120" y="516" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Sequences experience types based on where the student is and what they need next.</text>
-            <text x="50" y="532" fill="#96d2dc" fontWeight="700" fontSize="9" fontFamily="Arimo, sans-serif" opacity="0.8">THE STUDENT</text>
-            <text x="126" y="532" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Increasingly designs and chooses experiences. Leads the pathway over time.</text>
+              {/* Step 3 */}
+              <div className="bg-indigo/5 border border-indigo/12 rounded-xl p-4">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">3</div>
+                  <div>
+                    <p className="font-bold text-[13px] text-black/80 leading-snug">What experiences will prepare them?</p>
+                    <p className="text-[11px] text-black/40 mt-1.5 leading-relaxed">Eight experience types across context, content, and discipline — the right combination for each student.</p>
+                  </div>
+                </div>
+                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Sequences experience types based on where the student is and what they need next.</span>
+                  </div>
+                  <div className="flex gap-2 items-baseline">
+                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Increasingly designs and chooses experiences. Leads the pathway over time.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* ===== HUMAN-CENTERED GUIDANCE — right column ===== */}
-            {/* Guidance header bar */}
-            <rect x="420" y="30" width="350" height="46" rx="12" fill="#f6aa40" />
-            <text x="595" y="58" textAnchor="middle" fill="white" fontWeight="700" fontSize="20" fontFamily="Arimo, sans-serif">Human-Centered Guidance</text>
+            <div className="flex flex-col">
+              <div className="bg-orange text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
+                Human-Centered Guidance
+              </div>
 
-            {/* Guidance body */}
-            <rect x="420" y="86" width="350" height="460" rx="12" fill="#f6aa40" opacity="0.05" stroke="#f6aa40" strokeWidth="1" opacity="0.12" />
+              <div className="bg-orange/5 border border-orange/12 rounded-xl p-5 flex-1 flex flex-col justify-between">
+                {/* Central message */}
+                <p className="text-center font-bold text-[13px] text-black/70 leading-relaxed mb-6">
+                  Helping young people situate their learning within the broader human experience.
+                </p>
 
-            {/* Central message */}
-            <text x="595" y="118" textAnchor="middle" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.7">Helping young people situate</text>
-            <text x="595" y="134" textAnchor="middle" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.7">their learning within the broader</text>
-            <text x="595" y="150" textAnchor="middle" fill="#000" fontWeight="700" fontSize="13" fontFamily="Arimo, sans-serif" opacity="0.7">human experience.</text>
+                {/* Four capacities — stacked */}
+                <div className="space-y-2.5 mb-6">
+                  <div className="bg-orange/10 rounded-lg p-3 flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-orange flex items-center justify-center text-white font-bold text-[10px] shrink-0">G</div>
+                    <div>
+                      <p className="font-bold text-xs text-black/80">Guiding</p>
+                      <p className="text-[10px] text-black/40">Via deep relationships and knowing students well</p>
+                    </div>
+                  </div>
+                  <div className="bg-indigo/8 rounded-lg p-3 flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-[10px] shrink-0">C</div>
+                    <div>
+                      <p className="font-bold text-xs text-black/80">Content expertise</p>
+                      <p className="text-[10px] text-black/40">Supporting foundational skills at just the right time</p>
+                    </div>
+                  </div>
+                  <div className="bg-teal/10 rounded-lg p-3 flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-teal flex items-center justify-center text-white font-bold text-[10px] shrink-0">F</div>
+                    <div>
+                      <p className="font-bold text-xs text-black/80">Facilitating</p>
+                      <p className="text-[10px] text-black/40">Supporting students through interdisciplinary, interconnected experiences</p>
+                    </div>
+                  </div>
+                  <div className="bg-tan-grey/10 rounded-lg p-3 flex items-center gap-3">
+                    <div className="w-7 h-7 rounded-full bg-tan-grey flex items-center justify-center text-white font-bold text-[10px] shrink-0">S</div>
+                    <div>
+                      <p className="font-bold text-xs text-black/80">Architecting the system</p>
+                      <p className="text-[10px] text-black/40">Seeing, guiding, and managing the complexity of education at scale</p>
+                    </div>
+                  </div>
+                </div>
 
-            {/* Four capacities as visual blocks */}
-            {/* Guides */}
-            <rect x="440" y="172" width="150" height="52" rx="10" fill="#f6aa40" opacity="0.12" />
-            <circle cx="464" cy="198" r="12" fill="#f6aa40" opacity="0.5" />
-            <text x="464" y="202" textAnchor="middle" fill="white" fontWeight="700" fontSize="10" fontFamily="Arimo, sans-serif">G</text>
-            <text x="482" y="193" fill="#000" fontWeight="700" fontSize="12" fontFamily="Arimo, sans-serif" opacity="0.7">Guides</text>
-            <text x="482" y="208" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Deep relationships</text>
+                {/* Tagline */}
+                <p className="text-center text-orange font-bold text-[11px] opacity-60 leading-relaxed">
+                  The right adult, in the right role, at the right moment.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            {/* Content Experts */}
-            <rect x="600" y="172" width="150" height="52" rx="10" fill="#4b4b96" opacity="0.1" />
-            <circle cx="624" cy="198" r="12" fill="#4b4b96" opacity="0.5" />
-            <text x="624" y="202" textAnchor="middle" fill="white" fontWeight="700" fontSize="10" fontFamily="Arimo, sans-serif">C</text>
-            <text x="642" y="193" fill="#000" fontWeight="700" fontSize="12" fontFamily="Arimo, sans-serif" opacity="0.7">Content Experts</text>
-            <text x="642" y="208" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Subject-matter depth</text>
-
-            {/* Facilitators */}
-            <rect x="440" y="234" width="150" height="52" rx="10" fill="#508278" opacity="0.1" />
-            <circle cx="464" cy="260" r="12" fill="#508278" opacity="0.5" />
-            <text x="464" y="264" textAnchor="middle" fill="white" fontWeight="700" fontSize="10" fontFamily="Arimo, sans-serif">F</text>
-            <text x="482" y="255" fill="#000" fontWeight="700" fontSize="12" fontFamily="Arimo, sans-serif" opacity="0.7">Facilitators</text>
-            <text x="482" y="270" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Design experiences</text>
-
-            {/* System Architects */}
-            <rect x="600" y="234" width="150" height="52" rx="10" fill="#96a0ab" opacity="0.12" />
-            <circle cx="624" cy="260" r="12" fill="#96a0ab" opacity="0.5" />
-            <text x="624" y="264" textAnchor="middle" fill="white" fontWeight="700" fontSize="10" fontFamily="Arimo, sans-serif">S</text>
-            <text x="642" y="255" fill="#000" fontWeight="700" fontSize="12" fontFamily="Arimo, sans-serif" opacity="0.7">System Architects</text>
-            <text x="642" y="270" fill="#000" fontSize="10" fontFamily="Arimo, sans-serif" opacity="0.35">Connect all the parts</text>
-
-            {/* "The right adult, in the right role" */}
-            <text x="595" y="316" textAnchor="middle" fill="#f6aa40" fontWeight="700" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.6">The right adult, in the right role,</text>
-            <text x="595" y="332" textAnchor="middle" fill="#f6aa40" fontWeight="700" fontSize="11" fontFamily="Arimo, sans-serif" opacity="0.6">at the right moment.</text>
-
-            {/* ===== CONNECTING LINES to community ===== */}
-            <path d="M205 546 L205 570 Q205 585 230 590 L360 608" stroke="#4b4b96" strokeWidth="2" opacity="0.15" strokeDasharray="6 4" />
-            <path d="M595 546 L595 570 Q595 585 570 590 L440 608" stroke="#f6aa40" strokeWidth="2" opacity="0.15" strokeDasharray="6 4" />
-
-            {/* Student dot at junction */}
-            <circle cx="400" cy="595" r="10" fill="white" stroke="#508278" strokeWidth="2" />
-            <circle cx="400" cy="592" r="3" fill="#508278" opacity="0.5" />
-
-            {/* Sparks */}
-            <Spark cx={18} cy={50} size={8} color="#f6aa40" />
-            <Spark cx={782} cy={44} size={7} color="#4b4b96" />
-            <Spark cx={400} cy={16} size={5} color="#508278" />
-          </svg>
+          {/* ===== COMMUNITY FOUNDATION ===== */}
+          <div className="flex flex-col items-center mt-6">
+            {/* Connecting dashed lines */}
+            <div className="flex w-full max-w-xs justify-center mb-1">
+              <div className="flex-1 border-r-2 border-dashed border-indigo/15 h-6" />
+              <div className="flex-1 border-l-2 border-dashed border-orange/15 h-6" />
+            </div>
+            {/* Student dot */}
+            <div className="w-5 h-5 rounded-full bg-white border-2 border-teal flex items-center justify-center mb-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-teal/50" />
+            </div>
+            {/* Community oval */}
+            <div className="w-full max-w-2xl bg-orange/8 rounded-full py-4 px-8 text-center">
+              <p className="text-orange font-bold text-lg">Rooted in Community</p>
+              <p className="text-black/25 text-xs mt-1">Students belong. Adults share purpose. Families are partners.</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Tagline */}
@@ -182,22 +219,30 @@ export default function Throughline() {
         >
           <h3 className="text-lg font-bold text-indigo mb-3">Why students do the work</h3>
           <p className="text-sm text-black/60 leading-relaxed mb-3">
-            The industrial model runs on extrinsic motivation: grades, credits, seat-time,
-            consequences. It works for students who are already bought in and fails everyone
-            else. Summit 3.0 runs on a different motivational theory.
+            Every student arrives with something: knowledge they've built, a domain they're drawn to,
+            a life they're already imagining, experiences that have shaped what they value. Summit 3.0
+            starts there.
           </p>
           <p className="text-sm text-black/60 leading-relaxed mb-3">
-            When students see why they're doing something, because it connects to a pathway
-            they're building toward a life they want, the work becomes worth doing on its own
-            terms. When the system matches them to the right experience at their actual level,
-            two sources of demotivation disappear: being perpetually lost and being perpetually
-            bored. When a human guide helps them see how their experiences connect into a
-            coherent story about who they're becoming, ownership takes root.
+            The industrial model ignores those assets. It runs on extrinsic motivation — grades,
+            credits, seat-time, consequences — and works only for students who have already found
+            reasons to comply. When the starting point is deficit rather than capacity, most students
+            eventually disengage.
+          </p>
+          <p className="text-sm text-black/60 leading-relaxed mb-3">
+            Summit 3.0 runs on a different theory. When the pathway connects to a future a student
+            is genuinely building toward, their existing drive has somewhere to go. When the system
+            matches them to work at their actual level, it treats their current knowledge as a
+            foundation rather than a gap — and two sources of demotivation disappear: being
+            perpetually lost and being perpetually bored. When a human guide helps them see how
+            their experiences connect into a coherent story about who they're becoming, they
+            recognize the author as themselves.
           </p>
           <p className="text-sm text-black/60 leading-relaxed">
-            Relevance through the pathway. Precision that builds competence. Human guidance
-            that makes meaning. Three conditions that reinforce each other, and weaken if any
-            one is missing. That is why Summit 3.0 builds all three together.
+            Relevance through the pathway. Precision that honors what they already know. Human
+            guidance that names and builds on their strengths. Three conditions that reinforce
+            each other — and weaken if any one is missing. That is why Summit 3.0 builds all
+            three together.
           </p>
         </motion.div>
       </div>

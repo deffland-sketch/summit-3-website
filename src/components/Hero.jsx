@@ -139,7 +139,8 @@ export default function Hero() {
           className="text-white/70 font-medium leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)' }}
         >
-          <span className="block">Every student on their pathway</span>
+          <span className="block">The future of high school is not a set of classes and credits.</span>
+          <span className="block">It is every student on their pathway</span>
           <span className="block">with the right experiences at the right time,</span>
           <span className="block">shaped by human guidance and rooted in community.</span>
         </motion.p>

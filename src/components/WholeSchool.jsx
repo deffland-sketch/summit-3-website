@@ -425,7 +425,18 @@ export default function WholeSchool() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-white/40 mt-10 max-w-2xl mx-auto leading-relaxed text-sm"
+          className="text-center text-white/50 mt-10 max-w-2xl mx-auto leading-relaxed text-sm font-medium"
+        >
+          Ten years ago, this required school and system leaders doing heroic manual work to
+          produce even a slightly flexible schedule. Now the system handles the matching, and humans
+          do what humans do best.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+          className="text-center text-white/40 mt-4 max-w-2xl mx-auto leading-relaxed text-sm"
         >
           Every cycle, the system architects review the most up-to-date data — which students
           made progress, which need a different approach, which partner slots are available — and
