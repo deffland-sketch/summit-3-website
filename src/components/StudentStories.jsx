@@ -6,26 +6,99 @@ const students = [
   {
     name: 'Marco',
     preset: 2,
-    subtitle: 'Junior. Environmental biotech. Has dyslexia.',
+    subtitle: 'Junior. Environmental biotech pathway. Has dyslexia.',
     blocks: [
-      { time: '8:15', title: 'Community circle', description: 'Guide reviews his pathway, connects him to a biotech researcher whose profile matches his interests.', type: 'community' },
-      { time: '9:00', title: 'Small-group expert instruction', description: 'Four students with an interventionist. Targeted scientific vocabulary — terms they need for the lab analysis next.', type: 'academic' },
-      { time: '10:00', title: 'Peer collaboration', description: 'Lab analysis with two classmates, applying the vocabulary from the morning session.', type: 'academic' },
-      { time: '11:15', title: 'Independent practice', description: 'AI tutor on a complex EPA report at his reading edge. Content selected because it connects to his pathway.', type: 'independent' },
-      { time: '1:00', title: 'Field experience', description: 'Water samples with an environmental nonprofit. Real science, real data, three blocks from school.', type: 'realworld' },
+      {
+        time: '8:00',
+        title: 'Wellbeing and community: Morning community circle',
+        description: 'Guide reviews Summit\'s PLP (personalized learning plan) milestones, connects Marco to a biotech researcher whose profile matches his environmental interests.',
+        annotation: 'Morning starts with connection because Marco\'s pathway depends on the relationships that surface his interests.',
+        type: 'community',
+      },
+      {
+        time: '9:00',
+        title: 'Direct instruction: Small-group lesson with a science content expert',
+        description: 'Four students working on targeted scientific vocabulary — terms they need for the lab analysis coming up next block.',
+        annotation: 'Small-group is the right format because four students need the same vocabulary scaffold before this afternoon\'s lab.',
+        type: 'academic',
+      },
+      {
+        time: '10:00',
+        title: 'Practice and feedback: Collaborative lab analysis',
+        description: 'Applies the vocabulary from the morning session with two classmates, analyzing water quality data sets and getting real-time feedback from the content expert.',
+        annotation: 'Practice happens immediately after instruction, while the vocabulary is fresh and the feedback can land.',
+        type: 'academic',
+      },
+      {
+        time: '11:00',
+        title: 'Independent work and creation: AI-supported reading practice',
+        description: 'AI tutor guides him through a complex EPA report at his reading edge. Content selected because it connects directly to his environmental biotech pathway.',
+        annotation: 'AI tutoring lets him work at his reading edge on content that connects directly to his pathway.',
+        type: 'independent',
+      },
+      {
+        time: '12:00',
+        title: 'Reflection and goal-setting: Midday check-in',
+        description: 'Marco reviews his morning with his guide using the PLP. They tag what\'s working, what\'s not, and what he\'ll bring to this afternoon\'s field work.',
+        annotation: 'Reflection is what turns the morning\'s experiences into learning Marco can build on.',
+        type: 'community',
+      },
+      {
+        time: '1:00',
+        title: 'Real-world experience: Field work with an environmental nonprofit',
+        description: 'Collecting water samples and logging real data with a local watershed organization, three blocks from school. Real science, real stakes.',
+        aside: 'This is the part of Marco\'s week he talks about most. The connection between his pathway and real science in the field is what pulls him through the harder academic work.',
+        type: 'realworld',
+      },
     ],
   },
   {
     name: 'Amara',
     preset: 3,
-    subtitle: 'Sophomore. Exploring interests, strong writer, undecided.',
+    subtitle: 'Sophomore. Strong writer, exploring interests, undecided direction.',
     blocks: [
-      { time: '8:15', title: 'Community circle', description: 'Guide connects last week\'s documentary to an emerging interest in housing policy.', type: 'community' },
-      { time: '9:00', title: 'Discussion circle', description: 'Long-form journalism on housing policy. Deep engagement with complex text.', type: 'academic' },
-      { time: '10:15', title: 'Project studio', description: 'Mini-documentary, week 3 of 5. Facilitator pushes back on her framing.', type: 'realworld' },
-      { time: '11:30', title: 'Expert instruction', description: 'Algebra — modeling with linear functions. Six students, targeted to where they are.', type: 'academic' },
-      { time: '1:00', title: 'Reflection and planning', description: 'Guide helps her see three converging interests forming a pattern.', type: 'community' },
-      { time: '1:45', title: 'Independent practice', description: 'AI writing feedback on her documentary script. Revises the introduction.', type: 'independent' },
+      {
+        time: '8:00',
+        title: 'Wellbeing and community: Morning community circle',
+        description: 'Guide connects last week\'s documentary screening to an emerging interest in housing policy, updating her PLP to reflect the pattern.',
+        annotation: 'Community circle surfaces a pattern her guide can build on. Connection drives the design.',
+        type: 'community',
+      },
+      {
+        time: '9:00',
+        title: 'Discussion and dialogue: Seminar on long-form journalism',
+        description: 'Eight students discuss a housing policy investigation published in a national magazine. Deep engagement with complex text and competing perspectives.',
+        annotation: 'Eight students is the right size for the kind of deep engagement Amara needs to sharpen her thinking.',
+        type: 'academic',
+      },
+      {
+        time: '10:00',
+        title: 'Independent work and creation: Documentary project studio',
+        description: 'Week 3 of 5 on her mini-documentary about local housing. Facilitator pushes back on her framing — she revises her central argument.',
+        annotation: 'Sustained creation time is how the documentary moves from idea to argument.',
+        type: 'independent',
+      },
+      {
+        time: '11:30',
+        title: 'Direct instruction: Algebra with a math content expert',
+        description: 'Modeling with linear functions. Six students, instruction targeted to where each one is. Real housing data used as the context for practice problems.',
+        annotation: 'Math instruction lands because the data is housing data. The context matters as much as the content.',
+        type: 'academic',
+      },
+      {
+        time: '1:00',
+        title: 'Reflection and goal-setting: One-on-one guide check-in',
+        description: 'Guide helps her see three converging interests — writing, policy, documentary — forming a pattern that could shape her pathway.',
+        aside: 'This is the conversation that changed Amara\'s relationship to school — the moment she saw her interests forming a pattern and realized the pathway was hers.',
+        type: 'community',
+      },
+      {
+        time: '2:00',
+        title: 'Practice and feedback: Writing conference with AI feedback tools',
+        description: 'AI writing feedback on her documentary script. Revises the introduction three times, each draft sharper than the last.',
+        annotation: 'Writing feedback is timed to the documentary deadline. Feedback only works when it\'s actionable.',
+        type: 'academic',
+      },
     ],
   },
   {
@@ -33,20 +106,50 @@ const students = [
     preset: 5,
     subtitle: 'Senior. Nursing pathway. Works afternoons.',
     blocks: [
-      { time: '8:00', title: 'Dual enrollment', description: 'Anatomy & physiology, community college, asynchronous with guide support. Three weeks ahead.', type: 'independent' },
-      { time: '9:15', title: 'Expert instruction', description: 'Statistics — clinical data interpretation connected to his nursing pathway. Real hospital data sets.', type: 'academic' },
-      { time: '10:30', title: 'Community circle', description: 'Guide checks pathway milestones. CNA certification on track. Clinical rotation application due next month.', type: 'community' },
-      { time: '11:15', title: 'Peer tutoring', description: 'Leads biology review for two juniors. Data-matched — David demonstrated mastery last semester.', type: 'academic' },
-      { time: '12:15', title: 'Independent practice', description: 'Adaptive academic vocabulary. Wraps his school day before his afternoon shift.', type: 'independent' },
+      {
+        time: '8:00',
+        title: 'Independent work and creation: Dual enrollment anatomy course',
+        description: 'Anatomy & physiology through the community college, asynchronous with guide support. Three weeks ahead of pace.',
+        aside: 'David chose this course because it connects directly to his CNA work. He\'s three weeks ahead of pace because the content matters to him.',
+        type: 'independent',
+      },
+      {
+        time: '9:30',
+        title: 'Direct instruction: Statistics with a math content expert',
+        description: 'Clinical data interpretation connected to his nursing pathway. Using real hospital data sets to learn statistical reasoning.',
+        annotation: 'Statistics taught through hospital data because his pathway is nursing. Context drives engagement.',
+        type: 'academic',
+      },
+      {
+        time: '10:30',
+        title: 'Reflection and goal-setting: Pathway milestone review',
+        description: 'Guide checks PLP milestones. CNA certification on track. Clinical rotation application due next month — they map out next steps together.',
+        annotation: 'PLP check-ins are how a senior pathway stays on track. Milestones, next steps, decisions.',
+        type: 'community',
+      },
+      {
+        time: '11:30',
+        title: 'Presentation and performance: Peer teaching session',
+        description: 'Leads a biology review for two juniors. Data-matched — David demonstrated mastery last semester and teaching deepens his own understanding.',
+        annotation: 'Teaching biology to juniors deepens his own mastery. The data showed he was ready for this role.',
+        type: 'community',
+      },
+      {
+        time: '12:30',
+        title: 'Practice and feedback: Adaptive vocabulary practice',
+        description: 'Adaptive academic and medical vocabulary work. Wraps his school day before his afternoon CNA shift at the clinic.',
+        annotation: 'Adaptive practice closes his school day before his afternoon clinical shift. Pathway and schedule fit together.',
+        type: 'academic',
+      },
     ],
   },
 ]
 
 const typeColors = {
-  academic: { bg: 'bg-indigo', label: 'Academic' },
-  realworld: { bg: 'bg-teal', label: 'Real-world' },
-  community: { bg: 'bg-orange', label: 'Community' },
-  independent: { bg: 'bg-light-blue', label: 'Independent' },
+  academic: { bg: 'bg-indigo', label: 'Academic', text: 'text-indigo' },
+  realworld: { bg: 'bg-teal', label: 'Real-world', text: 'text-teal' },
+  community: { bg: 'bg-orange', label: 'Community', text: 'text-orange' },
+  independent: { bg: 'bg-light-blue', label: 'Independent', text: 'text-light-blue' },
 }
 
 function StudentCard({ student, index }) {
@@ -86,8 +189,21 @@ function StudentCard({ student, index }) {
               <span className="text-black/30 font-bold w-11 shrink-0 text-right tabular-nums">{block.time}</span>
               <div className={`w-1.5 shrink-0 rounded-full ${tc.bg} opacity-60`} />
               <div className="min-w-0">
-                <span className="font-bold text-black">{block.title}</span>
+                {block.title.includes(':') ? (
+                  <>
+                    <span className={`font-bold ${tc.text}`}>{block.title.split(':')[0]}:</span>
+                    <span className="font-bold text-black">{block.title.split(':').slice(1).join(':')}</span>
+                  </>
+                ) : (
+                  <span className="font-bold text-black">{block.title}</span>
+                )}
                 <span className="text-black/50"> — {block.description}</span>
+                {block.annotation && (
+                  <span className="block mt-1 italic text-black/35 text-xs">{block.annotation}</span>
+                )}
+                {block.aside && (
+                  <span className={`block mt-1 italic ${tc.text} opacity-50 text-xs`}>{block.aside}</span>
+                )}
               </div>
             </div>
           )

@@ -123,25 +123,25 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
+          className="text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          Summit 3.0: The future of high school
+          Summit 3.0
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-white/70 font-medium leading-relaxed"
+          style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)' }}
         >
-          The traditional bell schedule was designed for a world that no longer exists.
-          <br className="hidden md:block" />
-          What opens up when we let it go?
+          <span className="block">Every student on their pathway</span>
+          <span className="block">with the right experiences at the right time,</span>
+          <span className="block">shaped by human guidance and rooted in community.</span>
         </motion.p>
       </div>
 

@@ -69,7 +69,7 @@ const unlocks = [
     color: 'indigo',
     title: 'A technology stack that sees every student',
     summary:
-      'Most education technology tracks compliance and stores materials. Layering AI on top of a compliance-oriented architecture will never produce intelligent resource matching. Summit is building a next-generation LMS with an AI-powered data layer and knowledge graph underneath — giving system architects the tools to see every student, adjust every schedule, and deploy every resource based on real data.',
+      'Most education technology tracks compliance and stores materials. Layering AI on top of a compliance-oriented architecture will never produce intelligent resource matching. Summit is building four key layers that unlock the pathway model — giving System Architects the tools to see every student, adjust every schedule, and deploy every resource based on real data.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -82,15 +82,14 @@ const unlocks = [
         <p className="font-bold text-black/80">The tech stack has four key layers:</p>
 
         <div className="bg-white/60 rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Next-generation LMS</h4>
+          <h4 className="font-bold text-indigo mb-1">Learning management system (LMS)</h4>
           <p className="leading-relaxed">
-            A purpose-built learning management system designed for flexible, experience-based schools —
-            not a traditional LMS with AI bolted on. It manages every learning experience type in a
-            single platform: small-group instruction, project studios, field experiences, dual enrollment,
-            independent practice, and community circles. System architects use it to view the full school
-            in real time, adjust schedules based on the data the AI surfaces, and coordinate educator
-            deployment and space allocation. It's the operational layer that makes a school of 400
-            personalized pathways actually run.
+            The interface where students and educators interact with digital representations of
+            learning experiences. A student might be submitting a final product, uploading a picture
+            of their work, taking a quiz, or checking into a new experience — the LMS is where all of
+            that happens. It's purpose-built for flexible, experience-based schools, managing every
+            learning experience type in a single platform: small-group instruction, project studios,
+            field experiences, dual enrollment, independent practice, and community circles.
           </p>
         </div>
 
@@ -100,7 +99,7 @@ const unlocks = [
             Multi-dimensional learner profiles capturing academic progress, durable skills, response
             patterns, identity development, experiences, and life context. True personalization requires
             understanding the whole student — including schedule constraints, family responsibilities,
-            and support systems. This data feeds directly into the LMS, giving system architects and
+            and support systems. This data feeds directly into the LMS, giving System Architects and
             guides a complete picture of every student every day.
           </p>
         </div>
@@ -108,24 +107,32 @@ const unlocks = [
         <div className="bg-white/60 rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Knowledge graph</h4>
           <p className="leading-relaxed">
-            A structured representation of educational pathways encoding competencies, experiences,
-            credentials, and labor market outcomes. Edge weights learned from alumni trajectories and
-            longitudinal research, continuously updated. The AI uses the knowledge graph to recommend
-            which experiences each student needs next — and the system architects review those
-            recommendations through the LMS before finalizing the schedule.
+            The intelligence layer that powers pathway recommendations. The AI uses it to figure out
+            not just what experience to recommend next, but to continually update each student's
+            pathway as new data comes in — incorporating competencies, credentials, experiences, and
+            labor market outcomes. It learns from alumni trajectories and longitudinal research,
+            continuously refining its understanding of what works for different students. System
+            architects review the pathway recommendations it surfaces through the LMS before
+            finalizing schedules.
           </p>
         </div>
 
         <div className="bg-white/60 rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Resource matching engine</h4>
           <p className="leading-relaxed">
-            An optimization layer that takes a student's current profile, traverses the knowledge graph,
-            and generates schedule recommendations — accounting for educator availability, space capacity,
-            and partner schedules. Produces outputs for students (coherent next steps), guides
-            (undermatch alerts, weakening connections), and system architects (resource prioritization
-            and schedule adjustments). This is the practical answer to the batch problem — instead of
-            giving all students the same resources at the same time, the system continuously matches
-            individual students to specific resources.
+            The optimization layer that takes pathway recommendations and matches them to available
+            resources and experiences. It charts everything dynamically across the complexity of the
+            system — educator availability, space capacity, partner schedules, student needs — to
+            produce individualized student schedules. Instead of giving all students the same resources
+            at the same time, the engine continuously matches each student to specific resources,
+            producing outputs for students (coherent next steps), guides (undermatch alerts, weakening
+            connections), and System Architects (resource prioritization and schedule adjustments).
+          </p>
+        </div>
+
+        <div className="mt-2 bg-indigo/5 rounded-lg p-3 border border-indigo/10">
+          <p className="text-xs text-black/50 leading-relaxed">
+            <span className="font-bold text-indigo/70">The flow:</span> LMS (interface) → Data layer (student profiles) → Knowledge graph (pathway intelligence) → Resource matching (schedule optimization)
           </p>
         </div>
       </div>
@@ -135,7 +142,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient. Teacher and school leader turnover is at record highs. The current role has become impossible to execute well. Summit\'s model defines four distinct educator capacities so people can become experts at one thing while living balanced and sustainable lives.',
+      'The adults in a school are the most important ingredient. Teacher and school leader turnover is at record highs. The current role has become impossible to execute well. Summit\'s model defines four distinct educator capacities so people can develop more specific expertise while living balanced and sustainable lives. When AI handles what it does well, humans are freed to do what they do uniquely well.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -146,6 +153,14 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-4 text-sm text-black/70">
+        <p className="leading-relaxed">
+          AI is extraordinarily good at certain things: synthesizing data, providing instant feedback,
+          customizing content, and matching resources to needs. Humans are irreplaceable at others:
+          building relationships, inspiring motivation, navigating complexity with wisdom, and helping
+          young people make meaning of their experiences. The talent model is designed so that AI does
+          what it does well, freeing educators to do what they do uniquely well.
+        </p>
+
         <p className="font-bold text-black/80">Four capacities:</p>
         <ul className="space-y-3">
           <li>
@@ -153,39 +168,72 @@ const unlocks = [
             them on their pathway. Every conversation grounded in data and the student's goals and growth.
           </li>
           <li>
-            <span className="font-bold text-teal">Academic interventionists</span> — provide targeted
-            expert instruction based on data. Intervene with precision to accelerate mastery. Like specialist
-            doctors.
+            <span className="font-bold text-teal">Content Experts</span> — provide targeted instruction
+            based on data. They bring deep subject-matter knowledge to accelerate mastery where students
+            need it most.
           </li>
           <li>
             <span className="font-bold text-teal">Facilitators</span> — orchestrate projects, real-world
             experiences, and community learning. Experts in interpersonal connection and authentic application.
           </li>
           <li>
-            <span className="font-bold text-teal">System architects</span> — see how all parts connect.
+            <span className="font-bold text-teal">System Architects</span> — see how all parts connect.
             Manage complexity, curate partnerships and resources, ensure quality and equity.
           </li>
         </ul>
 
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
-            <thead>
-              <tr className="border-b border-black/10">
-                <th className="text-left py-2 pr-4 font-bold text-teal">AI handles</th>
-                <th className="text-left py-2 font-bold text-teal">Adults do more of</th>
-              </tr>
-            </thead>
-            <tbody className="text-black/60">
-              <tr className="border-b border-black/5">
-                <td className="py-2 pr-4">Instant feedback, progress monitoring, data synthesis</td>
-                <td className="py-2">Meaningful dialogue about growth, goals, metacognition</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4">Curriculum customization, scheduling, resource matching</td>
-                <td className="py-2">Designing rich learning experiences, supporting motivation</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
+          <p className="text-sm text-black/70 leading-relaxed">
+            <span className="font-bold text-orange">Human-centered guidance is not one adult's job.</span> It's
+            a system that ensures the right adult is in the right role at the right moment, informed
+            by the student's pathway — helping young people situate all of their learning within the
+            broader human experience for themselves, their community, and their world.
+          </p>
+        </div>
+
+        <div className="mt-4 grid md:grid-cols-2 gap-4">
+          <div className="bg-white/60 rounded-lg p-4">
+            <h4 className="font-bold text-teal mb-3 text-xs tracking-wide">AI handles</h4>
+            <ul className="space-y-2">
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">-</span>
+                Instant feedback on student work
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">-</span>
+                Progress monitoring and data synthesis
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">-</span>
+                Curriculum customization and content delivery
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">-</span>
+                Scheduling and resource matching
+              </li>
+            </ul>
+          </div>
+          <div className="bg-white/60 rounded-lg p-4 ring-1 ring-teal/20">
+            <h4 className="font-bold text-teal mb-3 text-xs tracking-wide">Adults do more of</h4>
+            <ul className="space-y-2">
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">+</span>
+                Meaningful dialogue about growth and goals
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">+</span>
+                Metacognition and identity development
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">+</span>
+                Designing rich learning experiences
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal mt-0.5 shrink-0">+</span>
+                Supporting motivation and connection
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     ),
@@ -271,7 +319,7 @@ export default function Unlocks() {
           </h2>
         </motion.div>
 
-        {/* The simple concept of a school */}
+        {/* Bridging from the industrial model section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -279,24 +327,30 @@ export default function Unlocks() {
           className="bg-white rounded-xl border border-black/10 p-8 mb-12 text-left"
         >
           <p className="text-lg text-black/80 leading-relaxed mb-4">
+            Matching the industrial model's completeness — and then surpassing it — requires
+            getting down to fundamental principles about what a school actually is.
+          </p>
+          <p className="text-black/70 leading-relaxed mb-4">
             A school can be most simply thought of as three things: a group of young people,
-            a package of outcomes and competencies, and a set of available resources. That's it.
-            <span className="font-bold text-indigo"> A school is kids, outcomes, and resources.</span>
+            a package of outcomes and competencies, and a set of available resources.
+            <span className="font-bold text-indigo"> A school is kids, outcomes, and resources.</span>{' '}
+            The industrial model locked those three elements into a rigid configuration — same
+            students, same outcomes, same resources, same schedule, every day. That's what made
+            it complete. It's also what made it increasingly ineffective.
           </p>
           <p className="text-black/70 leading-relaxed mb-4">
             All children are different. They need different types, frequencies, and amounts of
-            learning resources to develop any given competency. Traditional schooling batches
-            resource allocation into groups of 25-35 same-aged students regardless of need. At any
-            given moment, most students are not receiving the right resource in the right amount
-            at the right time. Time is the only truly scarce resource in education, and the
-            traditional model wastes it at scale.
+            learning resources to develop any given competency. Time is the only truly scarce
+            resource in education, and the industrial model wastes it at scale. A redesign this
+            comprehensive has to start from these fundamentals — and then build an operating system
+            that makes something better actually work.
           </p>
           <p className="text-black/70 leading-relaxed">
-            Summit sees three levers that unlock innovative design:
-            <span className="font-bold text-indigo"> how we use time</span>,
+            The pathway model requires that operating system. Three levers unlock it:
+            <span className="font-bold text-indigo"> how technology connects students to the right
+            resources at the right time</span>,
             <span className="font-bold text-teal"> how we deploy talent</span>, and
-            <span className="font-bold text-orange"> how technology connects students to the right
-            resources at the right time</span>.
+            <span className="font-bold text-orange"> how we use time</span>.
           </p>
         </motion.div>
 
@@ -305,17 +359,6 @@ export default function Unlocks() {
           {unlocks.map((unlock) => (
             <ExpandableCard key={unlock.title} unlock={unlock} color={unlock.color} />
           ))}
-        </div>
-
-        {/* Connecting flow */}
-        <div className="hidden md:flex items-center justify-center mt-10 gap-3 text-sm text-black/40">
-          <span className="text-indigo font-bold">Technology</span>
-          <span>→</span>
-          <span className="text-teal font-bold">Talent evolution</span>
-          <span>→</span>
-          <span className="text-orange font-bold">Flexible time</span>
-          <span>→</span>
-          <span className="text-black/60 font-bold">Curated learning</span>
         </div>
       </div>
     </section>

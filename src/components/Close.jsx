@@ -29,9 +29,9 @@ export default function Close() {
         >
           Every student prepared for a fulfilled life — one with purposeful work,
           financial independence, strong relationships, community, and health.
-          That's been Summit's vision since 2003. For the first time, we have the
-          tools, the team, and the track record to build the school that vision
-          always demanded. We're inviting you to invest in the proof point.
+          That's been Summit's vision since 2003. Now we have the tools, the team,
+          and the track record to build the school that vision always demanded.
+          We're inviting you to invest in the proof point.
         </motion.p>
 
         <motion.div
