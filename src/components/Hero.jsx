@@ -139,7 +139,7 @@ export default function Hero() {
           className="text-white/70 font-medium leading-relaxed"
           style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)' }}
         >
-          <span className="block">The future of high school is no longer courses and credits.</span>
+          <span className="block">The future of high school is no longer courses and seat-time credits.</span>
         </motion.p>
       </div>
 
