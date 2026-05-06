@@ -147,7 +147,7 @@ export default function Throughline() {
                   <div className="bg-indigo/8 rounded-lg p-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-[10px] shrink-0">C</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Content expertise</p>
+                      <p className="font-bold text-xs text-black/80">Providing content expertise</p>
                       <p className="text-[10px] text-black/40">Supporting foundational skills at just the right time</p>
                     </div>
                   </div>
