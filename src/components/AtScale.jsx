@@ -21,7 +21,7 @@ const needs = [
     question: 'Where are young people during the day?',
     color: '#4b4b96',
     industrial: 'A building with adults, bells, and defined periods. Students are accounted for at all times. Simple and reliable.',
-    summit: 'Students are always within a safe, purposeful structure, but that structure is flexible. System Architects coordinate spaces, adults, and schedules so students move between experiences safely. Safety is maintained without rigidity.',
+    summit: 'Students are always within a safe, purposeful structure, but that structure is flexible. Architecting the system coordinates spaces, adults, and schedules so students move between experiences safely. Safety is maintained without rigidity.',
   },
   {
     name: 'Developmentally appropriate progression',
@@ -35,7 +35,7 @@ const needs = [
     question: 'How do we make teaching sustainable?',
     color: '#503c2d',
     industrial: 'Stable jobs with clear definitions. But rigidly defined roles, isolating work, and the expectation that one person does everything.',
-    summit: 'Four specialized capacities (Guides, Content Experts, Facilitators, System Architects) so adults can develop deep expertise. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
+    summit: 'Four specialized capacities (guiding, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
   },
 ]
 
