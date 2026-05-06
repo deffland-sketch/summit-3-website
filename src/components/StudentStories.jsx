@@ -278,12 +278,11 @@ export default function StudentStories() {
             eventually disengage.
           </p>
           <p className="text-sm text-black/60 leading-relaxed">
-            Summit 3.0 runs on a different motivational theory: when the work is relevant to the
-            future a student wants or the interests they hold now, and when they have agency in the
-            doing of the work, engagement arises more powerfully than any external motivator can
-            produce. Matching the right resource to the right group of students at the right time
-            for the right reasons treats young people as full participants in the process — and
-            activates their engagement in deeper ways than any extrinsically reliant system could.
+            Summit 3.0 runs on a different motivational theory. When students see how the work
+            connects to the future they want or the kind of person they're becoming, and when they
+            have real agency in how they do it, motivation comes from inside, not outside. Matching
+            the right resource to the right group of students at the right time treats young people
+            as participants, not products. That activates engagement no extrinsic system can match.
           </p>
         </motion.div>
       </div>
