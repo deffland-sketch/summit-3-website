@@ -18,7 +18,7 @@ const students = [
       {
         time: '9:00',
         title: 'Direct instruction: Small-group lesson with a science content expert',
-        description: 'Four students working on targeted scientific vocabulary — terms they need for the lab analysis coming up next block.',
+        description: 'Four students working on targeted scientific vocabulary, terms they need for the lab analysis coming up next block.',
         annotation: null,
         type: 'academic',
       },
@@ -74,7 +74,7 @@ const students = [
       {
         time: '10:00',
         title: 'Independent work and creation: Documentary project studio',
-        description: 'Week 3 of 5 on her mini-documentary about local housing. Facilitator pushes back on her framing — she revises her central argument.',
+        description: 'Week 3 of 5 on her mini-documentary about local housing. Facilitator pushes back on her framing; she revises her central argument.',
         annotation: 'Sustained creation time is how Amara\'s developing voice sharpens into argument.',
         type: 'independent',
       },
@@ -88,8 +88,8 @@ const students = [
       {
         time: '1:00',
         title: 'Reflection and goal-setting: One-on-one guide check-in',
-        description: 'Guide helps her see three converging interests — writing, policy, documentary — forming a pattern that could shape her pathway.',
-        aside: 'This is the conversation that changed Amara\'s relationship to school — the moment she saw her interests forming a pattern and realized the pathway was hers.',
+        description: 'Guide helps her see three converging interests (writing, policy, documentary) forming a pattern that could shape her pathway.',
+        aside: 'This is the conversation that changed Amara\'s relationship to school: the moment she saw her interests forming a pattern and realized the pathway was hers.',
         type: 'community',
       },
       {
@@ -123,14 +123,14 @@ const students = [
       {
         time: '10:30',
         title: 'Reflection and goal-setting: Pathway milestone review',
-        description: 'Guide checks PLP milestones. CNA certification on track. Clinical rotation application due next month — they map out next steps together.',
+        description: 'Guide checks PLP milestones. CNA certification on track. Clinical rotation application due next month; they map out next steps together.',
         annotation: null,
         type: 'community',
       },
       {
         time: '11:30',
         title: 'Presentation and performance: Peer teaching session',
-        description: 'Leads a biology review for two juniors. Data-matched — David demonstrated mastery last semester and teaching deepens his own understanding.',
+        description: 'Leads a biology review for two juniors. Data-matched: David demonstrated mastery last semester and teaching deepens his own understanding.',
         annotation: 'Teaching biology to juniors builds on the mastery he\'s already demonstrated. The data showed he was ready for this role.',
         type: 'community',
       },

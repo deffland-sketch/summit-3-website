@@ -41,7 +41,7 @@ const experiences = [
       'Skills clinic',
       'Guided reading group',
     ],
-    why: 'Decades of research show that effective practice happens at the edge of what a student can do — not too easy, not too hard. The critical ingredient is feedback that\'s specific, immediate, and actionable. When practice is spaced across days rather than crammed into one session, retention improves dramatically.',
+    why: 'Decades of research show that effective practice happens at the edge of what a student can do: not too easy, not too hard. The critical ingredient is feedback that\'s specific, immediate, and actionable. When practice is spaced across days rather than crammed into one session, retention improves dramatically.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
         <path d="M6 16l8 8L26 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -63,7 +63,7 @@ const experiences = [
       'Case study discussion',
       'Community circle',
     ],
-    why: 'When students build on each other\'s reasoning — not just take turns talking — they reach deeper understanding than any individual study can produce. Research consistently shows that this kind of interactive engagement is the most powerful mode of learning, and it simultaneously builds the communication and collaboration skills that matter beyond school.',
+    why: 'When students build on each other\'s reasoning (not just take turns talking) they reach deeper understanding than any individual study can produce. Research consistently shows that this kind of interactive engagement is the most powerful mode of learning, and it simultaneously builds the communication and collaboration skills that matter beyond school.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
         <rect x="2" y="6" width="14" height="10" rx="3" stroke="currentColor" strokeWidth="2" />
@@ -88,7 +88,7 @@ const experiences = [
       'Coding a project',
       'Solving complex problems',
     ],
-    why: 'Producing original work requires students to organize, connect, and apply what they know — which deepens understanding far more than reviewing notes or re-reading. Independent work also develops metacognition: the ability to plan, monitor, and adjust your own learning process, one of the strongest predictors of long-term academic success.',
+    why: 'Producing original work requires students to organize, connect, and apply what they know, which deepens understanding far more than reviewing notes or re-reading. Independent work also develops metacognition: the ability to plan, monitor, and adjust your own learning process, one of the strongest predictors of long-term academic success.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
         <rect x="8" y="4" width="16" height="24" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -138,7 +138,7 @@ const experiences = [
       'Giving feedback to a peer',
       'Journaling or mindfulness practice',
     ],
-    why: 'The ability to think about your own thinking — called metacognition in the research — is the single strongest predictor of academic achievement. Without this experience type, a personalized pathway is something done to students. With it, students become co-authors of their own trajectory. This is where self-understanding, agency, and ownership develop.',
+    why: 'The ability to think about your own thinking (called metacognition in the research) is the single strongest predictor of academic achievement. Without this experience type, a personalized pathway is something done to students. With it, students become co-authors of their own trajectory. This is where self-understanding, agency, and ownership develop.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
         <circle cx="16" cy="16" r="10" stroke="currentColor" strokeWidth="2" />
@@ -187,7 +187,7 @@ const experiences = [
       'Club activities',
       'Restorative circles',
     ],
-    why: 'The science is unambiguous: cognitive engagement depends on physical and psychological readiness. Students who are hungry, stressed, isolated, or physically restless cannot access the learning in any of the other seven types. Including this as a named part of the schedule — not just "recess" or "lunch" — signals that the model is designed for whole humans.',
+    why: 'The science is unambiguous: cognitive engagement depends on physical and psychological readiness. Students who are hungry, stressed, isolated, or physically restless cannot access the learning in any of the other seven types. Including this as a named part of the schedule (not just "recess" or "lunch") signals that the model is designed for whole humans.',
     icon: (
       <svg viewBox="0 0 32 32" fill="none" className="w-8 h-8">
         <path d="M16 6c-2 0-4 2-4 5s4 7 4 7 4-4 4-7-2-5-4-5z" stroke="currentColor" strokeWidth="2" />
@@ -377,7 +377,7 @@ export default function LearningExperiences() {
         >
           <p className="text-center text-black/50 leading-relaxed text-sm">
             These eight experience types are grounded in research from the science of learning and
-            development — Hendrick & Kirschner, Chi, Kolb, Lave & Wenger, Deci & Ryan, Transcend
+            development: Hendrick & Kirschner, Chi, Kolb, Lave & Wenger, Deci & Ryan, Transcend
             Education, and Deans for Impact. Each experience type is designed to activate the
             conditions under which learning is most effective: spaced practice, immediate feedback,
             students building on each other's thinking, new knowledge connecting to prior experience,

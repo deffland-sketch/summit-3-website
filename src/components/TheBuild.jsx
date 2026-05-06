@@ -10,7 +10,7 @@ const phases = [
   {
     label: 'Phase 2',
     title: 'Cross-pollinate and extend',
-    body: 'Sierra flexes the schedule based on proven data — students move between experience types based on what the system recommends, not what the bell schedule dictates. Prep extends the pathway model beyond the initial cohort and integrates Sierra\u2019s scheduling logic. Pilot findings inform what gets codified. Cross-site design sprints merge the two lines of development.',
+    body: 'Sierra flexes the schedule based on proven data: students move between experience types based on what the system recommends, not what the bell schedule dictates. Prep extends the pathway model beyond the initial cohort and integrates Sierra\u2019s scheduling logic. Pilot findings inform what gets codified. Cross-site design sprints merge the two lines of development.',
   },
   {
     label: 'Phase 3',
@@ -68,7 +68,7 @@ export default function TheBuild() {
             </p>
             <p>
               Summit built the strongest single-school version of personalized learning the field
-              has seen. Summit Learning then reached 400 schools in 40 states — and we learned
+              has seen. Summit Learning then reached 400 schools in 40 states, and we learned
               what does and doesn't transfer when a fully designed model meets systems that
               haven't built the muscles to receive it. The bright spot is necessary. It is not
               sufficient.
@@ -100,7 +100,7 @@ export default function TheBuild() {
             <div className="bg-orange/5 border border-orange/10 rounded-xl p-5">
               <p className="text-sm text-black/70 leading-relaxed">
                 <span className="font-bold text-orange">Pilots at Tahoma, Shasta, Atlas, Tam, and K2</span> test
-                specific elements in different contexts — AI literacy at scale, adaptive math
+                specific elements in different contexts: AI literacy at scale, adaptive math
                 through Teach to One, durable skills assessment, AI-supported coaching. These
                 pilots pressure-test the model in varied conditions and build the network's
                 capacity to receive it.
@@ -136,7 +136,7 @@ export default function TheBuild() {
 
           <p className="text-sm text-black/60 leading-relaxed">
             It is whether a real public school system, with real staff and real families, can make
-            the transition from the traditional model to a fundamentally different one — and codify
+            the transition from the traditional model to a fundamentally different one, and codify
             the journey so other systems can follow. That is the proof point the field most needs.
           </p>
         </motion.div>
@@ -150,7 +150,7 @@ export default function TheBuild() {
         >
           <h3 className="text-lg font-bold text-indigo mb-3">Shaped by listening</h3>
           <p className="text-sm text-black/60 leading-relaxed mb-4">
-            In Fall 2025, Summit conducted a listening tour across every campus — students at all
+            In Fall 2025, Summit conducted a listening tour across every campus: students at all
             grade levels, caregivers with varied backgrounds, and every teaching team. Six consistent
             themes emerged:
           </p>
@@ -163,7 +163,7 @@ export default function TheBuild() {
             ))}
           </div>
           <p className="text-sm text-black/50 mt-4 leading-relaxed">
-            That listening shaped the vision. Students, families, and educators are co-designers —
+            That listening shaped the vision. Students, families, and educators are co-designers,
             not recipients of a finished product.
           </p>
         </motion.div>
@@ -205,7 +205,7 @@ export default function TheBuild() {
           <p className="text-sm text-white/80 leading-relaxed">
             The field needs bright-spot schools designed from scratch. They demonstrate what's
             possible. But alongside that work, we also need proof that an existing public school
-            system can make the transition — that a real school, with real staff and real families,
+            system can make the transition: that a real school, with real staff and real families,
             can move from the traditional model to a fundamentally different one while maintaining
             stability, keeping community trust, and continuing to serve students every day. Summit
             is building that evidence base.
@@ -222,7 +222,7 @@ export default function TheBuild() {
           <p className="text-black/50 leading-relaxed text-sm">
             We're not doing this alone. Summit is building in partnership with communities,
             technology partners, and a growing coalition of schools and funders committed to making
-            the transition from the traditional model to something fundamentally better — and proving
+            the transition from the traditional model to something fundamentally better, and proving
             it can be done within real public school systems.
           </p>
           <a

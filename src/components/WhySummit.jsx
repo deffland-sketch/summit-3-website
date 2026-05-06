@@ -119,7 +119,7 @@ export default function WhySummit() {
         >
           <p className="text-2xl md:text-3xl font-bold text-indigo leading-snug">
             Summit built the strongest version of a post-industrial school model it could a decade
-            ago — without the technology to fully realize it.
+            ago, without the technology to fully realize it.
           </p>
         </motion.div>
 
