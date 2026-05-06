@@ -40,7 +40,7 @@ const students = [
         time: '12:00',
         title: 'Reflection and goal-setting: Midday check-in',
         description: 'Marco reviews his morning with his guide using the PLP. They tag what\'s working, what\'s not, and what he\'ll bring to this afternoon\'s field work.',
-        annotation: 'Reflection is what turns the morning\'s experiences into learning Marco can build on.',
+        annotation: null,
         type: 'community',
       },
       {
@@ -61,14 +61,14 @@ const students = [
         time: '8:00',
         title: 'Wellbeing and community: Morning community circle',
         description: 'Guide connects last week\'s documentary screening to an emerging interest in housing policy, updating her PLP to reflect the pattern.',
-        annotation: 'Community circle surfaces a pattern her guide can build on. Connection drives the design.',
+        annotation: null,
         type: 'community',
       },
       {
         time: '9:00',
         title: 'Discussion and dialogue: Seminar on long-form journalism',
         description: 'Eight students discuss a housing policy investigation published in a national magazine. Deep engagement with complex text and competing perspectives.',
-        annotation: 'Eight students is the right size for the kind of deep engagement Amara needs to sharpen her thinking.',
+        annotation: null,
         type: 'academic',
       },
       {
@@ -82,7 +82,7 @@ const students = [
         time: '11:30',
         title: 'Direct instruction: Algebra with a math content expert',
         description: 'Modeling with linear functions. Six students, instruction targeted to where each one is. Real housing data used as the context for practice problems.',
-        annotation: 'Math instruction lands because the data is housing data. The context matters as much as the content.',
+        annotation: null,
         type: 'academic',
       },
       {
@@ -96,7 +96,7 @@ const students = [
         time: '2:00',
         title: 'Practice and feedback: Writing conference with AI feedback tools',
         description: 'AI writing feedback on her documentary script. Revises the introduction three times, each draft sharper than the last.',
-        annotation: 'Writing feedback is timed to the documentary deadline. Feedback only works when it\'s actionable.',
+        annotation: null,
         type: 'academic',
       },
     ],
@@ -110,7 +110,7 @@ const students = [
         time: '8:00',
         title: 'Independent work and creation: Dual enrollment anatomy course',
         description: 'Anatomy & physiology through the community college, asynchronous with guide support. Three weeks ahead of pace.',
-        aside: 'David chose this course because it connects directly to his CNA work. He\'s three weeks ahead of pace because the content matters to him.',
+        aside: null,
         type: 'independent',
       },
       {
@@ -254,6 +254,36 @@ export default function StudentStories() {
             Every one of these schedules was built based on where each student is on their pathway,
             what they need next, and who's available. When the data shows progress or a new need,
             the schedule adjusts.
+          </p>
+        </motion.div>
+
+        {/* Why students do the work */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="mt-12 max-w-3xl mx-auto border-l-4 border-orange pl-6"
+        >
+          <h3 className="text-lg font-bold text-indigo mb-3">Why students do the work</h3>
+          <p className="text-sm text-black/60 leading-relaxed mb-3">
+            Every student arrives with something: knowledge they've built, a domain they're drawn to,
+            a life they're already imagining, experiences that have shaped what they value. Summit 3.0
+            starts there.
+          </p>
+          <p className="text-sm text-black/60 leading-relaxed mb-3">
+            The industrial model ignores those assets. It runs on extrinsic motivation, grades,
+            credits, seat-time, consequences, and works only for students who have already found
+            reasons to comply. When the starting point is deficit rather than capacity, most students
+            eventually disengage.
+          </p>
+          <p className="text-sm text-black/60 leading-relaxed">
+            Summit 3.0 runs on a different motivational theory: when the work is relevant to the
+            future a student wants or the interests they hold now, and when they have agency in the
+            doing of the work, engagement arises more powerfully than any external motivator can
+            produce. Matching the right resource to the right group of students at the right time
+            for the right reasons treats young people as full participants in the process — and
+            activates their engagement in deeper ways than any extrinsically reliant system could.
           </p>
         </motion.div>
       </div>

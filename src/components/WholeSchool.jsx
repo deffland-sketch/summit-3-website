@@ -317,7 +317,6 @@ export default function WholeSchool() {
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto text-sm">
             400 students. 24 educators. 23 spaces. A network of community partners.
-            Click any time to see exactly how every resource in the building is deployed.
           </p>
         </motion.div>
 
@@ -429,18 +428,7 @@ export default function WholeSchool() {
         >
           Ten years ago, this required school and system leaders doing heroic manual work to
           produce even a slightly flexible schedule. Now the system handles the matching, and humans
-          do what humans do best.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.6 }}
-          className="text-center text-white/40 mt-4 max-w-2xl mx-auto leading-relaxed text-sm"
-        >
-          Every cycle, the system architects review the most up-to-date data — which students
-          made progress, which need a different approach, which partner slots are available — and
-          adjust the schedule through the platform. The schedule gets more precise every cycle.
+          do what humans do best: guide young people on their journey through expertise and connection.
         </motion.p>
       </div>
     </section>

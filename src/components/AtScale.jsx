@@ -119,9 +119,7 @@ export default function AtScale() {
           </h2>
           <p className="text-black/55 leading-relaxed max-w-2xl mx-auto">
             The traditional school model has outlasted every attempt to replace it. Not because
-            it works well — but because it works completely. Its motivational model, however, has run
-            out of gas — grades, credits, and consequences work for students who are already bought
-            in, and they fail everyone else. It addresses five fundamental needs
+            it works well — but because it works completely. It addresses five fundamental needs
             that any school system must address. Most attempts to replace it solve for one or two
             of these needs and leave the rest unaddressed. The industrial model eats them. Summit
             3.0 is designed to match the industrial model's completeness while surpassing its

@@ -209,37 +209,6 @@ export default function Throughline() {
           </p>
         </motion.div>
 
-        {/* Why students do the work */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-          className="mt-16 max-w-3xl mx-auto border-l-4 border-orange pl-6"
-        >
-          <h3 className="text-lg font-bold text-indigo mb-3">Why students do the work</h3>
-          <p className="text-sm text-black/60 leading-relaxed mb-3">
-            Every student arrives with something: knowledge they've built, a domain they're drawn to,
-            a life they're already imagining, experiences that have shaped what they value. Summit 3.0
-            starts there.
-          </p>
-          <p className="text-sm text-black/60 leading-relaxed mb-3">
-            The industrial model ignores those assets. It runs on extrinsic motivation — grades,
-            credits, seat-time, consequences — and works only for students who have already found
-            reasons to comply. When the starting point is deficit rather than capacity, most students
-            eventually disengage.
-          </p>
-          <p className="text-sm text-black/60 leading-relaxed mb-3">
-            Summit 3.0 runs on a different theory. When the pathway connects to a future a student
-            is genuinely building toward, their existing drive has somewhere to go. When the system
-            matches them to work at their level, it treats their current knowledge as a foundation
-            rather than a gap. When a human guide helps them see how their experiences connect into
-            a coherent story about who they're becoming, they recognize the author as themselves.
-          </p>
-          <p className="text-sm text-black/60 leading-relaxed">
-            Three conditions that reinforce each other — and weaken if any one is missing.
-          </p>
-        </motion.div>
       </div>
     </section>
   )
