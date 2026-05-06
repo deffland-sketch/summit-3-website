@@ -307,7 +307,7 @@ export default function LearningExperiences() {
           <p className="text-lg text-black/60 max-w-2xl mx-auto">
             To replace the system of courses and seat-time credits, we built a new taxonomy
             of eight experience types. Content-neutral, they apply across any disciplinary or
-            interdisciplinary context. Along each student's pathway, the system assembles the
+            interdisciplinary context. Along every student's pathway, the system assembles the
             right experiences, in the right sequence, in the right context.
           </p>
         </motion.div>

@@ -67,9 +67,9 @@ function ExpandableCard({ unlock, color }) {
 const unlocks = [
   {
     color: 'indigo',
-    title: 'A technology stack that sees every student',
+    title: 'Technology that matches the right resources to the right groups of students at the right time',
     summary:
-      'Most education technology tracks compliance and stores materials. Layering AI on top of a compliance-oriented architecture will never produce intelligent resource matching. Summit is building four key layers that unlock the pathway model — giving System Architects the tools to see every student, adjust every schedule, and deploy every resource based on real data.',
+      'Most education technology tracks compliance and stores materials. Summit is building something different: a stack that customizes learning resources and matches them to the right groups of students at the right time. The system sees every student, every educator, every space, every partner — and produces schedules built around what students need rather than what\u2019s logistically convenient.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
@@ -124,7 +124,7 @@ const unlocks = [
             resources and experiences. It charts everything dynamically across the complexity of the
             system — educator availability, space capacity, partner schedules, student needs — to
             produce individualized student schedules. Instead of giving all students the same resources
-            at the same time, the engine continuously matches each student to specific resources,
+            at the same time, the engine continuously matches groups of students to the resources they need,
             producing outputs for students (coherent next steps), guides (undermatch alerts, weakening
             connections), and System Architects (resource prioritization and schedule adjustments).
           </p>
@@ -142,7 +142,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient. Teacher and school leader turnover is at record highs. The current role has become impossible to execute well. Summit\'s model defines four distinct educator capacities so people can develop more specific expertise while living balanced and sustainable lives. When AI handles what it does well, humans are freed to do what they do uniquely well.',
+      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four distinct educator capacities — guiding, providing content expertise, facilitating, and architecting the system — so adults can develop deep expertise and live sustainable lives. AI handles what AI does well; educators focus on what only humans can do.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -153,40 +153,32 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-4 text-sm text-black/70">
-        <p className="leading-relaxed">
-          AI is extraordinarily good at certain things: synthesizing data, providing instant feedback,
-          customizing content, and matching resources to needs. Humans are irreplaceable at others:
-          building relationships, inspiring motivation, navigating complexity with wisdom, and helping
-          young people make meaning of their experiences. The talent model is designed so that AI does
-          what it does well, freeing educators to do what they do uniquely well.
-        </p>
-
         <p className="font-bold text-black/80">Four capacities:</p>
         <ul className="space-y-3">
           <li>
-            <span className="font-bold text-teal">Guides</span> — know students deeply, walk alongside
+            <span className="font-bold text-teal">Guiding</span> — knowing students deeply and walking alongside
             them on their pathway. Every conversation grounded in data and the student's goals and growth.
           </li>
           <li>
-            <span className="font-bold text-teal">Content Experts</span> — provide targeted instruction
-            based on data. They bring deep subject-matter knowledge to accelerate mastery where students
+            <span className="font-bold text-teal">Providing content expertise</span> — delivering targeted instruction
+            based on data. Bringing deep subject-matter knowledge to accelerate mastery where students
             need it most.
           </li>
           <li>
-            <span className="font-bold text-teal">Facilitators</span> — orchestrate projects, real-world
-            experiences, and community learning. Experts in interpersonal connection and authentic application.
+            <span className="font-bold text-teal">Facilitating</span> — orchestrating projects, real-world
+            experiences, and community learning. Designing for interpersonal connection and authentic application.
           </li>
           <li>
-            <span className="font-bold text-teal">System Architects</span> — see how all parts connect.
-            Manage complexity, curate partnerships and resources, ensure quality and equity.
+            <span className="font-bold text-teal">Architecting the system</span> — seeing how all parts connect.
+            Managing complexity, curating partnerships and resources, ensuring quality and equity.
           </li>
         </ul>
 
         <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
           <p className="text-sm text-black/70 leading-relaxed">
             <span className="font-bold text-orange">Human-centered guidance is not one adult's job.</span> It's
-            a system that ensures the right adult is in the right role at the right moment, informed
-            by the student's pathway — helping young people situate all of their learning within the
+            a system that ensures the right adult is doing the right thing at the right moment, informed
+            by each student's pathway — helping young people situate all of their learning within the
             broader human experience for themselves, their community, and their world.
           </p>
         </div>
@@ -242,7 +234,7 @@ const unlocks = [
     color: 'orange',
     title: 'Flexible time',
     summary:
-      'Most schools treat time as fixed. A student who has mastered a concept sits through the same lesson as one who hasn\'t encountered it yet. When the tech stack can recommend what each student needs and specialized educators are organized to deliver it, time becomes a flexible resource rather than a rigid constraint.',
+      'Time is the only truly scarce resource in education, and the industrial model wastes it at scale. Most schools treat time as fixed — every student gets the same amount of every subject, regardless of where they are. Summit 3.0 treats time as the resource we flex around what each student actually needs.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
