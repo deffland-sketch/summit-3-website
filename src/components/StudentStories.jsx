@@ -275,7 +275,7 @@ export default function StudentStories() {
             The industrial model ignores those assets. It runs on extrinsic motivation, grades,
             credits, seat-time, consequences, and works only for students who have already found
             reasons to comply. When the starting point is deficit rather than capacity, most students
-            eventually disengage.
+            eventually disengage. Anderson and Winthrop's recent research finds that fewer than 4% of teenagers experience the kind of curiosity-driven learning that builds durable skills and real motivation.
           </p>
           <p className="text-sm text-black/60 leading-relaxed">
             Summit 3.0 runs on a different motivational theory. When students see how the work
