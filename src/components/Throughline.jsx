@@ -1,6 +1,5 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Spark } from './SummitCharacters'
 
 export default function Throughline() {
   const ref = useRef(null)
@@ -29,17 +28,6 @@ export default function Throughline() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="max-w-4xl mx-auto mb-8 relative"
         >
-          {/* Decorative sparks */}
-          <svg className="absolute -top-2 -left-1 w-4 h-4 pointer-events-none" viewBox="0 0 16 16" fill="none">
-            <Spark cx={8} cy={8} size={8} color="#f6aa40" />
-          </svg>
-          <svg className="absolute -top-2 -right-1 w-4 h-4 pointer-events-none" viewBox="0 0 16 16" fill="none">
-            <Spark cx={8} cy={8} size={7} color="#4b4b96" />
-          </svg>
-          <svg className="absolute -top-3 left-1/2 -translate-x-1/2 w-3 h-3 pointer-events-none" viewBox="0 0 12 12" fill="none">
-            <Spark cx={6} cy={6} size={5} color="#508278" />
-          </svg>
-
           {/* Two-column layout */}
           <div className="grid md:grid-cols-2 gap-5">
 

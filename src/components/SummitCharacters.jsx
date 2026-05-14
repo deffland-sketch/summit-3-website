@@ -113,16 +113,6 @@ export function Rug({ cx, cy, rx, ry, color = C.peach, opacity = 0.4 }) {
   return <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill={color} opacity={opacity} />
 }
 
-export function Spark({ cx, cy, size = 12, color = C.orange }) {
-  const pts = []
-  for (let i = 0; i < 8; i++) {
-    const a = (i * Math.PI) / 4
-    const r = i % 2 === 0 ? size : size * 0.4
-    pts.push(`${cx + r * Math.cos(a)},${cy + r * Math.sin(a)}`)
-  }
-  return <polygon points={pts.join(' ')} fill={color} />
-}
-
 export function StudentGroup({ width = 200, height = 120 }) {
   const cx = width / 2
   const by = height - 6
@@ -134,8 +124,6 @@ export function StudentGroup({ width = 200, height = 120 }) {
       <Person x={cx + 10} y={by - 2} h={50} preset={2} />
       <Person x={cx + 38} y={by - 2} h={46} preset={5} />
       <Person x={cx + 64} y={by - 2} h={51} preset={8} />
-      <Spark cx={cx + 82} cy={18} size={7} color={C.orange} />
-      <Spark cx={cx - 76} cy={22} size={5} color={C.indigo} />
     </svg>
   )
 }
@@ -263,7 +251,6 @@ export function ExperienceScene({ type, width = 160, height = 96 }) {
         <rect x={cx - 24} y={by - 5} width={10} height={2} rx={1} fill={C.red} opacity={0.2} />
         <Person x={cx - 18} y={by + 2} h={32} preset={5} />
         <Person x={cx + 26} y={by + 2} h={34} preset={0} />
-        <Spark cx={cx + 50} cy={14} size={5} color={C.orange} />
       </>
     ),
 
@@ -276,8 +263,6 @@ export function ExperienceScene({ type, width = 160, height = 96 }) {
         <circle cx={cx - 1} cy={by - 44} r={4} fill={C.grey} opacity={0.4} />
         <circle cx={cx - 1} cy={by - 44} r={2} fill={C.brown} opacity={0.3} />
         <rect x={cx + 4} y={by - 51} width={4} height={3} rx={1} fill={C.grey} opacity={0.3} />
-        <Spark cx={30} cy={20} size={6} color={C.teal} />
-        <Spark cx={width - 28} cy={28} size={4} color={C.orange} />
       </>
     ),
 
@@ -334,4 +319,4 @@ export function ExperienceScene({ type, width = 160, height = 96 }) {
   )
 }
 
-export default { Character, Rug, Spark, StudentGroup, ExperienceScene, StudentAvatar }
+export default { Character, Rug, StudentGroup, ExperienceScene, StudentAvatar }
