@@ -115,23 +115,43 @@ export default function Hero() {
         </span>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-left">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
+          className="text-4xl md:text-6xl font-bold text-white mb-10"
         >
-          Summit 3.0
+          School wasn't built for this world. Or our students.
         </motion.h1>
-        <motion.p
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-white/70 font-medium leading-relaxed"
-          style={{ fontSize: 'clamp(1rem, 2.5vw, 1.35rem)' }}
+          className="mb-10 space-y-1"
         >
-          <span className="block">The future of high school is no longer static courses and seat-time credits.</span>
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student arrives with something.</p>
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student needs something different to grow.</p>
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student is going somewhere different.</p>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="text-white/70 text-base md:text-lg mb-10 leading-relaxed"
+        >
+          In a world moving this fast, the time we lose is time students never get back.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="text-2xl md:text-3xl font-bold text-white"
+        >
+          Summit 3.0 is built for our students.
         </motion.p>
       </div>
 

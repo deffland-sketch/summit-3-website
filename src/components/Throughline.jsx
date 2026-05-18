@@ -16,6 +16,9 @@ export default function Throughline() {
           className="text-center mb-10"
         >
           <p className="text-teal font-bold text-sm tracking-wide mb-3">The model</p>
+          <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
+            The future of high school is no longer static courses and seat-time credits.
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-indigo">
             Every student has a pathway
           </h2>
