@@ -122,7 +122,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.3 }}
           className="text-4xl md:text-6xl font-bold text-white mb-10"
         >
-          School wasn't built for this world. Or our students.
+          School wasn't built for this world.
         </motion.h1>
 
         <motion.div
@@ -132,7 +132,7 @@ export default function Hero() {
           className="mb-10 space-y-1"
         >
           <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student arrives with something.</p>
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student needs something different to grow.</p>
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student needs something different.</p>
           <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student is going somewhere different.</p>
         </motion.div>
 
@@ -142,7 +142,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="text-white/70 text-base md:text-lg mb-10 leading-relaxed"
         >
-          In a world moving this fast, the time we lose is time students never get back.
+          Our students are ready. Our schools are not.
         </motion.p>
 
         <motion.p
