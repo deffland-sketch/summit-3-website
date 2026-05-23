@@ -1,6 +1,7 @@
 import Hero from './components/Hero'
 import StudentStories from './components/StudentStories'
 import LearningExperiences from './components/LearningExperiences'
+import WhatStudentsBuild from './components/WhatStudentsBuild'
 import WholeSchool from './components/WholeSchool'
 import Throughline from './components/Throughline'
 import Unlocks from './components/Unlocks'
@@ -15,6 +16,7 @@ function App() {
       <Throughline />
       <StudentStories />
       <LearningExperiences />
+      <WhatStudentsBuild />
       <WholeSchool />
       <AtScale />
       <Unlocks />
