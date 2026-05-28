@@ -17,9 +17,9 @@ function App() {
       <StudentStories />
       <LearningExperiences />
       <WhatStudentsBuild />
+      <Unlocks />
       <WholeSchool />
       <AtScale />
-      <Unlocks />
       <WhySummit />
       <Close />
     </div>
