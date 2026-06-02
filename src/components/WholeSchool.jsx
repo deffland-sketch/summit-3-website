@@ -135,11 +135,11 @@ function StudentBreakdown({ data }) {
     <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
       {data.map((count, i) =>
         count > 0 ? (
-          <div key={i} className="flex items-center gap-2 bg-white/5 rounded-lg px-2 py-1.5">
-            <span className="w-2 h-2 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} />
+          <div key={i} className="flex items-center gap-2 bg-white/10 rounded-lg px-2.5 py-2">
+            <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} />
             <div className="min-w-0">
               <p className="text-white font-bold text-sm leading-tight">{count}</p>
-              <p className="text-white/40 text-[10px] leading-tight truncate">{experienceTypes[i].name}</p>
+              <p className="text-white/75 text-[11px] leading-tight truncate">{experienceTypes[i].name}</p>
             </div>
           </div>
         ) : null
@@ -161,18 +161,18 @@ function AdultBreakdown({ adults }) {
   return (
     <div>
       {/* Summary header */}
-      <div className="flex items-baseline gap-4 mb-4 pb-3 border-b border-white/10">
+      <div className="flex items-baseline gap-4 mb-4 pb-3 border-b border-white/15">
         <div>
           <span className="text-3xl font-bold text-white">{eduTotal}</span>
-          <span className="text-white/40 text-sm ml-1">of 24 educators</span>
+          <span className="text-white/70 text-sm ml-1">of 24 educators</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white/70">{adults.architects}</span>
-          <span className="text-white/30 text-sm ml-1">architects</span>
+          <span className="text-xl font-bold text-white">{adults.architects}</span>
+          <span className="text-white/70 text-sm ml-1">architects</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white/70">{adults.ops}</span>
-          <span className="text-white/30 text-sm ml-1">ops</span>
+          <span className="text-xl font-bold text-white">{adults.ops}</span>
+          <span className="text-white/70 text-sm ml-1">ops</span>
         </div>
       </div>
 
@@ -182,21 +182,21 @@ function AdultBreakdown({ adults }) {
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} />
-                <span className="text-white/80 text-sm font-bold">{r.label}</span>
+                <span className="text-white text-sm font-bold">{r.label}</span>
               </div>
-              <span className="text-white font-bold text-lg">{r.count}<span className="text-white/25 text-xs font-normal ml-1">/{r.max}</span></span>
+              <span className="text-white font-bold text-lg">{r.count}<span className="text-white/55 text-xs font-normal ml-1">/{r.max}</span></span>
             </div>
             {/* Horizontal bar */}
-            <div className="h-2.5 bg-white/8 rounded-full overflow-hidden mb-1">
+            <div className="h-2.5 bg-white/15 rounded-full overflow-hidden mb-1">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${(r.count / r.max) * 100}%` }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="h-full rounded-full"
-                style={{ backgroundColor: r.color, opacity: 0.8 }}
+                style={{ backgroundColor: r.color }}
               />
             </div>
-            <p className="text-white/25 text-[11px]">{r.desc}</p>
+            <p className="text-white/65 text-[11px]">{r.desc}</p>
           </div>
         ))}
       </div>
@@ -216,9 +216,9 @@ function SpaceBreakdown({ spaces }) {
   return (
     <div>
       {/* Summary header */}
-      <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-white/10">
+      <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-white/15">
         <span className="text-3xl font-bold text-white">{total}</span>
-        <span className="text-white/40 text-sm">of 23 spaces active</span>
+        <span className="text-white/70 text-sm">of 23 spaces active</span>
         <span className="text-orange font-bold text-sm ml-auto">{pct}% utilization</span>
       </div>
 
@@ -226,9 +226,9 @@ function SpaceBreakdown({ spaces }) {
         {rows.map((r) => {
           const utilPct = (r.count / r.of) * 100
           return (
-            <div key={r.label} className="bg-white/5 rounded-xl p-3">
+            <div key={r.label} className="bg-white/10 rounded-xl p-3">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white/70 text-sm font-bold">{r.label}</span>
+                <span className="text-white text-sm font-bold">{r.label}</span>
               </div>
               {/* Visual: filled/empty dots representing each space */}
               <div className="flex gap-1 mb-2">
@@ -237,17 +237,16 @@ function SpaceBreakdown({ spaces }) {
                     key={j}
                     className="h-4 flex-1 rounded-sm transition-all"
                     style={{
-                      backgroundColor: j < r.count ? r.color : 'rgba(255,255,255,0.06)',
-                      opacity: j < r.count ? 0.8 : 1,
+                      backgroundColor: j < r.count ? r.color : 'rgba(255,255,255,0.12)',
                     }}
                   />
                 ))}
               </div>
               <div className="flex items-baseline justify-between">
-                <p className="text-white/25 text-[11px]">{r.desc}</p>
+                <p className="text-white/65 text-[11px]">{r.desc}</p>
               </div>
               <p className="text-white font-bold text-lg mt-1">
-                {r.count}<span className="text-white/25 text-xs font-normal">/{r.of}</span>
+                {r.count}<span className="text-white/55 text-xs font-normal">/{r.of}</span>
                 {utilPct === 100 && <span className="text-orange text-[10px] font-bold ml-2">Full</span>}
               </p>
             </div>
@@ -260,14 +259,14 @@ function SpaceBreakdown({ spaces }) {
 
 function PartnerBreakdown({ partners }) {
   if (partners.length === 0) {
-    return <p className="text-white/30 text-sm italic">No field partners active at this time.</p>
+    return <p className="text-white/60 text-sm italic">No field partners active at this time.</p>
   }
   return (
     <div className="space-y-1.5">
       {partners.map((p, i) => (
-        <div key={i} className="flex gap-2 bg-white/5 rounded-lg px-3 py-2">
-          <span className="text-teal text-sm mt-0.5">●</span>
-          <p className="text-white/60 text-sm leading-relaxed">{p}</p>
+        <div key={i} className="flex gap-2 bg-white/10 rounded-lg px-3 py-2">
+          <span className="text-orange text-sm mt-0.5">●</span>
+          <p className="text-white/85 text-sm leading-relaxed">{p}</p>
         </div>
       ))}
     </div>
@@ -286,7 +285,7 @@ function StackedBar({ data, isActive, onClick }) {
             animate={{ height: `${pct}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ backgroundColor: experienceTypes[i].color }}
-            className={`w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-40'}`}
+            className={`w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-55'}`}
           />
         )
       })}
@@ -315,7 +314,7 @@ export default function WholeSchool() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             The whole school in motion
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto text-sm">
+          <p className="text-white/80 max-w-2xl mx-auto">
             400 students. 24 educators. 23 spaces. A network of community partners.
           </p>
         </motion.div>
@@ -323,8 +322,8 @@ export default function WholeSchool() {
         {/* Legend */}
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6">
           {experienceTypes.map((type) => (
-            <span key={type.name} className="flex items-center gap-1.5 text-[11px] text-white/60">
-              <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: type.color }} />
+            <span key={type.name} className="flex items-center gap-1.5 text-xs text-white/85">
+              <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: type.color }} />
               {type.name}
             </span>
           ))}
@@ -339,7 +338,7 @@ export default function WholeSchool() {
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                 activeIdx === i
                   ? 'bg-orange text-brown'
-                  : 'bg-white/10 text-white/50 hover:bg-white/20'
+                  : 'bg-white/15 text-white hover:bg-white/25'
               }`}
             >
               {s.time.replace(':00 ', ' ').replace(' am', 'a').replace(' pm', 'p')}
@@ -360,7 +359,7 @@ export default function WholeSchool() {
                   />
                 </div>
                 <p className={`text-[9px] md:text-[11px] mt-2 whitespace-nowrap transition-colors ${
-                  activeIdx === i ? 'text-orange font-bold' : 'text-white/25'
+                  activeIdx === i ? 'text-orange font-bold' : 'text-white/60'
                 }`}>
                   {s.time.replace(':00 ', ' ').replace(' am', 'a').replace(' pm', 'p')}
                 </p>
@@ -374,13 +373,13 @@ export default function WholeSchool() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-6 bg-white/6 backdrop-blur-sm rounded-xl overflow-hidden"
+            className="mt-6 bg-white/10 rounded-xl overflow-hidden"
           >
             {/* Panel header + tabs */}
             <div className="px-5 pt-4 pb-0 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex items-center gap-3">
                 <span className="text-orange font-bold text-lg">{slot.time}</span>
-                <span className="text-white/25 text-sm">400 students · 30 staff · 23 spaces</span>
+                <span className="text-white/70 text-sm">400 students · 30 staff · 23 spaces</span>
               </div>
               <div className="flex gap-1">
                 {tabs.map((t) => (
@@ -389,8 +388,8 @@ export default function WholeSchool() {
                     onClick={() => setActiveTab(t)}
                     className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${
                       activeTab === t
-                        ? 'bg-white/15 text-white'
-                        : 'text-white/40 hover:text-white/60'
+                        ? 'bg-white/25 text-white'
+                        : 'text-white/65 hover:text-white'
                     }`}
                   >
                     {tabLabels[t]}
@@ -410,7 +409,7 @@ export default function WholeSchool() {
             {/* Tab hint */}
             {activeTab === 'students' && (
               <div className="px-5 pb-5">
-                <p className="text-white/30 text-sm leading-relaxed border-t border-white/8 pt-3">
+                <p className="text-white/65 text-sm leading-relaxed border-t border-white/15 pt-3">
                   Switch tabs to see how educators are deployed, which spaces are in use, and which community partners are active at this time.
                 </p>
               </div>
@@ -424,7 +423,7 @@ export default function WholeSchool() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center text-white/50 mt-10 max-w-2xl mx-auto leading-relaxed text-sm font-medium"
+          className="text-center text-white/85 mt-10 max-w-2xl mx-auto leading-relaxed text-sm font-medium"
         >
           Ten years ago, this required school and system leaders doing heroic manual work to
           produce even a slightly flexible schedule. Now the system handles the matching, and humans
