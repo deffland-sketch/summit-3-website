@@ -1,5 +1,5 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
 import { StudentAvatar } from './SummitCharacters'
 
 const students = [
@@ -152,7 +152,7 @@ const typeColors = {
   independent: { bg: 'bg-light-blue', label: 'Independent', text: 'text-light-blue' },
 }
 
-function StudentCard({ student, index }) {
+function StudentCard({ student, index, isOpen, onToggle }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -162,53 +162,85 @@ function StudentCard({ student, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4 }}
-      className="bg-white rounded-xl border border-black/8 p-5 md:p-6"
+      className="bg-white rounded-xl border border-black/8 overflow-hidden"
     >
-      {/* Header */}
-      <div className="flex items-center gap-3 mb-4">
-        <StudentAvatar preset={student.preset} size={40} />
-        <div>
-          <h3 className="text-lg font-bold text-black leading-tight">{student.name}</h3>
-          <p className="text-xs text-black/50">{student.subtitle}</p>
+      <button
+        onClick={onToggle}
+        className="w-full text-left p-5 md:p-6 hover:bg-black/[0.015] transition-colors"
+        aria-expanded={isOpen}
+      >
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-4">
+          <StudentAvatar preset={student.preset} size={40} />
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-bold text-black leading-tight">{student.name}</h3>
+            <p className="text-xs text-black/50">{student.subtitle}</p>
+          </div>
+          <motion.svg
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="w-5 h-5 text-indigo/60 shrink-0"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
+          </motion.svg>
         </div>
-      </div>
 
-      {/* Color bar timeline */}
-      <div className="flex gap-0.5 mb-4">
-        {student.blocks.map((block, i) => (
-          <div key={i} className={`${typeColors[block.type].bg} rounded-sm h-2 flex-1 opacity-70`} />
-        ))}
-      </div>
+        {/* Color bar timeline — always visible as a peek */}
+        <div className="flex gap-0.5">
+          {student.blocks.map((block, i) => (
+            <div key={i} className={`${typeColors[block.type].bg} rounded-sm h-2 flex-1 opacity-70`} />
+          ))}
+        </div>
 
-      {/* Compact block list */}
-      <div className="space-y-2">
-        {student.blocks.map((block, i) => {
-          const tc = typeColors[block.type]
-          return (
-            <div key={i} className="flex gap-3 text-sm">
-              <span className="text-black/30 font-bold w-11 shrink-0 text-right tabular-nums">{block.time}</span>
-              <div className={`w-1.5 shrink-0 rounded-full ${tc.bg} opacity-60`} />
-              <div className="min-w-0">
-                {block.title.includes(':') ? (
-                  <>
-                    <span className={`font-bold ${tc.text}`}>{block.title.split(':')[0]}:</span>
-                    <span className="font-bold text-black">{block.title.split(':').slice(1).join(':')}</span>
-                  </>
-                ) : (
-                  <span className="font-bold text-black">{block.title}</span>
-                )}
-                <span className="text-black/50"> — {block.description}</span>
-                {block.annotation && (
-                  <span className="block mt-1 italic text-black/35 text-xs">{block.annotation}</span>
-                )}
-                {block.aside && (
-                  <span className={`block mt-1 italic ${tc.text} opacity-50 text-xs`}>{block.aside}</span>
-                )}
+        {!isOpen && (
+          <p className="text-xs text-indigo font-bold mt-3">View {student.name}'s day →</p>
+        )}
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="px-5 md:px-6 pb-5 md:pb-6 pt-1">
+              <div className="border-t border-black/8 pt-4 space-y-2">
+                {student.blocks.map((block, i) => {
+                  const tc = typeColors[block.type]
+                  return (
+                    <div key={i} className="flex gap-3 text-sm">
+                      <span className="text-black/30 font-bold w-11 shrink-0 text-right tabular-nums">{block.time}</span>
+                      <div className={`w-1.5 shrink-0 rounded-full ${tc.bg} opacity-60`} />
+                      <div className="min-w-0">
+                        {block.title.includes(':') ? (
+                          <>
+                            <span className={`font-bold ${tc.text}`}>{block.title.split(':')[0]}:</span>
+                            <span className="font-bold text-black">{block.title.split(':').slice(1).join(':')}</span>
+                          </>
+                        ) : (
+                          <span className="font-bold text-black">{block.title}</span>
+                        )}
+                        <span className="text-black/60"> — {block.description}</span>
+                        {block.annotation && (
+                          <span className="block mt-1 italic text-black/40 text-xs">{block.annotation}</span>
+                        )}
+                        {block.aside && (
+                          <span className={`block mt-1 italic ${tc.text} opacity-60 text-xs`}>{block.aside}</span>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </div>
-          )
-        })}
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   )
 }
@@ -216,6 +248,13 @@ function StudentCard({ student, index }) {
 export default function StudentStories() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+  const [openIdxs, setOpenIdxs] = useState(new Set())
+  const toggle = (i) => {
+    const next = new Set(openIdxs)
+    if (next.has(i)) next.delete(i)
+    else next.add(i)
+    setOpenIdxs(next)
+  }
 
   return (
     <section className="py-20 md:py-28 px-6 bg-peach/15" ref={ref}>
@@ -236,9 +275,15 @@ export default function StudentStories() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5 items-start">
           {students.map((student, i) => (
-            <StudentCard key={student.name} student={student} index={i} />
+            <StudentCard
+              key={student.name}
+              student={student}
+              index={i}
+              isOpen={openIdxs.has(i)}
+              onToggle={() => toggle(i)}
+            />
           ))}
         </div>
 
@@ -248,12 +293,16 @@ export default function StudentStories() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-8 bg-white rounded-xl border border-orange/20 p-5 text-center"
+          className="mt-8 bg-white rounded-xl border-l-4 border-orange p-5"
         >
-          <p className="text-black/60 text-sm leading-relaxed">
-            Every one of these schedules was built based on where each student is on their pathway,
-            what they need next, and who's available. When the data shows progress or a new need,
-            the schedule adjusts.
+          <p className="text-black/70 text-sm leading-relaxed mb-3">
+            Every one of these schedules was built around where each student is, what they need next,
+            and who's available. When the data shows progress or a new need, the schedule adjusts.
+          </p>
+          <p className="text-black/70 text-sm leading-relaxed">
+            <span className="font-bold text-indigo">What stays constant:</span> the same guide who
+            knows each student, a consistent community, and a daily rhythm students can count on.
+            The flexibility is in what students learn and when, not in whether they're held.
           </p>
         </motion.div>
 
