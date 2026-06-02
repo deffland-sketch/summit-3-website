@@ -130,12 +130,11 @@ export default function WhySummit() {
           transition={{ delay: 0.5 }}
           className="max-w-3xl mx-auto"
         >
-          <p className="text-lg text-black/70 leading-relaxed text-center">
-            Summit Learning reached 400+ schools
-            because the model worked. The core vision has always been: every student on a
-            personalized pathway within a strong community. The technology to make that vision fully
-            operational exists now. Summit is the organization with the track record, the
-            relationships, and the institutional knowledge to build it.
+          <p className="text-lg text-black leading-relaxed text-center">
+            Summit Learning reached 400+ schools because the model worked. The core vision has
+            always been: every student on a personalized pathway within a strong community. The
+            technology to make that vision fully operational exists now. Summit is the organization
+            with the track record, the relationships, and the institutional knowledge to build it.
           </p>
         </motion.div>
 
@@ -149,7 +148,7 @@ export default function WhySummit() {
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
             Built with our community
           </h3>
-          <p className="text-base text-black/70 leading-relaxed">
+          <p className="text-base text-black leading-relaxed">
             In Fall 2025, Summit conducted a listening tour across the network: 75 students
             and caregivers, eight schools, deep conversations about what's working and what
             needs to change. Summit 3.0 is built around what we've heard.
@@ -164,9 +163,9 @@ export default function WhySummit() {
           className="max-w-3xl mx-auto mt-12"
         >
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
-            Why scale demands transition
+            The proof point the field needs
           </h3>
-          <div className="space-y-4 text-base text-black/70 leading-relaxed">
+          <div className="space-y-4 text-base text-black leading-relaxed">
             <p>
               We applaud the people starting new school models from scratch. That work matters.
             </p>
@@ -179,7 +178,7 @@ export default function WhySummit() {
               What Summit is proving is that a real public school system, with real staff and
               real families, can make that transition.
             </p>
-            <p className="font-bold text-black">
+            <p className="font-bold text-indigo text-lg">
               That is the proof point that can move the system at scale.
             </p>
           </div>
