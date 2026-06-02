@@ -142,7 +142,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four distinct educator capacities (guiding, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live sustainable lives. AI handles what AI does well; educators focus on what only humans can do.',
+      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (guiding, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -234,7 +234,7 @@ const unlocks = [
     color: 'orange',
     title: 'Flexible time',
     summary:
-      'Time is the only truly scarce resource in education, and the industrial model wastes it at scale. Most schools treat time as fixed: every student gets the same amount of every subject, regardless of where they are. Summit 3.0 treats time as the resource we flex around what each student actually needs.',
+      'Time is the most valuable resource in a school. Most schools treat it as fixed: every student gets the same amount of every subject, regardless of where they are. Summit 3.0 treats time as the resource we flex around what each student actually needs.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
@@ -318,26 +318,25 @@ export default function Unlocks() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="bg-white rounded-xl border border-black/10 p-8 mb-12 text-left"
         >
-          <p className="text-lg text-black/80 leading-relaxed mb-4">
-            Matching the industrial model's completeness, and then surpassing it, requires
+          <p className="text-lg text-black leading-relaxed mb-4">
+            Matching the industrial model's completeness, and then adding precision on top, requires
             getting down to fundamental principles about what a school actually is.
           </p>
-          <p className="text-black/70 leading-relaxed mb-4">
+          <p className="text-black leading-relaxed mb-4">
             A school can be most simply thought of as three things: a group of young people,
-            a package of outcomes and competencies, and a set of available resources.
-            {' '}The industrial model locked those three elements into a rigid configuration: same
-            students, same outcomes, same resources, same schedule, every day. That's what made
-            it complete. It's also what made it increasingly ineffective.
+            a package of outcomes and competencies, and a set of available resources. The industrial
+            model locked those three elements into a single configuration: same students, same
+            outcomes, same resources, same schedule, every day. That uniformity is what made it
+            scalable. It's also where the precision is now available to add.
           </p>
-          <p className="text-black/70 leading-relaxed mb-4">
-            All children arrive with different knowledge, experiences, and interests. They need
-            different types, frequencies, and amounts of learning resources to build on what they
-            already bring. Time is the only truly scarce
-            resource in education, and the industrial model wastes it at scale. A redesign this
-            comprehensive has to start from these fundamentals, and then build an operating system
-            that makes something better actually work.
+          <p className="text-black leading-relaxed mb-4">
+            Students arrive with different knowledge, experiences, and interests, and need different
+            types, frequencies, and amounts of learning resources to build on what they bring. Time
+            is the most valuable resource in a school, and the next generation of the model uses it
+            with much more precision. A redesign this comprehensive starts from these fundamentals
+            and builds the operating system that makes something better actually work.
           </p>
-          <p className="text-black/70 leading-relaxed">
+          <p className="text-black leading-relaxed">
             The pathway model requires that operating system. Three levers unlock it:
             <span className="font-bold text-indigo"> how technology connects students to the right
             resources at the right time</span>,
