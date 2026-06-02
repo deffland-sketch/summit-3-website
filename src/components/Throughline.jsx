@@ -108,7 +108,7 @@ export default function Throughline() {
                   </div>
                   <div className="flex gap-2 items-baseline">
                     <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
-                    <span className="text-[10px] text-black/35 leading-relaxed">Increasingly designs and chooses experiences. Leads the pathway over time.</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Takes on real authority over time: choosing experiences, co-authoring their learning plan, and helping build their own schedule, with a guide alongside.</span>
                   </div>
                 </div>
               </div>
@@ -122,8 +122,11 @@ export default function Throughline() {
 
               <div className="bg-orange/5 border border-orange/12 rounded-xl p-5 flex-1 flex flex-col justify-between">
                 {/* Central message */}
-                <p className="text-center font-bold text-[13px] text-black/70 leading-relaxed mb-6">
-                  Helping young people situate their learning within the broader human experience.
+                <p className="text-center font-bold text-[13px] text-black/70 leading-relaxed mb-2">
+                  Four specialized capacities, held across the adults around a student.
+                </p>
+                <p className="text-center text-[11px] text-black/45 leading-relaxed mb-6">
+                  One person may carry more than one. No one is expected to do all four alone.
                 </p>
 
                 {/* Four capacities — stacked */}
@@ -131,29 +134,29 @@ export default function Throughline() {
                   <div className="bg-orange/10 rounded-lg p-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-orange flex items-center justify-center text-white font-bold text-[10px] shrink-0">G</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Guiding</p>
-                      <p className="text-[10px] text-black/40">Via deep relationships and knowing students well</p>
+                      <p className="font-bold text-xs text-black/80">Someone who knows you</p>
+                      <p className="text-[10px] text-black/40">Guiding through deep relationships and knowing students well</p>
                     </div>
                   </div>
                   <div className="bg-indigo/8 rounded-lg p-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-[10px] shrink-0">C</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Providing content expertise</p>
-                      <p className="text-[10px] text-black/40">Supporting foundational skills at just the right time</p>
+                      <p className="font-bold text-xs text-black/80">Someone who teaches you</p>
+                      <p className="text-[10px] text-black/40">Providing content expertise at just the right time</p>
                     </div>
                   </div>
                   <div className="bg-teal/10 rounded-lg p-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-teal flex items-center justify-center text-white font-bold text-[10px] shrink-0">F</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Facilitating</p>
-                      <p className="text-[10px] text-black/40">Supporting students through interdisciplinary, interconnected experiences</p>
+                      <p className="font-bold text-xs text-black/80">Someone who challenges you</p>
+                      <p className="text-[10px] text-black/40">Facilitating interdisciplinary, interconnected experiences</p>
                     </div>
                   </div>
                   <div className="bg-tan-grey/10 rounded-lg p-3 flex items-center gap-3">
                     <div className="w-7 h-7 rounded-full bg-tan-grey flex items-center justify-center text-white font-bold text-[10px] shrink-0">S</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Architecting the system</p>
-                      <p className="text-[10px] text-black/40">Seeing, guiding, and managing the complexity of education at scale</p>
+                      <p className="font-bold text-xs text-black/80">Someone who makes sure it holds</p>
+                      <p className="text-[10px] text-black/40">Architecting the system: seeing and managing the complexity of education at scale</p>
                     </div>
                   </div>
                 </div>
@@ -166,22 +169,13 @@ export default function Throughline() {
             </div>
           </div>
 
-          {/* ===== COMMUNITY FOUNDATION ===== */}
-          <div className="flex flex-col items-center mt-6">
-            {/* Connecting dashed lines */}
-            <div className="flex w-full max-w-xs justify-center mb-1">
-              <div className="flex-1 border-r-2 border-dashed border-indigo/15 h-6" />
-              <div className="flex-1 border-l-2 border-dashed border-orange/15 h-6" />
-            </div>
-            {/* Student dot */}
-            <div className="w-5 h-5 rounded-full bg-white border-2 border-teal flex items-center justify-center mb-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-teal/50" />
-            </div>
-            {/* Community oval */}
-            <div className="w-full max-w-2xl bg-orange/8 rounded-full py-4 px-8 text-center">
-              <p className="text-orange font-bold text-lg">Rooted in Community</p>
-              <p className="text-black/25 text-xs mt-1">Students belong. Adults share purpose. Families are partners.</p>
-            </div>
+          {/* ===== FOUNDATION CALLOUT ===== */}
+          <div className="mt-8 border-l-4 border-orange bg-white pl-5 py-3 max-w-3xl mx-auto">
+            <p className="text-orange font-bold text-xs tracking-[0.18em] uppercase mb-1">Foundation</p>
+            <p className="text-base md:text-lg font-bold text-black leading-snug">Rooted in community.</p>
+            <p className="text-sm text-black/60 mt-1 leading-relaxed">
+              Students belong. Adults share purpose. Families are partners.
+            </p>
           </div>
         </motion.div>
 
