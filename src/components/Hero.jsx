@@ -1,175 +1,114 @@
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-
-function GridToConstellation() {
-  const canvasRef = useRef(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    let animationId
-    let startTime = null
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth * window.devicePixelRatio
-      canvas.height = canvas.offsetHeight * window.devicePixelRatio
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio)
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    const cols = 12
-    const rows = 8
-    const points = []
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        points.push({
-          gridX: (c + 0.5) / cols,
-          gridY: (r + 0.5) / rows,
-          orgX: 0.1 + Math.random() * 0.8,
-          orgY: 0.1 + Math.random() * 0.8,
-          size: 2 + Math.random() * 3,
-          hue: Math.random() > 0.5 ? 0 : 1,
-          delay: (r * cols + c) * 0.008,
-        })
-      }
-    }
-
-    const draw = (ts) => {
-      if (!startTime) startTime = ts
-      const t = ts - startTime
-      const w = canvas.offsetWidth
-      const h = canvas.offsetHeight
-      ctx.clearRect(0, 0, w, h)
-
-      const progress = Math.min(1, t / 3000)
-      const ease = progress < 1 ? 1 - Math.pow(1 - progress, 3) : 1
-
-      for (const p of points) {
-        const e = Math.min(1, Math.max(0, (ease - p.delay) / (1 - p.delay)))
-        const x = p.gridX + (p.orgX - p.gridX) * e
-        const y = p.gridY + (p.orgY - p.gridY) * e
-        const floatX = ease >= 1 ? Math.sin(t / 2000 + p.orgX * 10) * 0.005 : 0
-        const floatY = ease >= 1 ? Math.cos(t / 2500 + p.orgY * 10) * 0.005 : 0
-        const px = (x + floatX) * w
-        const py = (y + floatY) * h
-        const alpha = 0.12 + e * 0.4
-
-        ctx.beginPath()
-        ctx.arc(px, py, p.size * (0.6 + e * 0.4), 0, Math.PI * 2)
-        ctx.fillStyle =
-          p.hue === 0
-            ? `rgba(150, 210, 220, ${alpha})`
-            : `rgba(246, 170, 64, ${alpha})`
-        ctx.fill()
-      }
-
-      if (ease > 0.5) {
-        const lineAlpha = (ease - 0.5) * 0.25
-        ctx.strokeStyle = `rgba(255,255,255,${lineAlpha})`
-        ctx.lineWidth = 0.5
-        for (let i = 0; i < points.length; i++) {
-          for (let j = i + 1; j < points.length; j++) {
-            const pi = points[i], pj = points[j]
-            const ei = Math.min(1, Math.max(0, (ease - pi.delay) / (1 - pi.delay)))
-            const ej = Math.min(1, Math.max(0, (ease - pj.delay) / (1 - pj.delay)))
-            const xi = (pi.gridX + (pi.orgX - pi.gridX) * ei) * w
-            const yi = (pi.gridY + (pi.orgY - pi.gridY) * ei) * h
-            const xj = (pj.gridX + (pj.orgX - pj.gridX) * ej) * w
-            const yj = (pj.gridY + (pj.orgY - pj.gridY) * ej) * h
-            if (Math.hypot(xi - xj, yi - yj) < 80) {
-              ctx.beginPath()
-              ctx.moveTo(xi, yi)
-              ctx.lineTo(xj, yj)
-              ctx.stroke()
-            }
-          }
-        }
-      }
-
-      animationId = requestAnimationFrame(draw)
-    }
-
-    animationId = requestAnimationFrame(draw)
-    return () => {
-      cancelAnimationFrame(animationId)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
-
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full opacity-60" />
-}
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #503c2d 0%, #4b4b96 100%)' }}
-    >
-      <GridToConstellation />
+    <>
+      <section className="relative bg-white pt-10 md:pt-14 pb-16 md:pb-20 px-6 overflow-hidden">
+        {/* Wordmark */}
+        <div className="max-w-6xl mx-auto mb-10 md:mb-14">
+          <p className="text-indigo font-bold text-xs md:text-sm tracking-[0.18em] uppercase">
+            Summit Public Schools — 3.0
+          </p>
+        </div>
 
-      {/* Summit logo */}
-      <div className="absolute top-6 left-6 md:top-8 md:left-10 z-10">
-        <span className="text-white/70 text-sm font-bold tracking-wide">
-          Summit Public Schools
-        </span>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+          {/* Copy column */}
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo leading-[1.05] mb-6"
+            >
+              Every student leaves ready to build the life they want.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="text-lg md:text-xl text-black leading-relaxed mb-6"
+            >
+              Summit 3.0 redesigns high school around each student's purpose, pathway, and the relationships that make learning matter.
+            </motion.p>
+
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-sm md:text-base text-black/70 leading-relaxed mb-10 border-l-4 border-orange pl-4"
+            >
+              Summit graduates earn an average of <span className="font-bold text-black">$81.1K</span> annually,
+              vs. $70.4K for peer charter graduates.
+            </motion.p>
+
+            {/* Stat callouts */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.45 }}
+              className="grid grid-cols-3 gap-4 md:gap-6"
+            >
+              <div>
+                <p className="text-2xl md:text-3xl font-bold text-indigo">11+</p>
+                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">years of proof</p>
+              </div>
+              <div>
+                <p className="text-2xl md:text-3xl font-bold text-teal">100K+</p>
+                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">students reached</p>
+              </div>
+              <div>
+                <p className="text-2xl md:text-3xl font-bold text-orange">3×</p>
+                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">college acceptance vs peer</p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Photo column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-peach/40">
+              {/* Photo placeholder — replace with /public/photos/hero-classroom.jpg */}
+              <img
+                src="/photos/hero-classroom.jpg"
+                alt="A Summit classroom in motion"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none'
+                }}
+              />
+              <div className="absolute inset-0 flex items-center justify-center text-center px-6 pointer-events-none">
+                <p className="text-indigo/40 text-sm font-bold tracking-wide">
+                  /public/photos/hero-classroom.jpg
+                </p>
+              </div>
+            </div>
+
+            {/* Pull quote */}
+            <div className="absolute -bottom-6 -left-4 md:-left-8 max-w-[80%] bg-white border-l-4 border-orange rounded-r-lg shadow-sm px-5 py-4">
+              <p className="text-sm md:text-base text-black italic leading-snug">
+                "She actually knew where I was headed."
+              </p>
+              <p className="text-xs text-black/60 font-bold mt-1.5">
+                Summit student, Class of 2024
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Differentiator strip */}
+      <div className="bg-indigo text-white py-5 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-base md:text-lg font-bold">
+            The first high school model built to be as complete as the one it replaces, and better on every dimension.
+          </p>
+        </div>
       </div>
-
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-left">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-10"
-        >
-          School wasn't built for this world.
-        </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mb-10 space-y-1"
-        >
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student arrives with something.</p>
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student needs something different.</p>
-          <p className="text-white/80 text-lg md:text-xl leading-relaxed">Every student is going somewhere different.</p>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="text-white/70 text-base md:text-lg mb-10 leading-relaxed"
-        >
-          Our students are ready. Our schools are not.
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="text-2xl md:text-3xl font-bold text-white"
-        >
-          Summit 3.0 is built for our students.
-        </motion.p>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-          className="w-5 h-8 border-2 border-white/40 rounded-full flex justify-center pt-1"
-        >
-          <div className="w-1 h-2 bg-white/60 rounded-full" />
-        </motion.div>
-      </motion.div>
-    </section>
+    </>
   )
 }
