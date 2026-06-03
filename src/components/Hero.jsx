@@ -2,8 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <>
-      <section className="relative bg-white pt-10 md:pt-14 pb-16 md:pb-20 px-6 overflow-hidden">
+    <section className="relative bg-white pt-10 md:pt-14 pb-16 md:pb-20 px-6 overflow-hidden">
         {/* Wordmark */}
         <div className="max-w-6xl mx-auto mb-10 md:mb-14">
           <p className="text-indigo font-bold text-xs md:text-sm tracking-[0.18em] uppercase">
@@ -99,16 +98,6 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-      </section>
-
-      {/* Differentiator strip */}
-      <div className="bg-indigo text-white py-5 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-base md:text-lg font-bold">
-            The first high school model built to be as complete as the one it replaces, and better on every dimension.
-          </p>
-        </div>
-      </div>
-    </>
+    </section>
   )
 }
