@@ -8,6 +8,9 @@ export default function Throughline() {
   return (
     <section className="py-20 md:py-28 px-6 bg-white" ref={ref}>
       <div className="max-w-5xl mx-auto">
+        {/* Divider from Hero */}
+        <div className="w-16 h-1 bg-orange rounded-full mx-auto mb-12" />
+
         {/* Headline */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
