@@ -71,20 +71,11 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-peach/40">
-              {/* Photo placeholder — replace with /public/photos/hero-classroom.jpg */}
               <img
                 src="/photos/hero-classroom.jpg"
                 alt="A Summit classroom in motion"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                }}
               />
-              <div className="absolute inset-0 flex items-center justify-center text-center px-6 pointer-events-none">
-                <p className="text-indigo/40 text-sm font-bold tracking-wide">
-                  /public/photos/hero-classroom.jpg
-                </p>
-              </div>
             </div>
 
             {/* Pull quote */}
