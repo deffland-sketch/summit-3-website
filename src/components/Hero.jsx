@@ -3,13 +3,6 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <section className="relative bg-white pt-10 md:pt-14 pb-16 md:pb-20 px-6 overflow-hidden">
-        {/* Wordmark */}
-        <div className="max-w-6xl mx-auto mb-10 md:mb-14">
-          <p className="text-indigo font-bold text-xs md:text-sm tracking-[0.18em] uppercase">
-            Summit Public Schools — 3.0
-          </p>
-        </div>
-
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-14 items-center">
           {/* Copy column */}
           <div>
@@ -19,7 +12,7 @@ export default function Hero() {
               transition={{ duration: 0.7 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo leading-[1.05] mb-6"
             >
-              Every student leaves ready to build the life they want.
+              Every student prepared to build the life they want.
             </motion.h1>
 
             <motion.p
