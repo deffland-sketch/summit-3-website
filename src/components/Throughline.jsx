@@ -173,10 +173,10 @@ export default function Throughline() {
           </div>
 
           {/* ===== FOUNDATION CALLOUT ===== */}
-          <div className="mt-8 border-l-4 border-orange bg-white pl-5 py-3 max-w-3xl mx-auto">
+          <div className="mt-5 border-l-4 border-orange bg-peach/40 rounded-r-xl px-5 py-4">
             <p className="text-orange font-bold text-xs tracking-[0.18em] uppercase mb-1">Foundation</p>
             <p className="text-base md:text-lg font-bold text-black leading-snug">Rooted in community.</p>
-            <p className="text-sm text-black/60 mt-1 leading-relaxed">
+            <p className="text-sm text-black/70 mt-1 leading-relaxed">
               Students belong. Adults share purpose. Families are partners.
             </p>
           </div>
