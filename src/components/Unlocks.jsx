@@ -319,22 +319,22 @@ export default function Unlocks() {
           className="bg-white rounded-xl border border-black/10 p-8 mb-12 text-left"
         >
           <p className="text-lg text-black leading-relaxed mb-4">
-            Matching the industrial model's completeness, and then adding precision on top, requires
-            getting down to fundamental principles about what a school actually is.
+            Evolving the industrial model to maximize every student's potential requires getting
+            down to fundamental principles about what a school actually is.
           </p>
           <p className="text-black leading-relaxed mb-4">
-            A school can be most simply thought of as three things: a group of young people,
-            a package of outcomes and competencies, and a set of available resources. The industrial
-            model locked those three elements into a single configuration: same students, same
+            A school can be most simply thought of as three things: a group of young people, a
+            package of outcomes and competencies, and a set of available resources. The industrial
+            model locks those three elements into a single configuration: same students, same
             outcomes, same resources, same schedule, every day. That uniformity is what made it
-            scalable. It's also where the precision is now available to add.
+            transformative, but it's also now what makes it increasingly ineffective.
           </p>
           <p className="text-black leading-relaxed mb-4">
             Students arrive with different knowledge, experiences, and interests, and need different
             types, frequencies, and amounts of learning resources to build on what they bring. Time
-            is the most valuable resource in a school, and the next generation of the model uses it
-            with much more precision. A redesign this comprehensive starts from these fundamentals
-            and builds the operating system that makes something better actually work.
+            is the most valuable resource in a school, and Summit 3.0 is designed to maximize this
+            finite resource. A redesign this comprehensive starts from these fundamentals and
+            builds the operating system that makes something better actually work.
           </p>
           <p className="text-black leading-relaxed">
             The pathway model requires that operating system. Three levers unlock it:
