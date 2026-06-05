@@ -39,19 +39,15 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
-              className="grid grid-cols-3 gap-4 md:gap-6"
+              className="grid grid-cols-2 gap-4 md:gap-8"
             >
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-indigo">11+</p>
+                <p className="text-2xl md:text-3xl font-bold text-indigo">23+</p>
                 <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">years of proof</p>
               </div>
               <div>
                 <p className="text-2xl md:text-3xl font-bold text-teal">100K+</p>
-                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">students reached</p>
-              </div>
-              <div>
-                <p className="text-2xl md:text-3xl font-bold text-orange">3×</p>
-                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">college acceptance vs peer</p>
+                <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">students impacted</p>
               </div>
             </motion.div>
           </div>
