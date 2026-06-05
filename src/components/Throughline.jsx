@@ -123,52 +123,79 @@ export default function Throughline() {
                 Human-Centered Guidance
               </div>
 
-              <div className="bg-orange/5 border border-orange/12 rounded-xl p-5 flex-1 flex flex-col justify-between">
-                {/* Central message */}
-                <p className="text-center font-bold text-[13px] text-black/70 leading-relaxed mb-2">
+              {/* Intro */}
+              <div className="text-center mb-3 px-2">
+                <p className="font-bold text-[13px] text-black/85 leading-snug mb-1">
                   Four specialized capacities, held across the adults around a student.
                 </p>
-                <p className="text-center text-[11px] text-black/45 leading-relaxed mb-6">
+                <p className="text-[11px] text-black/60 leading-relaxed">
                   One person may carry more than one. No one is expected to do all four alone.
                 </p>
+              </div>
 
-                {/* Four capacities — stacked */}
-                <div className="space-y-2.5 mb-6">
-                  <div className="bg-orange/10 rounded-lg p-3 flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-full bg-orange flex items-center justify-center text-white font-bold text-[10px] shrink-0">G</div>
+              {/* Four capacity cards — match the pathway question card treatment */}
+              <div className="space-y-2 flex-1">
+                {/* G — Guiding (orange) */}
+                <div className="bg-orange/5 border border-orange/15 rounded-xl p-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">G</div>
                     <div>
-                      <p className="font-bold text-xs text-black/80">Someone who knows you</p>
-                      <p className="text-[10px] text-black/40">Guiding through deep relationships and knowing students well</p>
+                      <p className="font-bold text-[13px] text-orange leading-snug">Guiding</p>
+                      <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who knows you</p>
                     </div>
                   </div>
-                  <div className="bg-indigo/8 rounded-lg p-3 flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-[10px] shrink-0">C</div>
-                    <div>
-                      <p className="font-bold text-xs text-black/80">Someone who teaches you</p>
-                      <p className="text-[10px] text-black/40">Providing content expertise at just the right time</p>
-                    </div>
-                  </div>
-                  <div className="bg-teal/10 rounded-lg p-3 flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-full bg-teal flex items-center justify-center text-white font-bold text-[10px] shrink-0">F</div>
-                    <div>
-                      <p className="font-bold text-xs text-black/80">Someone who challenges you</p>
-                      <p className="text-[10px] text-black/40">Facilitating interdisciplinary, interconnected experiences</p>
-                    </div>
-                  </div>
-                  <div className="bg-tan-grey/10 rounded-lg p-3 flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-full bg-tan-grey flex items-center justify-center text-white font-bold text-[10px] shrink-0">S</div>
-                    <div>
-                      <p className="font-bold text-xs text-black/80">Someone who makes sure it holds</p>
-                      <p className="text-[10px] text-black/40">Architecting the system: seeing and managing the complexity of education at scale</p>
-                    </div>
-                  </div>
+                  <p className="text-[11px] text-black/55 leading-relaxed ml-11">
+                    Builds deep relationships and knows each student well, holding the whole person, present every day.
+                  </p>
                 </div>
 
-                {/* Tagline */}
-                <p className="text-center text-orange font-bold text-[11px] opacity-60 leading-relaxed">
-                  The right adult, in the right role, at the right moment.
-                </p>
+                {/* C — Content expertise (indigo) */}
+                <div className="bg-indigo/5 border border-indigo/15 rounded-xl p-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">C</div>
+                    <div>
+                      <p className="font-bold text-[13px] text-indigo leading-snug">Providing content expertise</p>
+                      <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who teaches you</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-black/55 leading-relaxed ml-11">
+                    Delivers targeted instruction at just the right time, when a student hits something hard.
+                  </p>
+                </div>
+
+                {/* F — Facilitating (teal) */}
+                <div className="bg-teal/5 border border-teal/15 rounded-xl p-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">F</div>
+                    <div>
+                      <p className="font-bold text-[13px] text-teal leading-snug">Facilitating</p>
+                      <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who challenges you</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-black/55 leading-relaxed ml-11">
+                    Creates the conditions for students to think together through interdisciplinary, interconnected experiences.
+                  </p>
+                </div>
+
+                {/* S — Architecting the system (brown) */}
+                <div className="bg-brown/5 border border-brown/15 rounded-xl p-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-full bg-brown flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">S</div>
+                    <div>
+                      <p className="font-bold text-[13px] text-brown leading-snug">Architecting the system</p>
+                      <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who makes sure it holds</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-black/55 leading-relaxed ml-11">
+                    Sees and manages the complexity of education at scale, so no student falls through.
+                  </p>
+                </div>
               </div>
+
+              {/* Tagline */}
+              <p className="text-center text-orange font-bold text-xs leading-relaxed mt-3">
+                The right adult, in the right role, at the right moment.
+              </p>
             </div>
           </div>
 
