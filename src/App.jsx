@@ -7,6 +7,7 @@ import Throughline from './components/Throughline'
 import Unlocks from './components/Unlocks'
 import AtScale from './components/AtScale'
 import WhySummit from './components/WhySummit'
+import WhyNow from './components/WhyNow'
 import Close from './components/Close'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Unlocks />
       <AtScale />
       <WhySummit />
+      <WhyNow />
       <Close />
     </div>
   )
