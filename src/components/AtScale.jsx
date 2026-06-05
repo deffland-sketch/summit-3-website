@@ -115,21 +115,29 @@ export default function AtScale() {
           className="mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-indigo mb-6">
-            How the industrial model succeeded, and what comes next
+            How the industrial model succeeded, and why it's time to evolve
           </h2>
           <div className="space-y-4 text-black leading-relaxed max-w-3xl">
             <p>
-              The industrial model is the most successful organizational technology in the history
-              of education. It took schooling to scale and delivered real gains across whole
-              populations. Like population-level medicine, it works in the aggregate: we know it
-              helps the group, even when we can't say which student it's reaching, or why.
+              The industrial school model is the most successful organizational technology in the
+              history of education to date. It scaled the idea of a basic education to millions of
+              students, and delivered real gains across whole populations. That is a genuine
+              achievement, and Summit 3.0 is designed to build off that scale to do what the
+              industrial model never was designed for: reaching every young person and maximizing
+              their potential. Like population-level medicine, the industrial model is designed to
+              work in the aggregate, and we know this with 100 years of rising literacy and
+              graduation rates. But a system optimized for the average can't see each student, and
+              a system that can't see each student can't develop each student. The talent was
+              always there. The model was simply never built to find it, so an enormous amount of
+              human potential goes unrealized.
             </p>
             <p>
               The next breakthrough is precision. In medicine, we now match the right treatment to
               the right patient, at the right time, at the right dose. Summit 3.0 does the same for
-              learning: the right resource, for the right student, at the right time, without
-              giving up the aggregate gains that made the industrial model worth scaling. We are not
-              leaving its value behind. We are making it precise.
+              learning: the right resource, for the right student, at the right moment, so that
+              each student's full potential gets developed and the system's aggregate gains still
+              hold. We keep the scale that made the industrial model worth building, and we add
+              what it could never do, which is to see and grow every individual.
             </p>
           </div>
         </motion.div>
