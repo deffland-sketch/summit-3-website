@@ -132,35 +132,18 @@ export default function WhySummit() {
         >
           <p className="text-lg text-black leading-relaxed text-center">
             Summit Learning reached 400+ schools because the model worked. The core vision has
-            always been: every student on a personalized pathway within a strong community. The
-            technology to make that vision fully operational exists now. Summit is the organization
-            with the track record, the relationships, and the institutional knowledge to build it.
+            always been: every student on a personalized pathway within a strong community. Summit
+            is the organization with the track record, the relationships, and the institutional
+            knowledge to build it.
           </p>
         </motion.div>
 
-        {/* Built with our community */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.55 }}
-          className="max-w-3xl mx-auto mt-16"
-        >
-          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
-            Built with our community
-          </h3>
-          <p className="text-base text-black leading-relaxed">
-            In Fall 2025, Summit conducted a listening tour across the network: 75 students
-            and caregivers, eight schools, deep conversations about what's working and what
-            needs to change. Summit 3.0 is built around what we've heard.
-          </p>
-        </motion.div>
-
-        {/* Why scale demands transition */}
+        {/* The proof point the field needs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="max-w-3xl mx-auto mt-12"
+          className="max-w-3xl mx-auto mt-16"
         >
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
             The proof point the field needs
