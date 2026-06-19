@@ -22,11 +22,6 @@ export default function Throughline() {
           <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
             The future of high school is no longer static courses and seat-time credits.
           </p>
-          <p className="text-base md:text-lg text-black/70 leading-relaxed max-w-3xl mx-auto mb-6">
-            Every Summit student is known deeply, challenged academically, given real-world
-            experience, and prepared for what comes next. Summit 3.0 is how we make that real
-            for every student, at the scale of a public school system.
-          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-indigo">
             Every student has a pathway
           </h2>
