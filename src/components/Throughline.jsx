@@ -22,6 +22,11 @@ export default function Throughline() {
           <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
             The future of high school is no longer static courses and seat-time credits.
           </p>
+          <p className="text-base md:text-lg text-black/70 leading-relaxed max-w-3xl mx-auto mb-6">
+            Every Summit student is known deeply, challenged academically, given real-world
+            experience, and prepared for what comes next. Summit 3.0 is how we make that real
+            for every student, at the scale of a public school system.
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold text-indigo">
             Every student has a pathway
           </h2>
@@ -126,7 +131,9 @@ export default function Throughline() {
               {/* Intro */}
               <div className="text-center mb-3 px-2">
                 <p className="font-bold text-[13px] text-black/85 leading-snug mb-1">
-                  Four specialized capacities, held across the adults around a student.
+                  Being known and being challenged both depend on the adults around a student.
+                  Summit 3.0 organizes that work into four specialized capacities, held across
+                  the adults around a student.
                 </p>
                 <p className="text-[11px] text-black/60 leading-relaxed">
                   One person may carry more than one. No one is expected to do all four alone.

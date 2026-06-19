@@ -102,7 +102,7 @@ export default function LearningExperiences() {
             Every day is made of these
           </h2>
           <p className="text-lg text-black leading-relaxed max-w-3xl">
-            To replace static courses and seat-time credits, we built a new taxonomy of eight
+            To replace static courses and seat-time credits, we built a new set of eight
             experience types. Content-neutral, they apply across any disciplinary or interdisciplinary
             context. Along every student's pathway, the system assembles the right experiences, in
             the right sequence, in the right context.

@@ -321,17 +321,20 @@ export default function StudentStories() {
             starts there.
           </p>
           <p className="text-sm text-black/60 leading-relaxed mb-3">
-            The industrial model ignores those assets. It runs on extrinsic motivation, grades,
-            credits, seat-time, consequences, and works only for students who have already found
-            reasons to comply. When the starting point is deficit rather than capacity, most students
-            eventually disengage. Anderson and Winthrop's recent research finds that fewer than 4% of teenagers experience the kind of curiosity-driven learning that builds durable skills and real motivation.
+            The industrial model was built to move whole populations through a fixed sequence,
+            so it runs on extrinsic motivation: grades, credits, seat-time. That works for
+            students who have already found their own reasons to engage. For many others,
+            motivation never takes hold. Anderson and Winthrop's recent research finds that
+            fewer than 4% of teenagers experience the kind of curiosity-driven learning that
+            builds durable skills and real motivation.
           </p>
           <p className="text-sm text-black/60 leading-relaxed">
             Summit 3.0 runs on a different motivational theory. When students see how the work
-            connects to the future they want or the kind of person they're becoming, and when they
-            have real agency in how they do it, motivation comes from inside, not outside. Matching
-            the right resource to the right group of students at the right time treats young people
-            as participants, not products. That activates engagement no extrinsic system can match.
+            connects to the future they want and the kind of person they're becoming, and when
+            they have real agency in how they do it, motivation comes from within. Matching the
+            right resource to the right group of students at the right moment treats young people
+            as active participants in their own learning, and unlocks engagement that
+            compliance-based systems rarely reach.
           </p>
         </motion.div>
       </div>

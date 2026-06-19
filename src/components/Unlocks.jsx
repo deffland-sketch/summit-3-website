@@ -69,7 +69,7 @@ const unlocks = [
     color: 'indigo',
     title: 'Technology that matches the right resources to the right groups of students at the right time',
     summary:
-      'Most education technology tracks compliance and stores materials. Summit is building something different: a stack that customizes learning resources and matches them to the right groups of students at the right time. The system sees every student, every educator, every space, every partner, and produces schedules built around what students need rather than what\u2019s logistically convenient.',
+      'Summit is building a stack that customizes learning resources and matches them to the right group of students at the right time. The system sees every student, every educator, every space, and every partner, and produces schedules built around what each student needs.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />

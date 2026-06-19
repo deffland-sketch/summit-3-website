@@ -12,7 +12,7 @@ const founders = [
     name: 'Dan Effland',
     role: 'Senior Director of Innovation',
     photo: '/photos/dan-effland.jpg',
-    bio: 'Leads the product and technology work underneath Summit 3.0: the LMS, data layer, knowledge graph, and resource matching engine that make personalized pathways operational at school scale.',
+    bio: 'Leads the product and technology work underneath Summit 3.0: the system that maps each student’s pathway and matches them to the right learning experiences at school scale.',
   },
 ]
 
