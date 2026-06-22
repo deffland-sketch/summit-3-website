@@ -101,13 +101,13 @@ export default function Throughline() {
                   <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">3</div>
                   <div>
                     <p className="font-bold text-[13px] text-black/80 leading-snug">What experiences will prepare them?</p>
-                    <p className="text-[11px] text-black/40 mt-1.5 leading-relaxed">Eight experience types across context, content, and discipline: the right combination for each student.</p>
+                    <p className="text-[11px] text-black/40 mt-1.5 leading-relaxed">Eight learning opportunity types across context, content, and discipline: the right combination for each student.</p>
                   </div>
                 </div>
                 <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
                   <div className="flex gap-2 items-baseline">
                     <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
-                    <span className="text-[10px] text-black/35 leading-relaxed">Sequences experience types based on where the student is and what they need next.</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Sequences opportunity types based on where the student is and what they need next.</span>
                   </div>
                   <div className="flex gap-2 items-baseline">
                     <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>

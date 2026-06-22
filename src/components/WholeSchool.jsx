@@ -10,7 +10,7 @@ import { useRef, useState } from 'react'
  *   Partners: specific community and industry orgs
  */
 
-// Matches the 8 learning experience types
+// Matches the 8 learning opportunity types
 const experienceTypes = [
   { name: 'Direct instruction', color: '#4b4b96' },
   { name: 'Practice and feedback', color: '#508278' },
