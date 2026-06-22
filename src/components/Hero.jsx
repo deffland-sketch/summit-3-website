@@ -21,7 +21,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-lg md:text-xl text-black leading-relaxed mb-6"
             >
-              Every Summit student is known deeply, challenged academically, given real-world experience, and prepared for what comes next. Summit 3.0 is how we make that real for every student, at the scale of a public school system.
+              Every Summit student is known deeply, challenged academically, and prepared for what comes next. Summit 3.0 is how we make that real for every student, at the scale of a public school system.
             </motion.p>
 
             <motion.p
