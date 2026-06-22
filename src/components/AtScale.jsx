@@ -28,7 +28,7 @@ const needs = [
     question: 'How do we meet students where they are?',
     color: '#96d2dc',
     industrial: 'Grade levels based on age. Everyone moves through the same sequence, which gets the aggregate population through the curriculum.',
-    summit: 'A personalized pathway builds on what each student already knows, where they are socially, and what real-world experiences they bring. A 9th grader and a 12th grader in the same opportunity type may be doing very different work.',
+    summit: 'A personalized pathway builds on what each student already knows, where they are socially, and what real-world experiences they bring. A 9th grader and a 12th grader in the same experience type may be doing very different work.',
   },
   {
     name: 'Meaningful adult employment',

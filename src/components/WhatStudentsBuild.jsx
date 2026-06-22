@@ -73,7 +73,7 @@ export default function WhatStudentsBuild() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center text-sm italic text-black/50 max-w-2xl mx-auto"
         >
-          The eight learning opportunity types are how students build these. The pathway is what makes
+          The eight experience types are how students build these. The pathway is what makes
           the combination right for each student.
         </motion.p>
       </div>

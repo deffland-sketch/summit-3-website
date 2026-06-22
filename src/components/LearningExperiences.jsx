@@ -42,7 +42,7 @@ const experiences = [
     color: '#ffd2b4',
     description: 'A student steps back to examine their own learning: where they are, where they\'re going, what\'s working, what to adjust.',
     eg: 'e.g., PLP check-in, goal-setting session, self-assessment',
-    why: 'The ability to think about your own thinking (metacognition) is the single strongest predictor of academic achievement. Without this opportunity type, a personalized pathway is something done to students. With it, students become co-authors of their own trajectory.',
+    why: 'The ability to think about your own thinking (metacognition) is the single strongest predictor of academic achievement. Without this experience type, a personalized pathway is something done to students. With it, students become co-authors of their own trajectory.',
   },
   {
     name: 'Real-world experience',
@@ -103,9 +103,9 @@ export default function LearningExperiences() {
           </h2>
           <p className="text-lg text-black leading-relaxed max-w-3xl">
             To replace static courses and seat-time credits, we built a new set of eight
-            learning opportunity types. Content-neutral, they apply across any disciplinary or
-            interdisciplinary context. Along every student's pathway, the system assembles the right
-            opportunities, in the right sequence, in the right context.
+            experience types. Content-neutral, they apply across any disciplinary or interdisciplinary
+            context. Along every student's pathway, the system assembles the right experiences, in
+            the right sequence, in the right context.
           </p>
         </motion.div>
 
@@ -174,7 +174,7 @@ export default function LearningExperiences() {
           transition={{ delay: 0.3 }}
           className="mt-10 max-w-3xl mx-auto text-center text-sm text-black/60 leading-relaxed"
         >
-          These eight learning opportunity types are grounded in research from the science of learning and
+          These eight experience types are grounded in research from the science of learning and
           development: Hendrick & Kirschner, Chi, Kolb, Lave & Wenger, Deci & Ryan, Transcend Education,
           and Deans for Impact. Each one activates the conditions under which learning is most effective:
           spaced practice, immediate feedback, students building on each other's thinking, new knowledge

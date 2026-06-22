@@ -88,7 +88,7 @@ const unlocks = [
             learning experiences. A student might be submitting a final product, uploading a picture
             of their work, taking a quiz, or checking into a new experience. The LMS is where all of
             that happens. It's purpose-built for flexible, experience-based schools, managing every
-            learning opportunity type in a single platform: small-group instruction, project studios,
+            learning experience type in a single platform: small-group instruction, project studios,
             field experiences, dual enrollment, independent practice, and community circles.
           </p>
         </div>
@@ -270,7 +270,7 @@ const unlocks = [
             <ul className="space-y-2">
               <li className="flex gap-2">
                 <span className="text-orange mt-0.5">+</span>
-                Students move between opportunity types based on data
+                Students move between experience types based on data
               </li>
               <li className="flex gap-2">
                 <span className="text-orange mt-0.5">+</span>
