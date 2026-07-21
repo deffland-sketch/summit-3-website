@@ -27,6 +27,29 @@ export default function Throughline() {
           </h2>
         </motion.div>
 
+        {/* What we mean by a pathway */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-3xl mx-auto mb-12"
+        >
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
+            What we mean by a pathway
+          </h3>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
+            Every student follows a pathway. A pathway is a student's own plan for the life they want
+            to build, and it is different for every student. It changes as they grow, as they learn
+            more about themselves, and as their goals sharpen.
+          </p>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed">
+            A pathway prepares students for the careers and futures they choose, without locking them
+            into a track. Two students drawn to health care will move through different experiences,
+            at different paces, toward different versions of that future. The pathway follows the
+            student. The student is never sorted into it.
+          </p>
+        </motion.div>
+
         {/* DIAGRAM — HTML/Tailwind layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -209,6 +232,24 @@ export default function Throughline() {
               Students belong. Adults share purpose. Families are partners.
             </p>
           </div>
+        </motion.div>
+
+        {/* A day that flexes on a foundation that does not */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-3xl mx-auto mt-12 mb-10"
+        >
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
+            A day that flexes on a foundation that does not
+          </h3>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed">
+            Every student begins the day in community with the same guide and the same group of
+            peers, all year. The learning experiences change based on what each student needs. The
+            people, the belonging, and the daily rhythm stay constant.
+          </p>
         </motion.div>
 
         {/* Tagline */}

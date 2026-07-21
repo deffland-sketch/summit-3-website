@@ -79,6 +79,17 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-5 text-sm text-black/70">
+        <div className="bg-white/60 rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Smarter, not more</h4>
+          <p className="leading-relaxed">
+            Technology does more of the measuring, connecting, and scheduling so adults can do more
+            of the human work. Some of the most important parts of the day have no screen at all:
+            community, discussion, real-world experience, and time to eat and talk together. We use
+            technology where it makes learning more precise, and we protect the human and community
+            time that brings meaning and fulfillment to a student's experience.
+          </p>
+        </div>
+
         <p className="font-bold text-black/80">The tech stack has four key layers:</p>
 
         <div className="bg-white/60 rounded-lg p-4">
@@ -114,6 +125,16 @@ const unlocks = [
             continuously refining its understanding of what works for different students. System
             architects review the pathway recommendations it surfaces through the LMS before
             finalizing schedules.
+          </p>
+        </div>
+
+        <div className="bg-white/60 rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">How we keep students safe</h4>
+          <p className="leading-relaxed">
+            The system runs on student data, so protecting it is part of the design. Families own
+            their student's information. The model checks its own recommendations for bias, and a
+            human guide reviews and owns every decision about a student's pathway. Technology
+            recommends. People decide.
           </p>
         </div>
 

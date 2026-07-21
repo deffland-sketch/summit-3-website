@@ -6,7 +6,7 @@ const students = [
   {
     name: 'Marco',
     preset: 2,
-    subtitle: 'Junior. Environmental biotech pathway. Has dyslexia.',
+    subtitle: 'Junior. Right now his pathway is organized around environmental science, a direction that can grow or shift as he does. Has dyslexia.',
     blocks: [
       {
         time: '8:00',
@@ -32,7 +32,7 @@ const students = [
       {
         time: '11:00',
         title: 'Independent work and creation: AI-supported reading practice',
-        description: 'AI tutor guides him through a complex EPA report at his reading edge. Content selected because it connects directly to his environmental biotech pathway.',
+        description: 'AI tutor guides him through a complex EPA report at his reading edge. Content selected because it connects directly to his environmental science direction.',
         annotation: null,
         type: 'independent',
       },
@@ -104,7 +104,7 @@ const students = [
   {
     name: 'David',
     preset: 5,
-    subtitle: 'Senior. Nursing pathway. Works afternoons.',
+    subtitle: 'Senior. Right now his pathway is organized around nursing, a direction that can grow or shift as he does. Works afternoons.',
     blocks: [
       {
         time: '8:00',
@@ -116,7 +116,7 @@ const students = [
       {
         time: '9:30',
         title: 'Direct instruction: Statistics with a math content expert',
-        description: 'Clinical data interpretation connected to his nursing pathway. Using real hospital data sets to learn statistical reasoning.',
+        description: 'Clinical data interpretation connected to his interest in nursing. Using real hospital data sets to learn statistical reasoning.',
         annotation: null,
         type: 'academic',
       },

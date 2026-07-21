@@ -25,6 +25,15 @@ export default function Hero() {
             </motion.p>
 
             <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.22 }}
+              className="text-base md:text-lg text-black/80 leading-relaxed mb-6"
+            >
+              This is already beginning. In our schools today, students are shaping their own sequences, taking college courses, and learning beyond the school walls. Summit 3.0 makes that coherent and available to every student, including those for whom charting their own path is hardest.
+            </motion.p>
+
+            <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
