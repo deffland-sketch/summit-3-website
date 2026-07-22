@@ -234,7 +234,7 @@ export function ExperienceScene({ type, width = 160, height = 96 }) {
     ),
 
     // 6. REFLECTION & GOAL-SETTING → Mentoring (Slide Stuff 1)
-    // Blue table, GOALS monitor w/ checklist, student + guide in red chairs, gray rug
+    // Blue table, GOALS monitor w/ checklist, student + mentor in red chairs, gray rug
     'reflection': (
       <>
         <Rug cx={cx + 4} cy={by} rx={58} ry={16} color={C.grey} opacity={0.1} />

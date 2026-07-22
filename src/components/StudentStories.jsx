@@ -11,7 +11,7 @@ const students = [
       {
         time: '8:00',
         title: 'Wellbeing and community: Morning community circle',
-        description: 'Guide reviews Summit\'s PLP (personalized learning plan) milestones, connects Marco to a biotech researcher whose profile matches his environmental interests.',
+        description: 'Mentor reviews Summit\'s PLP (personalized learning plan) milestones, connects Marco to a biotech researcher whose profile matches his environmental interests.',
         annotation: 'Morning starts with connection because Marco\'s pathway depends on the relationships that surface his interests.',
         type: 'community',
       },
@@ -32,14 +32,14 @@ const students = [
       {
         time: '11:00',
         title: 'Independent work and creation: AI-supported reading practice',
-        description: 'AI tutor guides him through a complex EPA report at his reading edge. Content selected because it connects directly to his environmental science direction.',
+        description: 'AI tutor walks him through a complex EPA report at his reading edge. Content selected because it connects directly to his environmental science direction.',
         annotation: null,
         type: 'independent',
       },
       {
         time: '12:00',
         title: 'Reflection and goal-setting: Midday check-in',
-        description: 'Marco reviews his morning with his guide using the PLP. They tag what\'s working, what\'s not, and what he\'ll bring to this afternoon\'s field work.',
+        description: 'Marco reviews his morning with his mentor using the PLP. They tag what\'s working, what\'s not, and what he\'ll bring to this afternoon\'s field work.',
         annotation: null,
         type: 'community',
       },
@@ -60,7 +60,7 @@ const students = [
       {
         time: '8:00',
         title: 'Wellbeing and community: Morning community circle',
-        description: 'Guide connects last week\'s documentary screening to an emerging interest in housing policy, updating her PLP to reflect the pattern.',
+        description: 'Mentor connects last week\'s documentary screening to an emerging interest in housing policy, updating her PLP to reflect the pattern.',
         annotation: null,
         type: 'community',
       },
@@ -87,8 +87,8 @@ const students = [
       },
       {
         time: '1:00',
-        title: 'Reflection and goal-setting: One-on-one guide check-in',
-        description: 'Guide helps her see three converging interests (writing, policy, documentary) forming a pattern that could shape her pathway.',
+        title: 'Reflection and goal-setting: One-on-one mentor check-in',
+        description: 'Mentor helps her see three converging interests (writing, policy, documentary) forming a pattern that could shape her pathway.',
         aside: 'This is the conversation that changed Amara\'s relationship to school: the moment she saw her interests forming a pattern and realized the pathway was hers.',
         type: 'community',
       },
@@ -109,7 +109,7 @@ const students = [
       {
         time: '8:00',
         title: 'Independent work and creation: Dual enrollment anatomy course',
-        description: 'Anatomy & physiology through the community college, asynchronous with guide support. Three weeks ahead of pace.',
+        description: 'Anatomy & physiology through the community college, asynchronous with mentor support. Three weeks ahead of pace.',
         aside: null,
         type: 'independent',
       },
@@ -123,7 +123,7 @@ const students = [
       {
         time: '10:30',
         title: 'Reflection and goal-setting: Pathway milestone review',
-        description: 'Guide checks PLP milestones. CNA certification on track. Clinical rotation application due next month; they map out next steps together.',
+        description: 'Mentor checks PLP milestones. CNA certification on track. Clinical rotation application due next month; they map out next steps together.',
         annotation: null,
         type: 'community',
       },
@@ -300,7 +300,7 @@ export default function StudentStories() {
             and who's available. When the data shows progress or a new need, the schedule adjusts.
           </p>
           <p className="text-black/70 text-sm leading-relaxed">
-            <span className="font-bold text-indigo">What stays constant:</span> the same guide who
+            <span className="font-bold text-indigo">What stays constant:</span> the same mentor who
             knows each student, a consistent community, and a daily rhythm students can count on.
             The flexibility is in what students learn and when, not in whether they're held.
           </p>

@@ -14,7 +14,7 @@ const needs = [
     question: 'How do young people learn to live together?',
     color: '#f6aa40',
     industrial: 'Age-based cohorts, shared schedules, extracurriculars. Community emerges from proximity, and it works for many students.',
-    summit: 'Intentional community circles with a human guide who knows each student deeply. Peer groups built across ages and interests. Belonging is designed into the daily experience for every student, not only the ones for whom proximity is enough.',
+    summit: 'Intentional community circles with a human mentor who knows each student deeply. Peer groups built across ages and interests. Belonging is designed into the daily experience for every student, not only the ones for whom proximity is enough.',
   },
   {
     name: 'Physical safety and structure',
@@ -35,7 +35,7 @@ const needs = [
     question: 'How do we make teaching sustainable?',
     color: '#503c2d',
     industrial: 'Stable jobs with clear definitions, generations of educators built their lives around them. The role has also broadened to ask one adult to do nearly everything.',
-    summit: 'Four specialized capacities (guiding, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
+    summit: 'Four specialized capacities (mentoring, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
   },
 ]
 

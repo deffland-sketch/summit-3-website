@@ -134,7 +134,7 @@ export default function Throughline() {
                   </div>
                   <div className="flex gap-2 items-baseline">
                     <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
-                    <span className="text-[10px] text-black/35 leading-relaxed">Takes on real authority over time: choosing experiences, co-authoring their learning plan, and helping build their own schedule, with a guide alongside.</span>
+                    <span className="text-[10px] text-black/35 leading-relaxed">Takes on real authority over time: choosing experiences, co-authoring their learning plan, and helping build their own schedule, with a mentor alongside.</span>
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function Throughline() {
             {/* ===== HUMAN-CENTERED GUIDANCE — right column ===== */}
             <div className="flex flex-col">
               <div className="bg-orange text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
-                Human-Centered Guidance
+                Human-Centered Mentorship
               </div>
 
               {/* Intro */}
@@ -160,12 +160,12 @@ export default function Throughline() {
 
               {/* Four capacity cards — match the pathway question card treatment */}
               <div className="space-y-2 flex-1">
-                {/* G — Guiding (orange) */}
+                {/* M — Mentoring (orange) */}
                 <div className="bg-orange/5 border border-orange/15 rounded-xl p-4">
                   <div className="flex items-start gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">G</div>
+                    <div className="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">M</div>
                     <div>
-                      <p className="font-bold text-[13px] text-orange leading-snug">Guiding</p>
+                      <p className="font-bold text-[13px] text-orange leading-snug">Mentoring</p>
                       <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who knows you</p>
                     </div>
                   </div>
@@ -246,7 +246,7 @@ export default function Throughline() {
             A day that flexes on a foundation that does not
           </h3>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            Every student begins the day in community with the same guide and the same group of
+            Every student begins the day in community with the same mentor and the same group of
             peers, all year. The learning experiences change based on what each student needs. The
             people, the belonging, and the daily rhythm stay constant.
           </p>

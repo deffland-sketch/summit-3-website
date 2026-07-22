@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
  * School resource model:
  *   Staff: 24 educational personnel, 2 system architects, 4 admin/ops = 30 total
  *   Educational personnel break into capacities:
- *     6 guides, 8 academic content experts, 6 facilitators, 4 flexible (shift by need)
+ *     6 mentors, 8 academic content experts, 6 facilitators, 4 flexible (shift by need)
  *   Facilities: 12 classrooms, 2 large spaces, 6 small collaboration rooms, 3 lab spaces = 23 spaces
  *   Partners: specific community and industry orgs
  */
@@ -31,7 +31,7 @@ const timeSlots = [
     adults: { guides: 6, contentExperts: 0, facilitators: 0, flex: 0, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 0, labs: 0 },
     partners: [],
-    note: 'All 400 students in community circles with their 6 guides. Each guide leads ~67 students across 3 mentor groups, meeting in classrooms and both large spaces. System architects review overnight data and finalize the day\'s schedule adjustments. Admin/ops team manages arrivals and logistics.',
+    note: 'All 400 students in community circles with their 6 mentors. Each mentor leads ~67 students across 3 mentor groups, meeting in classrooms and both large spaces. System architects review overnight data and finalize the day\'s schedule adjustments. Admin/ops team manages arrivals and logistics.',
   },
   {
     time: '9:00 am',
@@ -44,7 +44,7 @@ const timeSlots = [
       'Bay Area Community Health (El Cerrito) — 3 students in weekly shadowing placement',
       'Mithun Architecture (Seattle) — 5 students on a site visit for their urban design project',
     ],
-    note: '8 content experts run 10 concurrent small-group sessions across 10 classrooms — each group is 4-6 students with a targeted skill focus. 83 students in peer collaboration fill both large spaces and all 6 collab rooms. 3 facilitators coach project studios in the labs. 3 guides are running reflection sessions. 4 flex educators float between independent practice and peer tutoring support. 4 students at career-connected learning sites, 8 at internship/shadowing placements with 3 partner organizations. 38 students work on dual enrollment courses in 2 classrooms, supervised by 2 flex educators with AI tutor support.',
+    note: '8 content experts run 10 concurrent small-group sessions across 10 classrooms — each group is 4-6 students with a targeted skill focus. 83 students in peer collaboration fill both large spaces and all 6 collab rooms. 3 facilitators coach project studios in the labs. 3 mentors are running reflection sessions. 4 flex educators float between independent practice and peer tutoring support. 4 students at career-connected learning sites, 8 at internship/shadowing placements with 3 partner organizations. 38 students work on dual enrollment courses in 2 classrooms, supervised by 2 flex educators with AI tutor support.',
   },
   {
     time: '10:00 am',
@@ -75,7 +75,7 @@ const timeSlots = [
       'East Bay Housing Alliance — 8 students (continued interviews)',
       'Local restaurant group (Redwood City) — 2 students in weekly operations shadowing',
     ],
-    note: 'Off-site experiences peak: 22 students in career-connected learning and 13 at internship/shadowing placements across 7 partner sites. 68 students in project studios using all 3 labs and both large spaces — teams are building tangible artifacts. 6 content experts run smaller, more targeted groups after the morning data was processed. 3 guides hold drop-in reflection sessions in collab rooms for students transitioning between experiences.',
+    note: 'Off-site experiences peak: 22 students in career-connected learning and 13 at internship/shadowing placements across 7 partner sites. 68 students in project studios using all 3 labs and both large spaces — teams are building tangible artifacts. 6 content experts run smaller, more targeted groups after the morning data was processed. 3 mentors hold drop-in reflection sessions in collab rooms for students transitioning between experiences.',
   },
   {
     time: '12:00 pm',
@@ -84,7 +84,7 @@ const timeSlots = [
     adults: { guides: 6, contentExperts: 2, facilitators: 2, flex: 2, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
     partners: [],
-    note: 'Midday community time. Guides lead lunch circles — a chance for students and adults to reconnect. System architects use this window to review the morning\'s data and adjust afternoon placements. A few students continue independent work or wrap up dual enrollment assignments. Ops coordinates afternoon field site transportation.',
+    note: 'Midday community time. Mentors lead lunch circles — a chance for students and adults to reconnect. System architects use this window to review the morning\'s data and adjust afternoon placements. A few students continue independent work or wrap up dual enrollment assignments. Ops coordinates afternoon field site transportation.',
   },
   {
     time: '1:00 pm',
@@ -114,7 +114,7 @@ const timeSlots = [
     partners: [
       'Multiple field sites (9 orgs) — 70 students across the city',
     ],
-    note: '45 students in career-connected learning and 25 at internship/shadowing placements — 70 students off-site, more than any single classroom holds. 93 in reflection and planning: guides are running end-of-day pathway conversations in collab rooms and classrooms, helping students process what happened today and connect it to their broader goals. System architects are already building tomorrow\'s schedule based on today\'s data. The building is quieter — much of the school is out in the community.',
+    note: '45 students in career-connected learning and 25 at internship/shadowing placements — 70 students off-site, more than any single classroom holds. 93 in reflection and planning: mentors are running end-of-day pathway conversations in collab rooms and classrooms, helping students process what happened today and connect it to their broader goals. System architects are already building tomorrow\'s schedule based on today\'s data. The building is quieter — much of the school is out in the community.',
   },
   {
     time: '3:00 pm',
@@ -123,7 +123,7 @@ const timeSlots = [
     adults: { guides: 6, contentExperts: 0, facilitators: 2, flex: 0, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
     partners: [],
-    note: 'Closing community circles. Guides check in with each student one more time. Field students return and debrief. System architects finalize tomorrow\'s first draft: which students need to be grouped differently, which content experts should shift focus, which spaces to reconfigure. The schedule gets more precise every cycle.',
+    note: 'Closing community circles. Mentors check in with each student one more time. Field students return and debrief. System architects finalize tomorrow\'s first draft: which students need to be grouped differently, which content experts should shift focus, which spaces to reconfigure. The schedule gets more precise every cycle.',
   },
 ]
 
@@ -151,7 +151,7 @@ function StudentBreakdown({ data }) {
 function AdultBreakdown({ adults }) {
   const eduTotal = adults.guides + adults.contentExperts + adults.facilitators + adults.flex
   const rows = [
-    { label: 'Guides', count: adults.guides, max: 6, color: '#f6aa40', desc: 'community circles, reflection, pathway conversations' },
+    { label: 'Mentors', count: adults.guides, max: 6, color: '#f6aa40', desc: 'community circles, reflection, pathway conversations' },
     { label: 'Content Experts', count: adults.contentExperts, max: 8, color: '#4b4b96', desc: 'small-group expert instruction, targeted skills' },
     { label: 'Facilitators', count: adults.facilitators, max: 6, color: '#508278', desc: 'project studios, discussion circles, field coordination' },
     { label: 'Flex educators', count: adults.flex, max: 4, color: '#96d2dc', desc: 'independent practice support, peer tutoring, dual enrollment' },
@@ -427,7 +427,7 @@ export default function WholeSchool() {
         >
           Ten years ago, this required school and system leaders doing heroic manual work to
           produce even a slightly flexible schedule. Now the system handles the matching, and humans
-          do what humans do best: guide young people on their journey through expertise and connection.
+          do what humans do best: mentor young people on their journey through expertise and connection.
         </motion.p>
       </div>
     </section>

@@ -111,7 +111,7 @@ const unlocks = [
             patterns, identity development, experiences, and life context. True personalization requires
             understanding the whole student, including schedule constraints, family responsibilities,
             and support systems. This data feeds directly into the LMS, giving System Architects and
-            guides a complete picture of every student every day.
+            mentors a complete picture of every student every day.
           </p>
         </div>
 
@@ -133,7 +133,7 @@ const unlocks = [
           <p className="leading-relaxed">
             The system runs on student data, so protecting it is part of the design. Families own
             their student's information. The model checks its own recommendations for bias, and a
-            human guide reviews and owns every decision about a student's pathway. Technology
+            human mentor reviews and owns every decision about a student's pathway. Technology
             recommends. People decide.
           </p>
         </div>
@@ -146,7 +146,7 @@ const unlocks = [
             system (educator availability, space capacity, partner schedules, student needs) to
             produce individualized student schedules. Instead of giving all students the same resources
             at the same time, the engine continuously matches groups of students to the resources they need,
-            producing outputs for students (coherent next steps), guides (undermatch alerts, weakening
+            producing outputs for students (coherent next steps), mentors (undermatch alerts, weakening
             connections), and System Architects (resource prioritization and schedule adjustments).
           </p>
         </div>
@@ -163,7 +163,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (guiding, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
+      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (mentoring, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -177,7 +177,7 @@ const unlocks = [
         <p className="font-bold text-black/80">Four capacities:</p>
         <ul className="space-y-3">
           <li>
-            <span className="font-bold text-teal">Guiding</span>: knowing students deeply and walking alongside
+            <span className="font-bold text-teal">Mentoring</span>: knowing students deeply and walking alongside
             them on their pathway. Every conversation grounded in data and the student's goals and growth.
           </li>
           <li>
@@ -197,7 +197,7 @@ const unlocks = [
 
         <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
           <p className="text-sm text-black/70 leading-relaxed">
-            <span className="font-bold text-orange">Human-centered guidance is not one adult's job.</span> It's
+            <span className="font-bold text-orange">Human-centered mentorship is not one adult's job.</span> It's
             a system that ensures the right adult is doing the right thing at the right moment, informed
             by each student's pathway, helping young people situate all of their learning within the
             broader human experience for themselves, their community, and their world.
