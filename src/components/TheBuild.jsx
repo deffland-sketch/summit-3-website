@@ -108,7 +108,7 @@ export default function TheBuild() {
               evolving teacher role.
             </p>
             <p className="text-base text-black leading-relaxed">
-              <span className="font-bold">Prep / Summit 780 tests the pathway and human mentorship experience.</span>{' '}
+              <span className="font-bold">Prep / Summit 780 tests the pathway and human guidance experience.</span>{' '}
               Prep's mentoring strength and California's regulatory context shape an 11th grade
               cohort built around a redesigned PLP, pathway projects, ASU dual enrollment, and
               interdisciplinary collaboration.

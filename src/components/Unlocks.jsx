@@ -197,7 +197,7 @@ const unlocks = [
 
         <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
           <p className="text-sm text-black/70 leading-relaxed">
-            <span className="font-bold text-orange">Human-centered mentorship is not one adult's job.</span> It's
+            <span className="font-bold text-orange">Human-centered guidance is not one adult's job.</span> It's
             a system that ensures the right adult is doing the right thing at the right moment, informed
             by each student's pathway, helping young people situate all of their learning within the
             broader human experience for themselves, their community, and their world.

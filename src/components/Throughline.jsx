@@ -143,7 +143,7 @@ export default function Throughline() {
             {/* ===== HUMAN-CENTERED GUIDANCE — right column ===== */}
             <div className="flex flex-col">
               <div className="bg-orange text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
-                Human-Centered Mentorship
+                Human-Centered Guidance
               </div>
 
               {/* Intro */}
