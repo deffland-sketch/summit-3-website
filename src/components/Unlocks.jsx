@@ -1,13 +1,16 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { Chevron } from './Chevron'
 
 function ExpandableCard({ unlock, color }) {
   const [open, setOpen] = useState(false)
 
+  // `text` uses the -ink variants: these cards sit on tinted backgrounds where
+  // raw brand teal and orange fall below the AA contrast floor.
   const colorMap = {
     indigo: { bg: 'bg-indigo/10', border: 'border-indigo/20', text: 'text-indigo', icon: 'text-indigo', dot: 'bg-indigo', hoverBg: 'hover:bg-indigo/15' },
-    teal: { bg: 'bg-teal/10', border: 'border-teal/20', text: 'text-teal', icon: 'text-teal', dot: 'bg-teal', hoverBg: 'hover:bg-teal/15' },
-    orange: { bg: 'bg-orange/10', border: 'border-orange/20', text: 'text-orange', icon: 'text-orange', dot: 'bg-orange', hoverBg: 'hover:bg-orange/15' },
+    teal: { bg: 'bg-teal/10', border: 'border-teal/20', text: 'text-teal-ink', icon: 'text-teal-ink', dot: 'bg-teal', hoverBg: 'hover:bg-teal/15' },
+    orange: { bg: 'bg-orange/10', border: 'border-orange/20', text: 'text-orange-ink', icon: 'text-orange-ink', dot: 'bg-orange', hoverBg: 'hover:bg-orange/15' },
   }
   const c = colorMap[color]
 
@@ -22,6 +25,7 @@ function ExpandableCard({ unlock, color }) {
       <button
         onClick={() => setOpen(!open)}
         className={`w-full text-left p-6 ${c.hoverBg} transition-colors`}
+        aria-expanded={open}
       >
         <div className="flex items-start gap-4">
           <div className={`w-10 h-10 rounded-lg ${c.bg} flex items-center justify-center shrink-0 ${c.icon}`}>
@@ -31,15 +35,7 @@ function ExpandableCard({ unlock, color }) {
             <h3 className={`text-lg font-bold ${c.text} mb-2`}>{unlock.title}</h3>
             <p className="text-sm text-black/70 leading-relaxed">{unlock.summary}</p>
           </div>
-          <motion.svg
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-            className={`w-5 h-5 shrink-0 mt-1 ${c.text}`}
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
-          </motion.svg>
+          <Chevron open={open} className={`mt-1 ${c.text}`} />
         </div>
       </button>
 
@@ -177,27 +173,27 @@ const unlocks = [
         <p className="font-bold text-black/80">Four capacities:</p>
         <ul className="space-y-3">
           <li>
-            <span className="font-bold text-teal">Mentoring</span>: knowing students deeply and walking alongside
+            <span className="font-bold text-teal-ink">Mentoring</span>: knowing students deeply and walking alongside
             them on their pathway. Every conversation grounded in data and the student's goals and growth.
           </li>
           <li>
-            <span className="font-bold text-teal">Providing content expertise</span>: delivering targeted instruction
+            <span className="font-bold text-teal-ink">Providing content expertise</span>: delivering targeted instruction
             based on data. Bringing deep subject-matter knowledge to accelerate mastery where students
             need it most.
           </li>
           <li>
-            <span className="font-bold text-teal">Facilitating</span>: orchestrating projects, real-world
+            <span className="font-bold text-teal-ink">Facilitating</span>: orchestrating projects, real-world
             experiences, and community learning. Designing for interpersonal connection and authentic application.
           </li>
           <li>
-            <span className="font-bold text-teal">Architecting the system</span>: seeing how all parts connect.
+            <span className="font-bold text-teal-ink">Architecting the system</span>: seeing how all parts connect.
             Managing complexity, curating partnerships and resources, ensuring quality and equity.
           </li>
         </ul>
 
         <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
           <p className="text-sm text-black/70 leading-relaxed">
-            <span className="font-bold text-orange">Human-centered guidance is not one adult's job.</span> It's
+            <span className="font-bold text-orange-ink">Human-centered guidance is not one adult's job.</span> It's
             a system that ensures the right adult is doing the right thing at the right moment, informed
             by each student's pathway, helping young people situate all of their learning within the
             broader human experience for themselves, their community, and their world.
@@ -206,43 +202,43 @@ const unlocks = [
 
         <div className="mt-4 grid md:grid-cols-2 gap-4">
           <div className="bg-white/60 rounded-lg p-4">
-            <h4 className="font-bold text-teal mb-3 text-xs tracking-wide">AI handles</h4>
+            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">AI handles</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">-</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
                 Instant feedback on student work
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">-</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
                 Progress monitoring and data synthesis
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">-</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
                 Curriculum customization and content delivery
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">-</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
                 Scheduling and resource matching
               </li>
             </ul>
           </div>
           <div className="bg-white/60 rounded-lg p-4 ring-1 ring-teal/20">
-            <h4 className="font-bold text-teal mb-3 text-xs tracking-wide">Adults do more of</h4>
+            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">Adults do more of</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">+</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
                 Meaningful dialogue about growth and goals
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">+</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
                 Metacognition and identity development
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">+</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
                 Designing rich learning experiences
               </li>
               <li className="flex gap-2">
-                <span className="text-teal mt-0.5 shrink-0">+</span>
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
                 Supporting motivation and connection
               </li>
             </ul>
@@ -269,40 +265,40 @@ const unlocks = [
             <h4 className="font-bold text-black/50 mb-2 text-xs tracking-wide">Traditional</h4>
             <ul className="space-y-2 text-black/50">
               <li className="flex gap-2">
-                <span className="text-tan-grey mt-0.5">-</span>
+                <span className="text-tan-grey-ink mt-0.5">-</span>
                 Fixed periods, uniform pacing
               </li>
               <li className="flex gap-2">
-                <span className="text-tan-grey mt-0.5">-</span>
+                <span className="text-tan-grey-ink mt-0.5">-</span>
                 Schedule built around adult staffing
               </li>
               <li className="flex gap-2">
-                <span className="text-tan-grey mt-0.5">-</span>
+                <span className="text-tan-grey-ink mt-0.5">-</span>
                 Intervention outside core classes
               </li>
               <li className="flex gap-2">
-                <span className="text-tan-grey mt-0.5">-</span>
+                <span className="text-tan-grey-ink mt-0.5">-</span>
                 Real-world experiences locked into set windows
               </li>
             </ul>
           </div>
           <div className="bg-white/60 rounded-lg p-4 ring-1 ring-orange/20">
-            <h4 className="font-bold text-orange mb-2 text-xs tracking-wide">Summit 3.0</h4>
+            <h4 className="font-bold text-orange-ink mb-2 text-xs tracking-wide">Summit 3.0</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">
-                <span className="text-orange mt-0.5">+</span>
+                <span className="text-orange-ink mt-0.5">+</span>
                 Students move between experience types based on data
               </li>
               <li className="flex gap-2">
-                <span className="text-orange mt-0.5">+</span>
+                <span className="text-orange-ink mt-0.5">+</span>
                 Schedule built around student learning needs enabled by specialized roles
               </li>
               <li className="flex gap-2">
-                <span className="text-orange mt-0.5">+</span>
+                <span className="text-orange-ink mt-0.5">+</span>
                 Intervention embedded in daily flow
               </li>
               <li className="flex gap-2">
-                <span className="text-orange mt-0.5">+</span>
+                <span className="text-orange-ink mt-0.5">+</span>
                 Career-connected learning integrated throughout
               </li>
             </ul>
@@ -318,7 +314,12 @@ export default function Unlocks() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-peach/10" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-peach/10"
+      ref={ref}
+      id="how-it-works"
+      aria-labelledby="how-it-works-heading"
+    >
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -326,8 +327,8 @@ export default function Unlocks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <p className="text-teal font-bold text-sm tracking-wide mb-3">The operating system underneath</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo mb-6">
+          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The operating system underneath</p>
+          <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-6">
             How it's possible
           </h2>
         </motion.div>
@@ -361,8 +362,8 @@ export default function Unlocks() {
             The pathway model requires that operating system. Three levers unlock it:
             <span className="font-bold text-indigo"> how technology connects students to the right
             resources at the right time</span>,
-            <span className="font-bold text-teal"> how we deploy talent</span>, and
-            <span className="font-bold text-orange"> how we use time</span>.
+            <span className="font-bold text-teal-ink"> how we deploy talent</span>, and
+            <span className="font-bold text-orange-ink"> how we use time</span>.
           </p>
         </motion.div>
 

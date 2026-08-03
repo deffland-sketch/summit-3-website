@@ -6,7 +6,12 @@ export default function Throughline() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-white" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-white"
+      ref={ref}
+      id="the-model"
+      aria-labelledby="the-model-heading"
+    >
       <div className="max-w-5xl mx-auto">
         {/* Divider from Hero */}
         <div className="w-16 h-1 bg-orange rounded-full mx-auto mb-12" />
@@ -18,11 +23,11 @@ export default function Throughline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <p className="text-teal font-bold text-sm tracking-wide mb-3">The model</p>
+          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The model</p>
           <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
             The future of high school is no longer static courses and seat-time credits.
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo">
+          <h2 id="the-model-heading" className="text-3xl md:text-4xl font-bold text-indigo">
             Every student has a pathway
           </h2>
         </motion.div>
@@ -77,11 +82,11 @@ export default function Throughline() {
                 </div>
                 <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-teal-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE SYSTEM</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Surfaces data, history, and patterns. Asks the right questions.</span>
                   </div>
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-light-blue-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE STUDENT</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Brings knowledge, experience, and aspirations the system is built to honor.</span>
                   </div>
                 </div>
@@ -103,11 +108,11 @@ export default function Throughline() {
                 </div>
                 <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-teal-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE SYSTEM</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Maps academic foundations and durable skills to the life the student is building toward.</span>
                   </div>
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-light-blue-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE STUDENT</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Co-owns the goals. Adjusts them as self-knowledge grows.</span>
                   </div>
                 </div>
@@ -129,11 +134,11 @@ export default function Throughline() {
                 </div>
                 <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-teal font-bold text-[9px] tracking-wide opacity-60 shrink-0 w-16">THE SYSTEM</span>
+                    <span className="text-teal-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE SYSTEM</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Sequences experience types based on where the student is and what they need next.</span>
                   </div>
                   <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue font-bold text-[9px] tracking-wide opacity-80 shrink-0 w-16">THE STUDENT</span>
+                    <span className="text-light-blue-ink font-bold text-[9px] tracking-wide shrink-0 w-16">THE STUDENT</span>
                     <span className="text-[10px] text-black/35 leading-relaxed">Takes on real authority over time: choosing experiences, co-authoring their learning plan, and helping build their own schedule, with a mentor alongside.</span>
                   </div>
                 </div>
@@ -165,7 +170,7 @@ export default function Throughline() {
                   <div className="flex items-start gap-3 mb-2">
                     <div className="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">M</div>
                     <div>
-                      <p className="font-bold text-[13px] text-orange leading-snug">Mentoring</p>
+                      <p className="font-bold text-[13px] text-orange-ink leading-snug">Mentoring</p>
                       <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who knows you</p>
                     </div>
                   </div>
@@ -193,7 +198,7 @@ export default function Throughline() {
                   <div className="flex items-start gap-3 mb-2">
                     <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">F</div>
                     <div>
-                      <p className="font-bold text-[13px] text-teal leading-snug">Facilitating</p>
+                      <p className="font-bold text-[13px] text-teal-ink leading-snug">Facilitating</p>
                       <p className="text-[12px] font-bold italic text-black/80 mt-0.5 leading-snug">Someone who challenges you</p>
                     </div>
                   </div>
@@ -218,7 +223,7 @@ export default function Throughline() {
               </div>
 
               {/* Tagline */}
-              <p className="text-center text-orange font-bold text-xs leading-relaxed mt-3">
+              <p className="text-center text-orange-ink font-bold text-xs leading-relaxed mt-3">
                 The right adult, in the right role, at the right moment.
               </p>
             </div>
@@ -226,7 +231,7 @@ export default function Throughline() {
 
           {/* ===== FOUNDATION CALLOUT ===== */}
           <div className="mt-5 border-l-4 border-orange bg-peach/40 rounded-r-xl px-5 py-4">
-            <p className="text-orange font-bold text-xs tracking-[0.18em] uppercase mb-1">Foundation</p>
+            <p className="text-orange-ink font-bold text-xs tracking-[0.18em] uppercase mb-1">Foundation</p>
             <p className="text-base md:text-lg font-bold text-black leading-snug">Rooted in community.</p>
             <p className="text-sm text-black/70 mt-1 leading-relaxed">
               Students belong. Adults share purpose. Families are partners.
@@ -262,7 +267,7 @@ export default function Throughline() {
         >
           <p className="text-xl md:text-2xl font-bold">
             <span className="text-indigo">Pathway-driven.</span>{' '}
-            <span className="text-orange">Human-centered.</span>{' '}
+            <span className="text-orange-ink">Human-centered.</span>{' '}
             <span className="text-teal">Community-rooted.</span>
           </p>
         </motion.div>

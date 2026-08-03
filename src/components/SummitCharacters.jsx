@@ -1,3 +1,5 @@
+import { brand } from '../palette'
+
 /**
  * Summit-style character illustrations — matched to the official brand slide deck.
  *
@@ -10,16 +12,8 @@
  * - Organic oval rugs under group scenes, round tables, chairs with backs
  */
 
-const C = {
-  indigo: '#4b4b96',
-  teal: '#508278',
-  orange: '#f6aa40',
-  peach: '#ffd2b4',
-  lightBlue: '#96d2dc',
-  brown: '#503c2d',
-  red: '#e6553c',
-  grey: '#96a0ab',
-}
+// Local alias for the shared palette; `grey` is this file's name for tanGrey.
+const C = { ...brand, grey: brand.tanGrey }
 
 /**
  * Standalone character — draws a complete person at (x, y) center-bottom.
@@ -130,7 +124,7 @@ export function StudentGroup({ width = 200, height = 120 }) {
 
 export function StudentAvatar({ preset = 0, size = 48 }) {
   return (
-    <svg viewBox="0 0 48 48" width={size} height={size} fill="none">
+    <svg viewBox="0 0 48 48" width={size} height={size} fill="none" aria-hidden="true" focusable="false">
       <Person x={24} y={44} h={38} preset={preset} />
     </svg>
   )

@@ -6,7 +6,12 @@ export default function WhySummit() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-white" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-white"
+      ref={ref}
+      id="why-summit"
+      aria-labelledby="why-summit-heading"
+    >
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,8 +19,8 @@ export default function WhySummit() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-teal font-bold text-sm tracking-wide mb-3">Built for this</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo">
+          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">Built for this</p>
+          <h2 id="why-summit-heading" className="text-3xl md:text-4xl font-bold text-indigo">
             Why Summit
           </h2>
         </motion.div>
@@ -58,7 +63,7 @@ export default function WhySummit() {
             <div className="flex items-end gap-4">
               <div>
                 <p className="text-4xl md:text-5xl font-bold text-teal">51%</p>
-                <p className="text-sm font-bold text-teal/70 mt-1">Summit graduates</p>
+                <p className="text-sm font-bold text-teal-ink mt-1">Summit graduates</p>
               </div>
               <div className="pb-1">
                 <p className="text-2xl md:text-3xl font-bold text-black/20">43%</p>
@@ -94,7 +99,7 @@ export default function WhySummit() {
           >
             <p className="text-3xl md:text-4xl font-bold text-indigo mb-1">100K+</p>
             <p className="text-sm text-black/60 font-bold">Students reached via Summit Learning</p>
-            <p className="text-orange font-bold text-lg mt-2">400+ schools in 40 states</p>
+            <p className="text-orange-ink font-bold text-lg mt-2">400+ schools in 40 states</p>
           </motion.div>
 
           {/* College acceptance */}

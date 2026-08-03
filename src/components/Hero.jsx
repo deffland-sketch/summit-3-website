@@ -69,10 +69,17 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-peach/40">
+              {/* LCP image: intrinsic size declared, loaded eagerly at high
+                  priority rather than queueing behind the JS bundle. */}
               <img
                 src="/photos/hero-classroom.jpg"
                 alt="A Summit classroom in motion"
                 className="w-full h-full object-cover"
+                width={2048}
+                height={1366}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
               />
             </div>
 

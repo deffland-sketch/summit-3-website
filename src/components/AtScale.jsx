@@ -1,39 +1,40 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { brand } from '../palette'
 
 const needs = [
   {
     name: 'Competency verification',
     question: 'How do we know students are ready?',
-    color: '#508278',
+    color: brand.teal,
     industrial: 'Standardized assessments, course grades, and seat-time requirements. Aggregate signals that produce a credential everyone recognizes.',
     summit: 'A living learner profile tracking academic foundations, durable skills, and real-world competencies. Evidence of readiness comes from multiple sources (assessments, project artifacts, professional feedback), making the credential precise to the student.',
   },
   {
     name: 'Socialization and belonging',
     question: 'How do young people learn to live together?',
-    color: '#f6aa40',
+    color: brand.orange,
     industrial: 'Age-based cohorts, shared schedules, extracurriculars. Community emerges from proximity, and it works for many students.',
     summit: 'Intentional community circles with a human mentor who knows each student deeply. Peer groups built across ages and interests. Belonging is designed into the daily experience for every student, not only the ones for whom proximity is enough.',
   },
   {
     name: 'Physical safety and structure',
     question: 'Where are young people during the day?',
-    color: '#4b4b96',
+    color: brand.indigo,
     industrial: 'A building with adults, bells, and defined periods. Students are accounted for at all times. Simple and reliable.',
     summit: 'Students are always within a safe, purposeful structure, but that structure flexes to match what each student needs that day. Architecting the system coordinates spaces, adults, and schedules so students move between experiences safely. Safety without rigidity.',
   },
   {
     name: 'Developmentally appropriate progression',
     question: 'How do we meet students where they are?',
-    color: '#96d2dc',
+    color: brand.lightBlue,
     industrial: 'Grade levels based on age. Everyone moves through the same sequence, which gets the aggregate population through the curriculum.',
     summit: 'A personalized pathway builds on what each student already knows, where they are socially, and what real-world experiences they bring. A 9th grader and a 12th grader in the same experience type may be doing very different work. This is how the model serves the students the traditional system serves least well. A multilingual learner, a student with an IEP or 504, a student far ahead in one subject and behind in another: each gets a sequence built for where they actually are, adjusted as they progress.',
   },
   {
     name: 'Meaningful adult employment',
     question: 'How do we make teaching sustainable?',
-    color: '#503c2d',
+    color: brand.brown,
     industrial: 'Stable jobs with clear definitions, generations of educators built their lives around them. The role has also broadened to ask one adult to do nearly everything.',
     summit: 'Four specialized capacities (mentoring, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
   },
@@ -51,7 +52,7 @@ function AccentBar({ color, inView }) {
   )
 }
 
-function NeedCard({ need, index }) {
+function NeedCard({ need }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -106,7 +107,12 @@ export default function AtScale() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 md:py-28 px-6" style={{ backgroundColor: '#ebf5f0' }} ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-mint"
+      ref={ref}
+      id="at-scale"
+      aria-labelledby="at-scale-heading"
+    >
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -114,7 +120,7 @@ export default function AtScale() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo mb-6">
+          <h2 id="at-scale-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-6">
             How the industrial model succeeded, and why it's time to evolve
           </h2>
           <div className="space-y-4 text-black leading-relaxed max-w-3xl">
@@ -154,8 +160,8 @@ export default function AtScale() {
           />
 
           <div className="space-y-5">
-            {needs.map((need, i) => (
-              <NeedCard key={need.name} need={need} index={i} />
+            {needs.map((need) => (
+              <NeedCard key={need.name} need={need} />
             ))}
           </div>
         </div>

@@ -6,7 +6,12 @@ export default function WhyNow() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-peach/15" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-peach/15"
+      ref={ref}
+      id="why-now"
+      aria-labelledby="why-now-heading"
+    >
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,8 +19,8 @@ export default function WhyNow() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <p className="text-teal font-bold text-sm tracking-wide mb-3">The moment</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo">
+          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The moment</p>
+          <h2 id="why-now-heading" className="text-3xl md:text-4xl font-bold text-indigo">
             Why now
           </h2>
         </motion.div>

@@ -1,22 +1,33 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
+/**
+ * `photo` is only set once a real headshot exists in /public/photos. Pointing at
+ * a missing file made the browser fetch the SPA's index.html as an image on every
+ * load, fail to decode it, and fall back — so the path stays null until the asset
+ * is there and the initials monogram is the intentional default.
+ */
 const founders = [
   {
     name: 'Cady Ching',
     role: 'Chief Executive Officer',
-    photo: '/photos/cady-ching.jpg',
+    photo: null,
     bio: 'Leads Summit Public Schools and the Summit 3.0 build. Brings deep operating experience across public school networks and a long track record of moving systems toward what students actually need.',
   },
   {
     name: 'Dan Effland',
     role: 'Senior Director of Innovation',
-    photo: '/photos/dan-effland.jpg',
+    photo: null,
     bio: 'Leads the product and technology work underneath Summit 3.0: the system that maps each student’s pathway and matches them to the right learning experiences at school scale.',
   },
 ]
 
 function FounderCard({ founder, delay }) {
+  const initials = founder.name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -27,19 +38,27 @@ function FounderCard({ founder, delay }) {
     >
       <div className="flex items-center gap-4 mb-4">
         <div className="w-16 h-16 rounded-full overflow-hidden bg-peach/40 shrink-0 relative">
-          <img
-            src={founder.photo}
-            alt={founder.name}
-            className="w-full h-full object-cover"
-            onError={(e) => { e.currentTarget.style.display = 'none' }}
-          />
-          <div className="absolute inset-0 flex items-center justify-center text-indigo/50 font-bold text-sm pointer-events-none">
-            {founder.name.split(' ').map((n) => n[0]).join('')}
-          </div>
+          {founder.photo ? (
+            <img
+              src={founder.photo}
+              alt={`Portrait of ${founder.name}`}
+              className="w-full h-full object-cover"
+              width={64}
+              height={64}
+              loading="lazy"
+            />
+          ) : (
+            <div
+              className="absolute inset-0 flex items-center justify-center text-indigo/70 font-bold text-sm"
+              aria-hidden="true"
+            >
+              {initials}
+            </div>
+          )}
         </div>
         <div>
           <h4 className="text-lg font-bold text-indigo leading-tight">{founder.name}</h4>
-          <p className="text-sm text-teal font-bold">{founder.role}</p>
+          <p className="text-sm text-teal-ink font-bold">{founder.role}</p>
         </div>
       </div>
       <p className="text-sm text-black/75 leading-relaxed">{founder.bio}</p>
@@ -55,6 +74,8 @@ export default function Close() {
     <section
       className="py-24 md:py-32 px-6 bg-indigo text-white"
       ref={ref}
+      id="invitation"
+      aria-labelledby="invitation-heading"
     >
       <div className="max-w-4xl mx-auto">
         <motion.p

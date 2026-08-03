@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { brand } from '../palette'
 
 /*
  * School resource model:
@@ -12,14 +13,14 @@ import { useRef, useState } from 'react'
 
 // Matches the 8 learning experience types
 const experienceTypes = [
-  { name: 'Direct instruction', color: '#4b4b96' },
-  { name: 'Practice and feedback', color: '#508278' },
-  { name: 'Discussion and dialogue', color: '#f6aa40' },
-  { name: 'Independent work and creation', color: '#96d2dc' },
-  { name: 'Presentation and performance', color: '#e6553c' },
-  { name: 'Reflection and goal-setting', color: '#ffd2b4' },
-  { name: 'Real-world experience', color: '#503c2d' },
-  { name: 'Wellbeing and community', color: '#96a0ab' },
+  { name: 'Direct instruction', color: brand.indigo },
+  { name: 'Practice and feedback', color: brand.teal },
+  { name: 'Discussion and dialogue', color: brand.orange },
+  { name: 'Independent work and creation', color: brand.lightBlue },
+  { name: 'Presentation and performance', color: brand.red },
+  { name: 'Reflection and goal-setting', color: brand.peach },
+  { name: 'Real-world experience', color: brand.brown },
+  { name: 'Wellbeing and community', color: brand.tanGrey },
 ]
 
 // Each time slot: students, adults deployed, spaces in use, partner activity, operational note
@@ -28,7 +29,7 @@ const timeSlots = [
     time: '8:00 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [0,     0,       0,      0,     0,      0,      0,    400],
-    adults: { guides: 6, contentExperts: 0, facilitators: 0, flex: 0, architects: 2, ops: 4 },
+    adults: { mentors: 6, contentExperts: 0, facilitators: 0, flex: 0, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 0, labs: 0 },
     partners: [],
     note: 'All 400 students in community circles with their 6 mentors. Each mentor leads ~67 students across 3 mentor groups, meeting in classrooms and both large spaces. System architects review overnight data and finalize the day\'s schedule adjustments. Admin/ops team manages arrivals and logistics.',
@@ -37,7 +38,7 @@ const timeSlots = [
     time: '9:00 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [75,    60,      28,     103,   0,      50,     12,   72],
-    adults: { guides: 3, contentExperts: 8, facilitators: 5, flex: 4, architects: 2, ops: 2 },
+    adults: { mentors: 3, contentExperts: 8, facilitators: 5, flex: 4, architects: 2, ops: 2 },
     spaces: { classrooms: 10, large: 2, collab: 6, labs: 3 },
     partners: [
       'Peninsula Open Space Trust (Redwood City) — 4 students collecting water samples at creek site',
@@ -50,7 +51,7 @@ const timeSlots = [
     time: '10:00 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [85,    72,      35,     95,    12,     40,     18,   43],
-    adults: { guides: 2, contentExperts: 8, facilitators: 6, flex: 4, architects: 2, ops: 2 },
+    adults: { mentors: 2, contentExperts: 8, facilitators: 6, flex: 4, architects: 2, ops: 2 },
     spaces: { classrooms: 11, large: 2, collab: 6, labs: 3 },
     partners: [
       'Peninsula Open Space Trust (Redwood City) — 4 students (continued)',
@@ -64,7 +65,7 @@ const timeSlots = [
     time: '11:00 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [60,    68,      45,     72,    18,     50,     35,   52],
-    adults: { guides: 3, contentExperts: 6, facilitators: 6, flex: 4, architects: 2, ops: 3 },
+    adults: { mentors: 3, contentExperts: 6, facilitators: 6, flex: 4, architects: 2, ops: 3 },
     spaces: { classrooms: 9, large: 2, collab: 6, labs: 3 },
     partners: [
       'Fred Hutchinson Cancer Research Center (Seattle) — 6 students in lab internship',
@@ -81,7 +82,7 @@ const timeSlots = [
     time: '12:00 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [5,     5,       5,      10,    0,      15,     0,    360],
-    adults: { guides: 6, contentExperts: 2, facilitators: 2, flex: 2, architects: 2, ops: 4 },
+    adults: { mentors: 6, contentExperts: 2, facilitators: 2, flex: 2, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
     partners: [],
     note: 'Midday community time. Mentors lead lunch circles — a chance for students and adults to reconnect. System architects use this window to review the morning\'s data and adjust afternoon placements. A few students continue independent work or wrap up dual enrollment assignments. Ops coordinates afternoon field site transportation.',
@@ -90,7 +91,7 @@ const timeSlots = [
     time: '1:00 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [50,    55,      25,     80,    20,     40,     55,   75],
-    adults: { guides: 3, contentExperts: 5, facilitators: 6, flex: 4, architects: 2, ops: 4 },
+    adults: { mentors: 3, contentExperts: 5, facilitators: 6, flex: 4, architects: 2, ops: 4 },
     spaces: { classrooms: 8, large: 2, collab: 6, labs: 3 },
     partners: [
       'Fred Hutch (Seattle) — 6 students (afternoon session)',
@@ -109,7 +110,7 @@ const timeSlots = [
     time: '2:00 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [35,    35,      15,     50,    15,     93,     70,   87],
-    adults: { guides: 4, contentExperts: 3, facilitators: 5, flex: 3, architects: 2, ops: 4 },
+    adults: { mentors: 4, contentExperts: 3, facilitators: 5, flex: 3, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 1, collab: 6, labs: 2 },
     partners: [
       'Multiple field sites (9 orgs) — 70 students across the city',
@@ -120,7 +121,7 @@ const timeSlots = [
     time: '3:00 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
     students: [0,     5,       0,      10,    0,      55,     5,    325],
-    adults: { guides: 6, contentExperts: 0, facilitators: 2, flex: 0, architects: 2, ops: 4 },
+    adults: { mentors: 6, contentExperts: 0, facilitators: 2, flex: 0, architects: 2, ops: 4 },
     spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
     partners: [],
     note: 'Closing community circles. Mentors check in with each student one more time. Field students return and debrief. System architects finalize tomorrow\'s first draft: which students need to be grouped differently, which content experts should shift focus, which spaces to reconfigure. The schedule gets more precise every cycle.',
@@ -136,7 +137,7 @@ function StudentBreakdown({ data }) {
       {data.map((count, i) =>
         count > 0 ? (
           <div key={i} className="flex items-center gap-2 bg-white/10 rounded-lg px-2.5 py-2">
-            <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} />
+            <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} aria-hidden="true" />
             <div className="min-w-0">
               <p className="text-white font-bold text-sm leading-tight">{count}</p>
               <p className="text-white/75 text-[11px] leading-tight truncate">{experienceTypes[i].name}</p>
@@ -149,14 +150,14 @@ function StudentBreakdown({ data }) {
 }
 
 function AdultBreakdown({ adults }) {
-  const eduTotal = adults.guides + adults.contentExperts + adults.facilitators + adults.flex
+  const eduTotal = adults.mentors + adults.contentExperts + adults.facilitators + adults.flex
   const rows = [
-    { label: 'Mentors', count: adults.guides, max: 6, color: '#f6aa40', desc: 'community circles, reflection, pathway conversations' },
-    { label: 'Content Experts', count: adults.contentExperts, max: 8, color: '#4b4b96', desc: 'small-group expert instruction, targeted skills' },
-    { label: 'Facilitators', count: adults.facilitators, max: 6, color: '#508278', desc: 'project studios, discussion circles, field coordination' },
-    { label: 'Flex educators', count: adults.flex, max: 4, color: '#96d2dc', desc: 'independent practice support, peer tutoring, dual enrollment' },
-    { label: 'System architects', count: adults.architects, max: 2, color: '#96a0ab', desc: 'schedule optimization, data review, partner coordination' },
-    { label: 'Admin/ops', count: adults.ops, max: 4, color: '#ffd2b4', desc: 'transportation, logistics, facilities, partner communication' },
+    { label: 'Mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'community circles, reflection, pathway conversations' },
+    { label: 'Content Experts', count: adults.contentExperts, max: 8, color: brand.indigo, desc: 'small-group expert instruction, targeted skills' },
+    { label: 'Facilitators', count: adults.facilitators, max: 6, color: brand.teal, desc: 'project studios, discussion circles, field coordination' },
+    { label: 'Flex educators', count: adults.flex, max: 4, color: brand.lightBlue, desc: 'independent practice support, peer tutoring, dual enrollment' },
+    { label: 'System architects', count: adults.architects, max: 2, color: brand.tanGrey, desc: 'schedule optimization, data review, partner coordination' },
+    { label: 'Admin/ops', count: adults.ops, max: 4, color: brand.peach, desc: 'transportation, logistics, facilities, partner communication' },
   ]
   return (
     <div>
@@ -181,7 +182,7 @@ function AdultBreakdown({ adults }) {
           <div key={r.label}>
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} />
+                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} aria-hidden="true" />
                 <span className="text-white text-sm font-bold">{r.label}</span>
               </div>
               <span className="text-white font-bold text-lg">{r.count}<span className="text-white/55 text-xs font-normal ml-1">/{r.max}</span></span>
@@ -208,10 +209,10 @@ function SpaceBreakdown({ spaces }) {
   const total = spaces.classrooms + spaces.large + spaces.collab + spaces.labs
   const pct = Math.round((total / 23) * 100)
   const rows = [
-    { label: 'Classrooms', count: spaces.classrooms, of: 12, color: '#4b4b96', icon: '▪', desc: 'small-group instruction, independent work, dual enrollment' },
-    { label: 'Large spaces', count: spaces.large, of: 2, color: '#f6aa40', icon: '▪', desc: 'peer collaboration, community circles, presentations' },
-    { label: 'Collaboration rooms', count: spaces.collab, of: 6, color: '#508278', icon: '▪', desc: 'discussion circles, reflection, peer tutoring' },
-    { label: 'Lab spaces', count: spaces.labs, of: 3, color: '#96d2dc', icon: '▪', desc: 'project studios, hands-on experiments, maker work' },
+    { label: 'Classrooms', count: spaces.classrooms, of: 12, color: brand.indigo, icon: '▪', desc: 'small-group instruction, independent work, dual enrollment' },
+    { label: 'Large spaces', count: spaces.large, of: 2, color: brand.orange, icon: '▪', desc: 'peer collaboration, community circles, presentations' },
+    { label: 'Collaboration rooms', count: spaces.collab, of: 6, color: brand.teal, icon: '▪', desc: 'discussion circles, reflection, peer tutoring' },
+    { label: 'Lab spaces', count: spaces.labs, of: 3, color: brand.lightBlue, icon: '▪', desc: 'project studios, hands-on experiments, maker work' },
   ]
   return (
     <div>
@@ -265,7 +266,7 @@ function PartnerBreakdown({ partners }) {
     <div className="space-y-1.5">
       {partners.map((p, i) => (
         <div key={i} className="flex gap-2 bg-white/10 rounded-lg px-3 py-2">
-          <span className="text-orange text-sm mt-0.5">●</span>
+          <span className="text-orange text-sm mt-0.5" aria-hidden="true">●</span>
           <p className="text-white/85 text-sm leading-relaxed">{p}</p>
         </div>
       ))}
@@ -273,23 +274,37 @@ function PartnerBreakdown({ partners }) {
   )
 }
 
-function StackedBar({ data, isActive, onClick }) {
+function StackedBar({ data, time, isActive, onClick }) {
+  // A real button so the chart is keyboard- and screen-reader-operable, not just
+  // clickable. The label spells out the distribution the bar encodes visually.
+  const label = data
+    .map((count, i) => (count > 0 ? `${count} in ${experienceTypes[i].name}` : null))
+    .filter(Boolean)
+    .join(', ')
+
   return (
-    <div className="flex flex-col-reverse h-full w-full cursor-pointer" onClick={onClick}>
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={isActive}
+      title={time}
+      aria-label={`${time}: ${label}`}
+      className="flex flex-col-reverse h-full w-full cursor-pointer rounded-sm"
+    >
       {data.map((value, i) => {
         const pct = (value / 400) * 100
         if (pct < 1) return null
         return (
-          <motion.div
+          <motion.span
             key={i}
             animate={{ height: `${pct}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ backgroundColor: experienceTypes[i].color }}
-            className={`w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-55'}`}
+            className={`block w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-55'}`}
           />
         )
       })}
-    </div>
+    </button>
   )
 }
 
@@ -301,8 +316,23 @@ export default function WholeSchool() {
 
   const slot = timeSlots[activeIdx]
 
+  // Arrow-key navigation between tabs, per the WAI-ARIA tabs pattern.
+  const onTabKeyDown = (e, tab) => {
+    const dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0
+    if (!dir) return
+    e.preventDefault()
+    const next = tabs[(tabs.indexOf(tab) + dir + tabs.length) % tabs.length]
+    setActiveTab(next)
+    document.getElementById(`tab-${next}`)?.focus()
+  }
+
   return (
-    <section className="py-20 md:py-28 px-6 bg-brown text-white" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-brown text-white"
+      ref={ref}
+      id="whole-school"
+      aria-labelledby="whole-school-heading"
+    >
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -311,7 +341,7 @@ export default function WholeSchool() {
           className="text-center mb-6"
         >
           <p className="text-orange font-bold text-sm tracking-wide mb-3">Multiply by 400</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
             The whole school in motion
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
@@ -323,7 +353,7 @@ export default function WholeSchool() {
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6">
           {experienceTypes.map((type) => (
             <span key={type.name} className="flex items-center gap-1.5 text-xs text-white/85">
-              <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: type.color }} />
+              <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: type.color }} aria-hidden="true" />
               {type.name}
             </span>
           ))}
@@ -335,6 +365,7 @@ export default function WholeSchool() {
             <button
               key={i}
               onClick={() => setActiveIdx(i)}
+              aria-pressed={activeIdx === i}
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                 activeIdx === i
                   ? 'bg-orange text-brown'
@@ -354,6 +385,7 @@ export default function WholeSchool() {
                 <div className="flex-1 w-full flex items-end">
                   <StackedBar
                     data={s.students}
+                    time={s.time}
                     isActive={activeIdx === i}
                     onClick={() => setActiveIdx(i)}
                   />
@@ -381,11 +413,17 @@ export default function WholeSchool() {
                 <span className="text-orange font-bold text-lg">{slot.time}</span>
                 <span className="text-white/70 text-sm">400 students · 30 staff · 23 spaces</span>
               </div>
-              <div className="flex gap-1">
+              <div className="flex gap-1" role="tablist" aria-label="Resource view">
                 {tabs.map((t) => (
                   <button
                     key={t}
+                    role="tab"
+                    id={`tab-${t}`}
+                    aria-selected={activeTab === t}
+                    aria-controls={`tabpanel-${t}`}
+                    tabIndex={activeTab === t ? 0 : -1}
                     onClick={() => setActiveTab(t)}
+                    onKeyDown={(e) => onTabKeyDown(e, t)}
                     className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${
                       activeTab === t
                         ? 'bg-white/25 text-white'
@@ -398,8 +436,23 @@ export default function WholeSchool() {
               </div>
             </div>
 
+            {/* What is actually happening at this hour. Authored per slot in
+                `timeSlots[].note` — this is the operational detail that makes the
+                400-student claim concrete. */}
+            <div className="px-5 pt-3">
+              <p className="text-white/80 text-sm leading-relaxed border-l-2 border-orange/60 pl-3">
+                {slot.note}
+              </p>
+            </div>
+
             {/* Tab content */}
-            <div className="p-5">
+            <div
+              className="p-5"
+              role="tabpanel"
+              id={`tabpanel-${activeTab}`}
+              aria-labelledby={`tab-${activeTab}`}
+              tabIndex={-1}
+            >
               {activeTab === 'students' && <StudentBreakdown data={slot.students} />}
               {activeTab === 'adults' && <AdultBreakdown adults={slot.adults} />}
               {activeTab === 'spaces' && <SpaceBreakdown spaces={slot.spaces} />}

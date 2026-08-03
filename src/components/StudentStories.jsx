@@ -1,6 +1,7 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { StudentAvatar } from './SummitCharacters'
+import { Chevron } from './Chevron'
 
 const students = [
   {
@@ -147,12 +148,12 @@ const students = [
 
 const typeColors = {
   academic: { bg: 'bg-indigo', label: 'Academic', text: 'text-indigo' },
-  realworld: { bg: 'bg-teal', label: 'Real-world', text: 'text-teal' },
-  community: { bg: 'bg-orange', label: 'Community', text: 'text-orange' },
-  independent: { bg: 'bg-light-blue', label: 'Independent', text: 'text-light-blue' },
+  realworld: { bg: 'bg-teal', label: 'Real-world', text: 'text-teal-ink' },
+  community: { bg: 'bg-orange', label: 'Community', text: 'text-orange-ink' },
+  independent: { bg: 'bg-light-blue', label: 'Independent', text: 'text-light-blue-ink' },
 }
 
-function StudentCard({ student, index, isOpen, onToggle }) {
+function StudentCard({ student, isOpen, onToggle }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
@@ -176,15 +177,7 @@ function StudentCard({ student, index, isOpen, onToggle }) {
             <h3 className="text-lg font-bold text-black leading-tight">{student.name}</h3>
             <p className="text-xs text-black/50">{student.subtitle}</p>
           </div>
-          <motion.svg
-            animate={{ rotate: isOpen ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-            className="w-5 h-5 text-indigo/60 shrink-0"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
-          </motion.svg>
+          <Chevron open={isOpen} className="text-indigo/60" />
         </div>
 
         {/* Color bar timeline — always visible as a peek */}
@@ -230,7 +223,7 @@ function StudentCard({ student, index, isOpen, onToggle }) {
                           <span className="block mt-1 italic text-black/40 text-xs">{block.annotation}</span>
                         )}
                         {block.aside && (
-                          <span className={`block mt-1 italic ${tc.text} opacity-60 text-xs`}>{block.aside}</span>
+                          <span className={`block mt-1 italic ${tc.text} text-xs`}>{block.aside}</span>
                         )}
                       </div>
                     </div>
@@ -257,7 +250,12 @@ export default function StudentStories() {
   }
 
   return (
-    <section className="py-20 md:py-28 px-6 bg-peach/15" ref={ref}>
+    <section
+      className="py-20 md:py-28 px-6 bg-peach/15"
+      ref={ref}
+      id="student-day"
+      aria-labelledby="student-day-heading"
+    >
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -265,8 +263,8 @@ export default function StudentStories() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <p className="text-teal font-bold text-sm tracking-wide mb-3">Meet three students</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-indigo mb-4">
+          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">Meet three students</p>
+          <h2 id="student-day-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
             What school feels like
           </h2>
           <p className="text-lg text-black/70 max-w-2xl">

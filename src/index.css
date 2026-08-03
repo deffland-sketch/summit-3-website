@@ -9,11 +9,31 @@
   --color-brown: #503c2d;
   --color-red: #e6553c;
   --color-tan-grey: #96a0ab;
+  /* Pale teal-tinted section background (AtScale) */
+  --color-mint: #ebf5f0;
+
+  /* Text-safe variants of the brand colors. Most of the palette is tuned for
+     fills and fails WCAG AA as text on white — brand orange is 1.9:1, peach is
+     1.4:1, light blue is 1.7:1, tan grey 2.7:1, all below the 4.5:1 body-text
+     floor. Use the `-ink` token whenever a brand color carries text on a light
+     background; keep the base token for fills, borders, and swatches. Indigo
+     (7.7:1) and brown (10.3:1) need no variant. */
+  /* Each clears 4.5:1 against white and against every tinted section
+     background on the page (peach/10, peach/15, peach/40, mint). */
+  --color-orange-ink: #9d6009;
+  --color-teal-ink: #47756c;
+  --color-light-blue-ink: #297987;
+  --color-red-ink: #c64027;
+  --color-peach-ink: #94603a;
+  --color-tan-grey-ink: #5f6b78;
+
   --font-sans: 'Arimo', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky nav */
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -21,4 +41,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+}
+
+/* Visible, on-brand focus ring for keyboard users on every interactive element */
+:focus-visible {
+  outline: 3px solid var(--color-orange-ink);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Framer Motion is handled by MotionConfig reducedMotion="user" in App.jsx;
+     this covers CSS transitions and any animation it does not own. */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
