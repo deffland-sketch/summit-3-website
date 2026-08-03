@@ -1,16 +1,37 @@
-# React + Vite
+# Summit 3.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page narrative website for Summit Public Schools' 3.0 model — a pitch and
+concept note for funders and partners.
 
-Currently, two official plugins are available:
+Built with React 19, Vite 8, Tailwind CSS v4 and Framer Motion. No router; the
+whole thing is one scrolling page composed of the section components in
+`src/components/`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting started
 
-## React Compiler
+```bash
+npm install
+npm run dev      # dev server with HMR
+npm run build    # production build to dist/
+npm run preview  # serve the production build locally
+npm run lint     # eslint
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Layout
 
-## Expanding the ESLint configuration
+```
+index.html          document head: title, meta description, Open Graph/Twitter tags
+src/
+  main.jsx          React entry
+  App.jsx           section order, <main>, skip link, reduced-motion config
+  index.css         Tailwind import, @theme color tokens, focus ring, reduced motion
+  palette.js        brand + ink hex values for inline styles
+  components/       one file per page section, plus Nav, Chevron, SummitCharacters
+public/
+  photos/           photography served as-is
+  favicon.svg
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+See `CLAUDE.md` for the section-by-section breakdown, the color system (including
+the `-ink` text variants and why they exist), and the accessibility invariants to
+preserve when editing.
