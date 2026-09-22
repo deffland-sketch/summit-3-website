@@ -32,6 +32,20 @@ export default function WhyNow() {
           className="space-y-5 text-base md:text-lg text-black leading-relaxed"
         >
           <p>
+            Public education is entering a period of real discontinuity. For a long time, the basic
+            operating assumptions of school have stayed remarkably stable: time is fixed, students
+            move largely in groups, and teachers are responsible for holding and delivering enormous
+            amounts of content. AI is accelerating the breakdown of all three.
+          </p>
+
+          <p className="border-l-4 border-orange pl-5">
+            That's a bigger question than how schools should use AI. It's: if we were designing a
+            learner-centered public school for the world our students are actually going to inherit,
+            what would we do differently? And can we prove that model inside the real constraints of
+            public education, so it can reach far more students than our own?
+          </p>
+
+          <p>
             For more than twenty years, Summit has evolved by listening: to students, families,
             educators, and the changing world its graduates step into.
           </p>
@@ -50,7 +64,7 @@ export default function WhyNow() {
             asking for and what employers now expect from graduates.
           </p>
 
-          <p className="border-l-4 border-orange pl-5">
+          <p>
             Two things are arriving together. The demand for this kind of school has never been
             clearer, and for the first time the technology exists to deliver it for every student
             at the scale of a real public system. That convergence is what makes this the moment.

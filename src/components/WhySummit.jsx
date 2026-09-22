@@ -25,6 +25,32 @@ export default function WhySummit() {
           </h2>
         </motion.div>
 
+        {/* Three chapters */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="max-w-3xl mx-auto mb-14 space-y-4 text-base md:text-lg text-black leading-relaxed"
+        >
+          <p>
+            Summit's first chapter proved that students historically underserved by the education
+            system could access rigorous, college-preparatory learning. Our second chapter pushed
+            further into learner-centered education: mentoring, student agency, self-direction, a
+            model built around what individual students need. Now we have the opportunity to take
+            another significant step.
+          </p>
+          <p>
+            Our 2030 ambition is that Summit will prove a learner-centered model in which every
+            student gets what they need, when they need it, to attain economic empowerment and lead
+            a fulfilled life in a rapidly changing world.
+          </p>
+          <p>
+            We mean <span className="font-bold text-indigo">prove</span>, deliberately. Not something
+            theoretically interesting, but something we build, operate in public schools, measure,
+            and can share with the field.
+          </p>
+        </motion.div>
+
         {/* Stats — comparison stats with peer contrast */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Salary */}
