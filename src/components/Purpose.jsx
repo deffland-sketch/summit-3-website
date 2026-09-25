@@ -54,7 +54,6 @@ export default function Purpose() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-10"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">What fuels a pathway</p>
           <h2 id="purpose-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
             Purpose is what makes a pathway work
           </h2>
@@ -146,7 +145,6 @@ export default function Purpose() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="mb-14"
         >
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-5">How it becomes motivation</h3>
           <ol className="grid md:grid-cols-3 gap-4">
@@ -166,34 +164,6 @@ export default function Purpose() {
               </li>
             ))}
           </ol>
-          <p className="text-sm text-black/60 leading-relaxed mt-4 max-w-3xl">
-            Summit already tracks the middle of this chain. Purpose and relevance of school are both
-            part of the Habits of Success that students grow in and reflect on with their mentors.
-          </p>
-        </motion.div>
-
-        {/* Why it is necessary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl border-l-4 border-orange pl-6"
-        >
-          <h3 className="text-lg font-bold text-indigo mb-3">Why the rest of the model depends on it</h3>
-          <p className="text-sm text-black/70 leading-relaxed mb-3">
-            The industrial model was built to move whole populations through a fixed sequence, so it
-            runs on grades, credits, and seat-time. That works for students who have already found
-            their own reasons to engage. For many others, motivation never takes hold. Anderson and
-            Winthrop's recent research finds that fewer than 4% of teenagers experience the kind of
-            curiosity-driven learning that builds durable skills and real motivation.
-          </p>
-          <p className="text-sm text-black/70 leading-relaxed">
-            Summit 3.0's flexible schedules and technology can match a student to the right
-            experience at the right moment, and that only works once someone knows what the student
-            cares about. That knowledge comes from trust built with a mentor and from real chances to
-            try things. Mentoring and Expeditions are what give every pathway its direction.
-          </p>
         </motion.div>
       </div>
     </section>

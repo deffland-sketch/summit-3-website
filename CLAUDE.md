@@ -15,7 +15,8 @@ Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a sk
 link and a sticky `Nav`.
 
 1. **Hero** — photo + copy two-column, headline stats, pull quote
-2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities)
+2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities),
+   closing on "The right adult, in the right role, at the right moment" and a community sentence
 3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
    Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
 4. **StudentStories** (`#student-day`) — 3 composite students of the same age (Marco, Amara,
@@ -80,6 +81,8 @@ pass there and `-ink` would be wrong.
   accent, on a tinted section background (or with a `border-black/8` outline on white).
   Body text at `text-sm` or larger, no lighter than `text-black/60`. Eyebrows and labels are
   sentence case: no `uppercase`, no letter-spacing.
+- No eyebrow labels (small colored kicker text) above section `<h2>`s, and no summary
+  callouts or punchy taglines closing out a section.
 - All sections use Framer Motion `useInView` for scroll-triggered animations.
 - Tailwind custom colors are used as utility classes (e.g. `text-indigo`, `bg-teal`).
 

@@ -78,15 +78,6 @@ export default function Close() {
       aria-labelledby="invitation-heading"
     >
       <div className="max-w-4xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-orange font-bold text-sm mb-4"
-        >
-          The invitation
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -123,7 +114,7 @@ export default function Close() {
           className="mb-16"
         >
           <a
-            href="mailto:info@summitps.org"
+            href="mailto:deffland@summitps.org"
             className="inline-block bg-orange text-brown font-bold px-8 py-4 rounded-lg text-lg hover:bg-orange/90 transition-colors"
           >
             Get in touch

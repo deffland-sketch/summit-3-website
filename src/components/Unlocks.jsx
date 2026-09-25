@@ -329,7 +329,6 @@ export default function Unlocks() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The operating system underneath</p>
           <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-6">
             How it's possible
           </h2>

@@ -455,7 +455,6 @@ export default function StudentStories() {
           transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">Meet three students</p>
           <h2 id="student-day-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
             Same age, three pathways
           </h2>
@@ -523,26 +522,6 @@ export default function StudentStories() {
             ))}
           </div>
         </div>
-
-        {/* Callout */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-8 bg-white rounded-xl border-l-4 border-orange p-5"
-        >
-          <p className="text-black/70 text-sm leading-relaxed mb-3">
-            Every Summit schedule here was built around where each student is, what they need next,
-            and who's available. When the data shows progress or a new need, the schedule adjusts.
-          </p>
-          <p className="text-black/70 text-sm leading-relaxed">
-            <span className="font-bold text-indigo">What stays constant:</span> the same long-term
-            mentor who knows each student, a consistent community, and a daily rhythm students can
-            count on. The flexibility is in what students learn and when. The support around them
-            holds steady.
-          </p>
-        </motion.div>
       </div>
     </section>
   )

@@ -19,7 +19,6 @@ export default function WhyNow() {
           transition={{ duration: 0.6 }}
           className="mb-10"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The moment</p>
           <h2 id="why-now-heading" className="text-3xl md:text-4xl font-bold text-indigo">
             Why now
           </h2>

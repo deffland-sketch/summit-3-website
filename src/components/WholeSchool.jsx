@@ -340,7 +340,6 @@ export default function WholeSchool() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <p className="text-orange font-bold text-sm tracking-wide mb-3">Multiply by 400</p>
           <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
             The whole school in motion
           </h2>

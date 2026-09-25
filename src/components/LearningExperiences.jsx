@@ -114,7 +114,6 @@ export default function LearningExperiences() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">What school is made of</p>
           <h2
             id="learning-experiences-heading"
             className="text-3xl md:text-4xl font-bold text-indigo mb-4"

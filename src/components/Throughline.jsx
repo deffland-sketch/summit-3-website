@@ -1,6 +1,31 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
+const steps = [
+  {
+    q: 'Who is the student, and what do they want for their life?',
+    a: 'Their knowledge, interests, experiences, and goals.',
+    dot: 'bg-light-blue',
+  },
+  {
+    q: 'What outcomes will support their launch into that life?',
+    a: 'Academic foundations and durable skills.',
+    dot: 'bg-teal',
+  },
+  {
+    q: 'What experiences will prepare them?',
+    a: 'The right mix of eight experience types, with students taking more ownership of their plan over time.',
+    dot: 'bg-indigo',
+  },
+]
+
+const capacities = [
+  { name: 'Mentoring', tagline: 'Someone who knows you', top: 'border-t-orange', text: 'text-orange-ink' },
+  { name: 'Content expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
+  { name: 'Facilitating', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
+  { name: 'Architecting the system', tagline: 'Someone who makes sure it holds', top: 'border-t-brown', text: 'text-brown' },
+]
+
 export default function Throughline() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
@@ -23,7 +48,6 @@ export default function Throughline() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">The model</p>
           <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
             The future of high school is no longer static courses and seat-time credits.
           </p>
@@ -55,223 +79,73 @@ export default function Throughline() {
           </p>
         </motion.div>
 
-        {/* DIAGRAM — HTML/Tailwind layout */}
+        {/* DIAGRAM: the pathway beside the adults who guide it */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="max-w-4xl mx-auto mb-8 relative"
+          className="max-w-4xl mx-auto"
         >
-          {/* Two-column layout */}
           <div className="grid md:grid-cols-2 gap-5">
-
-            {/* ===== THE PATHWAY — left column ===== */}
-            <div className="flex flex-col">
+            {/* The pathway */}
+            <div>
               <div className="bg-indigo text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
                 The pathway
               </div>
-
-              {/* Step 1 */}
-              <div className="bg-white border border-black/8 border-t-4 border-t-indigo rounded-xl p-5">
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-light-blue flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">1</div>
-                  <div>
-                    <p className="font-bold text-[15px] text-black/80 leading-snug">Who is the student, and what do they want for their life?</p>
-                    <p className="text-sm text-black/65 mt-1.5 leading-relaxed">Existing knowledge, interests, lived experience, goals, developmental needs, and aspirations for the life they want to build.</p>
-                  </div>
-                </div>
-                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-teal-ink font-bold text-xs shrink-0 w-20">The system</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Surfaces data, history, and patterns. Asks the right questions.</span>
-                  </div>
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue-ink font-bold text-xs shrink-0 w-20">The student</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Brings knowledge, experience, and aspirations the system is built to honor.</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Arrow 1→2 */}
-              <div className="flex justify-center py-1 text-indigo/20">
-                <svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M5 0v14M1 11l4 5 4-5" stroke="currentColor" strokeWidth="2" /></svg>
-              </div>
-
-              {/* Step 2 */}
-              <div className="bg-white border border-black/8 border-t-4 border-t-indigo rounded-xl p-5">
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">2</div>
-                  <div>
-                    <p className="font-bold text-[15px] text-black/80 leading-snug">What outcomes will support their launch into the life they want?</p>
-                    <p className="text-sm text-black/65 mt-1.5 leading-relaxed">Academic foundations that prepare students for college and careers, and durable skills like communication, collaboration, self-direction, and interpersonal awareness.</p>
-                  </div>
-                </div>
-                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-teal-ink font-bold text-xs shrink-0 w-20">The system</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Maps academic foundations and durable skills to the life the student is building toward.</span>
-                  </div>
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue-ink font-bold text-xs shrink-0 w-20">The student</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Co-owns the goals. Adjusts them as self-knowledge grows.</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Arrow 2→3 */}
-              <div className="flex justify-center py-1 text-indigo/20">
-                <svg width="10" height="18" viewBox="0 0 10 18" fill="none"><path d="M5 0v14M1 11l4 5 4-5" stroke="currentColor" strokeWidth="2" /></svg>
-              </div>
-
-              {/* Step 3 */}
-              <div className="bg-white border border-black/8 border-t-4 border-t-indigo rounded-xl p-5">
-                <div className="flex items-start gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">3</div>
-                  <div>
-                    <p className="font-bold text-[15px] text-black/80 leading-snug">What experiences will prepare them?</p>
-                    <p className="text-sm text-black/65 mt-1.5 leading-relaxed">Eight experience types across context, content, and discipline: the right combination for each student.</p>
-                  </div>
-                </div>
-                <div className="border-t border-indigo/10 mt-3 pt-2.5 space-y-1.5 ml-11">
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-teal-ink font-bold text-xs shrink-0 w-20">The system</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Sequences experience types based on where the student is and what they need next.</span>
-                  </div>
-                  <div className="flex gap-2 items-baseline">
-                    <span className="text-light-blue-ink font-bold text-xs shrink-0 w-20">The student</span>
-                    <span className="text-xs text-black/65 leading-relaxed">Takes on real authority over time: choosing experiences, co-authoring their learning plan, and helping build their own schedule, with a mentor alongside.</span>
-                  </div>
-                </div>
-              </div>
+              <ol className="space-y-3">
+                {steps.map((step, i) => (
+                  <li key={step.q} className="bg-white border border-black/8 border-t-4 border-t-indigo rounded-xl p-5 flex items-start gap-3">
+                    <span
+                      className={`w-8 h-8 rounded-full ${step.dot} flex items-center justify-center text-white font-bold text-sm shrink-0`}
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p className="font-bold text-[15px] text-black leading-snug">{step.q}</p>
+                      <p className="text-sm text-black/65 mt-1 leading-relaxed">{step.a}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
 
-            {/* ===== HUMAN-CENTERED GUIDANCE — right column ===== */}
-            <div className="flex flex-col">
+            {/* Human-centered guidance */}
+            <div>
               <div className="bg-orange text-black text-center font-bold text-lg py-3 rounded-xl mb-3">
                 Human-centered guidance
               </div>
-
-              {/* Intro */}
-              <div className="text-center mb-3 px-2">
-                <p className="font-bold text-[15px] text-black/85 leading-snug mb-1">
-                  Being known and being challenged both depend on the adults around a student.
-                  Summit 3.0 organizes that work into four specialized capacities, held across
-                  the adults around a student.
-                </p>
-                <p className="text-sm text-black/65 leading-relaxed">
-                  One person may carry more than one. No one is expected to do all four alone.
-                </p>
-              </div>
-
-              {/* Four capacity cards — match the pathway question card treatment */}
-              <div className="space-y-2 flex-1">
-                {/* M — Mentoring (orange) */}
-                <div className="bg-white border border-black/8 border-t-4 border-t-orange rounded-xl p-5">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">M</div>
-                    <div>
-                      <p className="font-bold text-[15px] text-orange-ink leading-snug">Mentoring</p>
-                      <p className="text-sm font-bold italic text-black/75 mt-0.5 leading-snug">Someone who knows you</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-black/65 leading-relaxed ml-11">
-                    Knows each student well over years, holds the whole person, and coaches both the learning and the pathway.
-                  </p>
-                </div>
-
-                {/* C — Content expertise (indigo) */}
-                <div className="bg-white border border-black/8 border-t-4 border-t-indigo rounded-xl p-5">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-indigo flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">C</div>
-                    <div>
-                      <p className="font-bold text-[15px] text-indigo leading-snug">Providing content expertise</p>
-                      <p className="text-sm font-bold italic text-black/75 mt-0.5 leading-snug">Someone who teaches you</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-black/65 leading-relaxed ml-11">
-                    Delivers targeted instruction at just the right time, when a student hits something hard.
-                  </p>
-                </div>
-
-                {/* F — Facilitating (teal) */}
-                <div className="bg-white border border-black/8 border-t-4 border-t-teal rounded-xl p-5">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">F</div>
-                    <div>
-                      <p className="font-bold text-[15px] text-teal-ink leading-snug">Facilitating</p>
-                      <p className="text-sm font-bold italic text-black/75 mt-0.5 leading-snug">Someone who challenges you</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-black/65 leading-relaxed ml-11">
-                    Creates the conditions for students to think together through interdisciplinary, interconnected experiences.
-                  </p>
-                </div>
-
-                {/* S — Architecting the system (brown) */}
-                <div className="bg-white border border-black/8 border-t-4 border-t-brown rounded-xl p-5">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="w-8 h-8 rounded-full bg-brown flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">S</div>
-                    <div>
-                      <p className="font-bold text-[15px] text-brown leading-snug">Architecting the system</p>
-                      <p className="text-sm font-bold italic text-black/75 mt-0.5 leading-snug">Someone who makes sure it holds</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-black/65 leading-relaxed ml-11">
-                    Sees and manages the complexity of education at scale, so no student falls through.
-                  </p>
-                </div>
-              </div>
-
-              {/* Tagline */}
-              <p className="text-center text-orange-ink font-bold text-xs leading-relaxed mt-3">
-                The right adult, in the right role, at the right moment.
+              <p className="text-sm text-black/70 text-center leading-relaxed mb-3 px-2">
+                Four capacities, shared across the adults around each student.
               </p>
+              <ul className="grid grid-cols-2 gap-3">
+                {capacities.map((c) => (
+                  <li key={c.name} className={`bg-white border border-black/8 border-t-4 ${c.top} rounded-xl p-4`}>
+                    <p className={`font-bold text-[15px] leading-snug ${c.text}`}>{c.name}</p>
+                    <p className="text-sm italic text-black/70 mt-1 leading-snug">{c.tagline}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* ===== FOUNDATION CALLOUT ===== */}
-          <div className="mt-5 border-l-4 border-orange bg-peach/40 rounded-r-xl px-5 py-4">
-            <p className="text-orange-ink font-bold text-sm mb-1">Foundation</p>
-            <p className="text-base md:text-lg font-bold text-black leading-snug">Rooted in community.</p>
-            <p className="text-sm text-black/70 mt-1 leading-relaxed">
-              Students belong. Adults share purpose. Families are partners.
-            </p>
-          </div>
+          <p className="text-center text-2xl md:text-3xl font-bold text-indigo mt-12 leading-snug">
+            The right adult, in the right role, at the right moment.
+          </p>
         </motion.div>
 
-        {/* A day that flexes on a foundation that does not */}
-        <motion.div
+        {/* Foundation */}
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-3xl mx-auto mt-12 mb-10"
+          className="max-w-3xl mx-auto mt-8 text-center text-base md:text-lg text-black/75 leading-relaxed"
         >
-          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
-            A day that flexes on a foundation that does not
-          </h3>
-          <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            Every student begins the day in community with the same long-term mentor and the same
-            group of peers. The learning experiences change based on what each student needs. The
-            people, the belonging, and the daily rhythm stay constant.
-          </p>
-        </motion.div>
-
-        {/* Tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="text-center"
-        >
-          <p className="text-xl md:text-2xl font-bold">
-            <span className="text-indigo">Pathway-driven.</span>{' '}
-            <span className="text-orange-ink">Human-centered.</span>{' '}
-            <span className="text-teal">Community-rooted.</span>
-          </p>
-        </motion.div>
-
+          All of it rests on community. Every student starts the day with the same long-term mentor
+          and the same group of peers, and families are partners in the work, so even as each
+          student's learning changes to fit what they need, the people who know them stay constant.
+        </motion.p>
       </div>
     </section>
   )
