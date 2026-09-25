@@ -23,7 +23,7 @@ const capacities = [
   { name: 'Mentoring', tagline: 'Someone who knows you', top: 'border-t-orange', text: 'text-orange-ink' },
   { name: 'Content expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
   { name: 'Facilitating', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
-  { name: 'Architecting the system', tagline: 'Someone who makes sure it holds', top: 'border-t-brown', text: 'text-brown' },
+  { name: 'Architecting the system', tagline: 'Someone who makes sure it all works together', top: 'border-t-brown', text: 'text-brown' },
 ]
 
 export default function Throughline() {
