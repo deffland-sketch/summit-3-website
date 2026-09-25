@@ -16,15 +16,18 @@ link and a sticky `Nav`.
 
 1. **Hero** — photo + copy two-column, headline stats, pull quote
 2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities)
-3. **StudentStories** (`#student-day`) — 3 expandable student day-in-the-life cards (Marco, Amara, David)
-4. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
-5. **WhatStudentsBuild** (`#what-students-build`) — academic foundations vs durable skills
-6. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (400 students across a school day), tabs for students/educators/spaces/partners
-7. **Unlocks** (`#how-it-works`) — 3 expandable cards (tech stack, talent model, flexible time)
-8. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
-9. **WhySummit** (`#why-summit`) — outcome stats and track record
-10. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
-11. **Close** (`#invitation`) — CTA, "Get in touch" email link, founder bios
+3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
+   Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
+4. **StudentStories** (`#student-day`) — 3 composite students in the same class (Marco, Amara,
+   David), tabbed across three views: traditional schedule, spring of 9th grade, 11th grade
+5. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
+6. **WhatStudentsBuild** (`#what-students-build`) — academic foundations vs durable skills
+7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (400 students across a school day), tabs for students/educators/spaces/partners
+8. **Unlocks** (`#how-it-works`) — 3 expandable cards (tech stack, talent model, flexible time)
+9. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
+10. **WhySummit** (`#why-summit`) — outcome stats and track record
+11. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
+12. **Close** (`#invitation`) — CTA, "Get in touch" email link, founder bios
 
 `TheBuild.jsx` exists but is **not rendered** — its listening-tour and proof-point
 content was absorbed into WhyNow and WhySummit. Its "Built across our system"

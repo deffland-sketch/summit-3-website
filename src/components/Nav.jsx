@@ -10,7 +10,8 @@ import { useEffect, useState } from 'react'
  */
 const links = [
   { href: '#the-model', label: 'The model' },
-  { href: '#student-day', label: 'A day' },
+  { href: '#purpose', label: 'Purpose' },
+  { href: '#student-day', label: 'Three students' },
   { href: '#whole-school', label: 'The school' },
   { href: '#how-it-works', label: 'How it works' },
   { href: '#why-summit', label: 'Why Summit' },

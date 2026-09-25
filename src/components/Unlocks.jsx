@@ -173,8 +173,9 @@ const unlocks = [
         <p className="font-bold text-black/80">Four capacities:</p>
         <ul className="space-y-3">
           <li>
-            <span className="font-bold text-teal-ink">Mentoring</span>: knowing students deeply and walking alongside
-            them on their pathway. Every conversation grounded in data and the student's goals and growth.
+            <span className="font-bold text-teal-ink">Mentoring</span>: a long-term mentor who knows each student deeply
+            and coaches both their learning and their pathway. Every conversation grounded in data and the
+            student's goals and growth.
           </li>
           <li>
             <span className="font-bold text-teal-ink">Providing content expertise</span>: delivering targeted instruction

@@ -175,7 +175,7 @@ export default function Throughline() {
                     </div>
                   </div>
                   <p className="text-[11px] text-black/55 leading-relaxed ml-11">
-                    Builds deep relationships and knows each student well, holding the whole person, present every day.
+                    Knows each student well over years, holds the whole person, and coaches both the learning and the pathway.
                   </p>
                 </div>
 
@@ -251,8 +251,8 @@ export default function Throughline() {
             A day that flexes on a foundation that does not
           </h3>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            Every student begins the day in community with the same mentor and the same group of
-            peers, all year. The learning experiences change based on what each student needs. The
+            Every student begins the day in community with the same long-term mentor and the same
+            group of peers. The learning experiences change based on what each student needs. The
             people, the belonging, and the daily rhythm stay constant.
           </p>
         </motion.div>

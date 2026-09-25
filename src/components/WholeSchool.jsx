@@ -152,7 +152,7 @@ function StudentBreakdown({ data }) {
 function AdultBreakdown({ adults }) {
   const eduTotal = adults.mentors + adults.contentExperts + adults.facilitators + adults.flex
   const rows = [
-    { label: 'Mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'community circles, reflection, pathway conversations' },
+    { label: 'Mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'community circles, learning coaching, pathway conversations' },
     { label: 'Content Experts', count: adults.contentExperts, max: 8, color: brand.indigo, desc: 'small-group expert instruction, targeted skills' },
     { label: 'Facilitators', count: adults.facilitators, max: 6, color: brand.teal, desc: 'project studios, discussion circles, field coordination' },
     { label: 'Flex educators', count: adults.flex, max: 4, color: brand.lightBlue, desc: 'independent practice support, peer tutoring, dual enrollment' },

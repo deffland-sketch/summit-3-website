@@ -1,6 +1,7 @@
 import { MotionConfig } from 'framer-motion'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import Purpose from './components/Purpose'
 import StudentStories from './components/StudentStories'
 import LearningExperiences from './components/LearningExperiences'
 import WhatStudentsBuild from './components/WhatStudentsBuild'
@@ -36,6 +37,7 @@ function App() {
           <main id="main">
             <Hero />
             <Throughline />
+            <Purpose />
             <StudentStories />
             <LearningExperiences />
             <WhatStudentsBuild />
