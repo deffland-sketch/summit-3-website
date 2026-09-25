@@ -7,7 +7,7 @@ export default function WhatStudentsBuild() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-white"
+      className="py-20 md:py-28 px-6 bg-mint"
       ref={ref}
       id="what-students-build"
       aria-labelledby="what-students-build-heading"
@@ -41,10 +41,10 @@ export default function WhatStudentsBuild() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-indigo/5 border border-indigo/10 rounded-xl p-6 md:p-8"
+            className="bg-white border-t-4 border-indigo rounded-xl p-6 md:p-8"
           >
             <h3 className="text-xl font-bold text-indigo mb-2">Academic foundations</h3>
-            <p className="text-base italic text-black/50 mb-4">
+            <p className="text-sm font-bold italic text-indigo mb-4">
               Understanding the world through math, science, history, and language.
             </p>
             <p className="text-base text-black/70 leading-relaxed">
@@ -59,10 +59,10 @@ export default function WhatStudentsBuild() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-teal/5 border border-teal/10 rounded-xl p-6 md:p-8"
+            className="bg-white border-t-4 border-teal rounded-xl p-6 md:p-8"
           >
-            <h3 className="text-xl font-bold text-teal mb-2">Durable skills</h3>
-            <p className="text-base italic text-black/50 mb-4">
+            <h3 className="text-xl font-bold text-indigo mb-2">Durable skills</h3>
+            <p className="text-sm font-bold italic text-teal-ink mb-4">
               The transferable capacities that make knowledge usable and life navigable.
             </p>
             <p className="text-base text-black/70 leading-relaxed">

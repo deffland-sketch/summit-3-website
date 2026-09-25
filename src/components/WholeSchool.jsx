@@ -140,7 +140,7 @@ function StudentBreakdown({ data }) {
             <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} aria-hidden="true" />
             <div className="min-w-0">
               <p className="text-white font-bold text-sm leading-tight">{count}</p>
-              <p className="text-white/75 text-[11px] leading-tight truncate">{experienceTypes[i].name}</p>
+              <p className="text-white/80 text-xs leading-tight truncate">{experienceTypes[i].name}</p>
             </div>
           </div>
         ) : null
@@ -197,7 +197,7 @@ function AdultBreakdown({ adults }) {
                 style={{ backgroundColor: r.color }}
               />
             </div>
-            <p className="text-white/65 text-[11px]">{r.desc}</p>
+            <p className="text-white/75 text-xs">{r.desc}</p>
           </div>
         ))}
       </div>
@@ -244,11 +244,11 @@ function SpaceBreakdown({ spaces }) {
                 ))}
               </div>
               <div className="flex items-baseline justify-between">
-                <p className="text-white/65 text-[11px]">{r.desc}</p>
+                <p className="text-white/75 text-xs">{r.desc}</p>
               </div>
               <p className="text-white font-bold text-lg mt-1">
                 {r.count}<span className="text-white/55 text-xs font-normal">/{r.of}</span>
-                {utilPct === 100 && <span className="text-orange text-[10px] font-bold ml-2">Full</span>}
+                {utilPct === 100 && <span className="text-orange text-xs font-bold ml-2">Full</span>}
               </p>
             </div>
           )
@@ -390,7 +390,7 @@ export default function WholeSchool() {
                     onClick={() => setActiveIdx(i)}
                   />
                 </div>
-                <p className={`text-[9px] md:text-[11px] mt-2 whitespace-nowrap transition-colors ${
+                <p className={`text-[10px] md:text-xs mt-2 whitespace-nowrap transition-colors ${
                   activeIdx === i ? 'text-orange font-bold' : 'text-white/60'
                 }`}>
                   {s.time.replace(':00 ', ' ').replace(' am', 'a').replace(' pm', 'p')}

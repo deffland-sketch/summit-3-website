@@ -58,7 +58,7 @@ export default function WhySummit() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="bg-indigo/5 rounded-xl p-6 border border-indigo/10"
+            className="bg-white rounded-xl p-6 border border-black/8 border-t-4 border-t-indigo"
           >
             <p className="text-sm text-black/50 font-bold mb-2">Average graduate annual salary</p>
             <div className="flex items-end gap-4">
@@ -67,8 +67,8 @@ export default function WhySummit() {
                 <p className="text-sm font-bold text-indigo/70 mt-1">Summit graduates</p>
               </div>
               <div className="pb-1">
-                <p className="text-2xl md:text-3xl font-bold text-black/20">$70.4K</p>
-                <p className="text-xs text-black/30 mt-1">Peer charter graduates</p>
+                <p className="text-2xl md:text-3xl font-bold text-black/45">$70.4K</p>
+                <p className="text-xs text-black/55 mt-1">Peer charter graduates</p>
               </div>
             </div>
             {/* Visual bar comparison */}
@@ -83,7 +83,7 @@ export default function WhySummit() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.18 }}
-            className="bg-teal/5 rounded-xl p-6 border border-teal/10"
+            className="bg-white rounded-xl p-6 border border-black/8 border-t-4 border-t-teal"
           >
             <p className="text-sm text-black/50 font-bold mb-2">Graduates in strong early jobs</p>
             <div className="flex items-end gap-4">
@@ -92,8 +92,8 @@ export default function WhySummit() {
                 <p className="text-sm font-bold text-teal-ink mt-1">Summit graduates</p>
               </div>
               <div className="pb-1">
-                <p className="text-2xl md:text-3xl font-bold text-black/20">43%</p>
-                <p className="text-xs text-black/30 mt-1">Peer charter graduates</p>
+                <p className="text-2xl md:text-3xl font-bold text-black/45">43%</p>
+                <p className="text-xs text-black/55 mt-1">Peer charter graduates</p>
               </div>
             </div>
             <div className="mt-4 space-y-1.5">
@@ -121,7 +121,7 @@ export default function WhySummit() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.4, delay: 0.34 }}
-            className="text-center bg-orange/8 rounded-xl p-5 border border-orange/15"
+            className="text-center bg-white rounded-xl p-5 border border-black/8 border-t-4 border-t-orange"
           >
             <p className="text-3xl md:text-4xl font-bold text-indigo mb-1">100K+</p>
             <p className="text-sm text-black/60 font-bold">Students reached via Summit Learning</p>
@@ -137,7 +137,7 @@ export default function WhySummit() {
           >
             <p className="text-3xl md:text-4xl font-bold text-indigo mb-1">99%</p>
             <p className="text-sm text-black/60 font-bold">Four-year college acceptance</p>
-            <p className="text-xs text-black/35 mt-1">Class of 2025</p>
+            <p className="text-xs text-black/55 mt-1">Class of 2025</p>
           </motion.div>
         </div>
 

@@ -1,6 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { brand } from '../palette'
+import { brand, ink } from '../palette'
+
+// Brand colors are fills; text in a need's color uses its ink variant.
+const inkFor = (hex) => ink[Object.keys(brand).find((k) => brand[k] === hex)] ?? hex
 
 const needs = [
   {
@@ -70,9 +73,7 @@ function NeedCard({ need }) {
         style={{ backgroundColor: need.color }}
       />
 
-      <div className="bg-white rounded-xl overflow-hidden shadow-sm"
-        style={{ borderLeft: `4px solid ${need.color}` }}
-      >
+      <div className="bg-white rounded-xl overflow-hidden border border-black/5">
         {/* Accent bar that fills on scroll */}
         <div className="px-5 pt-4">
           <AccentBar color={need.color} inView={inView} />
@@ -80,19 +81,19 @@ function NeedCard({ need }) {
 
         <div className="p-5 pt-3">
           {/* Header */}
-          <p className="text-xs font-bold tracking-wide mb-1" style={{ color: need.color }}>
-            {need.name.toUpperCase()}
+          <p className="text-sm font-bold mb-1" style={{ color: inkFor(need.color) }}>
+            {need.name}
           </p>
           <h3 className="text-base md:text-lg font-bold text-black mb-4">{need.question}</h3>
 
           {/* Two blocks */}
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <p className="text-[10px] font-bold text-black/50 tracking-wide mb-1.5">THE INDUSTRIAL MODEL</p>
+              <p className="text-xs font-bold text-black/60 mb-1.5">The industrial model</p>
               <p className="text-sm text-black/70 leading-relaxed">{need.industrial}</p>
             </div>
             <div className="rounded-lg p-3 -m-1" style={{ backgroundColor: need.color + '12' }}>
-              <p className="text-[10px] font-bold tracking-wide mb-1.5" style={{ color: need.color }}>SUMMIT 3.0</p>
+              <p className="text-xs font-bold mb-1.5" style={{ color: inkFor(need.color) }}>Summit 3.0</p>
               <p className="text-sm text-black leading-relaxed">{need.summit}</p>
             </div>
           </div>

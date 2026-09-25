@@ -5,12 +5,13 @@ import { Chevron } from './Chevron'
 function ExpandableCard({ unlock, color }) {
   const [open, setOpen] = useState(false)
 
-  // `text` uses the -ink variants: these cards sit on tinted backgrounds where
-  // raw brand teal and orange fall below the AA contrast floor.
+  // White cards with a single brand-color top accent, matching Purpose.
+  // `text` uses the -ink variants: raw brand teal and orange fall below the AA
+  // contrast floor as text.
   const colorMap = {
-    indigo: { bg: 'bg-indigo/10', border: 'border-indigo/20', text: 'text-indigo', icon: 'text-indigo', dot: 'bg-indigo', hoverBg: 'hover:bg-indigo/15' },
-    teal: { bg: 'bg-teal/10', border: 'border-teal/20', text: 'text-teal-ink', icon: 'text-teal-ink', dot: 'bg-teal', hoverBg: 'hover:bg-teal/15' },
-    orange: { bg: 'bg-orange/10', border: 'border-orange/20', text: 'text-orange-ink', icon: 'text-orange-ink', dot: 'bg-orange', hoverBg: 'hover:bg-orange/15' },
+    indigo: { bg: 'bg-indigo/10', top: 'border-t-indigo', text: 'text-indigo', icon: 'text-indigo', dot: 'bg-indigo', hoverBg: 'hover:bg-indigo/[0.03]' },
+    teal: { bg: 'bg-teal/10', top: 'border-t-teal', text: 'text-teal-ink', icon: 'text-teal-ink', dot: 'bg-teal', hoverBg: 'hover:bg-teal/[0.04]' },
+    orange: { bg: 'bg-orange/10', top: 'border-t-orange', text: 'text-orange-ink', icon: 'text-orange-ink', dot: 'bg-orange', hoverBg: 'hover:bg-orange/[0.05]' },
   }
   const c = colorMap[color]
 
@@ -20,7 +21,7 @@ function ExpandableCard({ unlock, color }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className={`${c.bg} border ${c.border} rounded-xl overflow-hidden`}
+      className={`bg-white border border-black/8 border-t-4 ${c.top} rounded-xl overflow-hidden`}
     >
       <button
         onClick={() => setOpen(!open)}
@@ -75,7 +76,7 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-5 text-sm text-black/70">
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Smarter, not more</h4>
           <p className="leading-relaxed">
             Technology does more of the measuring, connecting, and scheduling so adults can do more
@@ -88,7 +89,7 @@ const unlocks = [
 
         <p className="font-bold text-black/80">The tech stack has four key layers:</p>
 
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Learning management system (LMS)</h4>
           <p className="leading-relaxed">
             The interface where students and educators interact with digital representations of
@@ -100,7 +101,7 @@ const unlocks = [
           </p>
         </div>
 
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Data layer</h4>
           <p className="leading-relaxed">
             Multi-dimensional learner profiles capturing academic progress, durable skills, response
@@ -111,7 +112,7 @@ const unlocks = [
           </p>
         </div>
 
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Knowledge graph</h4>
           <p className="leading-relaxed">
             The intelligence layer that powers pathway recommendations. The AI uses it to figure out
@@ -124,7 +125,7 @@ const unlocks = [
           </p>
         </div>
 
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">How we keep students safe</h4>
           <p className="leading-relaxed">
             The system runs on student data, so protecting it is part of the design. Families own
@@ -134,7 +135,7 @@ const unlocks = [
           </p>
         </div>
 
-        <div className="bg-white/60 rounded-lg p-4">
+        <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Resource matching engine</h4>
           <p className="leading-relaxed">
             The optimization layer that takes pathway recommendations and matches them to available
@@ -202,7 +203,7 @@ const unlocks = [
         </div>
 
         <div className="mt-4 grid md:grid-cols-2 gap-4">
-          <div className="bg-white/60 rounded-lg p-4">
+          <div className="bg-black/[0.03] rounded-lg p-4">
             <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">AI handles</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">
@@ -223,7 +224,7 @@ const unlocks = [
               </li>
             </ul>
           </div>
-          <div className="bg-white/60 rounded-lg p-4 ring-1 ring-teal/20">
+          <div className="bg-black/[0.03] rounded-lg p-4 ring-1 ring-teal/20">
             <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">Adults do more of</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">
@@ -262,7 +263,7 @@ const unlocks = [
     expandedContent: (
       <div className="text-sm text-black/70">
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-white/60 rounded-lg p-4">
+          <div className="bg-black/[0.03] rounded-lg p-4">
             <h4 className="font-bold text-black/50 mb-2 text-xs tracking-wide">Traditional</h4>
             <ul className="space-y-2 text-black/50">
               <li className="flex gap-2">
@@ -283,7 +284,7 @@ const unlocks = [
               </li>
             </ul>
           </div>
-          <div className="bg-white/60 rounded-lg p-4 ring-1 ring-orange/20">
+          <div className="bg-black/[0.03] rounded-lg p-4 ring-1 ring-orange/20">
             <h4 className="font-bold text-orange-ink mb-2 text-xs tracking-wide">Summit 3.0</h4>
             <ul className="space-y-2">
               <li className="flex gap-2">

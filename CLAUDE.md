@@ -76,6 +76,10 @@ pass there and `-ink` would be wrong.
   slide deck. Only `StudentAvatar` is currently used; the rest are kept as an
   asset library.
 - `Chevron.jsx` — the shared disclosure chevron for all expandable cards.
+- Card pattern (set by `Purpose.jsx`): white cards with a single `border-t-4` brand-color
+  accent, on a tinted section background (or with a `border-black/8` outline on white).
+  Body text at `text-sm` or larger, no lighter than `text-black/60`. Eyebrows and labels are
+  sentence case: no `uppercase`, no letter-spacing.
 - All sections use Framer Motion `useInView` for scroll-triggered animations.
 - Tailwind custom colors are used as utility classes (e.g. `text-indigo`, `bg-teal`).
 

@@ -82,7 +82,7 @@ export default function Close() {
           initial={{ opacity: 0, y: 12 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-orange font-bold text-sm tracking-[0.18em] uppercase mb-4"
+          className="text-orange font-bold text-sm mb-4"
         >
           The invitation
         </motion.p>
@@ -137,7 +137,7 @@ export default function Close() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="border-t border-white/20 pt-10"
         >
-          <p className="text-white/70 font-bold text-sm tracking-[0.18em] uppercase mb-5">Who's building it</p>
+          <p className="text-white/80 font-bold text-sm mb-5">Who's building it</p>
           <div className="grid md:grid-cols-2 gap-5">
             {founders.map((f, i) => (
               <FounderCard key={f.name} founder={f} delay={0.5 + i * 0.1} />

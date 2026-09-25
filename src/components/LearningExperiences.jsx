@@ -150,7 +150,7 @@ export default function LearningExperiences() {
             aria-expanded={scienceOpen}
           >
             <div>
-              <p className="text-teal-ink font-bold text-xs tracking-[0.18em] uppercase mb-1">Learning science</p>
+              <p className="text-teal-ink font-bold text-sm mb-1">Learning science</p>
               <p className="text-base font-bold text-black">The learning science behind these</p>
             </div>
             <Chevron open={scienceOpen} className="text-teal-ink" />
