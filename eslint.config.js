@@ -34,4 +34,14 @@ export default defineConfig([
       'no-unused-vars': 'error',
     },
   },
+  // The Bookmarks Mirror Chrome extension shares the repo but not the site's
+  // runtime: it needs the `chrome` global, and its tests run under Node.
+  {
+    files: ['bookmarks-mirror/**/*.{js,mjs}'],
+    languageOptions: { globals: { ...globals.browser, ...globals.webextensions } },
+  },
+  {
+    files: ['bookmarks-mirror/test/**/*.mjs'],
+    languageOptions: { globals: globals.node },
+  },
 ])

@@ -31,6 +31,12 @@ content was absorbed into WhyNow and WhySummit. Its "Built across our system"
 detail (Sierra, Prep/Summit 780, and the network pilots) appears nowhere else on
 the site.
 
+## Unrelated folder: `bookmarks-mirror/`
+
+A personal Chrome extension (bookmarks to Google Drive mirror) that lives in this
+repo only for convenience. It is not part of the site, is not built by Vite, and
+shares no code with `src/`. See its own `DECISIONS.md` and `SETUP.md`.
+
 ## Colors
 
 Defined **twice, intentionally**, and must be kept in sync:

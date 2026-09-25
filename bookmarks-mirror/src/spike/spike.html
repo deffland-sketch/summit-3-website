@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookmarks Mirror: Phase 1 test</title>
+  <link rel="stylesheet" href="../ui.css">
+</head>
+<body>
+  <main>
+    <h1>Bookmarks Mirror: Phase 1 test</h1>
+    <p class="lede">Three steps prove the extension can sign in, make a folder in your Drive, and point a shortcut at a colleague's Doc without touching the Doc itself. Run them in order.</p>
+
+    <section aria-labelledby="s1">
+      <h2 id="s1">1. Connect your Google account</h2>
+      <p>A Google window opens and asks for permission. Read it before you approve: it should name your Cloud project and ask to see your Drive file list and manage only files this app creates.</p>
+      <button id="connect">Connect</button>
+      <div class="result" id="r1" role="status"></div>
+    </section>
+
+    <section aria-labelledby="s2">
+      <h2 id="s2">2. Create the "Bookmarks mirror" folder</h2>
+      <p>Makes one folder at the top of My Drive. If it already exists from an earlier run, it is reused.</p>
+      <button id="folder">Create folder</button>
+      <div class="result" id="r2" role="status"></div>
+    </section>
+
+    <section aria-labelledby="s3">
+      <h2 id="s3">3. Create a shortcut to a Doc you don't own</h2>
+      <p>Open a Google Doc a colleague owns and shared with you, copy the address from the top of Chrome, and paste it here.</p>
+      <label for="docUrl">Doc link</label>
+      <input id="docUrl" type="url" placeholder="https://docs.google.com/document/d/..." autocomplete="off">
+      <button id="shortcut">Create shortcut</button>
+      <button id="broad" class="secondary" hidden>Try again with full Drive permission</button>
+      <div class="result" id="r3" role="status"></div>
+    </section>
+
+    <section aria-labelledby="s4">
+      <h2 id="s4">Report for Claude</h2>
+      <p>When you're done, copy this and paste it back into the chat.</p>
+      <textarea id="report" rows="8" readonly></textarea>
+      <button id="copy" class="secondary">Copy report</button>
+    </section>
+  </main>
+  <script type="module" src="spike.js"></script>
+</body>
+</html>

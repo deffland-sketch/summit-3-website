@@ -1,0 +1,63 @@
+/* Summit palette (matches src/palette.js in the website). Brand teal and red
+   appear only as borders here, never as text. */
+:root {
+  --indigo: #4b4b96;
+  --teal: #508278;
+  --red: #e6553c;
+  --mint: #ebf5f0;
+  --peach-soft: #fff1e8;
+  --text: #1f1f2e;
+  --muted: #555566;
+  --border: #d6d6e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font: 16px/1.5 Arimo, Arial, Helvetica, sans-serif;
+}
+
+main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
+
+h1 { color: var(--indigo); font-size: 1.6rem; margin: 0 0 8px; }
+h2 { color: var(--indigo); font-size: 1.1rem; margin: 0 0 6px; }
+.lede { color: var(--muted); margin: 0 0 24px; }
+
+section { border-top: 1px solid var(--border); padding: 20px 0; }
+section p { margin: 0 0 12px; }
+
+label { display: block; font-weight: 700; margin-bottom: 4px; }
+
+input, textarea {
+  width: 100%;
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+textarea { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.85rem; }
+
+button {
+  font: inherit;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 2px solid var(--indigo);
+  background: var(--indigo);
+  color: #fff;
+  cursor: pointer;
+}
+button.secondary { background: #fff; color: var(--indigo); }
+button:disabled { opacity: 0.5; cursor: progress; }
+
+:focus-visible { outline: 3px solid #f6aa40; outline-offset: 2px; }
+
+.result:empty { display: none; }
+.result { margin-top: 12px; padding: 10px 12px; border-radius: 6px; border-left: 4px solid; }
+.result.good { background: var(--mint); border-color: var(--teal); }
+.result.bad { background: var(--peach-soft); border-color: var(--red); }
+.result a { color: var(--indigo); }

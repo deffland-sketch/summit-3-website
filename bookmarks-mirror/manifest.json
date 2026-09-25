@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmarks Mirror",
+  "version": "0.1.0",
+  "description": "Mirrors your Chrome bookmark folders into Google Drive as folders and shortcuts. One way only.",
+  "permissions": ["identity", "storage"],
+  "host_permissions": ["https://www.googleapis.com/*"],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Bookmarks Mirror"
+  },
+  "oauth2": {
+    "client_id": "PASTE_YOUR_CLIENT_ID_HERE.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive.file",
+      "https://www.googleapis.com/auth/drive.metadata.readonly"
+    ]
+  }
+}
