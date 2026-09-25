@@ -18,7 +18,7 @@ const founders = [
     name: 'Dan Effland',
     role: 'Chief of Staff and Strategy',
     photo: null,
-    bio: 'Leads the product and technology work underneath Summit 3.0: the system that maps each student’s pathway and matches them to the right learning experiences at school scale.',
+    bio: 'Works alongside the CEO to set Summit’s strategy and turn it into results, aligning people, priorities, and resources across the network. Oversees development, communications, partnerships, and innovation, and led the design of Summit 3.0 as Senior Director of Innovation.',
   },
 ]
 
