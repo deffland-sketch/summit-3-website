@@ -18,7 +18,7 @@ link and a sticky `Nav`.
 2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities)
 3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
    Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
-4. **StudentStories** (`#student-day`) — 3 composite students in the same class (Marco, Amara,
+4. **StudentStories** (`#student-day`) — 3 composite students of the same age (Marco, Amara,
    David), tabbed across three views: traditional schedule, spring of 9th grade, 11th grade
 5. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
 6. **WhatStudentsBuild** (`#what-students-build`) — academic foundations vs durable skills

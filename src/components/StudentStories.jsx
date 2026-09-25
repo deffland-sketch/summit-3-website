@@ -4,7 +4,7 @@ import { StudentAvatar } from './SummitCharacters'
 import { Chevron } from './Chevron'
 
 /*
- * Three composite students in the same class, shown at three moments:
+ * Three composite students of the same age, shown at three moments:
  *   traditional — the one schedule all three would likely share
  *   ninth       — spring of 9th grade at Summit: days still closely aligned
  *   eleventh    — 11th grade at Summit: days built around divergent pathways
@@ -71,20 +71,20 @@ const students = [
         {
           time: '10:00',
           title: 'Discussion and dialogue: Humanities seminar',
-          description: 'A seminar on a shared text. Amara and David are in the room too.',
+          description: 'A seminar on a shared text, with a humanities facilitator and a dozen peers.',
           type: 'academic',
         },
         {
           time: '11:00',
           title: 'Independent work and creation: AI-supported reading practice',
           description: 'Texts pitched at his reading edge, with a tutor that reads alongside him.',
-          annotation: 'This is the block where Marco\'s day differs most from his classmates\' this year.',
+          annotation: 'This is the block where Marco\'s day differs most from other 9th graders\' this year.',
           type: 'independent',
         },
         {
           time: '1:00',
           title: 'Real-world experience: Expedition, expose stage',
-          description: 'A week with a regional parks district. Amara is at a local newsroom and David is at a community hospital.',
+          description: 'A week with a regional parks district, one of many fields he samples this year.',
           type: 'realworld',
         },
         {
@@ -155,13 +155,13 @@ const students = [
         {
           time: '9:00',
           title: 'Direct instruction: Math small group',
-          description: 'Linear functions with the same content expert as Marco, in a different group of five.',
+          description: 'Linear functions with a math content expert and five classmates working at the same level.',
           type: 'academic',
         },
         {
           time: '10:00',
           title: 'Discussion and dialogue: Humanities seminar',
-          description: 'Same seminar as Marco and David. She says little out loud, and her written response is the sharpest in the room.',
+          description: 'She says little out loud, and her written response is the sharpest in the room.',
           type: 'academic',
         },
         {
@@ -244,13 +244,13 @@ const students = [
         {
           time: '9:00',
           title: 'Direct instruction: Math small group',
-          description: 'One level ahead of Marco and Amara, moving at his own pace with a content expert.',
+          description: 'A level ahead of most 9th graders, moving at his own pace with a content expert.',
           type: 'academic',
         },
         {
           time: '10:00',
           title: 'Discussion and dialogue: Humanities seminar',
-          description: 'Same seminar as Marco and Amara.',
+          description: 'A seminar on a shared text, with a humanities facilitator and a dozen peers.',
           type: 'academic',
         },
         {
@@ -457,11 +457,11 @@ export default function StudentStories() {
         >
           <p className="text-teal-ink font-bold text-sm tracking-wide mb-3">Meet three students</p>
           <h2 id="student-day-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
-            Same class, three pathways
+            Same age, three pathways
           </h2>
           <p className="text-lg text-black/70 max-w-2xl">
-            Marco, Amara, and David start 9th grade together. In a traditional high school, they
-            would likely follow nearly the same schedule for four years. At Summit, their days start
+            Marco, Amara, and David are the same age. In a traditional high school, they would likely
+            follow nearly the same schedule for four years. At Summit, their days start
             close together and pull apart as each of them figures out what they care about.
           </p>
           <p className="text-xs text-black/50 mt-3">Marco, Amara, and David are composites drawn from Summit students.</p>
