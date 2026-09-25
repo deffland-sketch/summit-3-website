@@ -16,7 +16,7 @@ const founders = [
   },
   {
     name: 'Dan Effland',
-    role: 'Senior Director of Innovation',
+    role: 'Chief of Staff and Strategy',
     photo: null,
     bio: 'Leads the product and technology work underneath Summit 3.0: the system that maps each student’s pathway and matches them to the right learning experiences at school scale.',
   },
