@@ -22,7 +22,7 @@ link and a sticky `Nav`.
 4. **StudentStories** (`#student-day`) — 3 composite students of the same age (Marco, Amara,
    David), tabbed across three views: traditional schedule, spring of 9th grade, 11th grade
 5. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
-6. **WhatStudentsBuild** (`#what-students-build`) — academic foundations vs durable skills
+6. **WhatStudentsBuild** (`#what-students-build`) — three outcomes: college-ready academics, durable skills, a plan and clear next step
 7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (400 students across a school day), tabs for students/educators/spaces/partners
 8. **Unlocks** (`#how-it-works`) — 3 expandable cards (tech stack, talent model, flexible time)
 9. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
