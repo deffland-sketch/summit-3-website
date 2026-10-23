@@ -39,7 +39,7 @@ const needs = [
     question: 'How do we make teaching sustainable?',
     color: brand.brown,
     industrial: 'Stable jobs with clear definitions, generations of educators built their lives around them. The role has also broadened to ask one adult to do nearly everything.',
-    summit: 'Four specialized capacities (mentoring, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
+    summit: 'Five specialized capacities (mentoring, providing content expertise, coaching how to learn, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
   },
 ]
 

@@ -160,7 +160,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (mentoring, providing content expertise, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
+      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines five specialized educator capacities (mentoring, providing content expertise, coaching how to learn, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -171,7 +171,7 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-4 text-sm text-black/70">
-        <p className="font-bold text-black/80">Four capacities:</p>
+        <p className="font-bold text-black/80">Five capacities:</p>
         <ul className="space-y-3">
           <li>
             <span className="font-bold text-teal-ink">Mentoring</span>: a long-term mentor who knows each student deeply
@@ -182,6 +182,11 @@ const unlocks = [
             <span className="font-bold text-teal-ink">Providing content expertise</span>: delivering targeted instruction
             based on data. Bringing deep subject-matter knowledge to accelerate mastery where students
             need it most.
+          </li>
+          <li>
+            <span className="font-bold text-teal-ink">Coaching how to learn</span>: helping students understand how
+            the brain actually learns, and building the habits and behaviors that make learning stick. Students
+            leave knowing how to teach themselves anything.
           </li>
           <li>
             <span className="font-bold text-teal-ink">Facilitating</span>: orchestrating projects, real-world

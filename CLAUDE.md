@@ -15,7 +15,7 @@ Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a sk
 link and a sticky `Nav`.
 
 1. **Hero** — photo + copy two-column, headline stats, pull quote
-2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities),
+2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (5 capacities),
    closing on "The right adult, in the right role, at the right moment" and a community sentence
 3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
    Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation

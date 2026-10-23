@@ -22,6 +22,7 @@ const steps = [
 const capacities = [
   { name: 'Mentoring', tagline: 'Someone who knows you', top: 'border-t-orange', text: 'text-orange-ink' },
   { name: 'Content expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
+  { name: 'Coaching how to learn', tagline: 'Someone who teaches you how you learn', top: 'border-t-light-blue', text: 'text-light-blue-ink' },
   { name: 'Facilitating', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
   { name: 'Architecting the system', tagline: 'Someone who makes sure it all works together', top: 'border-t-brown', text: 'text-brown' },
 ]
@@ -116,11 +117,16 @@ export default function Throughline() {
                 Human-centered guidance
               </div>
               <p className="text-sm text-black/70 text-center leading-relaxed mb-3 px-2">
-                Four capacities, shared across the adults around each student.
+                Five capacities, shared across the adults around each student.
               </p>
               <ul className="grid grid-cols-2 gap-3">
-                {capacities.map((c) => (
-                  <li key={c.name} className={`bg-white border border-black/8 border-t-4 ${c.top} rounded-xl p-4`}>
+                {capacities.map((c, i) => (
+                  <li
+                    key={c.name}
+                    className={`bg-white border border-black/8 border-t-4 ${c.top} rounded-xl p-4 ${
+                      i === capacities.length - 1 && capacities.length % 2 === 1 ? 'col-span-2' : ''
+                    }`}
+                  >
                     <p className={`font-bold text-[15px] leading-snug ${c.text}`}>{c.name}</p>
                     <p className="text-sm italic text-black/70 mt-1 leading-snug">{c.tagline}</p>
                   </li>
