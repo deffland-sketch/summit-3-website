@@ -3,14 +3,17 @@ import { useRef, useState } from 'react'
 import { brand } from '../palette'
 
 /*
- * School resource model:
- *   Staff: 24 educational personnel, 2 system architects, 4 admin/ops = 30 total
- *   Educational personnel break into capacities:
- *     6 mentors, 8 academic content experts, 6 facilitators, 4 flexible (shift by need)
- *   Facilities: 12 classrooms, 2 large spaces, 6 small collaboration rooms, 3 lab spaces = 23 spaces
- *   Partners: specific community and industry orgs
+ * School resource model (from "How Summit 3.0 Works", Oct 2026, scaled from a
+ * 100-student cohort to 200 at the same ratios):
+ *   Leadership and operations, fixed at 1 each: director, program coordinator,
+ *     operations and family coordinator
+ *   Educators, doubled: 6 specialist mentors (caseload ~33), 6 content experts,
+ *     2 learning strategies coaches, 2 projects facilitators = 16
+ *   ~50 partner educators: a named host at each partner organization
+ *   Home base: 6 small-group rooms, 2 practice commons, 2 seminar rooms,
+ *     2 project studios, 2 mentor nooks = 14 spaces; the city is the rest of the campus
+ *   Partner organizations are hypothetical examples, labeled as such on the page.
  */
-
 // Matches the 8 learning experience types
 const experienceTypes = [
   { name: 'Direct instruction', color: brand.indigo },
@@ -19,112 +22,117 @@ const experienceTypes = [
   { name: 'Independent work and creation', color: brand.lightBlue },
   { name: 'Presentation and performance', color: brand.red },
   { name: 'Reflection and goal-setting', color: brand.peach },
-  { name: 'Real-world experience', color: brand.brown },
+  // Brand brown would vanish on this brown section, so real-world uses the
+  // brand's light brown tint here.
+  { name: 'Real-world experience', color: '#e6e6e6' },
   { name: 'Wellbeing and community', color: brand.tanGrey },
 ]
 
 // Each time slot: students, adults deployed, spaces in use, partner activity, operational note
 const timeSlots = [
   {
-    time: '8:00 am',
+    time: '8:30 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [0,     0,       0,      0,     0,      0,      0,    400],
-    adults: { mentors: 6, contentExperts: 0, facilitators: 0, flex: 0, architects: 2, ops: 4 },
-    spaces: { classrooms: 6, large: 2, collab: 0, labs: 0 },
+    students: [0,     0,       0,      0,     0,      0,      0,    200],
+    adults: { mentors: 6, contentExperts: 6, coaches: 2, facilitators: 2, partners: 0 },
+    spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [],
-    note: 'All 400 students in community circles with their 6 mentors. Each mentor leads ~67 students across 3 mentor groups, meeting in classrooms and both large spaces. System architects review overnight data and finalize the day\'s schedule adjustments. Admin/ops team manages arrivals and logistics.',
+    note: 'Students starting in the building gather for a community launch: a shout-out and the day\'s big moments, run this week by a mentor. At 8:45 they break into small groups, each led by an educator, so all 16 educators start the day with a group of their own. Around 30 students starting at a college or partner site join a short virtual check-in from wherever they are. Their mentor and a core group of peers stay the same all year.',
   },
   {
-    time: '9:00 am',
+    time: '9:15 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [75,    60,      28,     103,   0,      50,     12,   72],
-    adults: { mentors: 3, contentExperts: 8, facilitators: 5, flex: 4, architects: 2, ops: 2 },
-    spaces: { classrooms: 10, large: 2, collab: 6, labs: 3 },
+    students: [30,    50,      20,     58,    0,      12,     30,   0],
+    adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 12 },
+    spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
-      'Peninsula Open Space Trust (Redwood City) — 4 students collecting water samples at creek site',
-      'Bay Area Community Health (El Cerrito) — 3 students in weekly shadowing placement',
-      'Mithun Architecture (Seattle) — 5 students on a site visit for their urban design project',
+      'Local community college: 18 students in morning college courses',
+      'Bay Area Community Health: 4 students in a weekly shadowing placement',
+      'Mithun Architecture: 4 students in week one of a two-week design internship',
+      'Children\'s Hospital: 4 students in a clinical internship',
     ],
-    note: '8 content experts run 10 concurrent small-group sessions across 10 classrooms — each group is 4-6 students with a targeted skill focus. 83 students in peer collaboration fill both large spaces and all 6 collab rooms. 3 facilitators coach project studios in the labs. 3 mentors are running reflection sessions. 4 flex educators float between independent practice and peer tutoring support. 4 students at career-connected learning sites, 8 at internship/shadowing placements with 3 partner organizations. 38 students work on dual enrollment courses in 2 classrooms, supervised by 2 flex educators with AI tutor support.',
+    note: 'The home base fills with small groups. Six content experts each teach a lesson to the five students ready for it this week. Nobody sits through a lesson they\'ve already mastered. Fifty students work in the practice commons with AI tutors and skills clinics while the learning strategies coaches help with planning, persistence, and attention. The projects facilitators run peer critique in the seminar rooms, and mentors coach research projects and prototype builds in the studios.',
   },
   {
-    time: '10:00 am',
+    time: '10:30 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [85,    72,      35,     95,    12,     40,     18,   43],
-    adults: { mentors: 2, contentExperts: 8, facilitators: 6, flex: 4, architects: 2, ops: 2 },
-    spaces: { classrooms: 11, large: 2, collab: 6, labs: 3 },
+    students: [30,    44,      24,     50,    6,      10,     36,   0],
+    adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 16 },
+    spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
-      'Peninsula Open Space Trust (Redwood City) — 4 students (continued)',
-      'Children\'s Hospital (Seattle) — 6 students in clinical internship placement',
-      'East Bay Housing Alliance (El Cerrito) — 8 students conducting housing policy interviews',
-      'Mithun Architecture (Seattle) — 5 students (continued site visit)',
+      'Local community college: 18 students (continued)',
+      'East Bay Housing Alliance: 8 students conducting housing policy interviews',
+      'Children\'s Hospital: 6 students in a clinical internship',
+      'Mithun Architecture: 4 students (continued)',
     ],
-    note: '95 students in peer collaboration — nearly a quarter of the school. Content experts are running 12 concurrent targeted sessions; the system architect shifted 2 groups based on yesterday\'s assessment data showing unexpected vocabulary gaps in 10th grade biology. 6 facilitators now active across project studios and discussion circles. 18 students at field sites with 4 partner orgs.',
+    note: 'One of these lessons was added overnight. A student\'s draft showed two writing skills within reach, so the engine placed her in a small-group argument-writing lesson and her phone showed the change this morning. Every educator\'s screen shows the same kind of plan: who they\'re teaching, where, and why. Exhibition rehearsals start in one of the studios.',
   },
   {
-    time: '11:00 am',
+    time: '11:30 am',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [60,    68,      45,     72,    18,     50,     35,   52],
-    adults: { mentors: 3, contentExperts: 6, facilitators: 6, flex: 4, architects: 2, ops: 3 },
-    spaces: { classrooms: 9, large: 2, collab: 6, labs: 3 },
+    students: [24,    40,      20,     54,    10,     12,     40,   0],
+    adults: { mentors: 5, contentExperts: 5, coaches: 2, facilitators: 2, partners: 18 },
+    spaces: { smallGroup: 5, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
-      'Fred Hutchinson Cancer Research Center (Seattle) — 6 students in lab internship',
-      'Redwood City Public Library — 5 students co-facilitating a youth book club',
-      'Bay Area Community Health (El Cerrito) — 3 students (continued)',
-      'AC Transit (El Cerrito) — 4 students analyzing ridership data for a civic design project',
-      'Pacific Science Center (Seattle) — 7 students assisting with exhibit prototyping',
-      'East Bay Housing Alliance — 8 students (continued interviews)',
-      'Local restaurant group (Redwood City) — 2 students in weekly operations shadowing',
+      'Local community college: 18 students (continued)',
+      'Children\'s Hospital: 6 students (continued)',
+      'Redwood City Public Library: 5 students co-facilitating a youth book club',
+      'AC Transit: 4 students analyzing ridership data for a civic design project',
+      'Mithun Architecture: 4 students (continued)',
+      'Pacific Science Center: 3 students assisting with exhibit prototyping',
     ],
-    note: 'Off-site experiences peak: 22 students in career-connected learning and 13 at internship/shadowing placements across 7 partner sites. 68 students in project studios using all 3 labs and both large spaces — teams are building tangible artifacts. 6 content experts run smaller, more targeted groups after the morning data was processed. 3 mentors hold drop-in reflection sessions in collab rooms for students transitioning between experiences.',
+    note: 'Content experts shift to writing conferences and feedback. AI has already scored this morning\'s drafts against Summit\'s rubrics and exemplars; educators review those scores, add feedback of their own, and override when they disagree. Mentors hold pathway check-ins in the mentor nooks.',
   },
   {
-    time: '12:00 pm',
+    time: '12:30 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [5,     5,       5,      10,    0,      15,     0,    360],
-    adults: { mentors: 6, contentExperts: 2, facilitators: 2, flex: 2, architects: 2, ops: 4 },
-    spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
-    partners: [],
-    note: 'Midday community time. Mentors lead lunch circles — a chance for students and adults to reconnect. System architects use this window to review the morning\'s data and adjust afternoon placements. A few students continue independent work or wrap up dual enrollment assignments. Ops coordinates afternoon field site transportation.',
-  },
-  {
-    time: '1:00 pm',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [50,    55,      25,     80,    20,     40,     55,   75],
-    adults: { mentors: 3, contentExperts: 5, facilitators: 6, flex: 4, architects: 2, ops: 4 },
-    spaces: { classrooms: 8, large: 2, collab: 6, labs: 3 },
+    students: [0,     0,       0,      0,     0,      0,      40,   160],
+    adults: { mentors: 6, contentExperts: 4, coaches: 1, facilitators: 1, partners: 18 },
+    spaces: { smallGroup: 2, commons: 2, seminar: 0, studio: 0, nook: 1 },
     partners: [
-      'Fred Hutch (Seattle) — 6 students (afternoon session)',
-      'Pacific Science Center (Seattle) — 7 students (continued)',
-      'Habitat for Humanity (Redwood City) — 10 students on a build site',
-      'Contra Costa Legal Services (El Cerrito) — 4 students observing proceedings',
-      'Genentech (Redwood City) — 5 students touring labs',
-      'City of Redwood City Office of Sustainability — 8 students presenting a water quality report',
-      'LifeLong Medical Care (El Cerrito) — 5 students (afternoon shift)',
-      'AC Transit (El Cerrito) — 4 students (continued)',
-      'Seattle Art Museum — 6 students documenting an exhibit for a media project',
+      'Local community college: 18 students (continued)',
+      'Fred Hutchinson Cancer Research Center: 6 students in a lab internship',
+      'Children\'s Hospital: 6 students (continued)',
+      'Mithun Architecture: 4 students (continued)',
+      'AC Transit: 4 students (continued)',
+      'Local restaurant group: 2 students in operations shadowing',
     ],
-    note: '85 students in project studios — the afternoon peak. 35 in career-connected learning and 20 at internship/shadowing placements across 9 sites. This is the most distributed moment of the day: students are at hospitals, government offices, construction sites, museums, and labs. 5 content experts run targeted afternoon sessions for students whose morning data showed they need reinforcement before tomorrow. 4 ops staff coordinate transportation and partner logistics.',
+    note: 'Lunch together at home base, and then the city becomes the campus. The operations and family coordinator handles transit passes and scheduled transport, and every student checks in through the learning platform when they arrive at a site.',
   },
   {
-    time: '2:00 pm',
+    time: '1:30 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [35,    35,      15,     50,    15,     93,     70,   87],
-    adults: { mentors: 4, contentExperts: 3, facilitators: 5, flex: 3, architects: 2, ops: 4 },
-    spaces: { classrooms: 6, large: 1, collab: 6, labs: 2 },
+    students: [12,    24,      10,     34,    8,      12,     100,  0],
+    adults: { mentors: 4, contentExperts: 4, coaches: 2, facilitators: 2, partners: 30 },
+    spaces: { smallGroup: 3, commons: 1, seminar: 1, studio: 2, nook: 1 },
     partners: [
-      'Multiple field sites (9 orgs) — 70 students across the city',
+      'Local community college: 24 students in afternoon college courses',
+      'Habitat for Humanity: 10 students on a build site',
+      'LifeLong Medical Care: 8 students in paid CNA clinical rotations',
+      'East Bay Housing Alliance: 8 students (continued interviews)',
+      'City of Redwood City Office of Sustainability: 8 students presenting a water quality report',
+      'Local employers: 8 students at paid work or apprenticeships',
+      'Peninsula Open Space Trust: 6 students on a creek water study',
+      'Children\'s Hospital: 6 students (continued)',
+      'Fred Hutchinson Cancer Research Center: 6 students (continued)',
+      'Genentech: 6 students touring labs',
+      'Seattle Art Museum: 6 students documenting an exhibit for a media project',
+      'Mithun Architecture: 4 students (continued)',
     ],
-    note: '45 students in career-connected learning and 25 at internship/shadowing placements — 70 students off-site, more than any single classroom holds. 93 in reflection and planning: mentors are running end-of-day pathway conversations in collab rooms and classrooms, helping students process what happened today and connect it to their broader goals. System architects are already building tomorrow\'s schedule based on today\'s data. The building is quieter — much of the school is out in the community.',
+    note: 'Half the school is out in the world: water studies, job shadows, a paid clinical rotation, a two-week design internship, college courses. Each site has a named partner educator who hosts or teaches, for an hour or a whole internship. Students on a long placement pick their academic work back up when they return. Back at home base, a smaller group keeps working with content experts and in the studios.',
   },
   {
     time: '3:00 pm',
     //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [0,     5,       0,      10,    0,      55,     5,    325],
-    adults: { mentors: 6, contentExperts: 0, facilitators: 2, flex: 0, architects: 2, ops: 4 },
-    spaces: { classrooms: 6, large: 2, collab: 2, labs: 0 },
-    partners: [],
-    note: 'Closing community circles. Mentors check in with each student one more time. Field students return and debrief. System architects finalize tomorrow\'s first draft: which students need to be grouped differently, which content experts should shift focus, which spaces to reconfigure. The schedule gets more precise every cycle.',
+    students: [0,     0,       0,      0,     0,      150,    30,   20],
+    adults: { mentors: 6, contentExperts: 3, coaches: 2, facilitators: 1, partners: 12 },
+    spaces: { smallGroup: 2, commons: 2, seminar: 1, studio: 1, nook: 2 },
+    partners: [
+      'Local employers: 12 students starting paid shifts',
+      'Local community college: 10 students in late-afternoon courses',
+      'LifeLong Medical Care: 8 students finishing clinical shifts',
+    ],
+    note: 'The day closes wherever students are. They log what they did in the learning platform and rate their own progress, and educators add observation notes. Each mentor scans a caseload of about 33: most on track, a few who need a nudge, a few ready for validation. Overnight, the engine makes small adjustments to tomorrow. Then it\'s team practice, clubs, or a shift at work.',
   },
 ]
 
@@ -150,30 +158,29 @@ function StudentBreakdown({ data }) {
 }
 
 function AdultBreakdown({ adults }) {
-  const eduTotal = adults.mentors + adults.contentExperts + adults.facilitators + adults.flex
+  const eduTotal = adults.mentors + adults.contentExperts + adults.coaches + adults.facilitators
   const rows = [
-    { label: 'Mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'community circles, learning coaching, pathway conversations' },
-    { label: 'Content Experts', count: adults.contentExperts, max: 8, color: brand.indigo, desc: 'small-group expert instruction, targeted skills' },
-    { label: 'Facilitators', count: adults.facilitators, max: 6, color: brand.teal, desc: 'project studios, discussion circles, field coordination' },
-    { label: 'Flex educators', count: adults.flex, max: 4, color: brand.lightBlue, desc: 'independent practice support, peer tutoring, dual enrollment' },
-    { label: 'System architects', count: adults.architects, max: 2, color: brand.tanGrey, desc: 'schedule optimization, data review, partner coordination' },
-    { label: 'Admin/ops', count: adults.ops, max: 4, color: brand.peach, desc: 'transportation, logistics, facilities, partner communication' },
+    { label: 'Specialist mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'caseloads of about 33, pathway guidance with students and families, project coaching' },
+    { label: 'Content experts', count: adults.contentExperts, max: 6, color: brand.indigo, desc: 'math, science, reading and writing: small-group lessons and feedback, scheduled by need' },
+    { label: 'Learning strategies coaches', count: adults.coaches, max: 2, color: brand.lightBlue, desc: 'planning, habits, persistence, managing attention and devices' },
+    { label: 'Projects facilitators', count: adults.facilitators, max: 2, color: brand.teal, desc: 'student-directed Expedition projects and peer critique' },
+    { label: 'Partner educators', count: adults.partners, max: 50, color: brand.peach, desc: 'a named host at each partner site, for an hour or a whole internship' },
   ]
   return (
     <div>
       {/* Summary header */}
-      <div className="flex items-baseline gap-4 mb-4 pb-3 border-b border-white/15">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4 pb-3 border-b border-white/15">
         <div>
           <span className="text-3xl font-bold text-white">{eduTotal}</span>
-          <span className="text-white/70 text-sm ml-1">of 24 educators</span>
+          <span className="text-white/70 text-sm ml-1">of 16 Summit educators</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white">{adults.architects}</span>
-          <span className="text-white/70 text-sm ml-1">architects</span>
+          <span className="text-xl font-bold text-white">{adults.partners}</span>
+          <span className="text-white/70 text-sm ml-1">partner educators</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white">{adults.ops}</span>
-          <span className="text-white/70 text-sm ml-1">ops</span>
+          <span className="text-xl font-bold text-white">3</span>
+          <span className="text-white/70 text-sm ml-1">leading the school: director, program coordinator, operations and family coordinator</span>
         </div>
       </div>
 
@@ -185,7 +192,7 @@ function AdultBreakdown({ adults }) {
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} aria-hidden="true" />
                 <span className="text-white text-sm font-bold">{r.label}</span>
               </div>
-              <span className="text-white font-bold text-lg">{r.count}<span className="text-white/55 text-xs font-normal ml-1">/{r.max}</span></span>
+              <span className="text-white font-bold text-lg">{r.count}<span className="text-white/55 text-xs font-normal ml-1">/{r.max === 50 ? '~50' : r.max}</span></span>
             </div>
             {/* Horizontal bar */}
             <div className="h-2.5 bg-white/15 rounded-full overflow-hidden mb-1">
@@ -206,20 +213,21 @@ function AdultBreakdown({ adults }) {
 }
 
 function SpaceBreakdown({ spaces }) {
-  const total = spaces.classrooms + spaces.large + spaces.collab + spaces.labs
-  const pct = Math.round((total / 23) * 100)
+  const total = spaces.smallGroup + spaces.commons + spaces.seminar + spaces.studio + spaces.nook
+  const pct = Math.round((total / 14) * 100)
   const rows = [
-    { label: 'Classrooms', count: spaces.classrooms, of: 12, color: brand.indigo, icon: '▪', desc: 'small-group instruction, independent work, dual enrollment' },
-    { label: 'Large spaces', count: spaces.large, of: 2, color: brand.orange, icon: '▪', desc: 'peer collaboration, community circles, presentations' },
-    { label: 'Collaboration rooms', count: spaces.collab, of: 6, color: brand.teal, icon: '▪', desc: 'discussion circles, reflection, peer tutoring' },
-    { label: 'Lab spaces', count: spaces.labs, of: 3, color: brand.lightBlue, icon: '▪', desc: 'project studios, hands-on experiments, maker work' },
+    { label: 'Small-group rooms', count: spaces.smallGroup, of: 6, color: brand.indigo, desc: 'lessons for the five students ready this week, writing conferences, demos' },
+    { label: 'Practice commons', count: spaces.commons, of: 2, color: brand.teal, desc: 'AI tutors, skills clinics, community launch, lunch' },
+    { label: 'Seminar rooms', count: spaces.seminar, of: 2, color: brand.orange, desc: 'peer critique, Socratic seminar, reading circles' },
+    { label: 'Project studios', count: spaces.studio, of: 2, color: brand.lightBlue, desc: 'research projects, prototype builds, exhibition prep' },
+    { label: 'Mentor nooks', count: spaces.nook, of: 2, color: brand.peach, desc: 'pathway check-ins and goal-setting' },
   ]
   return (
     <div>
       {/* Summary header */}
       <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-white/15">
         <span className="text-3xl font-bold text-white">{total}</span>
-        <span className="text-white/70 text-sm">of 23 spaces active</span>
+        <span className="text-white/70 text-sm">of 14 home base spaces active</span>
         <span className="text-orange font-bold text-sm ml-auto">{pct}% utilization</span>
       </div>
 
@@ -264,6 +272,9 @@ function PartnerBreakdown({ partners }) {
   }
   return (
     <div className="space-y-1.5">
+      <p className="text-white/70 text-xs italic mb-2">
+        Partner organizations shown are hypothetical examples, not current partnerships.
+      </p>
       {partners.map((p, i) => (
         <div key={i} className="flex gap-2 bg-white/10 rounded-lg px-3 py-2">
           <span className="text-orange text-sm mt-0.5" aria-hidden="true">●</span>
@@ -292,7 +303,7 @@ function StackedBar({ data, time, isActive, onClick }) {
       className="flex flex-col-reverse h-full w-full cursor-pointer rounded-sm"
     >
       {data.map((value, i) => {
-        const pct = (value / 400) * 100
+        const pct = (value / 200) * 100
         if (pct < 1) return null
         return (
           <motion.span
@@ -311,7 +322,7 @@ function StackedBar({ data, time, isActive, onClick }) {
 export default function WholeSchool() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
-  const [activeIdx, setActiveIdx] = useState(1) // 9am
+  const [activeIdx, setActiveIdx] = useState(1) // 9:15am
   const [activeTab, setActiveTab] = useState('students')
 
   const slot = timeSlots[activeIdx]
@@ -344,7 +355,8 @@ export default function WholeSchool() {
             The whole school in motion
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
-            400 students. 24 educators. 23 spaces. A network of community partners.
+            200 students. 16 educators and about 50 partner educators. A home base, with the city as
+            the rest of the campus.
           </p>
         </motion.div>
 
@@ -371,7 +383,7 @@ export default function WholeSchool() {
                   : 'bg-white/15 text-white hover:bg-white/25'
               }`}
             >
-              {s.time.replace(':00 ', ' ').replace(' am', 'a').replace(' pm', 'p')}
+              {s.time.replace(':00', '').replace(' am', 'a').replace(' pm', 'p')}
             </button>
           ))}
         </div>
@@ -392,7 +404,7 @@ export default function WholeSchool() {
                 <p className={`text-[10px] md:text-xs mt-2 whitespace-nowrap transition-colors ${
                   activeIdx === i ? 'text-orange font-bold' : 'text-white/60'
                 }`}>
-                  {s.time.replace(':00 ', ' ').replace(' am', 'a').replace(' pm', 'p')}
+                  {s.time.replace(':00', '').replace(' am', 'a').replace(' pm', 'p')}
                 </p>
               </div>
             ))}
@@ -410,7 +422,7 @@ export default function WholeSchool() {
             <div className="px-5 pt-4 pb-0 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex items-center gap-3">
                 <span className="text-orange font-bold text-lg">{slot.time}</span>
-                <span className="text-white/70 text-sm">400 students · 30 staff · 23 spaces</span>
+                <span className="text-white/70 text-sm">200 students · 19 Summit staff · ~50 partner educators</span>
               </div>
               <div className="flex gap-1" role="tablist" aria-label="Resource view">
                 {tabs.map((t) => (
@@ -437,7 +449,7 @@ export default function WholeSchool() {
 
             {/* What is actually happening at this hour. Authored per slot in
                 `timeSlots[].note` — this is the operational detail that makes the
-                400-student claim concrete. */}
+                200-student claim concrete. */}
             <div className="px-5 pt-3">
               <p className="text-white/80 text-sm leading-relaxed border-l-2 border-orange/60 pl-3">
                 {slot.note}
@@ -469,18 +481,6 @@ export default function WholeSchool() {
           </motion.div>
         </motion.div>
 
-        {/* Closing */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center text-white/85 mt-10 max-w-2xl mx-auto leading-relaxed text-sm font-medium"
-        >
-          Ten years ago, this required school and system leaders doing heroic manual work to
-          produce even a slightly flexible schedule. Now the system handles the matching, and humans
-          do what humans do best: mentor young people on their journey through expertise and connection.
-        </motion.p>
       </div>
     </section>
   )

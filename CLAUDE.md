@@ -15,7 +15,7 @@ Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a sk
 link and a sticky `Nav`.
 
 1. **Hero** — photo + copy two-column, headline stats, pull quote
-2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (5 capacities),
+2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities),
    closing on "The right adult, in the right role, at the right moment" and a community sentence
 3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
    Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
@@ -23,12 +23,14 @@ link and a sticky `Nav`.
    David), tabbed across three views: traditional schedule, spring of 9th grade, 11th grade
 5. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
 6. **WhatStudentsBuild** (`#what-students-build`) — three outcomes: college-ready academics, durable skills, a plan and clear next step
-7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (400 students across a school day), tabs for students/educators/spaces/partners
+7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (200 students across a school day), tabs for students/educators/spaces/partners.
+   Staffing follows "How Summit 3.0 Works" (Oct 2026) scaled to 200 at the same ratios; no system
+   architect role. Partner names are real organizations, labeled as hypothetical examples
 8. **Unlocks** (`#how-it-works`) — 3 expandable cards (tech stack, talent model, flexible time)
 9. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
 10. **WhySummit** (`#why-summit`) — outcome stats and track record
 11. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
-12. **Close** (`#invitation`) — CTA, "Get in touch" email link, founder bios
+12. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, founder bios
 
 `TheBuild.jsx` exists but is **not rendered** — its listening-tour and proof-point
 content was absorbed into WhyNow and WhySummit. Its "Built across our system"

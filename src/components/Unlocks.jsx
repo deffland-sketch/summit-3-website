@@ -87,41 +87,52 @@ const unlocks = [
           </p>
         </div>
 
-        <p className="font-bold text-black/80">The tech stack has four key layers:</p>
+        <p className="font-bold text-black/80">The stack has four layers:</p>
 
         <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Learning management system (LMS)</h4>
+          <h4 className="font-bold text-indigo mb-1">Learning platform</h4>
           <p className="leading-relaxed">
-            The interface where students and educators interact with digital representations of
-            learning experiences. A student might be submitting a final product, uploading a picture
-            of their work, taking a quiz, or checking into a new experience. The LMS is where all of
-            that happens. It's purpose-built for flexible, experience-based schools, managing every
-            learning experience type in a single platform: small-group instruction, project studios,
-            field experiences, dual enrollment, independent practice, and community circles.
+            One front door for everyone. A student opens it to see the week's plan, progress toward
+            outcomes, learning resources, and mentor feedback. An educator opens it to see who they're
+            teaching, where, and why. Families see a weekly update, and partners see the students they
+            host. Every other tool is reached through it.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Connected tools</h4>
+          <p className="leading-relaxed">
+            A long-term pathway planning tool, best-in-class AI-powered curricular tools, and the
+            college and partner systems that handle credits and placements, all reached through the
+            learning platform.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Intelligence layer</h4>
+          <p className="leading-relaxed">
+            Guided by a knowledge graph that links every outcome to the experiences and resources that
+            build it. From it, the engine builds each student's week from Friday goal-setting, their
+            progress, and which educators, spaces, and partner slots are open, then makes small
+            adjustments overnight. It groups students by need and flags who is ready for validation. AI
+            evaluates work against rubrics and exemplars and drafts feedback for educators to review
+            and add to.
           </p>
         </div>
 
         <div className="bg-black/[0.03] rounded-lg p-4">
           <h4 className="font-bold text-indigo mb-1">Data layer</h4>
-          <p className="leading-relaxed">
-            Multi-dimensional learner profiles capturing academic progress, durable skills, response
-            patterns, identity development, experiences, and life context. True personalization requires
-            understanding the whole student, including schedule constraints, family responsibilities,
-            and support systems. This data feeds directly into the LMS, giving System Architects and
-            mentors a complete picture of every student every day.
+          <p className="leading-relaxed mb-2">
+            <span className="font-bold text-black/80">The program record</span> holds everything the
+            program records: plans, check-ins and attendance, every piece of work and its evaluation,
+            educator notes, placements, and family communication. Summit holds it under the family's
+            data agreement, and it is what the engine and the educators work from.
           </p>
-        </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Knowledge graph</h4>
           <p className="leading-relaxed">
-            The intelligence layer that powers pathway recommendations. The AI uses it to figure out
-            not just what experience to recommend next, but to continually update each student's
-            pathway as new data comes in, incorporating competencies, credentials, experiences, and
-            labor market outcomes. It learns from alumni trajectories and longitudinal research,
-            continuously refining its understanding of what works for different students. System
-            architects review the pathway recommendations it surfaces through the LMS before
-            finalizing schedules.
+            <span className="font-bold text-black/80">The learner profile</span> is the concise,
+            portable record a student takes with them: validated competencies, badges, credentials,
+            selected work, and their plan for the future. The student owns it and chooses what to share,
+            and with whom.
           </p>
         </div>
 
@@ -134,25 +145,6 @@ const unlocks = [
             recommends. People decide.
           </p>
         </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Resource matching engine</h4>
-          <p className="leading-relaxed">
-            The optimization layer that takes pathway recommendations and matches them to available
-            resources and experiences. It charts everything dynamically across the complexity of the
-            system (educator availability, space capacity, partner schedules, student needs) to
-            produce individualized student schedules. Instead of giving all students the same resources
-            at the same time, the engine continuously matches groups of students to the resources they need,
-            producing outputs for students (coherent next steps), mentors (undermatch alerts, weakening
-            connections), and System Architects (resource prioritization and schedule adjustments).
-          </p>
-        </div>
-
-        <div className="mt-2 bg-indigo/5 rounded-lg p-3 border border-indigo/10">
-          <p className="text-xs text-black/50 leading-relaxed">
-            <span className="font-bold text-indigo/70">The flow:</span> LMS (interface) → Data layer (student profiles) → Knowledge graph (pathway intelligence) → Resource matching (schedule optimization)
-          </p>
-        </div>
       </div>
     ),
   },
@@ -160,7 +152,7 @@ const unlocks = [
     color: 'teal',
     title: 'An evolved talent model',
     summary:
-      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines five specialized educator capacities (mentoring, providing content expertise, coaching how to learn, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
+      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (mentoring, providing content expertise, coaching how to learn, and facilitating), alongside partner educators who teach and host in their own fields, so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
@@ -171,7 +163,7 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="space-y-4 text-sm text-black/70">
-        <p className="font-bold text-black/80">Five capacities:</p>
+        <p className="font-bold text-black/80">Four capacities, plus partners:</p>
         <ul className="space-y-3">
           <li>
             <span className="font-bold text-teal-ink">Mentoring</span>: a long-term mentor who knows each student deeply
@@ -193,8 +185,9 @@ const unlocks = [
             experiences, and community learning. Designing for interpersonal connection and authentic application.
           </li>
           <li>
-            <span className="font-bold text-teal-ink">Architecting the system</span>: seeing how all parts connect.
-            Managing complexity, curating partnerships and resources, ensuring quality and equity.
+            <span className="font-bold text-teal-ink">Partner educators</span>: a named host at every partner
+            organization, from a college instructor to a workplace supervisor, who teaches or hosts students for
+            anything from an hour to a full course or internship.
           </li>
         </ul>
 
@@ -266,7 +259,24 @@ const unlocks = [
       </svg>
     ),
     expandedContent: (
-      <div className="text-sm text-black/70">
+      <div className="text-sm text-black/70 space-y-4">
+        <ul className="space-y-3">
+          <li>
+            <span className="font-bold text-orange-ink">Day</span>: small adjustments overnight from the
+            day's evidence. A student's draft shows two writing skills within reach, so a 10:30 lesson is
+            added to her morning.
+          </li>
+          <li>
+            <span className="font-bold text-orange-ink">Week</span>: the engine builds each student's week
+            from Friday goal-setting, their progress, and which educators, spaces, and partner slots are
+            open. Student and mentor look it over Monday morning and confirm it.
+          </li>
+          <li>
+            <span className="font-bold text-orange-ink">Season</span>: stretches of the year can be built
+            around one experience, with academic work pausing and resuming around it. A student spends two
+            weeks full time in a hospital internship, then comes back for a three-week math intensive.
+          </li>
+        </ul>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-black/[0.03] rounded-lg p-4">
             <h4 className="font-bold text-black/50 mb-2 text-xs tracking-wide">Traditional</h4>

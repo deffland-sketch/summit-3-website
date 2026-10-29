@@ -24,7 +24,6 @@ const capacities = [
   { name: 'Content expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
   { name: 'Coaching how to learn', tagline: 'Someone who teaches you how you learn', top: 'border-t-light-blue', text: 'text-light-blue-ink' },
   { name: 'Facilitating', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
-  { name: 'Architecting the system', tagline: 'Someone who makes sure it all works together', top: 'border-t-brown', text: 'text-brown' },
 ]
 
 export default function Throughline() {
@@ -117,7 +116,7 @@ export default function Throughline() {
                 Human-centered guidance
               </div>
               <p className="text-sm text-black/70 text-center leading-relaxed mb-3 px-2">
-                Five capacities, shared across the adults around each student.
+                Four capacities, shared across the educators around each student, with a named partner educator at every site beyond school.
               </p>
               <ul className="grid grid-cols-2 gap-3">
                 {capacities.map((c, i) => (

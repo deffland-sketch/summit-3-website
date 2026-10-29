@@ -11,7 +11,7 @@ const needs = [
     question: 'How do we know students are ready?',
     color: brand.teal,
     industrial: 'Standardized assessments, course grades, and seat-time requirements. Aggregate signals that produce a credential everyone recognizes.',
-    summit: 'A living learner profile tracking academic foundations, durable skills, and real-world competencies. Evidence of readiness comes from multiple sources (assessments, project artifacts, professional feedback), making the credential precise to the student.',
+    summit: 'Assessment is continuous and tied to real work. AI evaluates student work against Summit\u2019s rubrics and exemplars, and educators review it, add their own feedback, and override when needed. Habits and durable skills earn badges as they are mastered, and industry standards validate where they exist: college credit, certifications, licensing exams. The diploma comes when every required competency is validated, on each student\u2019s own timeline.',
   },
   {
     name: 'Socialization and belonging',
@@ -25,7 +25,7 @@ const needs = [
     question: 'Where are young people during the day?',
     color: brand.indigo,
     industrial: 'A building with adults, bells, and defined periods. Students are accounted for at all times. Simple and reliable.',
-    summit: 'Students are always within a safe, purposeful structure, but that structure flexes to match what each student needs that day. Architecting the system coordinates spaces, adults, and schedules so students move between experiences safely. Safety without rigidity.',
+    summit: 'Students are always within a safe, purposeful structure, but that structure flexes to match what each student needs that day. Students check in through the learning platform wherever they are, every partner educator is background-checked, every site has a signed agreement, and families sign off on off-site placements. Safety without rigidity.',
   },
   {
     name: 'Developmentally appropriate progression',
@@ -39,7 +39,7 @@ const needs = [
     question: 'How do we make teaching sustainable?',
     color: brand.brown,
     industrial: 'Stable jobs with clear definitions, generations of educators built their lives around them. The role has also broadened to ask one adult to do nearly everything.',
-    summit: 'Five specialized capacities (mentoring, providing content expertise, coaching how to learn, facilitating, and architecting the system) so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
+    summit: 'Four specialized capacities (mentoring, providing content expertise, coaching how to learn, and facilitating), alongside partner educators who host and teach in their own fields, so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
   },
 ]
 

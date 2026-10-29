@@ -84,7 +84,7 @@ export default function Close() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-[1.1]"
         >
-          Every student with agency, momentum, and a pathway toward economic mobility.
+          Every student known deeply, challenged academically, and prepared for what comes next.
         </motion.h2>
 
         <motion.div
