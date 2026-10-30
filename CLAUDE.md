@@ -29,11 +29,11 @@ step (flexing time), what it looks like, what makes it work, why Summit.
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)
 6. **AWeek** (`#a-week`) — Amara's week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
-7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day": interactive chart of 200
+7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
    students across a day, tabs for students/educators/spaces/partners. Staffing follows "How
    Summit 3.0 Works" scaled to 200 at the same ratios. Partner names are real organizations,
    labeled as hypothetical examples
-8. **Educators** (`#educators`) — four capacities (mentoring, learning strategies coaching,
+8. **Educators** (`#educators`, white background) — four capacities (mentoring, learning strategies coaching,
    content expertise, project facilitation), partner educators, AI handles / adults do more
    of, "Live now"
 9. **Technology** (`#how-it-works`) — "Technology Recommends. People Decide.": four-layer
@@ -64,10 +64,10 @@ Defined **twice, intentionally**, and must be kept in sync:
 | Orange | `#f6aa40` | highlights, guidance, CTAs |
 | Peach | `#ffd2b4` | soft backgrounds |
 | Light Blue | `#96d2dc` | independent work, accents |
-| Brown | `#503c2d` | dark sections (WholeSchool bg) |
+| Brown | `#503c2d` | real-world experience fills, partner accents |
 | Red | `#e6553c` | presentation/performance |
 | Tan Grey | `#96a0ab` | wellbeing/community |
-| Mint | `#ebf5f0` | AtScale section background |
+| Mint | `#ebf5f0` | WholeSchool section background, soft panels |
 
 ### The `-ink` variants — read before styling text
 
@@ -80,7 +80,7 @@ So: **use `-ink` for text on light backgrounds** (`text-orange-ink`,
 swatches. Every `-ink` value clears 4.5:1 against white and against all four
 tinted section backgrounds. Indigo and brown already pass and are their own ink.
 
-On the dark sections (brown, indigo) the reverse applies — the light brand colors
+On the dark section (indigo, the Close) the reverse applies — the light brand colors
 pass there and `-ink` would be wrong.
 
 ## Key patterns
@@ -94,6 +94,8 @@ pass there and `-ink` would be wrong.
   action are used verbatim. No em-dashes, no "not X but Y," no deficit framing of educators. Never:
   landed, deliver(ed/able), spine, ship(ping), seat, "accelerat*" for student outcomes, "pathways"
   for groups of schools, or participant counts for the Fall 2025 focus groups.
+- "Pathway" is the single term for a student's plan for the life they want. Don't introduce a
+  second term for it ("plan for their future" was retired). Mentors guide it; Expeditions shape it.
 - Section headings and card titles are title case; body text and labels stay sentence case. The
   Hero vision line and the Close North Star are verbatim sentences and stay sentence case.
 - Card pattern (set by `Purpose.jsx`): white cards with a single `border-t-4` brand-color
