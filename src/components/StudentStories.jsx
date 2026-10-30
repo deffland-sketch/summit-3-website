@@ -5,9 +5,9 @@ import { Chevron } from './Chevron'
 
 /*
  * Three composite students of the same age, shown at three moments:
- *   traditional — the one schedule all three would likely share
- *   ninth       — spring of 9th grade at Summit: days still closely aligned
- *   eleventh    — 11th grade at Summit: days built around divergent pathways
+ *   traditional: the one schedule all three would likely share
+ *   ninth: spring of 9th grade at Summit: days still closely aligned
+ *   eleventh: 11th grade at Summit: days built around divergent pathways
  *
  * The comparison is the point. The color strip on each card stays visible when
  * collapsed, so switching views shows the schedules converge and pull apart.

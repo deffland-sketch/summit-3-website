@@ -4,7 +4,7 @@ import { useRef } from 'react'
 /**
  * `photo` is only set once a real headshot exists in /public/photos. Pointing at
  * a missing file made the browser fetch the SPA's index.html as an image on every
- * load, fail to decode it, and fall back — so the path stays null until the asset
+ * load, fail to decode it, and fall back: so the path stays null until the asset
  * is there and the initials monogram is the intentional default.
  */
 const founders = [

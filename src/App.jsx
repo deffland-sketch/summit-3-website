@@ -32,7 +32,7 @@ function App() {
             silently stops `position: sticky` from ever sticking. */}
         <Nav />
 
-        {/* `clip` rather than `hidden` — it contains the same horizontal overflow
+        {/* `clip` rather than `hidden`: it contains the same horizontal overflow
             from off-canvas section animations without creating a scroll container. */}
         <div className="overflow-x-clip">
           <main id="main">

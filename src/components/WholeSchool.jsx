@@ -448,7 +448,7 @@ export default function WholeSchool() {
             </div>
 
             {/* What is actually happening at this hour. Authored per slot in
-                `timeSlots[].note` — this is the operational detail that makes the
+                `timeSlots[].note`: this is the operational detail that makes the
                 200-student claim concrete. */}
             <div className="px-5 pt-3">
               <p className="text-white/80 text-sm leading-relaxed border-l-2 border-orange/60 pl-3">

@@ -49,7 +49,7 @@ export default function WhySummit() {
           </p>
         </motion.div>
 
-        {/* Stats — comparison stats with peer contrast */}
+        {/* Stats: comparison stats with peer contrast */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Salary */}
           <motion.div
@@ -114,7 +114,7 @@ export default function WhySummit() {
             <p className="text-sm text-black/60 font-bold">Graduates across Summit schools</p>
           </motion.div>
 
-          {/* Summit Learning — hero stat */}
+          {/* Summit Learning: hero stat */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

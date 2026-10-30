@@ -4,7 +4,7 @@
  * These are the same values as the `--color-*` tokens in index.css. They exist
  * here as well because several sections drive colour from data and need raw hex
  * for inline `style` (SVG fills, per-item accent borders) rather than a utility
- * class. Keep the two in sync — index.css is the reference for Tailwind classes,
+ * class. Keep the two in sync: index.css is the reference for Tailwind classes,
  * this is the reference for inline styles.
  *
  * `brand` is for fills, borders, and swatches. `ink` is for TEXT on light

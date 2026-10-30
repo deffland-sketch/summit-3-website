@@ -13,7 +13,7 @@
   --color-mint: #ebf5f0;
 
   /* Text-safe variants of the brand colors. Most of the palette is tuned for
-     fills and fails WCAG AA as text on white — brand orange is 1.9:1, peach is
+     fills and fails WCAG AA as text on white: brand orange is 1.9:1, peach is
      1.4:1, light blue is 1.7:1, tan grey 2.7:1, all below the 4.5:1 body-text
      floor. Use the `-ink` token whenever a brand color carries text on a light
      background; keep the base token for fills, borders, and swatches. Indigo
