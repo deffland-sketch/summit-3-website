@@ -23,15 +23,15 @@ const arc = [
 
 const chain = [
   {
-    title: 'A sense of purpose',
+    title: 'A Sense of Purpose',
     desc: 'Students start to name what they care about and who they want to become.',
   },
   {
-    title: 'School feels relevant',
+    title: 'School Feels Relevant',
     desc: 'A lab report, a seminar, a set of algebra problems: each one connects to a future the student can picture.',
   },
   {
-    title: 'Motivation from within',
+    title: 'Motivation From Within',
     desc: 'Students take on hard work because it moves them toward something that is theirs.',
   },
 ]
@@ -55,7 +55,7 @@ export default function Purpose() {
           className="max-w-3xl mb-10"
         >
           <h2 id="purpose-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
-            Purpose is what makes a pathway work
+            Purpose Is What Makes a Pathway Work
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
             A pathway needs something to aim at. Some students walk into 9th grade knowing exactly
@@ -77,7 +77,7 @@ export default function Purpose() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-white rounded-xl border-t-4 border-orange p-6"
           >
-            <h3 className="text-xl font-bold text-indigo mb-1">A long-term mentor</h3>
+            <h3 className="text-xl font-bold text-indigo mb-1">A Long-Term Mentor</h3>
             <p className="text-sm font-bold italic text-orange-ink mb-4">Someone who knows you, and stays</p>
             <p className="text-sm text-black/70 leading-relaxed mb-3">
               Every student has a mentor who stays with them as they grow. Mentors are with their
@@ -146,7 +146,7 @@ export default function Purpose() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-5">How it becomes motivation</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-5">How It Becomes Motivation</h3>
           <ol className="grid md:grid-cols-3 gap-4">
             {chain.map((c, i) => (
               <li key={c.title} className="relative bg-white rounded-xl p-5 border border-indigo/10">
@@ -164,6 +164,10 @@ export default function Purpose() {
               </li>
             ))}
           </ol>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed mt-8 max-w-3xl">
+            Mentoring and Expeditions already personalize two thirds of a Summit student's
+            experience. Summit 3.0 brings the same personalization to the academic core.
+          </p>
         </motion.div>
       </div>
     </section>

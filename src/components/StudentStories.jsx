@@ -30,7 +30,7 @@ const stages = [
     key: 'eleventh',
     label: '11th grade',
     caption:
-      'Two years later, their days have pulled apart. Each schedule is built around what the student cares about and needs next, and the mentor who has known them since 9th grade is still at the center.',
+      'Two years later, their days have pulled apart. What pulled their schedules apart is time flexing around each student. Each schedule is built around what the student cares about and needs next, and the mentor who has known them since 9th grade is still at the center.',
   },
 ]
 
@@ -456,7 +456,7 @@ export default function StudentStories() {
           className="mb-8"
         >
           <h2 id="student-day-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
-            Same age, three pathways
+            Same Age, Three Pathways
           </h2>
           <p className="text-lg text-black/70 max-w-2xl">
             Marco, Amara, and David are the same age. In a traditional high school, they would likely
