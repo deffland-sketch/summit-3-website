@@ -63,195 +63,10 @@ function ExpandableCard({ unlock, color }) {
 
 const unlocks = [
   {
-    color: 'indigo',
-    title: 'Technology that matches the right resources to the right groups of students at the right time',
-    summary:
-      'Summit is building a stack that customizes learning resources and matches them to the right group of students at the right time. The system sees every student, every educator, every space, and every partner, and produces schedules built around what each student needs.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
-        <path d="M3 9h18M9 3v18" stroke="currentColor" strokeWidth="2" />
-        <circle cx="15" cy="15" r="2" fill="currentColor" />
-      </svg>
-    ),
-    expandedContent: (
-      <div className="space-y-5 text-sm text-black/70">
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Smarter, not more</h4>
-          <p className="leading-relaxed">
-            Technology does more of the measuring, connecting, and scheduling so adults can do more
-            of the human work. Some of the most important parts of the day have no screen at all:
-            community, discussion, real-world experience, and time to eat and talk together. We use
-            technology where it makes learning more precise, and we protect the human and community
-            time that brings meaning and fulfillment to a student's experience.
-          </p>
-        </div>
-
-        <p className="font-bold text-black/80">The stack has four layers:</p>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Learning platform</h4>
-          <p className="leading-relaxed">
-            One front door for everyone. A student opens it to see the week's plan, progress toward
-            outcomes, learning resources, and mentor feedback. An educator opens it to see who they're
-            teaching, where, and why. Families see a weekly update, and partners see the students they
-            host. Every other tool is reached through it.
-          </p>
-        </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Connected tools</h4>
-          <p className="leading-relaxed">
-            A long-term pathway planning tool, best-in-class AI-powered curricular tools, and the
-            college and partner systems that handle credits and placements, all reached through the
-            learning platform.
-          </p>
-        </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Intelligence layer</h4>
-          <p className="leading-relaxed">
-            Guided by a knowledge graph that links every outcome to the experiences and resources that
-            build it. From it, the engine builds each student's week from Friday goal-setting, their
-            progress, and which educators, spaces, and partner slots are open, then makes small
-            adjustments overnight. It groups students by need and flags who is ready for validation. AI
-            evaluates work against rubrics and exemplars and drafts feedback for educators to review
-            and add to.
-          </p>
-        </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">Data layer</h4>
-          <p className="leading-relaxed mb-2">
-            <span className="font-bold text-black/80">The program record</span> holds everything the
-            program records: plans, check-ins and attendance, every piece of work and its evaluation,
-            educator notes, placements, and family communication. Summit holds it under the family's
-            data agreement, and it is what the engine and the educators work from.
-          </p>
-          <p className="leading-relaxed">
-            <span className="font-bold text-black/80">The learner profile</span> is the concise,
-            portable record a student takes with them: validated competencies, badges, credentials,
-            selected work, and their plan for the future. The student owns it and chooses what to share,
-            and with whom.
-          </p>
-        </div>
-
-        <div className="bg-black/[0.03] rounded-lg p-4">
-          <h4 className="font-bold text-indigo mb-1">How we keep students safe</h4>
-          <p className="leading-relaxed">
-            The system runs on student data, so protecting it is part of the design. Families own
-            their student's information. The model checks its own recommendations for bias, and a
-            human mentor reviews and owns every decision about a student's pathway. Technology
-            recommends. People decide.
-          </p>
-        </div>
-      </div>
-    ),
-  },
-  {
-    color: 'teal',
-    title: 'An evolved talent model',
-    summary:
-      'The adults in a school are the most important ingredient, and the current role has become impossible to execute well. Teacher and school leader turnover is at record highs. Summit\u2019s model defines four specialized educator capacities (mentoring, providing content expertise, coaching how to learn, and facilitating), alongside partner educators who teach and host in their own fields, so adults can develop deep expertise and live fulfilling, sustainable lives, the same outcome the model is built to give students. AI handles what AI does well; educators focus on what only humans can do.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
-        <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
-        <circle cx="5" cy="17" r="2.5" stroke="currentColor" strokeWidth="2" />
-        <circle cx="19" cy="17" r="2.5" stroke="currentColor" strokeWidth="2" />
-        <circle cx="12" cy="19" r="2.5" stroke="currentColor" strokeWidth="2" />
-      </svg>
-    ),
-    expandedContent: (
-      <div className="space-y-4 text-sm text-black/70">
-        <p className="font-bold text-black/80">Four capacities, plus partners:</p>
-        <ul className="space-y-3">
-          <li>
-            <span className="font-bold text-teal-ink">Mentoring</span>: a long-term mentor who knows each student deeply
-            and coaches both their learning and their pathway. Every conversation grounded in data and the
-            student's goals and growth.
-          </li>
-          <li>
-            <span className="font-bold text-teal-ink">Providing content expertise</span>: delivering targeted instruction
-            based on data. Bringing deep subject-matter knowledge to accelerate mastery where students
-            need it most.
-          </li>
-          <li>
-            <span className="font-bold text-teal-ink">Coaching how to learn</span>: helping students understand how
-            the brain actually learns, and building the habits and behaviors that make learning stick. Students
-            leave knowing how to teach themselves anything.
-          </li>
-          <li>
-            <span className="font-bold text-teal-ink">Facilitating</span>: orchestrating projects, real-world
-            experiences, and community learning. Designing for interpersonal connection and authentic application.
-          </li>
-          <li>
-            <span className="font-bold text-teal-ink">Partner educators</span>: a named host at every partner
-            organization, from a college instructor to a workplace supervisor, who teaches or hosts students for
-            anything from an hour to a full course or internship.
-          </li>
-        </ul>
-
-        <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
-          <p className="text-sm text-black/70 leading-relaxed">
-            <span className="font-bold text-orange-ink">Human-centered guidance is not one adult's job.</span> It's
-            a system that ensures the right adult is doing the right thing at the right moment, informed
-            by each student's pathway, helping young people situate all of their learning within the
-            broader human experience for themselves, their community, and their world.
-          </p>
-        </div>
-
-        <div className="mt-4 grid md:grid-cols-2 gap-4">
-          <div className="bg-black/[0.03] rounded-lg p-4">
-            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">AI handles</h4>
-            <ul className="space-y-2">
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
-                Instant feedback on student work
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
-                Progress monitoring and data synthesis
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
-                Curriculum customization and content delivery
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
-                Scheduling and resource matching
-              </li>
-            </ul>
-          </div>
-          <div className="bg-black/[0.03] rounded-lg p-4 ring-1 ring-teal/20">
-            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">Adults do more of</h4>
-            <ul className="space-y-2">
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
-                Meaningful dialogue about growth and goals
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
-                Metacognition and identity development
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
-                Designing rich learning experiences
-              </li>
-              <li className="flex gap-2">
-                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
-                Supporting motivation and connection
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    ),
-  },
-  {
     color: 'orange',
-    title: 'Flexible time',
+    title: 'Flexible Time',
     summary:
-      'Time is the most valuable resource in a school. Most schools treat it as fixed: every student gets the same amount of every subject, regardless of where they are. Summit 3.0 treats time as the resource we flex around what each student actually needs.',
+      'Time flexes first. Schools have long given every student the same amount of every subject, at the same pace. Summit 3.0 personalizes the academic core by flexing time around each student, so a student who is ready moves on, a student who needs more gets more, and the schedule adjusts as they grow.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
         <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
@@ -260,6 +75,12 @@ const unlocks = [
     ),
     expandedContent: (
       <div className="text-sm text-black/70 space-y-4">
+        <p className="leading-relaxed">
+          Mentoring and Expeditions are already deeply personal to each student. Flexing time brings
+          the same personalization to math, reading, writing, and science: small-group lessons for the
+          students ready this week, more practice for the students who need it, and room in the week
+          for real-world learning. Time flexes on three timescales.
+        </p>
         <ul className="space-y-3">
           <li>
             <span className="font-bold text-orange-ink">Day</span>: small adjustments overnight from the
@@ -277,6 +98,10 @@ const unlocks = [
             weeks full time in a hospital internship, then comes back for a three-week math intensive.
           </li>
         </ul>
+        <p className="leading-relaxed">
+          How far time flexes depends on a school's grade span and size. The section below shows the
+          three forms it takes across Summit.
+        </p>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-black/[0.03] rounded-lg p-4">
             <h4 className="font-bold text-black/50 mb-2 text-xs tracking-wide">Traditional</h4>
@@ -324,6 +149,190 @@ const unlocks = [
       </div>
     ),
   },
+  {
+    color: 'teal',
+    title: 'Educator Roles That Evolve With It',
+    summary:
+      'Great educators are the foundation of every Summit school, and families told us to keep them at the center. Over time, one role has been asked to carry nearly everything. Summit 3.0 organizes the work into four capacities: mentoring, learning strategies coaching, content expertise, and project facilitation. Educators typically focus on two. The network strategy is to develop expertise along the four capacities and create more flexible roles so educators can specialize in one or two, with partner educators teaching and hosting in their own fields.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <circle cx="12" cy="7" r="3" stroke="currentColor" strokeWidth="2" />
+        <circle cx="5" cy="17" r="2.5" stroke="currentColor" strokeWidth="2" />
+        <circle cx="19" cy="17" r="2.5" stroke="currentColor" strokeWidth="2" />
+        <circle cx="12" cy="19" r="2.5" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    ),
+    expandedContent: (
+      <div className="space-y-4 text-sm text-black/70">
+        <p className="font-bold text-black/80">Four capacities, plus partners. Educators typically focus on two.</p>
+        <ul className="space-y-3">
+          <li>
+            <span className="font-bold text-teal-ink">Mentoring</span>: a long-term mentor who knows each student deeply
+            and coaches both their learning and their pathway. Every conversation grounded in data and the
+            student's goals and growth.
+          </li>
+          <li>
+            <span className="font-bold text-teal-ink">Learning strategies coaching</span>: helping students understand
+            how the brain learns, and building the habits that make learning stick: planning, persistence, and
+            managing attention and devices.
+          </li>
+          <li>
+            <span className="font-bold text-teal-ink">Content expertise</span>: targeted instruction in math, science,
+            reading and writing, scheduled by need, so students master what they need next and grow faster.
+          </li>
+          <li>
+            <span className="font-bold text-teal-ink">Project facilitation</span>: running complex, student-directed
+            Expedition projects and peer critique, designed for real connection and authentic application.
+          </li>
+          <li>
+            <span className="font-bold text-teal-ink">Partner educators</span>: a named host at every partner
+            organization, from a college instructor to a workplace supervisor, who teaches or hosts students for
+            anything from an hour to a full course or internship.
+          </li>
+        </ul>
+
+        <div className="mt-4 bg-orange/5 rounded-lg p-3 border border-orange/10">
+          <p className="text-sm text-black/70 leading-relaxed">
+            <span className="font-bold text-orange-ink">Human-centered guidance is shared.</span> It's a
+            system that puts the right adult with each student at the right moment, informed by each
+            student's pathway, helping young people situate their learning within the broader human
+            experience for themselves, their community, and their world.
+          </p>
+        </div>
+
+        <div className="mt-4 grid md:grid-cols-2 gap-4">
+          <div className="bg-black/[0.03] rounded-lg p-4">
+            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">AI Handles</h4>
+            <ul className="space-y-2">
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
+                Instant feedback on student work
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
+                Progress monitoring and data synthesis
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
+                Curriculum customization and content selection
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">-</span>
+                Scheduling and resource matching
+              </li>
+            </ul>
+          </div>
+          <div className="bg-black/[0.03] rounded-lg p-4 ring-1 ring-teal/20">
+            <h4 className="font-bold text-teal-ink mb-3 text-xs tracking-wide">Adults Do More Of</h4>
+            <ul className="space-y-2">
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
+                Meaningful dialogue about growth and goals
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
+                Metacognition and identity development
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
+                Designing rich learning experiences
+              </li>
+              <li className="flex gap-2">
+                <span className="text-teal-ink mt-0.5 shrink-0">+</span>
+                Supporting motivation and connection
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    color: 'indigo',
+    title: 'Technology That Builds Each Student\u2019s Schedule',
+    summary:
+      'A learning platform builds each student\u2019s schedule from their needs and progress, and shows every educator who they\u2019re teaching, where, and why. Technology recommends. People decide.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2" />
+        <path d="M3 9h18M9 3v18" stroke="currentColor" strokeWidth="2" />
+        <circle cx="15" cy="15" r="2" fill="currentColor" />
+      </svg>
+    ),
+    expandedContent: (
+      <div className="space-y-5 text-sm text-black/70">
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Where Technology Fits</h4>
+          <p className="leading-relaxed">
+            Technology does more of the measuring, connecting, and scheduling so adults can do more
+            of the human work. Some of the most important parts of the day have no screen at all:
+            community, discussion, real-world experience, and time to eat and talk together. We use
+            technology where it makes learning more precise, and we protect the human and community
+            time that brings meaning and fulfillment to a student's experience.
+          </p>
+        </div>
+
+        <p className="font-bold text-black/80">The stack has four layers:</p>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Learning Platform</h4>
+          <p className="leading-relaxed">
+            One front door for everyone. A student opens it to see the week's plan, progress toward
+            outcomes, learning resources, and mentor feedback. An educator opens it to see who they're
+            teaching, where, and why. Families see a weekly update, and partners see the students they
+            host. Every other tool is reached through it.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Connected Tools</h4>
+          <p className="leading-relaxed">
+            A long-term pathway planning tool, best-in-class AI-powered curricular tools, and the
+            college and partner systems that handle credits and placements, all reached through the
+            learning platform.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Intelligence Layer</h4>
+          <p className="leading-relaxed">
+            Guided by a knowledge graph that links every outcome to the experiences and resources that
+            build it. From it, the engine builds each student's week from Friday goal-setting, their
+            progress, and which educators, spaces, and partner slots are open, then makes small
+            adjustments overnight. It groups students by need and flags who is ready for validation. AI
+            evaluates work against rubrics and exemplars and drafts feedback for educators to review
+            and add to.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">Data Layer</h4>
+          <p className="leading-relaxed mb-2">
+            <span className="font-bold text-black/80">The program record</span> holds everything the
+            program records: plans, check-ins and attendance, every piece of work and its evaluation,
+            educator notes, placements, and family communication. Summit holds it under the family's
+            data agreement, and it is what the engine and the educators work from.
+          </p>
+          <p className="leading-relaxed">
+            <span className="font-bold text-black/80">The learner profile</span> is the concise,
+            portable record a student takes with them: validated competencies, badges, credentials,
+            selected work, and their plan for the future. The student owns it and chooses what to share,
+            and with whom.
+          </p>
+        </div>
+
+        <div className="bg-black/[0.03] rounded-lg p-4">
+          <h4 className="font-bold text-indigo mb-1">How We Keep Students Safe</h4>
+          <p className="leading-relaxed">
+            The system runs on student data, so protecting it is part of the design. Families own
+            their student's information. The model checks its own recommendations for bias, and a
+            human mentor reviews and owns every decision about a student's pathway. Technology
+            recommends. People decide.
+          </p>
+        </div>
+      </div>
+    ),
+  },
 ]
 
 export default function Unlocks() {
@@ -345,7 +354,7 @@ export default function Unlocks() {
           className="text-center mb-6"
         >
           <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-6">
-            How it's possible
+            How It's Possible
           </h2>
         </motion.div>
 
@@ -357,29 +366,19 @@ export default function Unlocks() {
           className="bg-white rounded-xl border border-black/10 p-8 mb-12 text-left"
         >
           <p className="text-lg text-black leading-relaxed mb-4">
-            Evolving the industrial model to maximize every student's potential requires getting
-            down to fundamental principles about what a school actually is.
+            Time is a school's most valuable resource, and 150 years in, we still treat it as static.
+            Different students need different amounts of different things to learn, and we are building
+            a system where they get that.
           </p>
           <p className="text-black leading-relaxed mb-4">
-            A school can be most simply thought of as three things: a group of young people, a
-            package of outcomes and competencies, and a set of available resources. The industrial
-            model locks those three elements into a single configuration: same students, same
-            outcomes, same resources, same schedule, every day. That uniformity is what made it
-            transformative, but it's also now what makes it increasingly ineffective.
-          </p>
-          <p className="text-black leading-relaxed mb-4">
-            Students arrive with different knowledge, experiences, and interests, and need different
-            types, frequencies, and amounts of learning resources to build on what they bring. Time
-            is the most valuable resource in a school, and Summit 3.0 is designed to maximize this
-            finite resource. A redesign this comprehensive starts from these fundamentals and
-            builds the operating system that makes something better actually work.
+            Summit 3.0 personalizes the academic core by flexing time around each student. Time flexes
+            first. Educator roles and technology evolve to support it. That is what grows students faster.
           </p>
           <p className="text-black leading-relaxed">
-            The pathway model requires that operating system. Three levers unlock it:
-            <span className="font-bold text-indigo"> how technology connects students to the right
-            resources at the right time</span>,
+            Three levers make it work, in this order:
+            <span className="font-bold text-orange-ink"> how we use time</span>,
             <span className="font-bold text-teal-ink"> how we deploy talent</span>, and
-            <span className="font-bold text-orange-ink"> how we use time</span>.
+            <span className="font-bold text-indigo"> how technology supports both</span>.
           </p>
         </motion.div>
 
