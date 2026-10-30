@@ -9,12 +9,12 @@ import { useEffect, useState } from 'react'
  * the "Get in touch" CTA stays visible at every width.
  */
 const links = [
-  { href: '#the-model', label: 'The model' },
-  { href: '#purpose', label: 'Purpose' },
-  { href: '#student-day', label: 'Three students' },
+  { href: '#why-change', label: 'Why change' },
+  { href: '#what-we-have', label: 'What we have' },
+  { href: '#next-step', label: 'The next step' },
+  { href: '#a-week', label: 'A week' },
   { href: '#whole-school', label: 'The school' },
   { href: '#how-it-works', label: 'How it works' },
-  { href: '#across-summit', label: 'Across Summit' },
   { href: '#why-summit', label: 'Why Summit' },
 ]
 

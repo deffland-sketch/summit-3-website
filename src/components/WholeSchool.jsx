@@ -119,7 +119,7 @@ const timeSlots = [
       'Seattle Art Museum: 6 students documenting an exhibit for a media project',
       'Mithun Architecture: 4 students (continued)',
     ],
-    note: 'Half the school is out in the world: water studies, job shadows, a paid clinical rotation, a two-week design internship, college courses. Each site has a named partner educator who hosts or teaches, for an hour or a whole internship. Students on a long placement pick their academic work back up when they return. Back at home base, a smaller group keeps working with content experts and in the studios.',
+    note: 'Half the school is out in the world. Amara shadows a reporter, Marco tests creek water on a water study, David starts a paid clinical rotation, and others are in a two-week design internship or college courses. Each site has a named partner educator who hosts or teaches, for an hour or a whole internship. Students on a long placement pick their academic work back up when they return. Back at home base, a smaller group keeps working with content experts and in the studios.',
   },
   {
     time: '3:00 pm',
@@ -352,7 +352,7 @@ export default function WholeSchool() {
           className="text-center mb-6"
         >
           <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The Whole School in Motion
+            The Whole School in a Day
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
             200 students. 16 educators and about 50 partner educators. A home base, with the city as

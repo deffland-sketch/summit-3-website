@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
 /**
- * Disclosure chevron for the expandable cards, shared by StudentStories,
- * LearningExperiences and Unlocks (which each had their own identical copy).
+ * Disclosure chevron for expandable panels (the learning-science panel in
+ * LearningExperiences). Kept as a shared component for any future expandables.
  *
  * Decorative: the open/closed state is conveyed to assistive tech by
  * `aria-expanded` on the trigger button, so this is hidden from the a11y tree.

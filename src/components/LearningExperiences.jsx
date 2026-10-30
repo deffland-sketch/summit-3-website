@@ -26,7 +26,7 @@ const experiences = [
     ink: ink.orange,
     description: 'Students and adults engage in structured conversation about ideas, texts, or problems. The learning happens in the exchange.',
     eg: 'e.g., Socratic seminar, reading circle, peer critique',
-    why: 'When students build on each other\'s reasoning (not just take turns talking) they reach deeper understanding than any individual study can produce. Research consistently shows that this kind of interactive engagement is the most powerful mode of learning, and it simultaneously builds the communication and collaboration skills that matter beyond school.',
+    why: 'When students build on each other\'s reasoning, they reach deeper understanding than any individual study can produce. Research consistently shows that this kind of interactive engagement is the most powerful mode of learning, and it simultaneously builds the communication and collaboration skills that matter beyond school.',
   },
   {
     name: 'Independent Work and Creation',
@@ -58,13 +58,13 @@ const experiences = [
     ink: ink.brown,
     description: 'A student learns by participating in authentic work alongside professionals or community members, in settings beyond the school building.',
     eg: 'e.g., internship, job shadow, expedition, dual enrollment',
-    why: 'Research on how expertise develops shows that mastery comes from participating in real communities of practice, not just studying about them. Real-world experiences build the portfolio that employers and colleges value, and they give students concrete answers to the questions driving their pathway.',
+    why: 'Research on how expertise develops shows that mastery comes from participating in real communities of practice. Real-world experiences build the portfolio that employers and colleges value, and they give students concrete answers to the questions driving their pathway.',
   },
   {
     name: 'Wellbeing and Community',
     color: brand.tanGrey,
     ink: ink.tanGrey,
-    description: 'Time and structure dedicated to physical health, social connection, play, and emotional regulation. A precondition for learning, not a break from it.',
+    description: 'Time and structure dedicated to physical health, social connection, play, and emotional regulation. A precondition for learning.',
     eg: 'e.g., team sports, eating together, club activities',
     why: 'Cognitive engagement depends on physical and psychological readiness. Students who are hungry, stressed, isolated, or physically restless cannot access the learning in any of the other seven types. Naming this as part of the schedule signals that the model is designed for whole humans.',
   },
@@ -82,9 +82,9 @@ function ExperienceTile({ experience, index }) {
     >
       {/* `color` carries the left border and swatches; `ink` carries text, so the
           lighter half of the palette stays legible on white. */}
-      <h3 className="text-base font-bold leading-tight mb-2" style={{ color: experience.ink }}>
+      <h4 className="text-base font-bold leading-tight mb-2" style={{ color: experience.ink }}>
         {experience.name}
-      </h3>
+      </h4>
       <p className="text-sm text-black leading-relaxed mb-3 flex-1">
         {experience.description}
       </p>
@@ -95,36 +95,27 @@ function ExperienceTile({ experience, index }) {
   )
 }
 
-export default function LearningExperiences() {
+// Embedded in NextStep: the eight experience types are how flexed time gets used.
+export function ExperienceTypes() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
   const [scienceOpen, setScienceOpen] = useState(false)
 
   return (
-    <section
-      className="py-20 md:py-28 px-6 bg-white"
-      ref={ref}
-      id="learning-experiences"
-      aria-labelledby="learning-experiences-heading"
-    >
-      <div className="max-w-6xl mx-auto">
+    <div ref={ref} className="mt-16">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-8"
         >
-          <h2
-            id="learning-experiences-heading"
-            className="text-3xl md:text-4xl font-bold text-indigo mb-4"
-          >
-            Every Day Is Made of These
-          </h2>
-          <p className="text-lg text-black leading-relaxed max-w-3xl">
-            To replace static courses and time-based credits, we built a new set of eight
-            experience types. Content-neutral, they apply across any disciplinary or interdisciplinary
-            context. Along every student's pathway, the system assembles the right experiences, in
-            the right sequence, in the right context.
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-3">
+            Eight Experience Types
+          </h3>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed max-w-3xl">
+            Flexed time is spent across eight experience types, in the mix each student needs that
+            week. They replace static courses and time-based credits, and they work in any subject.
           </p>
         </motion.div>
 
@@ -192,6 +183,6 @@ export default function LearningExperiences() {
           connecting to prior experience, and learner agency.
         </motion.p>
       </div>
-    </section>
+    </div>
   )
 }

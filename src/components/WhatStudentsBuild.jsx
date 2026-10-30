@@ -49,7 +49,7 @@ export default function WhatStudentsBuild() {
             id="what-students-build-heading"
             className="text-3xl md:text-4xl font-bold text-indigo mb-6"
           >
-            What Students Are Building
+            What We Want for Every Student
           </h2>
           <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
             Every Summit student builds the foundations of a fulfilled life: purposeful work,
@@ -77,16 +77,6 @@ export default function WhatStudentsBuild() {
           ))}
         </div>
 
-        {/* Closing line */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-center text-sm italic text-black/60 max-w-2xl mx-auto"
-        >
-          The eight experience types are how students build these. The pathway is what makes
-          the combination right for each student.
-        </motion.p>
       </div>
     </section>
   )
