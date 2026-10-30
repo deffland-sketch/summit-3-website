@@ -22,7 +22,7 @@ const layers = [
   },
   {
     name: 'Data Layer',
-    body: 'The program record Summit holds under the family’s data agreement, and the concise learner profile the student owns and takes with them: validated competencies, badges, credentials, selected work, and their plan for the future.',
+    body: 'The program record Summit holds under the family’s data agreement, and the concise learner profile the student owns and takes with them: validated competencies, badges, credentials, selected work, and their pathway.',
   },
 ]
 

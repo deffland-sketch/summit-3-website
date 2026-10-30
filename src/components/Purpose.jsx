@@ -67,13 +67,13 @@ export default function Purpose() {
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
             Mentoring and Expeditions are already deeply personal to each student. Every Summit
             student has a mentor from middle school to graduation, takes part in Expeditions
-            connected to career pathways three times a year, and builds a personalized plan for life
-            after high school.
+            connected to careers three times a year, and builds a personalized plan for life after
+            high school.
           </p>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            That plan is the student&rsquo;s pathway: their own plan for the life they want, which
-            changes as they grow. Before a student can choose a direction, they have to trust an adult
-            enough to say what they want, and they have to try enough real things to know.
+            That plan is the student&rsquo;s pathway, and it changes as they grow. Before a student
+            can choose a direction, they have to trust an adult enough to say what they want, and
+            they have to try enough real things to know.
           </p>
         </motion.div>
 

@@ -56,7 +56,7 @@ export default function Educators() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-mint"
+      className="py-20 md:py-28 px-6 bg-white"
       ref={ref}
       id="educators"
       aria-labelledby="educators-heading"
@@ -89,7 +89,7 @@ export default function Educators() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.08 * (i + 1) }}
-              className={`bg-white border-t-4 ${c.top} rounded-xl p-6`}
+              className={`bg-white border border-black/8 border-t-4 ${c.top} rounded-xl p-6`}
             >
               <h3 className={`text-lg font-bold ${c.text}`}>{c.name}</h3>
               <p className="text-sm font-bold italic text-black/75 mb-3">{c.gloss}</p>
@@ -103,7 +103,7 @@ export default function Educators() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="bg-white rounded-xl border-t-4 border-brown p-6 mb-8"
+          className="bg-white rounded-xl border border-black/8 border-t-4 border-t-brown p-6 mb-8"
         >
           <h3 className="text-lg font-bold text-brown mb-2">Partner Educators</h3>
           <p className="text-sm md:text-base text-black/70 leading-relaxed">
@@ -114,7 +114,7 @@ export default function Educators() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-5">
-          <div className="bg-white rounded-xl p-6">
+          <div className="bg-black/[0.03] rounded-xl p-6">
             <h3 className="font-bold text-teal-ink mb-3">AI Handles</h3>
             <ul className="space-y-2 text-sm md:text-base text-black/75">
               {aiHandles.map((x) => (
@@ -125,7 +125,7 @@ export default function Educators() {
               ))}
             </ul>
           </div>
-          <div className="bg-white rounded-xl p-6 ring-1 ring-teal/25">
+          <div className="bg-mint rounded-xl p-6">
             <h3 className="font-bold text-teal-ink mb-3">Adults Do More Of</h3>
             <ul className="space-y-2 text-sm md:text-base text-black/75">
               {adultsDo.map((x) => (

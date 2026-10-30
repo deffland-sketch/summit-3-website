@@ -22,9 +22,7 @@ const experienceTypes = [
   { name: 'Independent work and creation', color: brand.lightBlue },
   { name: 'Presentation and performance', color: brand.red },
   { name: 'Reflection and goal-setting', color: brand.peach },
-  // Brand brown would vanish on this brown section, so real-world uses the
-  // brand's light brown tint here.
-  { name: 'Real-world experience', color: '#e6e6e6' },
+  { name: 'Real-world experience', color: brand.brown },
   { name: 'Wellbeing and community', color: brand.tanGrey },
 ]
 
@@ -144,11 +142,11 @@ function StudentBreakdown({ data }) {
     <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
       {data.map((count, i) =>
         count > 0 ? (
-          <div key={i} className="flex items-center gap-2 bg-white/10 rounded-lg px-2.5 py-2">
+          <div key={i} className="flex items-center gap-2 bg-black/[0.04] rounded-lg px-2.5 py-2">
             <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} aria-hidden="true" />
             <div className="min-w-0">
-              <p className="text-white font-bold text-sm leading-tight">{count}</p>
-              <p className="text-white/80 text-xs leading-tight truncate">{experienceTypes[i].name}</p>
+              <p className="text-black font-bold text-sm leading-tight">{count}</p>
+              <p className="text-black/80 text-xs leading-tight truncate">{experienceTypes[i].name}</p>
             </div>
           </div>
         ) : null
@@ -169,18 +167,18 @@ function AdultBreakdown({ adults }) {
   return (
     <div>
       {/* Summary header */}
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4 pb-3 border-b border-white/15">
+      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4 pb-3 border-b border-black/10">
         <div>
-          <span className="text-3xl font-bold text-white">{eduTotal}</span>
-          <span className="text-white/70 text-sm ml-1">of 16 Summit educators</span>
+          <span className="text-3xl font-bold text-black">{eduTotal}</span>
+          <span className="text-black/70 text-sm ml-1">of 16 Summit educators</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white">{adults.partners}</span>
-          <span className="text-white/70 text-sm ml-1">partner educators</span>
+          <span className="text-xl font-bold text-black">{adults.partners}</span>
+          <span className="text-black/70 text-sm ml-1">partner educators</span>
         </div>
         <div>
-          <span className="text-xl font-bold text-white">3</span>
-          <span className="text-white/70 text-sm ml-1">leading the school: director, program coordinator, operations and family coordinator</span>
+          <span className="text-xl font-bold text-black">3</span>
+          <span className="text-black/70 text-sm ml-1">leading the school: director, program coordinator, operations and family coordinator</span>
         </div>
       </div>
 
@@ -190,12 +188,12 @@ function AdultBreakdown({ adults }) {
             <div className="flex items-center justify-between mb-1">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} aria-hidden="true" />
-                <span className="text-white text-sm font-bold">{r.label}</span>
+                <span className="text-black text-sm font-bold">{r.label}</span>
               </div>
-              <span className="text-white font-bold text-lg">{r.count}<span className="text-white/55 text-xs font-normal ml-1">/{r.max === 50 ? '~50' : r.max}</span></span>
+              <span className="text-black font-bold text-lg">{r.count}<span className="text-black/60 text-xs font-normal ml-1">/{r.max === 50 ? '~50' : r.max}</span></span>
             </div>
             {/* Horizontal bar */}
-            <div className="h-2.5 bg-white/15 rounded-full overflow-hidden mb-1">
+            <div className="h-2.5 bg-black/[0.06] rounded-full overflow-hidden mb-1">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${(r.count / r.max) * 100}%` }}
@@ -204,7 +202,7 @@ function AdultBreakdown({ adults }) {
                 style={{ backgroundColor: r.color }}
               />
             </div>
-            <p className="text-white/75 text-xs">{r.desc}</p>
+            <p className="text-black/75 text-xs">{r.desc}</p>
           </div>
         ))}
       </div>
@@ -225,19 +223,19 @@ function SpaceBreakdown({ spaces }) {
   return (
     <div>
       {/* Summary header */}
-      <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-white/15">
-        <span className="text-3xl font-bold text-white">{total}</span>
-        <span className="text-white/70 text-sm">of 14 home base spaces active</span>
-        <span className="text-orange font-bold text-sm ml-auto">{pct}% utilization</span>
+      <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-black/10">
+        <span className="text-3xl font-bold text-black">{total}</span>
+        <span className="text-black/70 text-sm">of 14 home base spaces active</span>
+        <span className="text-orange-ink font-bold text-sm ml-auto">{pct}% utilization</span>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
         {rows.map((r) => {
           const utilPct = (r.count / r.of) * 100
           return (
-            <div key={r.label} className="bg-white/10 rounded-xl p-3">
+            <div key={r.label} className="bg-black/[0.04] rounded-xl p-3">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-white text-sm font-bold">{r.label}</span>
+                <span className="text-black text-sm font-bold">{r.label}</span>
               </div>
               {/* Visual: filled/empty dots representing each space */}
               <div className="flex gap-1 mb-2">
@@ -246,17 +244,17 @@ function SpaceBreakdown({ spaces }) {
                     key={j}
                     className="h-4 flex-1 rounded-sm transition-all"
                     style={{
-                      backgroundColor: j < r.count ? r.color : 'rgba(255,255,255,0.12)',
+                      backgroundColor: j < r.count ? r.color : 'rgba(0,0,0,0.08)',
                     }}
                   />
                 ))}
               </div>
               <div className="flex items-baseline justify-between">
-                <p className="text-white/75 text-xs">{r.desc}</p>
+                <p className="text-black/75 text-xs">{r.desc}</p>
               </div>
-              <p className="text-white font-bold text-lg mt-1">
-                {r.count}<span className="text-white/55 text-xs font-normal">/{r.of}</span>
-                {utilPct === 100 && <span className="text-orange text-xs font-bold ml-2">Full</span>}
+              <p className="text-black font-bold text-lg mt-1">
+                {r.count}<span className="text-black/60 text-xs font-normal">/{r.of}</span>
+                {utilPct === 100 && <span className="text-orange-ink text-xs font-bold ml-2">Full</span>}
               </p>
             </div>
           )
@@ -268,17 +266,17 @@ function SpaceBreakdown({ spaces }) {
 
 function PartnerBreakdown({ partners }) {
   if (partners.length === 0) {
-    return <p className="text-white/60 text-sm italic">No field partners active at this time.</p>
+    return <p className="text-black/60 text-sm italic">No field partners active at this time.</p>
   }
   return (
     <div className="space-y-1.5">
-      <p className="text-white/70 text-xs italic mb-2">
+      <p className="text-black/70 text-xs italic mb-2">
         Partner organizations shown are hypothetical examples, not current partnerships.
       </p>
       {partners.map((p, i) => (
-        <div key={i} className="flex gap-2 bg-white/10 rounded-lg px-3 py-2">
-          <span className="text-orange text-sm mt-0.5" aria-hidden="true">●</span>
-          <p className="text-white/85 text-sm leading-relaxed">{p}</p>
+        <div key={i} className="flex gap-2 bg-black/[0.04] rounded-lg px-3 py-2">
+          <span className="text-orange-ink text-sm mt-0.5" aria-hidden="true">●</span>
+          <p className="text-black/85 text-sm leading-relaxed">{p}</p>
         </div>
       ))}
     </div>
@@ -339,7 +337,7 @@ export default function WholeSchool() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-brown text-white"
+      className="py-20 md:py-28 px-6 bg-mint text-black"
       ref={ref}
       id="whole-school"
       aria-labelledby="whole-school-heading"
@@ -351,10 +349,10 @@ export default function WholeSchool() {
           transition={{ duration: 0.6 }}
           className="text-center mb-6"
         >
-          <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
             The Whole School in a Day
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto">
+          <p className="text-black/80 max-w-2xl mx-auto">
             200 students. 16 educators and about 50 partner educators. A home base, with the city as
             the rest of the campus.
           </p>
@@ -363,7 +361,7 @@ export default function WholeSchool() {
         {/* Legend */}
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6">
           {experienceTypes.map((type) => (
-            <span key={type.name} className="flex items-center gap-1.5 text-xs text-white/85">
+            <span key={type.name} className="flex items-center gap-1.5 text-xs text-black/85">
               <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: type.color }} aria-hidden="true" />
               {type.name}
             </span>
@@ -380,7 +378,7 @@ export default function WholeSchool() {
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                 activeIdx === i
                   ? 'bg-orange text-brown'
-                  : 'bg-white/15 text-white hover:bg-white/25'
+                  : 'bg-black/[0.06] text-black hover:bg-black/10'
               }`}
             >
               {s.time.replace(':00', '').replace(' am', 'a').replace(' pm', 'p')}
@@ -402,7 +400,7 @@ export default function WholeSchool() {
                   />
                 </div>
                 <p className={`text-[10px] md:text-xs mt-2 whitespace-nowrap transition-colors ${
-                  activeIdx === i ? 'text-orange font-bold' : 'text-white/60'
+                  activeIdx === i ? 'text-orange-ink font-bold' : 'text-black/60'
                 }`}>
                   {s.time.replace(':00', '').replace(' am', 'a').replace(' pm', 'p')}
                 </p>
@@ -416,13 +414,13 @@ export default function WholeSchool() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-6 bg-white/10 rounded-xl overflow-hidden"
+            className="mt-6 bg-white border border-black/8 rounded-xl overflow-hidden"
           >
             {/* Panel header + tabs */}
             <div className="px-5 pt-4 pb-0 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="text-orange font-bold text-lg">{slot.time}</span>
-                <span className="text-white/70 text-sm">200 students · 19 Summit staff · ~50 partner educators</span>
+                <span className="text-orange-ink font-bold text-lg">{slot.time}</span>
+                <span className="text-black/70 text-sm">200 students · 19 Summit staff · ~50 partner educators</span>
               </div>
               <div className="flex gap-1" role="tablist" aria-label="Resource view">
                 {tabs.map((t) => (
@@ -437,8 +435,8 @@ export default function WholeSchool() {
                     onKeyDown={(e) => onTabKeyDown(e, t)}
                     className={`px-3 py-1 rounded-md text-xs font-bold transition-all ${
                       activeTab === t
-                        ? 'bg-white/25 text-white'
-                        : 'text-white/65 hover:text-white'
+                        ? 'bg-black/10 text-black'
+                        : 'text-black/60 hover:text-black'
                     }`}
                   >
                     {tabLabels[t]}
@@ -451,7 +449,7 @@ export default function WholeSchool() {
                 `timeSlots[].note`: this is the operational detail that makes the
                 200-student claim concrete. */}
             <div className="px-5 pt-3">
-              <p className="text-white/80 text-sm leading-relaxed border-l-2 border-orange/60 pl-3">
+              <p className="text-black/80 text-sm leading-relaxed border-l-2 border-orange pl-3">
                 {slot.note}
               </p>
             </div>
@@ -473,7 +471,7 @@ export default function WholeSchool() {
             {/* Tab hint */}
             {activeTab === 'students' && (
               <div className="px-5 pb-5">
-                <p className="text-white/65 text-sm leading-relaxed border-t border-white/15 pt-3">
+                <p className="text-black/60 text-sm leading-relaxed border-t border-black/10 pt-3">
                   Switch tabs to see how educators are deployed, which spaces are in use, and which community partners are active at this time.
                 </p>
               </div>
