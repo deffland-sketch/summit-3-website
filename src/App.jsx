@@ -8,6 +8,7 @@ import WhatStudentsBuild from './components/WhatStudentsBuild'
 import WholeSchool from './components/WholeSchool'
 import Throughline from './components/Throughline'
 import Unlocks from './components/Unlocks'
+import AcrossSummit from './components/AcrossSummit'
 import AtScale from './components/AtScale'
 import WhySummit from './components/WhySummit'
 import WhyNow from './components/WhyNow'
@@ -43,6 +44,7 @@ function App() {
             <WhatStudentsBuild />
             <WholeSchool />
             <Unlocks />
+            <AcrossSummit />
             <AtScale />
             <WhySummit />
             <WhyNow />
