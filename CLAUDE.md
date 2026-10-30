@@ -22,8 +22,12 @@ step (flexing time), what it looks like, what makes it work, why Summit.
 3. **WhatStudentsBuild** (`#what-students-build`) — "What We Want for Every Student": three
    outcomes plus the economic empowerment line
 4. **Purpose** (`#what-we-have`) — "What Summit Already Has": long-term mentor (guides each
-   student's pathway), graduated Expeditions, "2 in 3", purpose → relevance → motivation,
+   student's pathway), graduated Expeditions, "2 in 3",
    the Fall 2025 community Keep and Build lists
+4b. **Motivation** (`#purpose-to-motivation`, mint) — "Purpose Makes Learning Relevant, and
+   Relevance Builds Motivation": the logic of the model. Mentor and Expeditions build purpose,
+   flexible time makes the academic core relevant to it, motivation follows. The 69% Transcend
+   stat. This wording is the source for the same idea in the Sierra and 2030 strategy decks
 5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
    talent, technology, time by day/week/season with a "Live now" line, and the eight
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)

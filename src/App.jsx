@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import WhyChange from './components/WhyChange'
 import WhatStudentsBuild from './components/WhatStudentsBuild'
 import Purpose from './components/Purpose'
+import Motivation from './components/Motivation'
 import NextStep from './components/NextStep'
 import AWeek from './components/AWeek'
 import WholeSchool from './components/WholeSchool'
@@ -38,6 +39,7 @@ function App() {
             <WhyChange />
             <WhatStudentsBuild />
             <Purpose />
+            <Motivation />
             <NextStep />
             <AWeek />
             <WholeSchool />

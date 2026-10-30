@@ -124,7 +124,9 @@ export default function AWeek() {
             A Week in Summit 3.0
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            Amara&rsquo;s week is built around her goals, her progress, and her mentor.
+            Amara&rsquo;s week is built around her goals, her progress, and her mentor. She is
+            curious about journalism, so her argument essay and a day in a newsroom sit in the same
+            week, and the writing has a reason to be good.
           </p>
         </motion.div>
 
