@@ -10,9 +10,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-indigo leading-[1.05] mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-indigo leading-[1.1] mb-6"
             >
-              Every student prepared to build the life they want.
+              Every student equipped for a fulfilled life, with purposeful work, financial independence, strong relationships, community, and health.
             </motion.h1>
 
             <motion.p
@@ -21,17 +21,9 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-lg md:text-xl text-black leading-relaxed mb-6"
             >
-              Every Summit student is known deeply, challenged academically, and prepared for what comes next. Summit 3.0 is how we make that real for every student, at the scale of a public school system.
+              Summit 3.0 personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and Expeditions are already deeply personal; the academic core is next.
             </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.22 }}
-              className="text-base md:text-lg text-black/80 leading-relaxed mb-6"
-            >
-              This is already beginning. In our schools today, students are shaping their own sequences, taking college courses, and learning beyond the school walls. Summit 3.0 makes that coherent and available to every student, including those for whom charting their own path is hardest.
-            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 12 }}
