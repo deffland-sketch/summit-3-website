@@ -20,7 +20,7 @@ export default function WhyNow() {
           className="mb-10"
         >
           <h2 id="why-now-heading" className="text-3xl md:text-4xl font-bold text-indigo">
-            Why now
+            Why Now
           </h2>
         </motion.div>
 
@@ -33,8 +33,8 @@ export default function WhyNow() {
           <p>
             Public education is entering a period of real discontinuity. For a long time, the basic
             operating assumptions of school have stayed remarkably stable: time is fixed, students
-            move largely in groups, and teachers are responsible for holding and delivering enormous
-            amounts of content. AI is accelerating the breakdown of all three.
+            move largely in groups, and teachers are responsible for holding and teaching enormous
+            amounts of content. AI is speeding up the change in all three.
           </p>
 
           <p className="border-l-4 border-orange pl-5">
@@ -50,22 +50,24 @@ export default function WhyNow() {
           </p>
 
           <p>
-            In Fall 2025, Summit ran a listening tour across the network: 75 students and
-            caregivers in eight schools, in deep conversation about what's working and what needs
-            to change. The pattern was clear. Families still value what has always defined Summit:
-            strong relationships, dedicated mentors, and rigorous academics. Students, caregivers,
-            and educators also pointed to the same new priorities: AI fluency, critical thinking,
-            real-world and career-connected learning, and more flexibility in how learning happens.
+            In Fall 2025, Summit held focus groups with students, caregivers and educators across
+            every Summit community, in deep conversation about what's working and what comes next.
+            They told us what to keep: great educators, deep mentoring and relationships,
+            college-ready academic expectations, and real-world, career-connected learning. And they
+            told us what to build: more flexibility in how and when learning happens, and AI literacy
+            for the world students are entering.
           </p>
 
           <p>
-            Those signals aren't unique to Summit. They match what families across the country are
-            asking for and what employers now expect from graduates.
+            Those signals match what families across the country are asking for and what employers now
+            expect from graduates. And the need is real: young people are disengaged from school, and
+            recent graduates are underemployed. Unemployment for ages 22 to 27 is at a decade high,
+            excluding pandemic years.
           </p>
 
           <p>
             Two things are arriving together. The demand for this kind of school has never been
-            clearer, and for the first time the technology exists to deliver it for every student
+            clearer, and for the first time the technology exists to make it possible for every student
             at the scale of a real public system. That convergence is what makes this the moment.
           </p>
 

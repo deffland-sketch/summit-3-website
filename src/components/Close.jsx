@@ -94,8 +94,9 @@ export default function Close() {
           className="space-y-5 text-lg text-white/95 leading-relaxed mb-10"
         >
           <p>
-            Purposeful work. Financial independence. Strong relationships. Community. Health.
-            That's been Summit's vision since 2003, and the data shows students are getting there.
+            Every student equipped for a fulfilled life, with purposeful work, financial independence,
+            strong relationships, community, and health. That's been Summit's vision since 2003, and
+            the data shows students are getting there.
           </p>
           <p className="border-l-4 border-orange pl-5">
             Time, talent, and technology make the model work. The fourth ingredient is investment.
