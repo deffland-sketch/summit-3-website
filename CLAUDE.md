@@ -15,7 +15,8 @@ Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a sk
 link and a sticky `Nav`.
 
 1. **Hero** — photo + copy two-column, headline stats, pull quote
-2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities),
+2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities:
+   mentoring, learning strategies coaching, content expertise, project facilitation),
    closing on "The right adult, in the right role, at the right moment" and a community sentence
 3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
    Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
@@ -26,11 +27,14 @@ link and a sticky `Nav`.
 7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (200 students across a school day), tabs for students/educators/spaces/partners.
    Staffing follows "How Summit 3.0 Works" (Oct 2026) scaled to 200 at the same ratios; no system
    architect role. Partner names are real organizations, labeled as hypothetical examples
-8. **Unlocks** (`#how-it-works`) — 3 expandable cards (tech stack, talent model, flexible time)
-9. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
-10. **WhySummit** (`#why-summit`) — outcome stats and track record
-11. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
-12. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, founder bios
+8. **Unlocks** (`#how-it-works`) — leads with the theory of action; 3 expandable levers in order:
+   flexible time, talent, technology
+9. **AcrossSummit** (`#across-summit`) — One Model, Three Forms: flexible time by grade span and size.
+   No school names
+10. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
+11. **WhySummit** (`#why-summit`) — outcome stats and track record
+12. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
+13. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, founder bios
 
 `TheBuild.jsx` exists but is **not rendered** — its listening-tour and proof-point
 content was absorbed into WhyNow and WhySummit. Its "Built across our system"
@@ -79,10 +83,16 @@ pass there and `-ink` would be wrong.
   slide deck. Only `StudentAvatar` is currently used; the rest are kept as an
   asset library.
 - `Chevron.jsx` — the shared disclosure chevron for all expandable cards.
+- Copy follows the 2030 Strategy Source of Truth (Oct 2026). Vision, 2030 ambition, and theory of
+  action are used verbatim. No em-dashes, no "not X but Y," no deficit framing of educators. Never:
+  landed, deliver(ed/able), spine, ship(ping), seat, "accelerat*" for student outcomes, "pathways"
+  for groups of schools, or participant counts for the Fall 2025 focus groups.
+- Section headings and card titles are title case; body text and labels stay sentence case. The
+  Hero vision line and the Close North Star are verbatim sentences and stay sentence case.
 - Card pattern (set by `Purpose.jsx`): white cards with a single `border-t-4` brand-color
   accent, on a tinted section background (or with a `border-black/8` outline on white).
-  Body text at `text-sm` or larger, no lighter than `text-black/60`. Eyebrows and labels are
-  sentence case: no `uppercase`, no letter-spacing.
+  Body text at `text-sm` or larger, no lighter than `text-black/60`. Labels are sentence case:
+  no `uppercase`, no letter-spacing.
 - No eyebrow labels (small colored kicker text) above section `<h2>`s, and no summary
   callouts or punchy taglines closing out a section.
 - All sections use Framer Motion `useInView` for scroll-triggered animations.

@@ -21,9 +21,9 @@ const steps = [
 
 const capacities = [
   { name: 'Mentoring', tagline: 'Someone who knows you', top: 'border-t-orange', text: 'text-orange-ink' },
-  { name: 'Content expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
-  { name: 'Coaching how to learn', tagline: 'Someone who teaches you how you learn', top: 'border-t-light-blue', text: 'text-light-blue-ink' },
-  { name: 'Facilitating', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
+  { name: 'Learning Strategies Coaching', tagline: 'Someone who teaches you how you learn', top: 'border-t-light-blue', text: 'text-light-blue-ink' },
+  { name: 'Content Expertise', tagline: 'Someone who teaches you', top: 'border-t-indigo', text: 'text-indigo' },
+  { name: 'Project Facilitation', tagline: 'Someone who challenges you', top: 'border-t-teal', text: 'text-teal-ink' },
 ]
 
 export default function Throughline() {
@@ -49,11 +49,15 @@ export default function Throughline() {
           className="text-center mb-10"
         >
           <p className="text-lg md:text-xl text-indigo/70 italic mb-4">
-            The future of high school is no longer static courses and seat-time credits.
+            The future of high school is no longer static courses and time-based credits.
           </p>
           <h2 id="the-model-heading" className="text-3xl md:text-4xl font-bold text-indigo">
-            Every student has a pathway
+            Every Student Has a Pathway
           </h2>
+          <p className="text-base md:text-lg text-black/75 mt-4 max-w-2xl mx-auto leading-relaxed">
+            The pathway is what each student is building toward. Flexing time is how the school
+            makes room for it.
+          </p>
         </motion.div>
 
         {/* What we mean by a pathway */}
@@ -64,7 +68,7 @@ export default function Throughline() {
           className="max-w-3xl mx-auto mb-12"
         >
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
-            What we mean by a pathway
+            What We Mean by a Pathway
           </h3>
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
             Every student follows a pathway. A pathway is a student's own plan for the life they want
@@ -90,7 +94,7 @@ export default function Throughline() {
             {/* The pathway */}
             <div>
               <div className="bg-indigo text-white text-center font-bold text-lg py-3 rounded-xl mb-3">
-                The pathway
+                The Pathway
               </div>
               <ol className="space-y-3">
                 {steps.map((step, i) => (
@@ -113,10 +117,10 @@ export default function Throughline() {
             {/* Human-centered guidance */}
             <div>
               <div className="bg-orange text-black text-center font-bold text-lg py-3 rounded-xl mb-3">
-                Human-centered guidance
+                Human-Centered Guidance
               </div>
               <p className="text-sm text-black/70 text-center leading-relaxed mb-3 px-2">
-                Four capacities, shared across the educators around each student, with a named partner educator at every site beyond school.
+                Four capacities, shared across the educators around each student. Educators typically focus on two. A named partner educator hosts and teaches at every site beyond school.
               </p>
               <ul className="grid grid-cols-2 gap-3">
                 {capacities.map((c, i) => (

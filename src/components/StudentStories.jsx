@@ -5,9 +5,9 @@ import { Chevron } from './Chevron'
 
 /*
  * Three composite students of the same age, shown at three moments:
- *   traditional — the one schedule all three would likely share
- *   ninth       — spring of 9th grade at Summit: days still closely aligned
- *   eleventh    — 11th grade at Summit: days built around divergent pathways
+ *   traditional: the one schedule all three would likely share
+ *   ninth: spring of 9th grade at Summit: days still closely aligned
+ *   eleventh: 11th grade at Summit: days built around divergent pathways
  *
  * The comparison is the point. The color strip on each card stays visible when
  * collapsed, so switching views shows the schedules converge and pull apart.
@@ -30,7 +30,7 @@ const stages = [
     key: 'eleventh',
     label: '11th grade',
     caption:
-      'Two years later, their days have pulled apart. Each schedule is built around what the student cares about and needs next, and the mentor who has known them since 9th grade is still at the center.',
+      'Two years later, their days have pulled apart. What pulled their schedules apart is time flexing around each student. Each schedule is built around what the student cares about and needs next, and the mentor who has known them since 9th grade is still at the center.',
   },
 ]
 
@@ -456,7 +456,7 @@ export default function StudentStories() {
           className="mb-8"
         >
           <h2 id="student-day-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-4">
-            Same age, three pathways
+            Same Age, Three Pathways
           </h2>
           <p className="text-lg text-black/70 max-w-2xl">
             Marco, Amara, and David are the same age. In a traditional high school, they would likely

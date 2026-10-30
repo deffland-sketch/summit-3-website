@@ -4,7 +4,7 @@ import { useRef } from 'react'
 /**
  * `photo` is only set once a real headshot exists in /public/photos. Pointing at
  * a missing file made the browser fetch the SPA's index.html as an image on every
- * load, fail to decode it, and fall back — so the path stays null until the asset
+ * load, fail to decode it, and fall back: so the path stays null until the asset
  * is there and the initials monogram is the intentional default.
  */
 const founders = [
@@ -94,8 +94,9 @@ export default function Close() {
           className="space-y-5 text-lg text-white/95 leading-relaxed mb-10"
         >
           <p>
-            Purposeful work. Financial independence. Strong relationships. Community. Health.
-            That's been Summit's vision since 2003, and the data shows students are getting there.
+            Every student equipped for a fulfilled life, with purposeful work, financial independence,
+            strong relationships, community, and health. That's been Summit's vision since 2003, and
+            the data shows students are getting there.
           </p>
           <p className="border-l-4 border-orange pl-5">
             Time, talent, and technology make the model work. The fourth ingredient is investment.

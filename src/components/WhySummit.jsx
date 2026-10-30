@@ -39,18 +39,17 @@ export default function WhySummit() {
             another significant step.
           </p>
           <p>
-            Our 2030 ambition is that Summit will prove a learner-centered model in which every
+            By 2030, Summit Public Schools will prove that a learner-centered model can ensure every
             student gets what they need, when they need it, to attain economic empowerment and lead
             a fulfilled life in a rapidly changing world.
           </p>
           <p>
-            We mean <span className="font-bold text-indigo">prove</span>, deliberately. Not something
-            theoretically interesting, but something we build, operate in public schools, measure,
-            and can share with the field.
+            We mean <span className="font-bold text-indigo">prove</span>, deliberately: a model we
+            build, operate in public schools, measure, and share with the field.
           </p>
         </motion.div>
 
-        {/* Stats — comparison stats with peer contrast */}
+        {/* Stats: comparison stats with peer contrast */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Salary */}
           <motion.div
@@ -115,7 +114,7 @@ export default function WhySummit() {
             <p className="text-sm text-black/60 font-bold">Graduates across Summit schools</p>
           </motion.div>
 
-          {/* Summit Learning — hero stat */}
+          {/* Summit Learning: hero stat */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -176,7 +175,7 @@ export default function WhySummit() {
           className="max-w-3xl mx-auto mt-16"
         >
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-4">
-            The proof point the field needs
+            The Proof Point the Field Needs
           </h3>
           <div className="space-y-4 text-base text-black leading-relaxed">
             <p>

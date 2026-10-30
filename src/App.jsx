@@ -8,6 +8,7 @@ import WhatStudentsBuild from './components/WhatStudentsBuild'
 import WholeSchool from './components/WholeSchool'
 import Throughline from './components/Throughline'
 import Unlocks from './components/Unlocks'
+import AcrossSummit from './components/AcrossSummit'
 import AtScale from './components/AtScale'
 import WhySummit from './components/WhySummit'
 import WhyNow from './components/WhyNow'
@@ -31,7 +32,7 @@ function App() {
             silently stops `position: sticky` from ever sticking. */}
         <Nav />
 
-        {/* `clip` rather than `hidden` — it contains the same horizontal overflow
+        {/* `clip` rather than `hidden`: it contains the same horizontal overflow
             from off-canvas section animations without creating a scroll container. */}
         <div className="overflow-x-clip">
           <main id="main">
@@ -43,6 +44,7 @@ function App() {
             <WhatStudentsBuild />
             <WholeSchool />
             <Unlocks />
+            <AcrossSummit />
             <AtScale />
             <WhySummit />
             <WhyNow />

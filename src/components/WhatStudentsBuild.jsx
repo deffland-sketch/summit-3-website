@@ -3,23 +3,24 @@ import { useRef } from 'react'
 
 const outcomes = [
   {
-    title: 'College-ready academic foundations',
+    title: 'College-Ready Academic Foundations',
     subtitle: 'Understanding the world through math, science, history, and language.',
     body: 'Reading and writing with depth. Mathematical reasoning. Scientific inquiry. Civic and historical understanding. The disciplinary knowledge and ways of thinking that prepare students for college, careers, and a life of continued learning.',
     top: 'border-indigo',
     accent: 'text-indigo',
   },
   {
-    title: 'Durable skills for thriving in life',
+    title: 'Durable Skills for Thriving in Life',
     subtitle: 'The transferable capacities that make knowledge usable and life navigable.',
     body: 'Communication, collaboration, problem-solving, and critical thinking. Self-direction, curiosity, resilience, agency, and interpersonal awareness. Digital and AI fluency: working with the tools that increasingly shape every field and every life.',
     top: 'border-teal',
     accent: 'text-teal-ink',
   },
   {
-    title: 'A plan for their future and a clear next step',
+    title: 'A Plan for Their Future and a Clear Next Step',
     subtitle: 'Direction for life after high school, and a real first step toward it.',
     body: 'Every student leaves with a plan for the life they want and a clear next step they are ready to take: college, a credential, a first job, or a high-growth pathway, with the ability to support themselves along the way. The plan grows out of years of mentoring and Expeditions, so students can explain why it fits them.',
+    note: 'Economic empowerment means a strong first job or credential, earnings that support independence, and real options.',
     top: 'border-orange',
     accent: 'text-orange-ink',
   },
@@ -48,7 +49,7 @@ export default function WhatStudentsBuild() {
             id="what-students-build-heading"
             className="text-3xl md:text-4xl font-bold text-indigo mb-6"
           >
-            What students are building
+            What Students Are Building
           </h2>
           <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
             Every Summit student builds the foundations of a fulfilled life: purposeful work,
@@ -71,6 +72,7 @@ export default function WhatStudentsBuild() {
               <h3 className="text-xl font-bold text-indigo mb-2 leading-snug">{o.title}</h3>
               <p className={`text-sm font-bold italic ${o.accent} mb-4`}>{o.subtitle}</p>
               <p className="text-base text-black/70 leading-relaxed">{o.body}</p>
+              {o.note && <p className="text-sm font-bold text-black/75 leading-relaxed mt-4">{o.note}</p>}
             </motion.div>
           ))}
         </div>

@@ -14,6 +14,7 @@ const links = [
   { href: '#student-day', label: 'Three students' },
   { href: '#whole-school', label: 'The school' },
   { href: '#how-it-works', label: 'How it works' },
+  { href: '#across-summit', label: 'Across Summit' },
   { href: '#why-summit', label: 'Why Summit' },
 ]
 

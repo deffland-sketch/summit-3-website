@@ -1,7 +1,7 @@
 import { brand } from '../palette'
 
 /**
- * Summit-style character illustrations — matched to the official brand slide deck.
+ * Summit-style character illustrations: matched to the official brand slide deck.
  *
  * Reference: Summit Slide Stuff slides 5-9
  * - Large round heads (solid brand color, no features), ~30% of character height
@@ -16,7 +16,7 @@ import { brand } from '../palette'
 const C = { ...brand, grey: brand.tanGrey }
 
 /**
- * Standalone character — draws a complete person at (x, y) center-bottom.
+ * Standalone character: draws a complete person at (x, y) center-bottom.
  * h = total height. Colors and hair vary by preset index.
  */
 function Person({ x, y, h = 50, preset = 0 }) {
@@ -130,7 +130,7 @@ export function StudentAvatar({ preset = 0, size = 48 }) {
   )
 }
 
-/** All experience scene illustrations — each mapped to a specific Summit Slide Stuff reference */
+/** All experience scene illustrations: each mapped to a specific Summit Slide Stuff reference */
 export function ExperienceScene({ type, width = 160, height = 96 }) {
   const cx = width / 2
   const by = height - 4

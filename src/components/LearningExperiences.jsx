@@ -5,7 +5,7 @@ import { brand, ink } from '../palette'
 
 const experiences = [
   {
-    name: 'Direct instruction',
+    name: 'Direct Instruction',
     color: brand.indigo,
     ink: ink.indigo,
     description: 'A knowledgeable adult teaches something specific. A lesson, a demonstration, a worked example, or a lab walkthrough.',
@@ -13,7 +13,7 @@ const experiences = [
     why: 'Research on how memory works shows that new concepts stick when an expert breaks them down into manageable pieces, connects them to what students already know, and models their own thinking process. Direct instruction is one of the most well-studied and effective approaches in education, and it works best in smaller groups where the teacher can gauge understanding in real time.',
   },
   {
-    name: 'Practice and feedback',
+    name: 'Practice and Feedback',
     color: brand.teal,
     ink: ink.teal,
     description: 'A student practices a specific skill while receiving targeted, timely feedback from someone who can diagnose what\'s working.',
@@ -21,7 +21,7 @@ const experiences = [
     why: 'Decades of research show that effective practice happens at the edge of what a student can do: not too easy, not too hard. The critical ingredient is feedback that\'s specific, immediate, and actionable. When practice is spaced across days rather than crammed into one session, retention improves dramatically.',
   },
   {
-    name: 'Discussion and dialogue',
+    name: 'Discussion and Dialogue',
     color: brand.orange,
     ink: ink.orange,
     description: 'Students and adults engage in structured conversation about ideas, texts, or problems. The learning happens in the exchange.',
@@ -29,7 +29,7 @@ const experiences = [
     why: 'When students build on each other\'s reasoning (not just take turns talking) they reach deeper understanding than any individual study can produce. Research consistently shows that this kind of interactive engagement is the most powerful mode of learning, and it simultaneously builds the communication and collaboration skills that matter beyond school.',
   },
   {
-    name: 'Independent work and creation',
+    name: 'Independent Work and Creation',
     color: brand.lightBlue,
     ink: ink.lightBlue,
     description: 'A student works on their own to produce something: writing, research, a model, a solution. The student makes the decisions.',
@@ -37,7 +37,7 @@ const experiences = [
     why: 'Producing original work requires students to organize, connect, and apply what they know, which deepens understanding far more than reviewing notes or re-reading. Independent work also develops metacognition: the ability to plan, monitor, and adjust your own learning process, one of the strongest predictors of long-term academic success.',
   },
   {
-    name: 'Presentation and performance',
+    name: 'Presentation and Performance',
     color: brand.red,
     ink: ink.red,
     description: 'A student demonstrates learning to an authentic audience. The stakes are real.',
@@ -45,7 +45,7 @@ const experiences = [
     why: 'Presenting under real conditions is one of the most powerful ways to consolidate learning. It requires students to retrieve, organize, and communicate their knowledge without scaffolding. It also builds identity: "I am someone who can do this." Employers consistently rank communication, poise, and adaptability among the skills that matter most.',
   },
   {
-    name: 'Reflection and goal-setting',
+    name: 'Reflection and Goal-Setting',
     color: brand.peach,
     ink: ink.peach,
     description: 'A student steps back to examine their own learning: where they are, where they\'re going, what\'s working, what to adjust.',
@@ -53,7 +53,7 @@ const experiences = [
     why: 'The ability to think about your own thinking (metacognition) is the single strongest predictor of academic achievement. Without this experience type, a personalized pathway is something done to students. With it, students become co-authors of their own trajectory.',
   },
   {
-    name: 'Real-world experience',
+    name: 'Real-World Experience',
     color: brand.brown,
     ink: ink.brown,
     description: 'A student learns by participating in authentic work alongside professionals or community members, in settings beyond the school building.',
@@ -61,7 +61,7 @@ const experiences = [
     why: 'Research on how expertise develops shows that mastery comes from participating in real communities of practice, not just studying about them. Real-world experiences build the portfolio that employers and colleges value, and they give students concrete answers to the questions driving their pathway.',
   },
   {
-    name: 'Wellbeing and community',
+    name: 'Wellbeing and Community',
     color: brand.tanGrey,
     ink: ink.tanGrey,
     description: 'Time and structure dedicated to physical health, social connection, play, and emotional regulation. A precondition for learning, not a break from it.',
@@ -118,10 +118,10 @@ export default function LearningExperiences() {
             id="learning-experiences-heading"
             className="text-3xl md:text-4xl font-bold text-indigo mb-4"
           >
-            Every day is made of these
+            Every Day Is Made of These
           </h2>
           <p className="text-lg text-black leading-relaxed max-w-3xl">
-            To replace static courses and seat-time credits, we built a new set of eight
+            To replace static courses and time-based credits, we built a new set of eight
             experience types. Content-neutral, they apply across any disciplinary or interdisciplinary
             context. Along every student's pathway, the system assembles the right experiences, in
             the right sequence, in the right context.
@@ -150,7 +150,7 @@ export default function LearningExperiences() {
           >
             <div>
               <p className="text-teal-ink font-bold text-sm mb-1">Learning science</p>
-              <p className="text-base font-bold text-black">The learning science behind these</p>
+              <p className="text-base font-bold text-black">The Learning Science Behind These</p>
             </div>
             <Chevron open={scienceOpen} className="text-teal-ink" />
           </button>
