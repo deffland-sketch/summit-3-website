@@ -22,7 +22,7 @@ export default function Hero() {
               className="text-lg md:text-xl text-black leading-relaxed mb-6"
             >
               <span className="block font-bold text-indigo mb-2">When time is flexible in service of each student, students grow faster.</span>
-              Summit 3.0 personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and Expeditions are already deeply personal; the academic core is next.
+              Summit’s next step personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and Expeditions are already deeply personal; the academic core is next.
             </motion.p>
 
 

@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 /*
- * What Summit Already Has: the foundation Summit 3.0 builds on. A long-term mentor
+ * What Summit Already Has: the foundation Summit's next step builds on. A long-term mentor
  * who guides each student's pathway, graduated Expeditions, and what the community
  * asked us to keep and build.
  *
@@ -168,7 +168,7 @@ export default function Purpose() {
           </div>
           <p className="text-base text-black/75 leading-relaxed mt-5 max-w-3xl">
             These signals match what families across the country are asking for, and what employers
-            now expect from graduates. Summit 3.0 brings the same personalization students already
+            now expect from graduates. Flexible time brings the same personalization students already
             get from mentoring and Expeditions to the academic core.
           </p>
         </motion.div>

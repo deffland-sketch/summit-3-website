@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 
 /*
- * A Week in Summit 3.0: Amara's week, built around her goals, her progress, and her
+ * A Week Built Around Amara: her week, built around her goals, her progress, and her
  * mentor, set against a traditional bell schedule. Adapted from "A Day in Summit 3.0"
  * and the Sierra deck (Oct 2026). Amara is a composite; partner sites are described
  * generically rather than named.
@@ -121,7 +121,7 @@ export default function AWeek() {
           className="max-w-3xl mb-10"
         >
           <h2 id="a-week-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
-            A Week in Summit 3.0
+            A Week Built Around Amara
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
             Amara&rsquo;s week is built around her goals, her progress, and her mentor. She is
