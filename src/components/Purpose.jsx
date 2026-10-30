@@ -17,21 +17,6 @@ const arc = [
   { step: 'Pursue', desc: 'Internships, credentials, and college courses in a chosen direction.' },
 ]
 
-const chain = [
-  {
-    title: 'A Sense of Purpose',
-    desc: 'Students start to name what they care about and who they want to become.',
-  },
-  {
-    title: 'School Feels Relevant',
-    desc: 'A lab report, a seminar, a set of algebra problems: each one connects to a future the student can picture.',
-  },
-  {
-    title: 'Motivation From Within',
-    desc: 'Students take on hard work because it moves them toward something that is theirs.',
-  },
-]
-
 const keep = [
   'Great educators',
   'Deep mentoring and relationships',
@@ -136,41 +121,13 @@ export default function Purpose() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="bg-mint rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 mb-14"
+          className="bg-mint rounded-xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-3 md:gap-6 mb-16"
         >
           <p className="text-4xl md:text-5xl font-bold text-indigo shrink-0">2 in 3</p>
           <p className="text-sm md:text-base text-black/70 leading-relaxed">
             More than two thirds of Summit students name Expeditions as a top-three influence on
             their plan after high school.
           </p>
-        </motion.div>
-
-        {/* How it becomes motivation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
-          className="mb-16"
-        >
-          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-5">How It Becomes Motivation</h3>
-          <ol className="grid md:grid-cols-3 gap-4">
-            {chain.map((c, i) => (
-              <li key={c.title} className="relative bg-white rounded-xl p-5 border border-black/8">
-                <span className="text-xs font-bold text-teal-ink">Step {i + 1}</span>
-                <p className="font-bold text-black mt-1 mb-2">{c.title}</p>
-                <p className="text-sm text-black/65 leading-relaxed">{c.desc}</p>
-                {i < chain.length - 1 && (
-                  <span
-                    className="hidden md:flex absolute -right-3.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-orange text-white text-sm font-bold items-center justify-center z-10"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                )}
-              </li>
-            ))}
-          </ol>
         </motion.div>
 
         {/* What our community told us */}
