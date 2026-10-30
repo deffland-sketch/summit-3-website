@@ -1,6 +1,8 @@
-# Summit 3.0 Website
+# Summit's Next Step Website
 
-Single-page narrative website for Summit Public Schools' 3.0 model — a pitch/concept note for funders and partners.
+Single-page narrative website for Summit Public Schools' next step (flexing time around each student) — a pitch/concept note for funders and partners.
+
+**Naming:** the public name is "Summit's Next Step" (nav logo, page title, Hero). Never use "Summit 3.0" in rendered copy; the CEO prefers it retired. Where a sentence needs a subject, describe the model plainly ("flexible time", "Summit's learner-centered model"). Internal source documents keep their own titles (e.g. "How Summit 3.0 Works") in code comments.
 
 ## Tech stack
 
@@ -31,7 +33,7 @@ step (flexing time), what it looks like, what makes it work, why Summit.
 5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
    talent, technology, time by day/week/season with a "Live now" line, and the eight
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)
-6. **AWeek** (`#a-week`) — Amara's week (Friday goals, built over the weekend, confirmed
+6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
 7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
    students across a day, tabs for students/educators/spaces/partners. Staffing follows "How

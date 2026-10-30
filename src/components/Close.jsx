@@ -12,13 +12,13 @@ const founders = [
     name: 'Cady Ching',
     role: 'Chief Executive Officer',
     photo: null,
-    bio: 'Leads Summit Public Schools and the Summit 3.0 build. Brings deep operating experience across public school networks and a long track record of moving systems toward what students actually need.',
+    bio: 'Leads Summit Public Schools and the work toward its 2030 ambition. Brings deep operating experience across public school networks and a long track record of moving systems toward what students actually need.',
   },
   {
     name: 'Dan Effland',
     role: 'Chief of Staff and Strategy',
     photo: null,
-    bio: 'Works alongside the CEO to set Summit’s strategy and turn it into results, aligning people, priorities, and resources across the network. Oversees development, communications, partnerships, and innovation, and led the design of Summit 3.0 as Senior Director of Innovation.',
+    bio: 'Works alongside the CEO to set Summit’s strategy and turn it into results, aligning people, priorities, and resources across the network. Oversees development, communications, partnerships, and innovation, and led the design of Summit’s learner-centered model as Senior Director of Innovation.',
   },
 ]
 
