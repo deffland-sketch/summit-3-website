@@ -352,7 +352,7 @@ export default function WholeSchool() {
           className="text-center mb-6"
         >
           <h2 id="whole-school-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
-            The whole school in motion
+            The Whole School in Motion
           </h2>
           <p className="text-white/80 max-w-2xl mx-auto">
             200 students. 16 educators and about 50 partner educators. A home base, with the city as
