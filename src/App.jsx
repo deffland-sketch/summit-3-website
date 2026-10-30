@@ -1,17 +1,15 @@
 import { MotionConfig } from 'framer-motion'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
-import Purpose from './components/Purpose'
-import StudentStories from './components/StudentStories'
-import LearningExperiences from './components/LearningExperiences'
+import WhyChange from './components/WhyChange'
 import WhatStudentsBuild from './components/WhatStudentsBuild'
+import Purpose from './components/Purpose'
+import NextStep from './components/NextStep'
+import AWeek from './components/AWeek'
 import WholeSchool from './components/WholeSchool'
-import Throughline from './components/Throughline'
-import Unlocks from './components/Unlocks'
-import AcrossSummit from './components/AcrossSummit'
-import AtScale from './components/AtScale'
+import Educators from './components/Educators'
+import Technology from './components/Technology'
 import WhySummit from './components/WhySummit'
-import WhyNow from './components/WhyNow'
 import Close from './components/Close'
 
 function App() {
@@ -37,17 +35,15 @@ function App() {
         <div className="overflow-x-clip">
           <main id="main">
             <Hero />
-            <Throughline />
-            <Purpose />
-            <StudentStories />
-            <LearningExperiences />
+            <WhyChange />
             <WhatStudentsBuild />
+            <Purpose />
+            <NextStep />
+            <AWeek />
             <WholeSchool />
-            <Unlocks />
-            <AcrossSummit />
-            <AtScale />
+            <Educators />
+            <Technology />
             <WhySummit />
-            <WhyNow />
             <Close />
           </main>
         </div>

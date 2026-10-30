@@ -12,34 +12,41 @@ Single-page narrative website for Summit Public Schools' 3.0 model — a pitch/c
 ## Section flow (in App.jsx)
 
 Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a skip
-link and a sticky `Nav`.
+link and a sticky `Nav`. One story arc: why change, what Summit already has, the next
+step (flexing time), what it looks like, what makes it work, why Summit.
 
-1. **Hero** — photo + copy two-column, headline stats, pull quote
-2. **Throughline** (`#the-model`) — pathway model (3 steps) + human-centered guidance (4 capacities:
-   mentoring, learning strategies coaching, content expertise, project facilitation),
-   closing on "The right adult, in the right role, at the right moment" and a community sentence
-3. **Purpose** (`#purpose`) — the motivational theory: long-term mentor + graduated
-   Expeditions (expose, explore, pursue) → purpose → relevance → intrinsic motivation
-4. **StudentStories** (`#student-day`) — 3 composite students of the same age (Marco, Amara,
-   David), tabbed across three views: traditional schedule, spring of 9th grade, 11th grade
-5. **LearningExperiences** (`#learning-experiences`) — 8 experience type tiles + expandable learning-science panel
-6. **WhatStudentsBuild** (`#what-students-build`) — three outcomes: college-ready academics, durable skills, a plan and clear next step
-7. **WholeSchool** (`#whole-school`) — interactive stacked bar chart (200 students across a school day), tabs for students/educators/spaces/partners.
-   Staffing follows "How Summit 3.0 Works" (Oct 2026) scaled to 200 at the same ratios; no system
-   architect role. Partner names are real organizations, labeled as hypothetical examples
-8. **Unlocks** (`#how-it-works`) — leads with the theory of action; 3 expandable levers in order:
-   flexible time, talent, technology
-9. **AcrossSummit** (`#across-summit`) — One Model, Three Forms: flexible time by grade span and size.
-   No school names
-10. **AtScale** (`#at-scale`) — industrial model vs Summit 3.0 across 5 needs
-11. **WhySummit** (`#why-summit`) — outcome stats and track record
-12. **WhyNow** (`#why-now`) — the listening tour and the convergence argument
-13. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, founder bios
+1. **Hero** — vision line (verbatim), "When time is flexible in service of each student,
+   students grow faster," theory-of-action subhead, earnings line, proof stats, pull quote
+2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, three constraint
+   cards, the Gallup preparedness stat
+3. **WhatStudentsBuild** (`#what-students-build`) — "What We Want for Every Student": three
+   outcomes plus the economic empowerment line
+4. **Purpose** (`#what-we-have`) — "What Summit Already Has": long-term mentor (guides each
+   student's pathway), graduated Expeditions, "2 in 3", purpose → relevance → motivation,
+   the Fall 2025 community Keep and Build lists
+5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
+   talent, technology, time by day/week/season with a "Live now" line, and the eight
+   experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)
+6. **AWeek** (`#a-week`) — Amara's week (Friday goals, built over the weekend, confirmed
+   Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
+7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day": interactive chart of 200
+   students across a day, tabs for students/educators/spaces/partners. Staffing follows "How
+   Summit 3.0 Works" scaled to 200 at the same ratios. Partner names are real organizations,
+   labeled as hypothetical examples
+8. **Educators** (`#educators`) — four capacities (mentoring, learning strategies coaching,
+   content expertise, project facilitation), partner educators, AI handles / adults do more
+   of, "Live now"
+9. **Technology** (`#how-it-works`) — "Technology Recommends. People Decide.": four-layer
+   stack, safety, how learning is verified, "Live now", and the one sentence that every
+   Summit school is moving toward flexible time at the pace its size allows
+10. **WhySummit** (`#why-summit`) — 2030 ambition verbatim, "prove," why now, outcome stats,
+    track record
+11. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios
 
-`TheBuild.jsx` exists but is **not rendered** — its listening-tour and proof-point
-content was absorbed into WhyNow and WhySummit. Its "Built across our system"
-detail (Sierra, Prep/Summit 780, and the network pilots) appears nowhere else on
-the site.
+Never describe forms of flexible time by school type or group schools on the site.
+`TheBuild.jsx` exists but is **not rendered** and holds older wording. The industrial
+model comparison, the three-student comparison, and One Model, Three Forms were retired
+in the Oct 30 2026 revision; they live in git history (tag pre-site-revision-2026-10-30).
 
 ## Colors
 

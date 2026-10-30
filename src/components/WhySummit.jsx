@@ -47,6 +47,11 @@ export default function WhySummit() {
             We mean <span className="font-bold text-indigo">prove</span>, deliberately: a model we
             build, operate in public schools, measure, and share with the field.
           </p>
+          <p>
+            And the moment is right. The demand for this kind of school has never been clearer, and
+            for the first time the technology exists to make flexible time possible for every student
+            at the scale of a real public system.
+          </p>
         </motion.div>
 
         {/* Stats: comparison stats with peer contrast */}
