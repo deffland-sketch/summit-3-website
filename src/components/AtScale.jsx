@@ -7,39 +7,39 @@ const inkFor = (hex) => ink[Object.keys(brand).find((k) => brand[k] === hex)] ??
 
 const needs = [
   {
-    name: 'Competency verification',
-    question: 'How do we know students are ready?',
+    name: 'Competency Verification',
+    question: 'How Do We Know Students Are Ready?',
     color: brand.teal,
-    industrial: 'Standardized assessments, course grades, and seat-time requirements. Aggregate signals that produce a credential everyone recognizes.',
-    summit: 'Assessment is continuous and tied to real work. AI evaluates student work against Summit\u2019s rubrics and exemplars, and educators review it, add their own feedback, and override when needed. Habits and durable skills earn badges as they are mastered, and industry standards validate where they exist: college credit, certifications, licensing exams. The diploma comes when every required competency is validated, on each student\u2019s own timeline.',
+    industrial: 'Standardized assessments, course grades, and time-based requirements. Aggregate signals that produce a credential everyone recognizes.',
+    summit: 'Assessment is continuous and tied to real work: AI evaluates it against Summit’s rubrics and exemplars, and educators review it, add their own feedback, and override when needed. The diploma comes when every required competency is validated, on each student’s own timeline, with badges for habits and durable skills and industry validation where standards exist.',
   },
   {
-    name: 'Socialization and belonging',
-    question: 'How do young people learn to live together?',
+    name: 'Socialization and Belonging',
+    question: 'How Do Young People Learn to Live Together?',
     color: brand.orange,
     industrial: 'Age-based cohorts, shared schedules, extracurriculars. Community emerges from proximity, and it works for many students.',
-    summit: 'Intentional community circles with a human mentor who knows each student deeply. Peer groups built across ages and interests. Belonging is designed into the daily experience for every student, not only the ones for whom proximity is enough.',
+    summit: 'Every day starts in community with a long-term mentor who knows each student deeply and a core group of peers built across ages and interests. Belonging is designed into the daily experience for every student.',
   },
   {
-    name: 'Physical safety and structure',
-    question: 'Where are young people during the day?',
+    name: 'Physical Safety and Structure',
+    question: 'Where Are Young People During the Day?',
     color: brand.indigo,
     industrial: 'A building with adults, bells, and defined periods. Students are accounted for at all times. Simple and reliable.',
-    summit: 'Students are always within a safe, purposeful structure, but that structure flexes to match what each student needs that day. Students check in through the learning platform wherever they are, every partner educator is background-checked, every site has a signed agreement, and families sign off on off-site placements. Safety without rigidity.',
+    summit: 'Students are always within a safe, purposeful structure that flexes to match what each student needs that day. They check in through the learning platform wherever they are, every partner educator is background-checked, and families sign off on off-site placements.',
   },
   {
-    name: 'Developmentally appropriate progression',
-    question: 'How do we meet students where they are?',
+    name: 'Developmentally Appropriate Progression',
+    question: 'How Do We Meet Students Where They Are?',
     color: brand.lightBlue,
     industrial: 'Grade levels based on age. Everyone moves through the same sequence, which gets the aggregate population through the curriculum.',
-    summit: 'A personalized pathway builds on what each student already knows, where they are socially, and what real-world experiences they bring. A 9th grader and a 12th grader in the same experience type may be doing very different work. This is how the model serves the students the traditional system serves least well. A multilingual learner, a student with an IEP or 504, a student far ahead in one subject and behind in another: each gets a sequence built for where they actually are, adjusted as they progress.',
+    summit: 'Time flexes around each student, so a student who is ready moves on and a student who needs more gets more, in the same school. A multilingual learner, a student with an IEP or 504, or a student far ahead in one subject and behind in another each gets a sequence built for where they are.',
   },
   {
-    name: 'Meaningful adult employment',
-    question: 'How do we make teaching sustainable?',
+    name: 'Meaningful Adult Employment',
+    question: 'How Do We Make Teaching Sustainable?',
     color: brand.brown,
-    industrial: 'Stable jobs with clear definitions, generations of educators built their lives around them. The role has also broadened to ask one adult to do nearly everything.',
-    summit: 'Four specialized capacities (mentoring, providing content expertise, coaching how to learn, and facilitating), alongside partner educators who host and teach in their own fields, so adults can develop deep expertise and live fulfilling, sustainable lives. AI handles administrative load. The work is more engaging because educators do what they\'re best at.',
+    industrial: 'Stable jobs with clear definitions, and generations of educators built their lives around them. Over time, one role has been asked to carry nearly everything.',
+    summit: 'Four capacities, mentoring, learning strategies coaching, content expertise, and project facilitation, with educators typically focusing on two so they can build deep expertise. AI handles administrative load, and partner educators teach and host in their own fields.',
   },
 ]
 
@@ -122,29 +122,19 @@ export default function AtScale() {
           className="mb-12"
         >
           <h2 id="at-scale-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-6">
-            How the industrial model succeeded, and why it's time to evolve
+            How the Industrial Model Succeeded, and Why It's Time to Evolve
           </h2>
           <div className="space-y-4 text-black leading-relaxed max-w-3xl">
             <p>
               The industrial school model is the most successful organizational technology in the
-              history of education to date. It scaled the idea of a basic education to millions of
-              students, and delivered real gains across whole populations. That is a genuine
-              achievement, and Summit 3.0 is designed to build off that scale to do what the
-              industrial model never was designed for: reaching every young person and maximizing
-              their potential. Like population-level medicine, the industrial model is designed to
-              work in the aggregate, and we know this with 100 years of rising literacy and
-              graduation rates. But a system optimized for the average can't see each student, and
-              a system that can't see each student can't develop each student. The talent was
-              always there. The model was simply never built to find it, so an enormous amount of
-              human potential goes unrealized.
+              history of education. For 150 years it has scaled a basic education to millions of
+              students by giving every student the same time, and 100 years of rising literacy and
+              graduation rates are a real achievement Summit 3.0 builds on.
             </p>
             <p>
-              The next breakthrough is precision. In medicine, we now match the right treatment to
-              the right patient, at the right time, at the right dose. Summit 3.0 does the same for
-              learning: the right resource, for the right student, at the right moment, so that
-              each student's full potential gets developed and the system's aggregate gains still
-              hold. We keep the scale that made the industrial model worth building, and we add
-              what it could never do, which is to see and grow every individual.
+              Holding time static is also where it reaches its limit. Different students need
+              different amounts of different things to learn, and a system built for the average
+              can't see each student. Summit 3.0 keeps that scale and flexes time around each student.
             </p>
           </div>
         </motion.div>
