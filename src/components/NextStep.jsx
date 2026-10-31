@@ -6,6 +6,8 @@ import { ExperienceTypes } from './LearningExperiences'
  * The Next Step: the theory of action, the three levers (today vs. where we are
  * headed), and how time flexes by day, week, and season. Language follows the 2030
  * Strategy Source of Truth (Oct 2026). "Live now" lines name no schools.
+ * Each lever carries the student need it meets most directly (see "What Keeps
+ * Motivation Going" in Motivation.jsx); need colors match that section.
  */
 
 const levers = [
@@ -15,6 +17,7 @@ const levers = [
     headed: 'Time that flexes around what each student needs, by day, by week, and across the year.',
     color: 'text-orange-ink',
     bar: 'bg-orange',
+    need: { name: 'Growth', text: 'every student works at the right level and can see their progress.', label: 'text-teal-ink', bg: 'bg-teal/[0.06]' },
   },
   {
     name: 'Talent',
@@ -22,6 +25,7 @@ const levers = [
     headed: 'Educators who build deep expertise in one or two of four capacities, in roles flexible enough to allow it.',
     color: 'text-teal-ink',
     bar: 'bg-teal',
+    need: { name: 'Belonging', text: 'every student is known by a mentor who stays with them.', label: 'text-indigo', bg: 'bg-indigo/10' },
   },
   {
     name: 'Technology',
@@ -29,6 +33,7 @@ const levers = [
     headed: 'A learning platform that builds each student’s schedule from their needs and progress. Technology recommends. People decide.',
     color: 'text-indigo',
     bar: 'bg-indigo',
+    need: { name: 'Ownership', text: 'students set their goals and confirm their week with their mentor.', label: 'text-orange-ink', bg: 'bg-orange/10' },
   },
 ]
 
@@ -101,9 +106,14 @@ export default function NextStep() {
                 <p className="text-sm md:text-base text-black/60 leading-relaxed">
                   <span className="md:hidden font-bold">Today: </span>{l.today}
                 </p>
-                <p className="text-sm md:text-base text-black/85 leading-relaxed">
-                  <span className="md:hidden font-bold">Where we are headed: </span>{l.headed}
-                </p>
+                <div>
+                  <p className="text-sm md:text-base text-black/85 leading-relaxed">
+                    <span className="md:hidden font-bold">Where we are headed: </span>{l.headed}
+                  </p>
+                  <p className={`mt-3 text-sm text-black/75 leading-relaxed rounded-md px-3 py-2 ${l.need.bg}`}>
+                    <span className={`font-bold ${l.need.label}`}>{l.need.name}:</span> {l.need.text}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>

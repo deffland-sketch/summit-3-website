@@ -29,9 +29,12 @@ step (flexing time), what it looks like, what makes it work, why Summit.
 4b. **Motivation** (`#purpose-to-motivation`, mint) — "Purpose Makes Learning Relevant, and
    Relevance Builds Motivation": the logic of the model. Mentor and Expeditions build purpose,
    flexible time makes the academic core relevant to it, motivation follows. The 69% Transcend
-   stat. This wording is the source for the same idea in the Sierra and 2030 strategy decks
+   stat. This wording is the source for the same idea in the Sierra and 2030 strategy decks.
+   Then "What Keeps Motivation Going": belonging (indigo), growth (teal), ownership (orange),
+   lighter than the cards. Self-determination theory is named only in its source line; never
+   use autonomy, competence, or relatedness in visible copy
 5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
-   talent, technology, time by day/week/season with a "Live now" line, and the eight
+   talent, technology (each row carries a Growth / Belonging / Ownership callout), time by day/week/season with a "Live now" line, and the eight
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)
 6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named

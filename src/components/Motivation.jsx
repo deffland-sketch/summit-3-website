@@ -7,6 +7,10 @@ import { useRef } from 'react'
  * time makes academic work relevant to it, and motivation follows. Stats are from the
  * 2030 Strategy Source of Truth (Oct 2026): Transcend, Conversations with Kids (2022),
  * and the Summit SY26 spring student survey.
+ *
+ * "What Keeps Motivation Going" grounds the sequence in self-determination theory,
+ * named only in its source line. The three needs are deliberately lighter than the
+ * cards above (no fill, a thin left rule) so the sequence stays the main event.
  */
 
 const steps = [
@@ -33,6 +37,27 @@ const steps = [
     top: 'border-t-indigo',
     label: 'text-indigo',
     dot: 'bg-indigo',
+  },
+]
+
+const needs = [
+  {
+    title: 'Belonging',
+    body: 'A long-term mentor who knows each student, and Expeditions alongside peers and professionals. 89% of Summit students trust their mentor.',
+    rule: 'border-indigo',
+    label: 'text-indigo',
+  },
+  {
+    title: 'Growth',
+    body: 'Flexible time puts each student in work at the right level, in small groups scheduled by need, with progress they can see week to week.',
+    rule: 'border-teal',
+    label: 'text-teal-ink',
+  },
+  {
+    title: 'Ownership',
+    body: 'Students set their own goals and confirm their week with their mentor. Technology recommends. People decide.',
+    rule: 'border-orange',
+    label: 'text-orange-ink',
   },
 ]
 
@@ -112,6 +137,32 @@ export default function Motivation() {
             </motion.li>
           ))}
         </ol>
+
+        {/* What keeps motivation going: the three needs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="mt-14"
+        >
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-2">What Keeps Motivation Going</h3>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed mb-6 max-w-3xl">
+            Students stay motivated when three needs are met. Summit&rsquo;s model is built to meet
+            each one.
+          </p>
+          <ul className="grid md:grid-cols-3 gap-6">
+            {needs.map((n) => (
+              <li key={n.title} className={`border-l-2 ${n.rule} pl-4`}>
+                <h4 className={`font-bold ${n.label} mb-1`}>{n.title}</h4>
+                <p className="text-sm md:text-base text-black/70 leading-relaxed">{n.body}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="text-xs text-black/60 mt-6">
+            Grounded in self-determination theory (Ryan and Deci, 2000 and 2017).
+          </p>
+        </motion.div>
       </div>
     </section>
   )
