@@ -94,7 +94,7 @@ export default function Close() {
           className="space-y-5 text-lg text-white/95 leading-relaxed mb-10"
         >
           <p>
-            Every student equipped for a fulfilled life, with purposeful work, financial independence,
+            Every student equipped for a fulfilled life, with purpose, financial independence,
             strong relationships, community, and health. That's been Summit's vision since 2003, and
             the data shows students are getting there.
           </p>

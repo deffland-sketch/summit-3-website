@@ -52,7 +52,7 @@ export default function WhatStudentsBuild() {
             What We Want for Every Student
           </h2>
           <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
-            Every Summit student builds the foundations of a fulfilled life: purposeful work,
+            Every Summit student builds the foundations of a fulfilled life: purpose,
             financial independence, strong relationships, community, and health. They leave with
             three things: the academics that open doors, the skills that make a life navigable, and
             a pathway toward what comes next.

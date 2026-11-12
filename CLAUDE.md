@@ -17,22 +17,32 @@ Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a sk
 link and a sticky `Nav`. One story arc: why change, what Summit already has, the next
 step (flexing time), what it looks like, what makes it work, why Summit.
 
-1. **Hero** — vision line (verbatim), "When time is flexible in service of each student,
+1. **Hero** — H1 "Every student is equipped to lead a fulfilled life." with a row of the five
+   elements as labeled pills (Purpose · Financial Independence · Strong Relationships ·
+   Community · Health); "When time is flexible in service of each student,
    students grow faster," theory-of-action subhead, earnings line, proof stats, pull quote
 2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, three constraint
    cards, the Gallup preparedness stat
 3. **WhatStudentsBuild** (`#what-students-build`) — "What We Want for Every Student": three
    outcomes plus the economic empowerment line
 4. **Purpose** (`#what-we-have`) — "What Summit Already Has": long-term mentor (guides each
-   student's pathway), graduated Expeditions, "2 in 3",
+   student's pathway) with the 91% trust tile, graduated Expeditions with the 2,245 placements
+   tile and breakdown, "2 in 3" (top influence), a sources line at the bottom,
    the Fall 2025 community Keep and Build lists
-4b. **Motivation** (`#purpose-to-motivation`, mint) — "Purpose Makes Learning Relevant, and
-   Relevance Builds Motivation": the logic of the model. Mentor and Expeditions build purpose,
-   flexible time makes the academic core relevant to it, motivation follows. The 69% Transcend
-   stat. This wording is the source for the same idea in the Sierra and 2030 strategy decks
+4b. **Motivation** (`#purpose-to-motivation`, mint) — "Purpose, Relevance, and Competence Build
+   Motivation": Purpose + Relevance + Competence = Motivation, with visible operators. Mentor and
+   Expeditions build purpose, flexible time builds relevance, self-directed learning skills build
+   competence. The 69% Transcend stat, and a self-determination theory source line. Matches the
+   Sierra 11/9 site visit deck
 5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
    talent, technology, time by day/week/season with a "Live now" line, and the eight
-   experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`)
+   experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`). Its "Live now"
+   line names Summit Sierra and links to `#sierra`
+5b. **Sierra** (`#sierra`, mint) — "Summit Sierra: The First Proof Point of Summit's Next Step",
+   with the eyebrow "The first proof point" (the one deliberate exception to the no-eyebrow rule).
+   Three of eight experience types (illustrative stacked bars), the day's shape plus the ownership
+   progression, foundation stat tiles, the listen/adjust/check-again loop with two examples, five
+   first-year measures and "How Results Set the Pace"
 6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
 7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
@@ -49,7 +59,9 @@ step (flexing time), what it looks like, what makes it work, why Summit.
     track record
 11. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios
 
-Never describe forms of flexible time by school type or group schools on the site.
+Never describe forms of flexible time by school type or group schools on the site. Sierra is
+named as the first proof point (its own section and the NextStep "Live now" line); other schools
+stay unnamed.
 `TheBuild.jsx` exists but is **not rendered** and holds older wording. The industrial
 model comparison, the three-student comparison, and One Model, Three Forms were retired
 in the Oct 30 2026 revision; they live in git history (tag pre-site-revision-2026-10-30).
@@ -103,7 +115,9 @@ pass there and `-ink` would be wrong.
 - "Pathway" is the single term for a student's plan for the life they want. Don't introduce a
   second term for it ("plan for their future" was retired). Mentors guide it; Expeditions shape it.
 - Section headings and card titles are title case; body text and labels stay sentence case. The
-  Hero vision line and the Close North Star are verbatim sentences and stay sentence case.
+  Hero H1 and the Close North Star are sentences and stay sentence case. The five fulfilled-life
+  elements are "purpose, financial independence, strong relationships, community, and health"
+  everywhere (never "purposeful work").
 - Card pattern (set by `Purpose.jsx`): white cards with a single `border-t-4` brand-color
   accent, on a tinted section background (or with a `border-black/8` outline on white).
   Body text at `text-sm` or larger, no lighter than `text-black/60`. Labels are sentence case:

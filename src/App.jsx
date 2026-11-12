@@ -6,6 +6,7 @@ import WhatStudentsBuild from './components/WhatStudentsBuild'
 import Purpose from './components/Purpose'
 import Motivation from './components/Motivation'
 import NextStep from './components/NextStep'
+import Sierra from './components/Sierra'
 import AWeek from './components/AWeek'
 import WholeSchool from './components/WholeSchool'
 import Educators from './components/Educators'
@@ -41,6 +42,7 @@ function App() {
             <Purpose />
             <Motivation />
             <NextStep />
+            <Sierra />
             <AWeek />
             <WholeSchool />
             <Educators />

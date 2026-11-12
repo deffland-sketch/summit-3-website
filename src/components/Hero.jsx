@@ -1,5 +1,14 @@
 import { motion } from 'framer-motion'
 
+// The five elements of a fulfilled life, shown as labeled pills under the H1.
+const elements = [
+  { label: 'Purpose', dot: 'bg-indigo' },
+  { label: 'Financial Independence', dot: 'bg-teal' },
+  { label: 'Strong Relationships', dot: 'bg-orange' },
+  { label: 'Community', dot: 'bg-light-blue' },
+  { label: 'Health', dot: 'bg-tan-grey' },
+]
+
 export default function Hero() {
   return (
     <section className="relative bg-white pt-10 md:pt-14 pb-16 md:pb-20 px-6 overflow-hidden">
@@ -10,10 +19,28 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-indigo leading-[1.1] mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-indigo leading-[1.1] mb-5"
             >
-              Every student equipped for a fulfilled life, with purposeful work, financial independence, strong relationships, community, and health.
+              Every student is equipped to lead a fulfilled life.
             </motion.h1>
+
+            <motion.ul
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="flex flex-wrap gap-2 mb-7"
+              aria-label="The five elements of a fulfilled life"
+            >
+              {elements.map((e) => (
+                <li
+                  key={e.label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-3 py-1 text-sm font-bold text-black/80"
+                >
+                  <span className={`w-2 h-2 rounded-full ${e.dot}`} aria-hidden="true" />
+                  {e.label}
+                </li>
+              ))}
+            </motion.ul>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}

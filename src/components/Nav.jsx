@@ -12,6 +12,7 @@ const links = [
   { href: '#why-change', label: 'Why change' },
   { href: '#what-we-have', label: 'What we have' },
   { href: '#next-step', label: 'Flexible time' },
+  { href: '#sierra', label: 'Sierra' },
   { href: '#a-week', label: 'A week' },
   { href: '#whole-school', label: 'The school' },
   { href: '#how-it-works', label: 'How it works' },
@@ -36,13 +37,13 @@ export default function Nav() {
     >
       <nav
         aria-label="Section navigation"
-        className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6"
+        className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4 xl:gap-6"
       >
         <a href="#top" className="font-bold text-indigo shrink-0 whitespace-nowrap">
           Summit&rsquo;s <span className="text-orange-ink">Next Step</span>
         </a>
 
-        <ul className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm">
+        <ul className="hidden lg:flex items-center gap-3 xl:gap-6 text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <a
