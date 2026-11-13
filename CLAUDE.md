@@ -29,17 +29,17 @@ step (flexing time), what it looks like, what makes it work, why Summit.
    student's pathway) with the 91% trust tile, graduated Expeditions with the 2,245 placements
    tile and breakdown, "2 in 3" (top influence), a sources line at the bottom,
    the Fall 2025 community Keep and Build lists
-4b. **Motivation** (`#purpose-to-motivation`, mint) — "Purpose, Relevance, and Competence Build
-   Motivation": Purpose + Relevance + Competence = Motivation, with visible operators. Mentor and
-   Expeditions build purpose, flexible time builds relevance, self-directed learning skills build
-   competence. The 69% Transcend stat, and a self-determination theory source line. Matches the
-   Sierra 11/9 site visit deck
 5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
    talent, technology, time by day/week/season with a "Live now" line, and the eight
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`). Its "Live now"
    line names Summit Sierra and links to `#sierra`
 6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
+6b. **Motivation** (`#purpose-to-motivation`, peach/10, placed after AWeek) — "Purpose, Relevance, and Competence Build
+   Motivation": Purpose + Relevance + Competence = Motivation, with visible operators. Mentor and
+   Expeditions build purpose, flexible time builds relevance, self-directed learning skills build
+   competence. The 69% Transcend stat, and a self-determination theory source line. Matches the
+   Sierra 11/9 site visit deck
 7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
    students across a day, tabs for students/educators/spaces/partners. Staffing follows "How
    Summit 3.0 Works" scaled to 200 at the same ratios. Partner names are real organizations,

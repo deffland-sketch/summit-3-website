@@ -40,9 +40,9 @@ function App() {
             <WhyChange />
             <WhatStudentsBuild />
             <Purpose />
-            <Motivation />
             <NextStep />
             <AWeek />
+            <Motivation />
             <WholeSchool />
             <Educators />
             <Technology />

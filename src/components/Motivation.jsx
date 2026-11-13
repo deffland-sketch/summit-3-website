@@ -3,7 +3,7 @@ import { Fragment, useRef } from 'react'
 
 /*
  * Purpose, Relevance, and Competence Build Motivation: the logic of the model, placed
- * between what Summit already has and the next step. Mentoring and Expeditions build
+ * right after Amara's week, so the week is the example before the explanation. Mentoring and Expeditions build
  * purpose, flexible time makes academic work relevant to it, self-directed learning
  * skills build competence, and motivation follows (self-determination theory, Ryan and
  * Deci). Framing matches the Sierra 11/9 site visit deck (Nov 2026). Stats are from the
@@ -52,7 +52,7 @@ export default function Motivation() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-mint"
+      className="py-20 md:py-28 px-6 bg-peach/10"
       ref={ref}
       id="purpose-to-motivation"
       aria-labelledby="purpose-to-motivation-heading"
