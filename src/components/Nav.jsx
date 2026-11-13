@@ -12,10 +12,10 @@ const links = [
   { href: '#why-change', label: 'Why change' },
   { href: '#what-we-have', label: 'What we have' },
   { href: '#next-step', label: 'Flexible time' },
-  { href: '#sierra', label: 'Sierra' },
   { href: '#a-week', label: 'A week' },
   { href: '#whole-school', label: 'The school' },
   { href: '#how-it-works', label: 'How it works' },
+  { href: '#sierra', label: 'Sierra' },
   { href: '#why-summit', label: 'Why Summit' },
 ]
 

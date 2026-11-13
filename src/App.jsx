@@ -42,11 +42,11 @@ function App() {
             <Purpose />
             <Motivation />
             <NextStep />
-            <Sierra />
             <AWeek />
             <WholeSchool />
             <Educators />
             <Technology />
+            <Sierra />
             <WhySummit />
             <Close />
           </main>

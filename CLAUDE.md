@@ -38,11 +38,6 @@ step (flexing time), what it looks like, what makes it work, why Summit.
    talent, technology, time by day/week/season with a "Live now" line, and the eight
    experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`). Its "Live now"
    line names Summit Sierra and links to `#sierra`
-5b. **Sierra** (`#sierra`, mint) — "Summit Sierra: The First Proof Point of Summit's Next Step",
-   with the eyebrow "The first proof point" (the one deliberate exception to the no-eyebrow rule).
-   Three of eight experience types (illustrative stacked bars), the day's shape plus the ownership
-   progression, foundation stat tiles, the listen/adjust/check-again loop with two examples, five
-   first-year measures and "How Results Set the Pace"
 6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
    Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
 7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
@@ -55,6 +50,12 @@ step (flexing time), what it looks like, what makes it work, why Summit.
 9. **Technology** (`#how-it-works`) — "Technology Recommends. People Decide.": four-layer
    stack, safety, how learning is verified, "Live now", and the one sentence that every
    Summit school is moving toward flexible time at the pace its size allows
+9b. **Sierra** (`#sierra`, mint) — "Summit Sierra: The First Proof Point of Summit's Next Step",
+   with the eyebrow "The first proof point" (the one deliberate exception to the no-eyebrow rule).
+   Three of eight experience types (illustrative stacked bars), the day's shape plus the ownership
+   progression, foundation stat tiles, the listen/adjust/check-again loop with two examples, five
+   first-year measures and "How Results Set the Pace". Placed after Technology, right before
+   WhySummit
 10. **WhySummit** (`#why-summit`) — 2030 ambition verbatim, "prove," why now, outcome stats,
     track record
 11. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios

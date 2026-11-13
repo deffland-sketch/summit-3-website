@@ -3,8 +3,8 @@ import { Fragment, useRef } from 'react'
 import { brand } from '../palette'
 
 /*
- * Summit Sierra: the first proof point. Sits after the eight experience types and
- * before Amara's week. Copy is from Dan's Nov 2026 spec, drawn from the Sierra 11/9
+ * Summit Sierra: the first proof point. Sits after Technology and right before
+ * Why Summit, so the model is fully described before the proof point. Copy is from Dan's Nov 2026 spec, drawn from the Sierra 11/9
  * site visit deck. Visuals vary on purpose (stacked bars, a day-shape strip, a
  * progression strip, stat tiles, a three-step loop) so the section does not read
  * as a wall of cards. Every color is paired with a text label.
