@@ -1,10 +1,12 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { Fragment, useRef } from 'react'
 
 /*
- * From Purpose to Motivation: the logic of the model, placed between what Summit
- * already has and the next step. Mentoring and Expeditions build purpose, flexible
- * time makes academic work relevant to it, and motivation follows. Stats are from the
+ * Purpose, Relevance, and Competence Build Motivation: the logic of the model, placed
+ * between what Summit already has and the next step. Mentoring and Expeditions build
+ * purpose, flexible time makes academic work relevant to it, self-directed learning
+ * skills build competence, and motivation follows (self-determination theory, Ryan and
+ * Deci). Framing matches the Sierra 11/9 site visit deck (Nov 2026). Stats are from the
  * 2030 Strategy Source of Truth (Oct 2026): Transcend, Conversations with Kids (2022),
  * and the Summit SY26 spring student survey.
  */
@@ -27,6 +29,14 @@ const steps = [
     dot: 'bg-orange',
   },
   {
+    title: 'Competence',
+    builtBy: 'Built by self-directed learning skills',
+    body: 'Students learn to plan, practice, ask for help, and choose the support they need, with guided autonomy and strong relationships around them.',
+    top: 'border-t-light-blue',
+    label: 'text-light-blue-ink',
+    dot: 'bg-light-blue',
+  },
+  {
     title: 'Motivation',
     builtBy: 'What follows',
     body: 'Students take on hard academic work because it moves them toward something that is theirs, and they keep at it when it gets hard.',
@@ -47,7 +57,7 @@ export default function Motivation() {
       id="purpose-to-motivation"
       aria-labelledby="purpose-to-motivation-heading"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -55,16 +65,17 @@ export default function Motivation() {
           className="max-w-3xl mb-10"
         >
           <h2 id="purpose-to-motivation-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5 leading-tight">
-            Purpose Makes Learning Relevant, and Relevance Builds Motivation
+            Purpose, Relevance, and Competence Build Motivation
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
-            Students work hardest when school connects to a future they can picture. Summit already
-            builds that sense of purpose through mentoring and Expeditions.
+            Students work hardest when school connects to a future they can picture, and when they
+            have the skills to get there. Summit has long built purpose through mentoring and
+            Expeditions.
           </p>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            The academic core is where the connection is hardest to see. Flexible time is how we
-            carry purpose into it, so a student&rsquo;s math, science, reading and writing connect to
-            the pathway they are building.
+            Flexible time carries that purpose into the academic core, so a student&rsquo;s math,
+            science, reading and writing connect to the pathway they are building. Our focus now is
+            competence: making sure every student builds the skills to direct their own learning.
           </p>
         </motion.div>
 
@@ -81,37 +92,45 @@ export default function Motivation() {
           </p>
         </motion.div>
 
-        <ol className="grid md:grid-cols-3 gap-5">
-          {steps.map((s, i) => (
-            <motion.li
-              key={s.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 * (i + 1) }}
-              className={`relative bg-white rounded-xl border-t-4 ${s.top} p-6`}
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <span
-                  className={`w-6 h-6 rounded-full ${s.dot} text-white text-xs font-bold flex items-center justify-center shrink-0`}
-                  aria-hidden="true"
+        {/* Purpose + Relevance + Competence = Motivation. Operators sit in their own
+            grid columns on wide screens and between stacked cards on narrow ones. */}
+        <ol
+          className="grid gap-3 lg:gap-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] items-stretch"
+          aria-label="Purpose plus relevance plus competence equals motivation"
+        >
+          {steps.map((s, i) => {
+            const isResult = i === steps.length - 1
+            return (
+              <Fragment key={s.title}>
+                {i > 0 && (
+                  <li className="flex items-center justify-center" aria-hidden="true">
+                    <span
+                      className={`w-9 h-9 rounded-full text-xl font-bold flex items-center justify-center ${
+                        isResult ? 'bg-indigo text-white' : 'bg-white text-indigo border border-indigo/20'
+                      }`}
+                    >
+                      {isResult ? '=' : '+'}
+                    </span>
+                  </li>
+                )}
+                <motion.li
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.12 * (i + 1) }}
+                  className={`rounded-xl border-t-4 ${s.top} p-6 ${isResult ? 'bg-indigo/[0.06] ring-1 ring-indigo/15' : 'bg-white'}`}
                 >
-                  {i + 1}
-                </span>
-                <h3 className="text-xl font-bold text-indigo">{s.title}</h3>
-              </div>
-              <p className={`text-sm font-bold ${s.label} mb-3`}>{s.builtBy}</p>
-              <p className="text-sm md:text-base text-black/70 leading-relaxed">{s.body}</p>
-              {i < steps.length - 1 && (
-                <span
-                  className="hidden md:flex absolute -right-3.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-orange text-white text-sm font-bold items-center justify-center z-10"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              )}
-            </motion.li>
-          ))}
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className={`w-2.5 h-2.5 rounded-full ${s.dot} shrink-0`} aria-hidden="true" />
+                    <h3 className="text-xl font-bold text-indigo">{s.title}</h3>
+                  </div>
+                  <p className={`text-sm font-bold ${s.label} mb-3`}>{s.builtBy}</p>
+                  <p className="text-sm md:text-base text-black/70 leading-relaxed">{s.body}</p>
+                </motion.li>
+              </Fragment>
+            )
+          })}
         </ol>
+        <p className="text-xs text-black/60 mt-6">Source: self-determination theory (Ryan and Deci)</p>
       </div>
     </section>
   )

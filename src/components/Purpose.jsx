@@ -8,13 +8,22 @@ import { useRef } from 'react'
  *
  * Sources: 2030 Strategy Source of Truth (Oct 2026); Summit Sierra and Summit 780
  * design blueprints (SY27); SXSW EDU 2026 Expeditions deck. The two-thirds figure is
- * from the Expeditions program FAQ and the source of truth.
+ * from the Expeditions program FAQ and the source of truth. The 91% and 2,245 figures
+ * are from the Sierra 11/9 site visit deck (Nov 2026).
  */
 
 const arc = [
   { step: 'Expose', desc: 'Try a wide range of fields and see what real work looks like.' },
   { step: 'Explore', desc: 'Go deeper into the ones that pull at you.' },
   { step: 'Pursue', desc: 'Internships, credentials, and college courses in a chosen direction.' },
+]
+
+// Expeditions placements this year, from SY26-27 verified roster data.
+const placements = [
+  '404 college course enrollments',
+  '369 internships and placements',
+  '203 industry credentials',
+  '157 in the healthcare pipeline',
 ]
 
 const keep = [
@@ -68,7 +77,7 @@ export default function Purpose() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6"
+            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6 flex flex-col"
           >
             <h3 className="text-xl font-bold text-indigo mb-1">A Long-Term Mentor</h3>
             <p className="text-sm font-bold italic text-orange-ink mb-4">Someone who knows you, and stays</p>
@@ -82,13 +91,19 @@ export default function Purpose() {
               connect short-term choices to long-term plans. Trust builds over time, and a mentor who
               has known a student for years hears things a new adult never would.
             </p>
+            <div className="mt-auto pt-5">
+              <div className="rounded-lg bg-orange/10 px-4 py-3 flex items-baseline gap-3">
+                <p className="text-3xl font-bold text-orange-ink shrink-0">91%</p>
+                <p className="text-sm text-black/75 leading-snug">of Summit students trust their mentor</p>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-teal p-6"
+            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-teal p-6 flex flex-col"
           >
             <h3 className="text-xl font-bold text-indigo mb-1">Expeditions</h3>
             <p className="text-sm font-bold italic text-teal-ink mb-4">Real work in the real world</p>
@@ -112,6 +127,25 @@ export default function Purpose() {
                 </li>
               ))}
             </ol>
+            <div className="mt-auto pt-5">
+              <div className="rounded-lg bg-teal/[0.08] px-4 py-3">
+                <div className="flex items-baseline gap-3">
+                  <p className="text-3xl font-bold text-teal-ink shrink-0">2,245</p>
+                  <p className="text-sm text-black/75 leading-snug">
+                    personalized placements this year across Summit&rsquo;s seven high schools in college courses,
+                    internships, and industry credentials
+                  </p>
+                </div>
+                <ul className="mt-3 pt-3 border-t border-teal/20 flex flex-wrap gap-x-3 gap-y-1 text-xs text-black/70">
+                  {placements.map((p) => (
+                    <li key={p} className="flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal shrink-0" aria-hidden="true" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </motion.div>
         </div>
 
@@ -125,7 +159,7 @@ export default function Purpose() {
         >
           <p className="text-4xl md:text-5xl font-bold text-indigo shrink-0">2 in 3</p>
           <p className="text-sm md:text-base text-black/70 leading-relaxed">
-            More than two thirds of Summit students name Expeditions as a top-three influence on
+            More than two thirds of Summit students name Expeditions as a top influence on
             their plan after high school.
           </p>
         </motion.div>
@@ -172,6 +206,10 @@ export default function Purpose() {
             get from mentoring and Expeditions to the academic core.
           </p>
         </motion.div>
+
+        <p className="text-xs text-black/60 mt-10">
+          Sources: SY26&ndash;27 verified Expeditions roster data; Summit SY25 and SY26 spring student surveys.
+        </p>
       </div>
     </section>
   )

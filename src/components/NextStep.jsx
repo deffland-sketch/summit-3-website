@@ -5,7 +5,7 @@ import { ExperienceTypes } from './LearningExperiences'
 /*
  * The Next Step: the theory of action, the three levers (today vs. where we are
  * headed), and how time flexes by day, week, and season. Language follows the 2030
- * Strategy Source of Truth (Oct 2026). "Live now" lines name no schools.
+ * Strategy Source of Truth (Oct 2026). The "Live now" line points to Sierra (#sierra).
  */
 
 const levers = [
@@ -132,9 +132,11 @@ export default function NextStep() {
             ))}
           </ul>
           <p className="text-sm md:text-base text-black/75 leading-relaxed mt-5 max-w-3xl">
-            <span className="font-bold text-orange-ink">Live now:</span> one Summit high school runs
-            collaborative mornings and a flexible afternoon built from learning data, whole school, and
-            another flexes 11th grade around each student&rsquo;s plan.
+            <span className="font-bold text-orange-ink">Live now:</span> Summit Sierra in Seattle is
+            the first school bringing flexible time to the academic core.{' '}
+            <a href="#sierra" className="font-bold text-indigo underline underline-offset-2 hover:text-indigo/80">
+              See how below.
+            </a>
           </p>
         </motion.div>
 
