@@ -132,7 +132,7 @@ export default function Purpose() {
                 <div className="flex items-baseline gap-3">
                   <p className="text-3xl font-bold text-teal-ink shrink-0">2,245</p>
                   <p className="text-sm text-black/75 leading-snug">
-                    placements this year across Summit&rsquo;s seven high schools in college courses,
+                    personalized placements this year across Summit&rsquo;s seven high schools in college courses,
                     internships, and industry credentials
                   </p>
                 </div>
