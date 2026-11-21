@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { ELEMENTS } from '../elements'
-import { ElementLegend, ElementTag } from './ElementTag'
+import { ElementTag } from './ElementTag'
 
 /*
  * School resource model (from "How Summit 3.0 Works", Oct 2026, scaled from a
@@ -15,20 +15,32 @@ import { ElementLegend, ElementTag } from './ElementTag'
  *     2 project studios, 2 mentor nooks = 14 spaces; the city is the rest of the campus
  *   Partner organizations are hypothetical examples, labeled as such on the page.
  */
-// Students in each slot are counted by model element (bottom of each bar first).
-// The counts were re-tallied from the earlier per-activity counts, keeping every
-// slot at 200: direct instruction, practice and feedback, discussion and dialogue,
-// and independent work go to Academic Core; reflection and goal-setting and
-// community time go to Mentoring; real-world experience, exhibitions, and
-// independent work in the project studios (20 students whenever both studios are
-// open) go to Career-Connected Learning; the 12:30 lunch count is Lunch.
-const studentKeys = ['academic', 'mentoring', 'ccl', 'lunch']
+// Students in each slot are counted by learning experience, grouped under the
+// three model elements and drawn in shades of each element's color (darkest at
+// the bottom of each group). Lunch is shown in the schedule in a light neutral but
+// is not on the key. Every slot totals 200. Career-connected counts follow the
+// partner list for that slot (college courses vs. other field placements);
+// "Expedition projects" is independent work in the two project studios.
+const experiences = [
+  { key: 'di', element: 'academic', label: 'Direct instruction', color: '#4b4b96' },
+  { key: 'pf', element: 'academic', label: 'Practice and feedback', color: '#6a6aae' },
+  { key: 'dd', element: 'academic', label: 'Discussion and dialogue', color: '#8c8cc4' },
+  { key: 'iw', element: 'academic', label: 'Independent work', color: '#b0b0da' },
+  { key: 'gr', element: 'mentoring', label: 'Goal setting and reflection', color: '#508278' },
+  { key: 'ct', element: 'mentoring', label: 'Community time', color: '#86b0a7' },
+  { key: 'ep', element: 'ccl', label: 'Expedition projects', color: '#f6aa40' },
+  { key: 'cc', element: 'ccl', label: 'College courses', color: '#f8bd68' },
+  { key: 'fi', element: 'ccl', label: 'Internships and Expeditions in the field', color: '#fad08f' },
+  { key: 'ex', element: 'ccl', label: 'Exhibitions of learning', color: '#fce3bd' },
+  { key: 'lunch', element: 'lunch', label: 'Lunch', color: ELEMENTS.lunch.color },
+]
+const keyedElements = ['academic', 'mentoring', 'ccl']
 
 // Each time slot: students, adults deployed, spaces in use, partner activity, operational note
 const timeSlots = [
   {
     time: '8:30 am',
-    students: { academic: 0, mentoring: 200, ccl: 0, lunch: 0 },
+    students: { ct: 200 },
     adults: { mentors: 6, contentExperts: 6, coaches: 2, facilitators: 2, partners: 0 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [],
@@ -36,7 +48,7 @@ const timeSlots = [
   },
   {
     time: '9:15 am',
-    students: { academic: 138, mentoring: 12, ccl: 50, lunch: 0 },
+    students: { di: 30, pf: 50, dd: 20, iw: 38, gr: 12, ep: 20, cc: 18, fi: 12 },
     adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 12 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -49,7 +61,7 @@ const timeSlots = [
   },
   {
     time: '10:30 am',
-    students: { academic: 128, mentoring: 10, ccl: 62, lunch: 0 },
+    students: { di: 30, pf: 44, dd: 24, iw: 30, gr: 10, ep: 20, cc: 18, fi: 18, ex: 6 },
     adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 16 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -62,7 +74,7 @@ const timeSlots = [
   },
   {
     time: '11:30 am',
-    students: { academic: 118, mentoring: 12, ccl: 70, lunch: 0 },
+    students: { di: 24, pf: 40, dd: 20, iw: 34, gr: 12, ep: 20, cc: 18, fi: 22, ex: 10 },
     adults: { mentors: 5, contentExperts: 5, coaches: 2, facilitators: 2, partners: 18 },
     spaces: { smallGroup: 5, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -77,7 +89,7 @@ const timeSlots = [
   },
   {
     time: '12:30 pm',
-    students: { academic: 0, mentoring: 0, ccl: 40, lunch: 160 },
+    students: { cc: 18, fi: 22, lunch: 160 },
     adults: { mentors: 6, contentExperts: 4, coaches: 1, facilitators: 1, partners: 18 },
     spaces: { smallGroup: 2, commons: 2, seminar: 0, studio: 0, nook: 1 },
     partners: [
@@ -92,7 +104,7 @@ const timeSlots = [
   },
   {
     time: '1:30 pm',
-    students: { academic: 60, mentoring: 12, ccl: 128, lunch: 0 },
+    students: { di: 12, pf: 24, dd: 10, iw: 14, gr: 12, ep: 20, cc: 24, fi: 76, ex: 8 },
     adults: { mentors: 4, contentExperts: 4, coaches: 2, facilitators: 2, partners: 30 },
     spaces: { smallGroup: 3, commons: 1, seminar: 1, studio: 2, nook: 1 },
     partners: [
@@ -113,7 +125,7 @@ const timeSlots = [
   },
   {
     time: '3:00 pm',
-    students: { academic: 0, mentoring: 170, ccl: 30, lunch: 0 },
+    students: { gr: 150, ct: 20, cc: 10, fi: 20 },
     adults: { mentors: 6, contentExperts: 3, coaches: 2, facilitators: 1, partners: 12 },
     spaces: { smallGroup: 2, commons: 2, seminar: 1, studio: 1, nook: 2 },
     partners: [
@@ -129,19 +141,34 @@ const tabs = ['students', 'adults', 'spaces', 'partners']
 const tabLabels = { students: 'Students', adults: 'Educators', spaces: 'Spaces', partners: 'Partners' }
 
 function StudentBreakdown({ data }) {
+  const groups = [...keyedElements, 'lunch']
+    .map((el) => ({ el, rows: experiences.filter((x) => x.element === el && data[x.key] > 0) }))
+    .filter((g) => g.rows.length > 0)
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
-      {studentKeys.map((k) =>
-        data[k] > 0 ? (
-          <div key={k} className="flex items-center gap-3 bg-black/[0.04] rounded-lg px-3 py-2.5">
-            <span className="w-3 h-8 rounded-sm shrink-0" style={{ backgroundColor: ELEMENTS[k].color }} aria-hidden="true" />
-            <div className="min-w-0">
-              <p className="text-black font-bold text-lg leading-tight">{data[k]}</p>
-              <p className="text-black/80 text-xs leading-tight">{ELEMENTS[k].label}</p>
-            </div>
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      {groups.map(({ el, rows }) => (
+        <div key={el} className="bg-black/[0.04] rounded-lg px-3 py-3">
+          <div className="flex items-baseline justify-between gap-2 mb-2">
+            {el === 'lunch' ? (
+              <span className="text-sm font-bold text-black/70">Lunch</span>
+            ) : (
+              <ElementTag element={el} size="xs" />
+            )}
+            <span className="text-lg font-bold text-black">{rows.reduce((n, x) => n + data[x.key], 0)}</span>
           </div>
-        ) : null
-      )}
+          {el !== 'lunch' && (
+            <ul className="space-y-1">
+              {rows.map((x) => (
+                <li key={x.key} className="flex items-center gap-2 text-xs text-black/80">
+                  <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: x.color }} aria-hidden="true" />
+                  <span className="font-bold text-black w-7 tabular-nums">{data[x.key]}</span>
+                  <span className="leading-tight">{x.label}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))}
     </div>
   )
 }
@@ -278,8 +305,8 @@ function PartnerBreakdown({ partners }) {
 function StackedBar({ data, time, isActive, onClick }) {
   // A real button so the chart is keyboard- and screen-reader-operable, not just
   // clickable. The label spells out the distribution the bar encodes visually.
-  const label = studentKeys
-    .map((k) => (data[k] > 0 ? `${data[k]} in ${ELEMENTS[k].label}` : null))
+  const label = experiences
+    .map((x) => (data[x.key] > 0 ? `${data[x.key]} in ${x.label.toLowerCase()}` : null))
     .filter(Boolean)
     .join(', ')
 
@@ -292,15 +319,15 @@ function StackedBar({ data, time, isActive, onClick }) {
       aria-label={`${time}: ${label}`}
       className="flex flex-col-reverse h-full w-full cursor-pointer rounded-sm"
     >
-      {studentKeys.map((k) => {
-        const pct = (data[k] / 200) * 100
+      {experiences.map((x) => {
+        const pct = ((data[x.key] || 0) / 200) * 100
         if (pct < 1) return null
         return (
           <motion.span
-            key={k}
+            key={x.key}
             animate={{ height: `${pct}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ backgroundColor: ELEMENTS[k].color }}
+            style={{ backgroundColor: x.color }}
             className={`block w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-75'}`}
           />
         )
@@ -329,7 +356,7 @@ export default function WholeSchool() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-mint text-black"
+      className="py-16 md:py-24 px-6 bg-mint text-black"
       ref={ref}
       id="whole-school"
       aria-labelledby="whole-school-heading"
@@ -351,7 +378,22 @@ export default function WholeSchool() {
         </motion.div>
 
         {/* Legend */}
-        <ElementLegend keys={studentKeys} className="justify-center mb-6" />
+        {/* Key: learning experiences grouped under each element. Lunch is not on the key. */}
+        <div className="grid sm:grid-cols-3 gap-x-6 gap-y-3 max-w-4xl mx-auto mb-6" aria-label="Key">
+          {keyedElements.map((el) => (
+            <div key={el}>
+              <ElementTag element={el} size="xs" className="mb-1.5" />
+              <ul className="space-y-1">
+                {experiences.filter((x) => x.element === el).map((x) => (
+                  <li key={x.key} className="flex items-center gap-1.5 text-xs text-black/80">
+                    <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: x.color }} aria-hidden="true" />
+                    {x.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
         {/* Time controls */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">

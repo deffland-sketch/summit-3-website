@@ -4,8 +4,9 @@
  * mainly serves, and the overlap is called out in the copy.
  *
  * `science` is the short learning-science note shown on the How It Works page.
- * Notes are carried over from the earlier learning-science panel; experiences
- * without one have no note yet. Academic Core lists the three experiences Sierra
+ * Most are carried over from the earlier learning-science panel; the notes for
+ * one-on-one check-ins, Personalized Learning Plan meetings, internships, college
+ * courses, and industry credentials were drafted in Nov 2026 for review. Academic Core lists the three experiences Sierra
  * flexes first.
  */
 export const learningExperiences = {
@@ -40,6 +41,7 @@ export const learningExperiences = {
       name: 'One-on-one check-ins with a mentor',
       description: 'A student meets with the mentor who knows them best to talk through progress, goals, and what comes next.',
       eg: 'e.g., pathway check-in, one-on-one mentor conference',
+      science: 'Research on developmental relationships finds that young people grow most when an adult knows them well, expresses care, challenges them to grow, and helps them find their way. One-on-one time is where a mentor learns what a student needs, and where the student practices asking for it.',
     },
     {
       name: 'Community time in a constant mentor group',
@@ -57,6 +59,7 @@ export const learningExperiences = {
       name: 'Personalized Learning Plan meetings',
       description: 'A student, their mentor, and their family look at the student’s Personalized Learning Plan and pathway together.',
       eg: 'e.g., PLP check-in, family conference',
+      science: 'Goals do the most for learning when they are specific, chosen by the learner, and revisited often. Bringing families into these conversations connects what a student works on at school to the life they want outside it.',
     },
   ],
   ccl: [
@@ -70,16 +73,19 @@ export const learningExperiences = {
       name: 'Internships',
       description: 'A student learns by participating in authentic work alongside professionals or community members, in settings beyond the school building.',
       eg: 'e.g., design internship, clinical rotation',
+      science: 'Work-based learning gives students practice with real tasks held to real standards, with feedback from people who do the work. It also builds the professional relationships that open doors to first jobs.',
     },
     {
       name: 'College courses',
       description: 'College-level courses that earn credit before graduation.',
       eg: 'e.g., dual enrollment, community college course',
+      science: 'Taking college courses in high school lets students meet college-level expectations with support still around them. Research on dual enrollment links it to higher rates of college enrollment and completion.',
     },
     {
       name: 'Industry credentials',
       description: 'Certifications employers recognize, earned during high school.',
       eg: 'e.g., CNA healthcare, Google tech',
+      science: 'A credential is a signal of skill that employers already recognize, and a first step on a career ladder that can stack into further training. Earning one also shows students what they can do in a field before they commit to it.',
     },
     {
       name: 'Exhibitions of learning',

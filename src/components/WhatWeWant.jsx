@@ -1,0 +1,89 @@
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
+
+/*
+ * What We Want for Every Student: the portrait of a graduate. Outcomes, kept
+ * separate from the model (What Students Get), so the cards use neutral accents
+ * rather than element colors.
+ */
+
+const outcomes = [
+  {
+    title: 'College-Ready Academic Core',
+    subtitle: 'Understanding the world through math, science, history, and language.',
+    body: 'Reading and writing with depth. Mathematical reasoning. Scientific inquiry. Civic and historical understanding. The disciplinary knowledge and ways of thinking that prepare students for college, careers, and a life of continued learning.',
+    top: 'border-black/15',
+    accent: 'text-black/65',
+  },
+  {
+    title: 'Durable Skills for Thriving in Life',
+    subtitle: 'The transferable capacities that make knowledge usable and life navigable.',
+    body: 'Communication, collaboration, problem-solving, and critical thinking. Self-direction, curiosity, resilience, agency, and interpersonal awareness. Digital and AI fluency: working with the tools that increasingly shape every field and every life.',
+    top: 'border-black/15',
+    accent: 'text-black/65',
+  },
+  {
+    title: 'A Pathway and a Clear Next Step',
+    subtitle: 'Direction for life after high school, and a real first step toward it.',
+    body: 'Every student leaves with a pathway, their own plan for the life they want, and a clear next step they are ready to take: college, a credential, a first job, or a high-growth career, with the ability to support themselves along the way. The pathway grows out of years of mentoring and career-connected learning through Expeditions, so students can explain why it fits them.',
+    note: 'Economic empowerment means a strong first job or credential, earnings that support independence, and real options.',
+    top: 'border-black/15',
+    accent: 'text-black/65',
+  },
+]
+
+export default function WhatWeWant() {
+  const ref = useRef(null)
+  const inView = useInView(ref, { once: true, margin: '-100px' })
+
+  return (
+    <section
+      className="py-20 md:py-28 px-6 bg-mint"
+      ref={ref}
+      id="what-we-want"
+      aria-labelledby="what-we-want-heading"
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14"
+        >
+          <h2
+            id="what-we-want-heading"
+            className="text-3xl md:text-4xl font-bold text-indigo mb-6"
+          >
+            What We Want for Every Student
+          </h2>
+          <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
+            Every Summit student builds the foundations of a fulfilled life: purposeful work,
+            financial independence, strong relationships, community, and health. They leave with
+            three things: the academics that open doors, the skills that make a life navigable, and
+            a pathway toward what comes next.
+          </p>
+        </motion.div>
+
+        {/* Three cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
+          {outcomes.map((o, i) => (
+            <motion.div
+              key={o.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
+              className={`bg-white border-t-4 ${o.top} rounded-xl p-6 md:p-7`}
+            >
+              <h3 className="text-xl font-bold text-indigo mb-2 leading-snug">{o.title}</h3>
+              <p className={`text-sm font-bold italic ${o.accent} mb-4`}>{o.subtitle}</p>
+              <p className="text-base text-black/70 leading-relaxed">{o.body}</p>
+              {o.note && <p className="text-sm font-bold text-black/75 leading-relaxed mt-4">{o.note}</p>}
+            </motion.div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  )
+}

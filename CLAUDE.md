@@ -17,7 +17,8 @@ Single-page narrative website for Summit Public Schools' next step (flexing time
 
 The site is organized around three model elements, the one taxonomy and the one color coding:
 **Academic Core** (indigo, darkest), **Mentoring** (teal, medium), **Career-Connected Learning**
-(orange, lightest). Lunch is a light neutral gray outside the three, used only in schedules.
+(orange, lightest). Lunch is a light neutral gray outside the three, shown in schedules but never
+on a key or legend.
 All three exist at every Summit school today; mentoring and career-connected learning already
 flex around each student, and the academic core personalizes next by flexing time.
 
@@ -39,28 +40,31 @@ a skip link, a sticky `Nav` (section links plus How It Works), and `SiteFooter`:
    fulfilled-life pills (Purposeful Work · Financial Independence · Strong Relationships ·
    Community · Health, neutral dots), theory-of-action subhead, earnings line, stats, quote
 2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, constraint cards, Gallup stat
-3. **WhatStudentsGet** (`#what-students-get`) — what every student gets: the three element
-   cards (College-Ready Academic Core; A Long-Term Mentor with one-on-one check-ins and the 91%
-   tile; Career-Connected Learning through Expeditions with expose/explore/pursue and the 2,245
-   placements), the durable-skills and pathway outcomes, "2 in 3", Keep and Build, sources
+3. **WhatWeWant** (`#what-we-want`, mint) — "What We Want for Every Student": the portrait of a
+   graduate (College-Ready Academic Core, Durable Skills, A Pathway and a Clear Next Step),
+   neutral accents. Kept separate from the model on purpose
+3b. **WhatStudentsGet** (`#what-students-get`) — the model: the three element cards (The Academic
+   Core; A Long-Term Mentor with one-on-one check-ins and the 91% tile; Career-Connected Learning
+   through Expeditions with expose/explore/pursue and the 2,245 placements), "2 in 3", Keep and
+   Build, sources
 4. **NextStep** (`#next-step`, nav "What's next") — theory of action, the three elements and
    where each stands, time by day/week/season (how the academic core flexes) with the Sierra
    "Live now" link, and Learning Experiences in three element columns
-5. **Motivation** (`#purpose-to-motivation`, mint) — Purpose + Relevance + Competence =
+5. **Motivation** (`#purpose-to-motivation`, mint, above Amara's week by choice) — Purpose + Relevance + Competence =
    Motivation (neutral accents), 69% stat, self-determination theory source line
-6. **AWeek** (`#a-week`) — "A Week Built Around Amara", blocks colored by element plus Lunch,
+6. **AWeek** (`#a-week`) — "A Week Built Around Amara", blocks colored by element (Lunch gray, off the key),
    tabbed against a traditional bell schedule
-7. **WholeSchool** (`#whole-school`, mint) — 200 students across a day, counted by element
-   (Lunch at 12:30); educator roles and spaces tagged by the element they mainly serve.
-   Partner names are real organizations, labeled as hypothetical examples
 8. **Sierra** (`#sierra`, peach/10) — first proof point, eyebrow "The first proof point" (the one
    exception to the no-eyebrow rule); three academic-core learning experiences in indigo shades
 9. **WhySummit** (`#why-summit`) — the 2030 sentence ("Summit will prove a school model where
    every student gets what they need, when they need it, to attain economic empowerment and
    lead a fulfilled life."), "prove," why now, outcome stats, track record
-10. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios (do not edit bios)
+10. **Close** (`#invitation`) — North Star headline, the three-elements investment line, CTA, "Get in touch" email link, bios
 
-How It Works page (`HowItWorks.jsx`): **Educators** (`#educators`, four capacities and partner
+How It Works page (`HowItWorks.jsx`): **WholeSchool** (`#whole-school`, mint, 200 students across a
+day counted by learning experience in shades of each element's color, key grouped by element;
+educator roles and spaces tagged by element; partner names are real organizations labeled as
+hypothetical examples), **Educators** (`#educators`, four capacities and partner
 educators grouped by element, AI handles / adults do more of, "Live now"), **Technology**
 (`#technology`, four-layer stack, safety, verification, "Live now"), **LearningScience**
 (`#learning-science`, a note per learning experience plus the research citation).

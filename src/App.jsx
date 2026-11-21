@@ -2,11 +2,11 @@ import { MotionConfig } from 'framer-motion'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import WhyChange from './components/WhyChange'
+import WhatWeWant from './components/WhatWeWant'
 import WhatStudentsGet from './components/WhatStudentsGet'
 import NextStep from './components/NextStep'
 import Motivation from './components/Motivation'
 import AWeek from './components/AWeek'
-import WholeSchool from './components/WholeSchool'
 import Sierra from './components/Sierra'
 import WhySummit from './components/WhySummit'
 import Close from './components/Close'
@@ -36,11 +36,11 @@ function App() {
           <main id="main">
             <Hero />
             <WhyChange />
+            <WhatWeWant />
             <WhatStudentsGet />
             <NextStep />
             <Motivation />
             <AWeek />
-            <WholeSchool />
             <Sierra />
             <WhySummit />
             <Close />

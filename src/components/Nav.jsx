@@ -16,7 +16,6 @@ const sections = [
   { id: 'what-students-get', label: 'What students get' },
   { id: 'next-step', label: 'What’s next' },
   { id: 'a-week', label: 'A week' },
-  { id: 'whole-school', label: 'The school' },
   { id: 'sierra', label: 'Sierra' },
   { id: 'why-summit', label: 'Why Summit' },
 ]

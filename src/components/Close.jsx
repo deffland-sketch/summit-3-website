@@ -18,7 +18,7 @@ const founders = [
     name: 'Dan Effland',
     role: 'Chief of Staff and Strategy',
     photo: null,
-    bio: 'Works alongside the CEO to set Summit’s strategy and turn it into results, aligning people, priorities, and resources across the network. Oversees development, communications, partnerships, and innovation, and led the design of Summit’s learner-centered model as Senior Director of Innovation.',
+    bio: 'Works alongside the CEO to set Summit’s strategy and turn it into results, aligning people, priorities, and resources across the network. Oversees development, communications, partnerships, and innovation, and led the design of Summit’s next step as Senior Director of Innovation.',
   },
 ]
 
@@ -99,7 +99,8 @@ export default function Close() {
             the data shows students are getting there.
           </p>
           <p className="border-l-4 border-orange pl-5">
-            {/* Opening sentence pending Dan's choice between two options in the review notes. */}
+            Every Summit school already has the academic core, mentoring, and career-connected
+            learning. Personalizing the academic core is the next step, and it takes investment.
             Building the proof point that can move the system takes partners willing to fund it.
           </p>
           <p className="font-bold">

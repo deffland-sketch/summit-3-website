@@ -175,7 +175,8 @@ export default function AWeek() {
         <div role="tabpanel" id="week-tabpanel" aria-labelledby={`week-tab-${view}`} tabIndex={-1}>
           {view === 'amara' ? (
             <>
-              <ElementLegend keys={['academic', 'mentoring', 'ccl', 'lunch']} className="mb-4" />
+              {/* Lunch appears in the schedule in a light neutral but is not on the key. */}
+              <ElementLegend className="mb-4" />
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 {week.map((d) => (
                   <div
