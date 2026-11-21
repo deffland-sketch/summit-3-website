@@ -106,7 +106,7 @@ export default function Sierra() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-mint"
+      className="py-20 md:py-28 px-6 bg-peach/10"
       ref={ref}
       id="sierra"
       aria-labelledby="sierra-heading"

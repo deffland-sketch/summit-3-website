@@ -3,9 +3,12 @@ import { useRef } from 'react'
 import { ElementTag } from './ElementTag'
 
 /*
- * What Summit Already Has: the foundation Summit's next step builds on. A long-term mentor
- * who guides each student's pathway, graduated Expeditions, and what the community
- * asked us to keep and build.
+ * What Students Get: the three model elements every Summit student gets, and what
+ * Summit already has. Merges the earlier "What We Want for Every Student" and
+ * "What Summit Already Has" sections: an Academic Core card, the long-term mentor
+ * (Mentoring) and Expeditions (Career-Connected Learning), then the durable-skills
+ * and pathway outcomes, the 2-in-3 stat, and what the community asked us to keep
+ * and build.
  *
  * Sources: 2030 Strategy Source of Truth (Oct 2026); Summit Sierra and Summit 780
  * design blueprints (SY27); SXSW EDU 2026 Expeditions deck. The two-thirds figure is
@@ -27,6 +30,23 @@ const placements = [
   '157 in the healthcare pipeline',
 ]
 
+// Outcomes carried over from "What We Want for Every Student". Academics now live
+// in the Academic Core card; these two are outcomes, not elements, so they use
+// neutral accents.
+const outcomes = [
+  {
+    title: 'Durable Skills for Thriving in Life',
+    subtitle: 'The transferable capacities that make knowledge usable and life navigable.',
+    body: 'Communication, collaboration, problem-solving, and critical thinking. Self-direction, curiosity, resilience, agency, and interpersonal awareness. Digital and AI fluency: working with the tools that increasingly shape every field and every life.',
+  },
+  {
+    title: 'A Pathway and a Clear Next Step',
+    subtitle: 'Direction for life after high school, and a real first step toward it.',
+    body: 'Every student leaves with a pathway, their own plan for the life they want, and a clear next step they are ready to take: college, a credential, a first job, or a high-growth career, with the ability to support themselves along the way. The pathway grows out of years of mentoring and career-connected learning through Expeditions, so students can explain why it fits them.',
+    note: 'Economic empowerment means a strong first job or credential, earnings that support independence, and real options.',
+  },
+]
+
 const keep = [
   'Great educators',
   'Deep mentoring and relationships',
@@ -38,7 +58,7 @@ const build = [
   'AI literacy for the world students are entering',
 ]
 
-export default function Purpose() {
+export default function WhatStudentsGet() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -46,19 +66,26 @@ export default function Purpose() {
     <section
       className="py-20 md:py-28 px-6 bg-white"
       ref={ref}
-      id="what-we-have"
-      aria-labelledby="what-we-have-heading"
+      id="what-students-get"
+      aria-labelledby="what-students-get-heading"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-10"
         >
-          <h2 id="what-we-have-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
-            What Summit Already Has
+          <h2 id="what-students-get-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
+            What Students Get
           </h2>
+          <p className="text-base md:text-lg text-black/80 leading-relaxed mb-8">
+            Every Summit student builds the foundations of a fulfilled life: purposeful work,
+            financial independence, strong relationships, community, and health. They leave with
+            three things: the academics that open doors, the skills that make a life navigable, and
+            a pathway toward what comes next.
+          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-3">What Summit Already Has</h3>
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
             Mentoring and career-connected learning are already deeply personal to each student.
             Every Summit student has a mentor from middle school to graduation, takes part in
@@ -72,8 +99,25 @@ export default function Purpose() {
           </p>
         </motion.div>
 
-        {/* Mentoring and Career-Connected Learning, already personal at every school */}
-        <div className="grid md:grid-cols-2 gap-5 mb-6">
+        {/* The three elements, at every school today */}
+        <div className="grid lg:grid-cols-3 gap-5 mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-indigo p-6 flex flex-col"
+          >
+            <ElementTag element="academic" size="xs" className="mb-2" />
+            <h3 className="text-xl font-bold text-indigo mb-1">College-Ready Academic Core</h3>
+            <p className="text-sm font-bold italic text-indigo mb-4">
+              Understanding the world through math, science, history, and language.
+            </p>
+            <p className="text-sm text-black/70 leading-relaxed">
+              Reading and writing with depth. Mathematical reasoning. Scientific inquiry. Civic and
+              historical understanding. The disciplinary knowledge and ways of thinking that prepare
+              students for college, careers, and a life of continued learning.
+            </p>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -150,6 +194,18 @@ export default function Purpose() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Outcomes students leave with */}
+        <div className="grid md:grid-cols-2 gap-5 mb-6">
+          {outcomes.map((o) => (
+            <div key={o.title} className="bg-white rounded-xl border border-black/8 border-t-4 border-t-black/15 p-6">
+              <h3 className="text-xl font-bold text-indigo mb-1">{o.title}</h3>
+              <p className="text-sm font-bold italic text-black/65 mb-4">{o.subtitle}</p>
+              <p className="text-sm md:text-base text-black/70 leading-relaxed">{o.body}</p>
+              {o.note && <p className="text-sm font-bold text-black/75 leading-relaxed mt-4">{o.note}</p>}
+            </div>
+          ))}
         </div>
 
         {/* Proof point */}

@@ -2,17 +2,15 @@ import { MotionConfig } from 'framer-motion'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import WhyChange from './components/WhyChange'
-import WhatStudentsBuild from './components/WhatStudentsBuild'
-import Purpose from './components/Purpose'
-import Motivation from './components/Motivation'
+import WhatStudentsGet from './components/WhatStudentsGet'
 import NextStep from './components/NextStep'
-import Sierra from './components/Sierra'
+import Motivation from './components/Motivation'
 import AWeek from './components/AWeek'
 import WholeSchool from './components/WholeSchool'
-import Educators from './components/Educators'
-import Technology from './components/Technology'
+import Sierra from './components/Sierra'
 import WhySummit from './components/WhySummit'
 import Close from './components/Close'
+import SiteFooter from './components/SiteFooter'
 
 function App() {
   return (
@@ -38,18 +36,16 @@ function App() {
           <main id="main">
             <Hero />
             <WhyChange />
-            <WhatStudentsBuild />
-            <Purpose />
+            <WhatStudentsGet />
             <NextStep />
-            <AWeek />
             <Motivation />
+            <AWeek />
             <WholeSchool />
-            <Educators />
-            <Technology />
             <Sierra />
             <WhySummit />
             <Close />
           </main>
+          <SiteFooter />
         </div>
       </div>
     </MotionConfig>

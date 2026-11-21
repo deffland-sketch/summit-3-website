@@ -53,7 +53,7 @@ export default function Motivation() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-peach/10"
+      className="py-20 md:py-28 px-6 bg-mint"
       ref={ref}
       id="purpose-to-motivation"
       aria-labelledby="purpose-to-motivation-heading"

@@ -2,7 +2,8 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 /*
- * Technology: the four-layer stack, the safety block, and how learning is verified.
+ * Technology, on the How It Works page: the four-layer stack, the safety block, and
+ * how learning is verified.
  * Language follows the 2030 Strategy Source of Truth (Oct 2026) and the operating
  * overview "How Summit 3.0 Works." "Live now" names no schools or vendors.
  */
@@ -32,10 +33,10 @@ export default function Technology() {
 
   return (
     <section
-      className="py-20 md:py-28 px-6 bg-peach/10"
+      className="py-16 md:py-24 px-6 bg-peach/10"
       ref={ref}
-      id="how-it-works"
-      aria-labelledby="how-it-works-heading"
+      id="technology"
+      aria-labelledby="technology-heading"
     >
       <div className="max-w-5xl mx-auto">
         <motion.div
@@ -44,7 +45,7 @@ export default function Technology() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-10"
         >
-          <h2 id="how-it-works-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
+          <h2 id="technology-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5">
             Technology Recommends. People Decide.
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
@@ -63,7 +64,7 @@ export default function Technology() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.08 * (i + 1) }}
-              className="bg-white rounded-xl border border-black/8 border-t-4 border-t-indigo p-6"
+              className="bg-white rounded-xl border border-black/8 border-t-4 border-t-black/15 p-6"
             >
               <h3 className="text-lg font-bold text-indigo mb-2">{l.name}</h3>
               <p className="text-sm md:text-base text-black/70 leading-relaxed">{l.body}</p>

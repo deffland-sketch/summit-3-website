@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { HOW_IT_WORKS_HREF } from '../links'
 
 /**
  * Sticky section nav.
@@ -8,18 +9,20 @@ import { useEffect, useState } from 'react'
  * the whole page. Links are hidden on small screens where they would crowd;
  * the "Get in touch" CTA stays visible at every width.
  */
-const links = [
-  { href: '#why-change', label: 'Why change' },
-  { href: '#what-we-have', label: 'What we have' },
-  { href: '#next-step', label: 'Flexible time' },
-  { href: '#a-week', label: 'A week' },
-  { href: '#whole-school', label: 'The school' },
-  { href: '#how-it-works', label: 'How it works' },
-  { href: '#sierra', label: 'Sierra' },
-  { href: '#why-summit', label: 'Why Summit' },
+// Section links on the main page, in page order. On the How It Works page the same
+// links point back to the main page (`/#id`).
+const sections = [
+  { id: 'why-change', label: 'Why change' },
+  { id: 'what-students-get', label: 'What students get' },
+  { id: 'next-step', label: 'What’s next' },
+  { id: 'a-week', label: 'A week' },
+  { id: 'whole-school', label: 'The school' },
+  { id: 'sierra', label: 'Sierra' },
+  { id: 'why-summit', label: 'Why Summit' },
 ]
-
-export default function Nav() {
+export default function Nav({ page = 'home' }) {
+  const onHome = page === 'home'
+  const toSection = (id) => (onHome ? `#${id}` : `/#${id}`)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -39,25 +42,36 @@ export default function Nav() {
         aria-label="Section navigation"
         className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4 xl:gap-6"
       >
-        <a href="#top" className="font-bold text-indigo shrink-0 whitespace-nowrap">
-          Summit&rsquo;s <span className="text-orange-ink">Next Step</span>
+        <a href={onHome ? '#top' : '/'} className="font-bold text-indigo shrink-0 whitespace-nowrap">
+          Summit&rsquo;s Next Step
         </a>
 
         <ul className="hidden lg:flex items-center gap-3 xl:gap-6 text-sm">
-          {links.map((l) => (
-            <li key={l.href}>
+          {sections.map((l) => (
+            <li key={l.id}>
               <a
-                href={l.href}
+                href={toSection(l.id)}
                 className="text-black/60 hover:text-indigo font-bold transition-colors whitespace-nowrap"
               >
                 {l.label}
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={HOW_IT_WORKS_HREF}
+              aria-current={onHome ? undefined : 'page'}
+              className={`font-bold transition-colors whitespace-nowrap ${
+                onHome ? 'text-black/60 hover:text-indigo' : 'text-indigo underline underline-offset-4'
+              }`}
+            >
+              How it works
+            </a>
+          </li>
         </ul>
 
         <a
-          href="#invitation"
+          href={toSection('invitation')}
           className="shrink-0 bg-indigo text-white font-bold text-sm px-4 py-2 rounded-lg hover:bg-indigo/90 transition-colors"
         >
           Get in touch

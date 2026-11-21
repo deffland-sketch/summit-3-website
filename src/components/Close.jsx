@@ -99,7 +99,7 @@ export default function Close() {
             the data shows students are getting there.
           </p>
           <p className="border-l-4 border-orange pl-5">
-            Time, talent, and technology make the model work. The fourth ingredient is investment.
+            {/* Opening sentence pending Dan's choice between two options in the review notes. */}
             Building the proof point that can move the system takes partners willing to fund it.
           </p>
           <p className="font-bold">
