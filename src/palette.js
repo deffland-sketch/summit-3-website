@@ -22,6 +22,7 @@ export const brand = {
   brown: '#503c2d',
   red: '#e6553c',
   tanGrey: '#96a0ab',
+  lunch: '#d5d9de',
 }
 
 export const ink = {
@@ -34,4 +35,5 @@ export const ink = {
   brown: '#503c2d',
   red: '#c64027',
   tanGrey: '#5f6b78',
+  lunch: '#5f6b78',
 }

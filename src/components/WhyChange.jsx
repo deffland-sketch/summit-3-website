@@ -10,17 +10,17 @@ const constraints = [
   {
     title: 'A Fixed Bell Schedule',
     body: 'Every student gets the same minutes on the same subjects, whatever they already know.',
-    top: 'border-t-indigo',
+    top: 'border-t-black/15',
   },
   {
     title: 'The Same Pace for Every Student',
     body: 'Students arrive with different strengths, interests, and unfinished learning. A fixed pace can’t plan for that.',
-    top: 'border-t-teal',
+    top: 'border-t-black/15',
   },
   {
     title: 'One Role Asked to Carry Nearly Everything',
     body: 'Teaching, grading, reviewing data, planning, and mentoring, all held by one role, with school leaders stretched thin too.',
-    top: 'border-t-orange',
+    top: 'border-t-black/15',
   },
 ]
 

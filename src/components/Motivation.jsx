@@ -3,46 +3,47 @@ import { Fragment, useRef } from 'react'
 
 /*
  * Purpose, Relevance, and Competence Build Motivation: the logic of the model, placed
- * right after Amara's week, so the week is the example before the explanation. Mentoring and Expeditions build
- * purpose, flexible time makes academic work relevant to it, self-directed learning
+ * right after Amara's week, so the week is the example before the explanation. Mentoring and
+ * career-connected learning build purpose, flexible time makes academic work relevant to it, self-directed learning
  * skills build competence, and motivation follows (self-determination theory, Ryan and
  * Deci). Framing matches the Sierra 11/9 site visit deck (Nov 2026). Stats are from the
  * 2030 Strategy Source of Truth (Oct 2026): Transcend, Conversations with Kids (2022),
  * and the Summit SY26 spring student survey.
  */
 
+// Steps in an argument, not model elements, so they use neutral accents.
 const steps = [
   {
     title: 'Purpose',
-    builtBy: 'Built by a long-term mentor and Expeditions',
+    builtBy: 'Built by mentoring and career-connected learning',
     body: 'Students name what they care about and who they want to become, and shape it into a pathway. 83% of Summit students say their mentor helps them plan for life after high school.',
-    top: 'border-t-teal',
-    label: 'text-teal-ink',
-    dot: 'bg-teal',
+    top: 'border-t-black/15',
+    label: 'text-black/65',
+    dot: 'bg-black/30',
   },
   {
     title: 'Relevance',
     builtBy: 'Built by flexible time',
     body: 'When time flexes, academic work can sit next to the experiences that give it meaning. A student headed into a clinical internship gets the biology she needs before she goes, and one back from a design internship gets the geometry it called for.',
-    top: 'border-t-orange',
-    label: 'text-orange-ink',
-    dot: 'bg-orange',
+    top: 'border-t-black/15',
+    label: 'text-black/65',
+    dot: 'bg-black/30',
   },
   {
     title: 'Competence',
     builtBy: 'Built by self-directed learning skills',
     body: 'Students learn to plan, practice, ask for help, and choose the support they need, with guided autonomy and strong relationships around them.',
-    top: 'border-t-light-blue',
-    label: 'text-light-blue-ink',
-    dot: 'bg-light-blue',
+    top: 'border-t-black/15',
+    label: 'text-black/65',
+    dot: 'bg-black/30',
   },
   {
     title: 'Motivation',
     builtBy: 'What follows',
     body: 'Students take on hard academic work because it moves them toward something that is theirs, and they keep at it when it gets hard.',
-    top: 'border-t-indigo',
-    label: 'text-indigo',
-    dot: 'bg-indigo',
+    top: 'border-t-black/15',
+    label: 'text-black/65',
+    dot: 'bg-black/30',
   },
 ]
 
@@ -106,7 +107,7 @@ export default function Motivation() {
                   <li className="flex items-center justify-center" aria-hidden="true">
                     <span
                       className={`w-9 h-9 rounded-full text-xl font-bold flex items-center justify-center ${
-                        isResult ? 'bg-indigo text-white' : 'bg-white text-indigo border border-indigo/20'
+                        isResult ? 'bg-black/75 text-white' : 'bg-white text-black/75 border border-black/15'
                       }`}
                     >
                       {isResult ? '=' : '+'}
@@ -117,7 +118,7 @@ export default function Motivation() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.12 * (i + 1) }}
-                  className={`rounded-xl border-t-4 ${s.top} p-6 ${isResult ? 'bg-indigo/[0.06] ring-1 ring-indigo/15' : 'bg-white'}`}
+                  className={`rounded-xl border-t-4 ${s.top} p-6 ${isResult ? 'bg-white ring-2 ring-black/15' : 'bg-white'}`}
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className={`w-2.5 h-2.5 rounded-full ${s.dot} shrink-0`} aria-hidden="true" />

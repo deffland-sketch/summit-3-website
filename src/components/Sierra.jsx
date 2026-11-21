@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { Fragment, useRef } from 'react'
-import { brand } from '../palette'
+import { ElementTag } from './ElementTag'
 
 /*
  * Summit Sierra: the first proof point. Sits after Technology and right before
@@ -10,13 +10,13 @@ import { brand } from '../palette'
  * as a wall of cards. Every color is paired with a text label.
  */
 
-// The three experience types Sierra starts with, in the same colors as the
-// eight-type legend in LearningExperiences.jsx. `text` is the segment label color
-// chosen for contrast against the fill.
+// The three academic-core learning experiences Sierra starts with, in three shades
+// of the Academic Core indigo (darkest to lightest), each with its label in the
+// legend. `text` is the segment label color chosen for contrast against the fill.
 const types = [
-  { key: 'di', label: 'Direct instruction', color: brand.indigo, text: 'text-white' },
-  { key: 'pf', label: 'Practice and feedback', color: brand.teal, text: 'text-black' },
-  { key: 'dd', label: 'Discussion and dialogue', color: brand.orange, text: 'text-black' },
+  { key: 'di', label: 'Direct instruction', color: '#4b4b96', text: 'text-white' },
+  { key: 'pf', label: 'Practice and feedback', color: '#8585bf', text: 'text-black' },
+  { key: 'dd', label: 'Discussion and dialogue', color: '#c3c3e2', text: 'text-black' },
 ]
 
 const students = [
@@ -26,12 +26,13 @@ const students = [
 ]
 
 const progression = ['Structured', 'Guided choice', 'More independence', 'Student ownership']
-// Rising indigo intensity carries the progression; each step also has its label.
+// Rising neutral intensity carries the progression (it is not a model element);
+// each step also has its label.
 const progressionStyle = [
-  'bg-indigo/10 text-indigo',
-  'bg-indigo/25 text-indigo',
-  'bg-indigo/40 text-black',
-  'bg-indigo text-white',
+  'bg-black/[0.05] text-black',
+  'bg-black/10 text-black',
+  'bg-black/20 text-black',
+  'bg-black/75 text-white',
 ]
 
 const foundation = [
@@ -39,22 +40,22 @@ const foundation = [
     label: 'Academics',
     stat: '+10 points',
     body: 'in students meeting the ELA standard, SY25 to SY26. Math proficiency also rose by 4%.',
-    top: 'border-t-indigo',
-    ink: 'text-indigo',
+    top: 'border-t-black/15',
+    ink: 'text-black/65',
   },
   {
     label: 'A clear next step',
     stat: '100%',
     body: 'of SY26 graduates graduated and were accepted to at least one college. More than 80% of first-generation graduates have enrolled in college for three straight years.',
-    top: 'border-t-teal',
-    ink: 'text-teal-ink',
+    top: 'border-t-black/15',
+    ink: 'text-black/65',
   },
   {
     label: 'Teams',
     stat: null,
     body: 'Students stayed, key teachers stayed, and the team chose and designed this model together.',
-    top: 'border-t-orange',
-    ink: 'text-orange-ink',
+    top: 'border-t-black/15',
+    ink: 'text-black/65',
   },
 ]
 
@@ -117,7 +118,7 @@ export default function Sierra() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mb-14"
         >
-          <p className="text-sm font-bold text-teal-ink mb-2">The first proof point</p>
+          <p className="text-sm font-bold text-black/60 mb-2">The first proof point</p>
           <h2 id="sierra-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5 leading-tight">
             Summit Sierra: The First Proof Point of Summit&rsquo;s Next Step
           </h2>
@@ -128,16 +129,15 @@ export default function Sierra() {
           </p>
         </motion.div>
 
-        {/* 1. Three of the eight experience types */}
+        {/* 1. Three learning experiences in the academic core */}
         <Sub className="mb-16">
           <div className="grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-12 items-start">
             <div>
               <h3 className="text-xl md:text-2xl font-bold text-indigo mb-3">
-                Starting With Three of the Eight Experience Types
+                Starting With Three Learning Experiences in the Academic Core
               </h3>
               <p className="text-base text-black/80 leading-relaxed">
-                The full model has eight experience types. Sierra is starting with three in the
-                academic core: direct instruction, practice and feedback, and discussion and dialogue.
+                Sierra is starting with three in the academic core: direct instruction, practice and feedback, and discussion and dialogue.
                 Every student gets all three. What flexes is how much of each.
               </p>
             </div>
@@ -183,16 +183,22 @@ export default function Sierra() {
         <Sub className="mb-16">
           <h3 className="text-xl md:text-2xl font-bold text-indigo mb-5">A Day at Sierra Today</h3>
           <div className="grid md:grid-cols-2 gap-3">
-            <div className="rounded-xl bg-white border-t-4 border-orange p-5">
-              <p className="text-sm font-bold text-orange-ink">Morning</p>
+            <div className="rounded-xl bg-white border-t-4 border-indigo p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-bold text-indigo">Morning</p>
+                <ElementTag element="academic" size="xs" />
+              </div>
               <p className="text-lg font-bold text-indigo mt-1">Collaborative learning</p>
               <p className="text-sm text-black/60 mt-0.5">Three 50-minute blocks on an A/B schedule</p>
               <p className="text-sm md:text-base text-black/75 leading-relaxed mt-3">
                 Socratic seminars, labs, book talks, and peer collaboration
               </p>
             </div>
-            <div className="rounded-xl bg-white border-t-4 border-teal p-5">
-              <p className="text-sm font-bold text-teal-ink">Afternoon</p>
+            <div className="rounded-xl bg-white border-t-4 border-indigo p-5">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-sm font-bold text-indigo">Afternoon</p>
+                <ElementTag element="academic" size="xs" />
+              </div>
               <p className="text-lg font-bold text-indigo mt-1">Student-directed learning</p>
               <p className="text-sm text-black/60 mt-0.5">About a 2.5-hour block</p>
               <p className="text-sm md:text-base text-black/75 leading-relaxed mt-3">
@@ -200,13 +206,13 @@ export default function Sierra() {
               </p>
             </div>
             {/* Mentoring spans both halves of the day */}
-            <div className="md:col-span-2 rounded-xl bg-indigo text-white px-5 py-4 flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
+            <div className="md:col-span-2 rounded-xl bg-teal/15 border-l-4 border-teal text-black px-5 py-4 flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
               <div className="shrink-0">
-                <p className="text-sm font-bold text-white/85">All day</p>
-                <p className="text-lg font-bold">Mentoring</p>
-                <p className="text-sm text-white/85">Three daily touchpoints</p>
+                <p className="text-sm font-bold text-teal-ink">All day</p>
+                <p className="text-lg font-bold text-teal-ink">Mentoring</p>
+                <p className="text-sm text-black/70">Three daily touchpoints</p>
               </div>
-              <p className="text-sm md:text-base text-white/95 leading-relaxed md:border-l md:border-white/25 md:pl-6 mt-2 md:mt-0">
+              <p className="text-sm md:text-base text-black leading-relaxed md:border-l md:border-black/20 md:pl-6 mt-2 md:mt-0">
                 Morning launch, midday goal setting, and end-of-day reflection, anchored in each
                 student&rsquo;s learning plan
               </p>
@@ -217,7 +223,7 @@ export default function Sierra() {
             {progression.map((p, i) => (
               <Fragment key={p}>
                 {i > 0 && (
-                  <li className="flex items-center justify-center text-indigo font-bold" aria-hidden="true">
+                  <li className="flex items-center justify-center text-black/60 font-bold" aria-hidden="true">
                     <span className="rotate-90 sm:rotate-0">→</span>
                   </li>
                 )}
@@ -259,7 +265,7 @@ export default function Sierra() {
             <ol className="grid sm:grid-cols-3 gap-3" aria-label="A three-step loop that repeats">
               {loop.map((l, i) => (
                 <li key={l.step} className="relative flex items-start gap-3 bg-white rounded-xl p-4">
-                  <span className="w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center shrink-0" aria-hidden="true">
+                  <span className="w-8 h-8 rounded-full bg-black/75 text-white text-sm font-bold flex items-center justify-center shrink-0" aria-hidden="true">
                     {i + 1}
                   </span>
                   <div>
@@ -267,7 +273,7 @@ export default function Sierra() {
                     {l.desc && <p className="text-sm text-black/70 leading-snug mt-0.5">{l.desc}</p>}
                   </div>
                   {i < loop.length - 1 && (
-                    <span className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-orange text-black text-sm font-bold items-center justify-center z-10" aria-hidden="true">
+                    <span className="hidden sm:flex absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-white border border-black/20 text-black text-sm font-bold items-center justify-center z-10" aria-hidden="true">
                       →
                     </span>
                   )}
@@ -276,17 +282,17 @@ export default function Sierra() {
             </ol>
             {/* Return path from step 3 back to step 1, so the steps read as a loop */}
             <svg className="hidden sm:block w-full h-6 mt-1" viewBox="0 0 600 24" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M500 2 V14 H100 V4" fill="none" stroke={brand.teal} strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />
-              <path d="M95 9 L100 2 L105 9" fill="none" stroke={brand.teal} strokeWidth="2" vectorEffect="non-scaling-stroke" />
+              <path d="M500 2 V14 H100 V4" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="2" strokeDasharray="5 4" vectorEffect="non-scaling-stroke" />
+              <path d="M95 9 L100 2 L105 9" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
             </svg>
           </div>
           <div className="grid md:grid-cols-2 gap-5">
             {examples.map((e) => (
               <article key={e.title} className="bg-white rounded-xl border border-black/8 p-6">
                 <h4 className="text-lg font-bold text-indigo mb-4">{e.title}</h4>
-                <p className="text-sm font-bold text-teal-ink mb-1">What we heard</p>
+                <p className="text-sm font-bold text-black/60 mb-1">What we heard</p>
                 <p className="text-sm md:text-base text-black/75 leading-relaxed mb-4">{e.heard}</p>
-                <p className="text-sm font-bold text-orange-ink mb-1">What we changed</p>
+                <p className="text-sm font-bold text-black/60 mb-1">What we changed</p>
                 <p className="text-sm md:text-base text-black/75 leading-relaxed">{e.changed}</p>
               </article>
             ))}
@@ -299,14 +305,14 @@ export default function Sierra() {
           <p className="text-base text-black/80 leading-relaxed mb-6">The first year of evidence looks at five things.</p>
           <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
             {measures.map((m, i) => (
-              <li key={m.label} className="border-l-2 border-indigo pl-4">
+              <li key={m.label} className="border-l-2 border-black/20 pl-4">
                 <p className="text-xs font-bold text-black/60" aria-hidden="true">{i + 1}</p>
                 <p className="font-bold text-indigo mb-1">{m.label}</p>
                 <p className="text-sm text-black/70 leading-relaxed">{m.body}</p>
               </li>
             ))}
           </ol>
-          <div className="bg-white rounded-xl border-l-4 border-orange p-5 md:p-6">
+          <div className="bg-white rounded-xl border-l-4 border-black/25 p-5 md:p-6">
             <h4 className="text-lg font-bold text-indigo mb-2">How Results Set the Pace</h4>
             <p className="text-sm md:text-base text-black/75 leading-relaxed">
               Winter MAP is the early signal. If it shows slower growth than peers, we adjust. If it

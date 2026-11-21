@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 
-// The five elements of a fulfilled life, shown as labeled pills under the H1.
+// The five elements of a fulfilled life, shown as labeled pills under the H1. Neutral
+// dots: color on this site is reserved for the three model elements.
 const elements = [
-  { label: 'Purposeful Work', dot: 'bg-indigo' },
-  { label: 'Financial Independence', dot: 'bg-teal' },
-  { label: 'Strong Relationships', dot: 'bg-orange' },
-  { label: 'Community', dot: 'bg-light-blue' },
-  { label: 'Health', dot: 'bg-tan-grey' },
+  { label: 'Purposeful Work', dot: 'bg-black/30' },
+  { label: 'Financial Independence', dot: 'bg-black/30' },
+  { label: 'Strong Relationships', dot: 'bg-black/30' },
+  { label: 'Community', dot: 'bg-black/30' },
+  { label: 'Health', dot: 'bg-black/30' },
 ]
 
 export default function Hero() {
@@ -57,7 +58,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-sm md:text-base text-black/70 leading-relaxed mb-10 border-l-4 border-orange pl-4"
+              className="text-sm md:text-base text-black/70 leading-relaxed mb-10 border-l-4 border-black/20 pl-4"
             >
               Summit graduates earn an average of <span className="font-bold text-black">$81.1K</span> annually,
               vs. $70.4K for peer charter graduates.
@@ -75,7 +76,7 @@ export default function Hero() {
                 <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">years of proof</p>
               </div>
               <div>
-                <p className="text-2xl md:text-3xl font-bold text-teal">100K+</p>
+                <p className="text-2xl md:text-3xl font-bold text-indigo">100K+</p>
                 <p className="text-xs md:text-sm text-black/70 leading-snug mt-1">students impacted</p>
               </div>
             </motion.div>
@@ -104,7 +105,7 @@ export default function Hero() {
             </div>
 
             {/* Pull quote */}
-            <div className="absolute -bottom-6 -left-4 md:-left-8 max-w-[80%] bg-white border-l-4 border-orange rounded-r-lg shadow-sm px-5 py-4">
+            <div className="absolute -bottom-6 -left-4 md:-left-8 max-w-[80%] bg-white border-l-4 border-black/20 rounded-r-lg shadow-sm px-5 py-4">
               <p className="text-sm md:text-base text-black italic leading-snug">
                 "She actually knew where I was headed."
               </p>

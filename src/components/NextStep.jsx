@@ -1,36 +1,31 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { ExperienceTypes } from './LearningExperiences'
+import { ELEMENTS, ELEMENT_KEYS } from '../elements'
+import { ElementTag } from './ElementTag'
+import { LearningExperiences } from './LearningExperiences'
 
 /*
- * The Next Step: the theory of action, the three levers (today vs. where we are
- * headed), and how time flexes by day, week, and season. Language follows the 2030
- * Strategy Source of Truth (Oct 2026). The "Live now" line points to Sierra (#sierra).
+ * The Next Step: the theory of action, the three model elements (all at every
+ * Summit school today; the academic core personalizes next), how time flexes by
+ * day, week, and season, and the learning experiences under each element. The
+ * "Live now" line points to Sierra (#sierra).
  */
 
-const levers = [
-  {
-    name: 'Time',
-    today: 'A fixed bell schedule for everyone.',
-    headed: 'Time that flexes around what each student needs, by day, by week, and across the year.',
-    color: 'text-orange-ink',
-    bar: 'bg-orange',
+const elementStatus = {
+  academic: {
+    what: 'Math, science, reading and writing, and history.',
+    status: 'Personalizes next, by flexing time around each student',
+    next: true,
   },
-  {
-    name: 'Talent',
-    today: 'One role asked to carry nearly everything.',
-    headed: 'Educators who develop expertise along four capacities, in roles flexible enough for educators to specialize in certain capacities.',
-    color: 'text-teal-ink',
-    bar: 'bg-teal',
+  mentoring: {
+    what: 'A long-term mentor and a constant mentor group.',
+    status: 'Already flexes around each student',
   },
-  {
-    name: 'Technology',
-    today: 'Layered on top of the schedule.',
-    headed: 'A learning platform that builds each student’s schedule from their needs and progress. Technology recommends. People decide.',
-    color: 'text-indigo',
-    bar: 'bg-indigo',
+  ccl: {
+    what: 'Expeditions, internships, college courses, and industry credentials.',
+    status: 'Already flexes around each student',
   },
-]
+}
 
 const timescales = [
   {
@@ -79,33 +74,30 @@ export default function NextStep() {
           </p>
         </motion.div>
 
-        {/* Today vs. where we are headed */}
+        {/* The three elements: all at every school today; the academic core is next */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="bg-white rounded-xl border border-black/8 overflow-hidden mb-16"
+          className="mb-16"
         >
-          <div className="hidden md:grid grid-cols-[9rem_1fr_1.6fr] gap-6 px-6 py-3 bg-black/[0.03] text-sm font-bold text-black/65">
-            <span />
-            <span>Today</span>
-            <span>Where We Are Headed</span>
-          </div>
-          <ul>
-            {levers.map((l) => (
-              <li key={l.name} className="grid md:grid-cols-[9rem_1fr_1.6fr] gap-2 md:gap-6 px-6 py-5 border-t border-black/8 first:border-t-0 md:first:border-t">
-                <p className={`font-bold text-lg ${l.color} flex items-center gap-2`}>
-                  <span className={`w-2.5 h-2.5 rounded-full ${l.bar}`} aria-hidden="true" />
-                  {l.name}
-                </p>
-                <p className="text-sm md:text-base text-black/60 leading-relaxed">
-                  <span className="md:hidden font-bold">Today: </span>{l.today}
-                </p>
-                <p className="text-sm md:text-base text-black/85 leading-relaxed">
-                  <span className="md:hidden font-bold">Where we are headed: </span>{l.headed}
-                </p>
-              </li>
-            ))}
+          <p className="font-bold text-black/80 mb-4">All three elements exist at every Summit school today.</p>
+          <ul className="grid md:grid-cols-3 gap-5">
+            {ELEMENT_KEYS.map((k) => {
+              const st = elementStatus[k]
+              return (
+                <li
+                  key={k}
+                  className={`rounded-xl border-t-4 ${ELEMENTS[k].topBorder} p-6 ${
+                    st.next ? 'bg-white ring-2 ring-indigo/30' : 'bg-white border border-black/8'
+                  }`}
+                >
+                  <ElementTag element={k} size="base" />
+                  <p className="text-sm md:text-base text-black/70 leading-relaxed mt-2">{st.what}</p>
+                  <p className={`mt-4 text-sm font-bold ${st.next ? 'text-indigo' : 'text-black/65'}`}>{st.status}</p>
+                </li>
+              )
+            })}
           </ul>
         </motion.div>
 
@@ -125,14 +117,14 @@ export default function NextStep() {
           </p>
           <ul className="grid md:grid-cols-3 gap-5">
             {timescales.map((t) => (
-              <li key={t.name} className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6">
-                <h4 className="text-lg font-bold text-orange-ink mb-2">{t.name}</h4>
+              <li key={t.name} className="bg-white rounded-xl border border-black/8 border-t-4 border-t-indigo p-6">
+                <h4 className="text-lg font-bold text-indigo mb-2">{t.name}</h4>
                 <p className="text-sm md:text-base text-black/70 leading-relaxed">{t.body}</p>
               </li>
             ))}
           </ul>
           <p className="text-sm md:text-base text-black/75 leading-relaxed mt-5 max-w-3xl">
-            <span className="font-bold text-orange-ink">Live now:</span> Summit Sierra in Seattle is
+            <span className="font-bold text-indigo">Live now:</span> Summit Sierra in Seattle is
             the first school bringing flexible time to the academic core.{' '}
             <a href="#sierra" className="font-bold text-indigo underline underline-offset-2 hover:text-indigo/80">
               See how below.
@@ -140,7 +132,7 @@ export default function NextStep() {
           </p>
         </motion.div>
 
-        <ExperienceTypes />
+        <LearningExperiences />
       </div>
     </section>
   )

@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { brand } from '../palette'
+import { ELEMENTS } from '../elements'
+import { ElementLegend, ElementTag } from './ElementTag'
 
 /*
  * School resource model (from "How Summit 3.0 Works", Oct 2026, scaled from a
@@ -14,24 +15,20 @@ import { brand } from '../palette'
  *     2 project studios, 2 mentor nooks = 14 spaces; the city is the rest of the campus
  *   Partner organizations are hypothetical examples, labeled as such on the page.
  */
-// Matches the 8 learning experience types
-const experienceTypes = [
-  { name: 'Direct instruction', color: brand.indigo },
-  { name: 'Practice and feedback', color: brand.teal },
-  { name: 'Discussion and dialogue', color: brand.orange },
-  { name: 'Independent work and creation', color: brand.lightBlue },
-  { name: 'Presentation and performance', color: brand.red },
-  { name: 'Reflection and goal-setting', color: brand.peach },
-  { name: 'Real-world experience', color: brand.brown },
-  { name: 'Wellbeing and community', color: brand.tanGrey },
-]
+// Students in each slot are counted by model element (bottom of each bar first).
+// The counts were re-tallied from the earlier per-activity counts, keeping every
+// slot at 200: direct instruction, practice and feedback, discussion and dialogue,
+// and independent work go to Academic Core; reflection and goal-setting and
+// community time go to Mentoring; real-world experience, exhibitions, and
+// independent work in the project studios (20 students whenever both studios are
+// open) go to Career-Connected Learning; the 12:30 lunch count is Lunch.
+const studentKeys = ['academic', 'mentoring', 'ccl', 'lunch']
 
 // Each time slot: students, adults deployed, spaces in use, partner activity, operational note
 const timeSlots = [
   {
     time: '8:30 am',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [0,     0,       0,      0,     0,      0,      0,    200],
+    students: { academic: 0, mentoring: 200, ccl: 0, lunch: 0 },
     adults: { mentors: 6, contentExperts: 6, coaches: 2, facilitators: 2, partners: 0 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [],
@@ -39,8 +36,7 @@ const timeSlots = [
   },
   {
     time: '9:15 am',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [30,    50,      20,     58,    0,      12,     30,   0],
+    students: { academic: 138, mentoring: 12, ccl: 50, lunch: 0 },
     adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 12 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -53,8 +49,7 @@ const timeSlots = [
   },
   {
     time: '10:30 am',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [30,    44,      24,     50,    6,      10,     36,   0],
+    students: { academic: 128, mentoring: 10, ccl: 62, lunch: 0 },
     adults: { mentors: 4, contentExperts: 6, coaches: 2, facilitators: 2, partners: 16 },
     spaces: { smallGroup: 6, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -67,8 +62,7 @@ const timeSlots = [
   },
   {
     time: '11:30 am',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [24,    40,      20,     54,    10,     12,     40,   0],
+    students: { academic: 118, mentoring: 12, ccl: 70, lunch: 0 },
     adults: { mentors: 5, contentExperts: 5, coaches: 2, facilitators: 2, partners: 18 },
     spaces: { smallGroup: 5, commons: 2, seminar: 2, studio: 2, nook: 2 },
     partners: [
@@ -83,8 +77,7 @@ const timeSlots = [
   },
   {
     time: '12:30 pm',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [0,     0,       0,      0,     0,      0,      40,   160],
+    students: { academic: 0, mentoring: 0, ccl: 40, lunch: 160 },
     adults: { mentors: 6, contentExperts: 4, coaches: 1, facilitators: 1, partners: 18 },
     spaces: { smallGroup: 2, commons: 2, seminar: 0, studio: 0, nook: 1 },
     partners: [
@@ -99,8 +92,7 @@ const timeSlots = [
   },
   {
     time: '1:30 pm',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [12,    24,      10,     34,    8,      12,     100,  0],
+    students: { academic: 60, mentoring: 12, ccl: 128, lunch: 0 },
     adults: { mentors: 4, contentExperts: 4, coaches: 2, facilitators: 2, partners: 30 },
     spaces: { smallGroup: 3, commons: 1, seminar: 1, studio: 2, nook: 1 },
     partners: [
@@ -121,8 +113,7 @@ const timeSlots = [
   },
   {
     time: '3:00 pm',
-    //        Direct Practice Discuss Indep  Present Reflect Real  Wellbeing
-    students: [0,     0,       0,      0,     0,      150,    30,   20],
+    students: { academic: 0, mentoring: 170, ccl: 30, lunch: 0 },
     adults: { mentors: 6, contentExperts: 3, coaches: 2, facilitators: 1, partners: 12 },
     spaces: { smallGroup: 2, commons: 2, seminar: 1, studio: 1, nook: 2 },
     partners: [
@@ -139,14 +130,14 @@ const tabLabels = { students: 'Students', adults: 'Educators', spaces: 'Spaces',
 
 function StudentBreakdown({ data }) {
   return (
-    <div className="grid grid-cols-3 md:grid-cols-5 gap-2">
-      {data.map((count, i) =>
-        count > 0 ? (
-          <div key={i} className="flex items-center gap-2 bg-black/[0.04] rounded-lg px-2.5 py-2">
-            <span className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ backgroundColor: experienceTypes[i].color }} aria-hidden="true" />
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2">
+      {studentKeys.map((k) =>
+        data[k] > 0 ? (
+          <div key={k} className="flex items-center gap-3 bg-black/[0.04] rounded-lg px-3 py-2.5">
+            <span className="w-3 h-8 rounded-sm shrink-0" style={{ backgroundColor: ELEMENTS[k].color }} aria-hidden="true" />
             <div className="min-w-0">
-              <p className="text-black font-bold text-sm leading-tight">{count}</p>
-              <p className="text-black/80 text-xs leading-tight truncate">{experienceTypes[i].name}</p>
+              <p className="text-black font-bold text-lg leading-tight">{data[k]}</p>
+              <p className="text-black/80 text-xs leading-tight">{ELEMENTS[k].label}</p>
             </div>
           </div>
         ) : null
@@ -158,11 +149,11 @@ function StudentBreakdown({ data }) {
 function AdultBreakdown({ adults }) {
   const eduTotal = adults.mentors + adults.contentExperts + adults.coaches + adults.facilitators
   const rows = [
-    { label: 'Specialist mentors', count: adults.mentors, max: 6, color: brand.orange, desc: 'caseloads of about 33, pathway guidance with students and families, project coaching' },
-    { label: 'Content experts', count: adults.contentExperts, max: 6, color: brand.indigo, desc: 'math, science, reading and writing: small-group lessons and feedback, scheduled by need' },
-    { label: 'Learning strategies coaches', count: adults.coaches, max: 2, color: brand.lightBlue, desc: 'planning, habits, persistence, managing attention and devices' },
-    { label: 'Projects facilitators', count: adults.facilitators, max: 2, color: brand.teal, desc: 'student-directed Expedition projects and peer critique' },
-    { label: 'Partner educators', count: adults.partners, max: 50, color: brand.peach, desc: 'a named host at each partner site, for an hour or a whole internship' },
+    { label: 'Specialist mentors', count: adults.mentors, max: 6, element: 'mentoring', desc: 'caseloads of about 33, pathway guidance with students and families, project coaching' },
+    { label: 'Content experts', count: adults.contentExperts, max: 6, element: 'academic', desc: 'math, science, reading and writing: small-group lessons and feedback, scheduled by need' },
+    { label: 'Learning strategies coaches', count: adults.coaches, max: 2, element: 'mentoring', desc: 'planning, habits, persistence, managing attention and devices' },
+    { label: 'Projects facilitators', count: adults.facilitators, max: 2, element: 'ccl', desc: 'student-directed Expedition projects and peer critique' },
+    { label: 'Partner educators', count: adults.partners, max: 50, element: 'ccl', desc: 'a named host at each partner site, for an hour or a whole internship' },
   ]
   return (
     <div>
@@ -186,9 +177,9 @@ function AdultBreakdown({ adults }) {
         {rows.map((r) => (
           <div key={r.label}>
             <div className="flex items-center justify-between mb-1">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: r.color }} aria-hidden="true" />
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
                 <span className="text-black text-sm font-bold">{r.label}</span>
+                <ElementTag element={r.element} size="xs" />
               </div>
               <span className="text-black font-bold text-lg">{r.count}<span className="text-black/60 text-xs font-normal ml-1">/{r.max === 50 ? '~50' : r.max}</span></span>
             </div>
@@ -199,7 +190,7 @@ function AdultBreakdown({ adults }) {
                 animate={{ width: `${(r.count / r.max) * 100}%` }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="h-full rounded-full"
-                style={{ backgroundColor: r.color }}
+                style={{ backgroundColor: ELEMENTS[r.element].color }}
               />
             </div>
             <p className="text-black/75 text-xs">{r.desc}</p>
@@ -214,11 +205,11 @@ function SpaceBreakdown({ spaces }) {
   const total = spaces.smallGroup + spaces.commons + spaces.seminar + spaces.studio + spaces.nook
   const pct = Math.round((total / 14) * 100)
   const rows = [
-    { label: 'Small-group rooms', count: spaces.smallGroup, of: 6, color: brand.indigo, desc: 'lessons for the five students ready this week, writing conferences, demos' },
-    { label: 'Practice commons', count: spaces.commons, of: 2, color: brand.teal, desc: 'AI tutors, skills clinics, community launch, lunch' },
-    { label: 'Seminar rooms', count: spaces.seminar, of: 2, color: brand.orange, desc: 'peer critique, Socratic seminar, reading circles' },
-    { label: 'Project studios', count: spaces.studio, of: 2, color: brand.lightBlue, desc: 'research projects, prototype builds, exhibition prep' },
-    { label: 'Mentor nooks', count: spaces.nook, of: 2, color: brand.peach, desc: 'pathway check-ins and goal-setting' },
+    { label: 'Small-group rooms', count: spaces.smallGroup, of: 6, element: 'academic', desc: 'lessons for the five students ready this week, writing conferences, demos' },
+    { label: 'Practice commons', count: spaces.commons, of: 2, element: 'academic', desc: 'AI tutors, skills clinics, community launch, lunch' },
+    { label: 'Seminar rooms', count: spaces.seminar, of: 2, element: 'academic', desc: 'peer critique, Socratic seminar, reading circles' },
+    { label: 'Project studios', count: spaces.studio, of: 2, element: 'ccl', desc: 'research projects, prototype builds, exhibition prep' },
+    { label: 'Mentor nooks', count: spaces.nook, of: 2, element: 'mentoring', desc: 'pathway check-ins and goal-setting' },
   ]
   return (
     <div>
@@ -226,7 +217,7 @@ function SpaceBreakdown({ spaces }) {
       <div className="flex items-baseline gap-3 mb-4 pb-3 border-b border-black/10">
         <span className="text-3xl font-bold text-black">{total}</span>
         <span className="text-black/70 text-sm">of 14 home base spaces active</span>
-        <span className="text-orange-ink font-bold text-sm ml-auto">{pct}% utilization</span>
+        <span className="text-black/75 font-bold text-sm ml-auto">{pct}% utilization</span>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
@@ -234,8 +225,9 @@ function SpaceBreakdown({ spaces }) {
           const utilPct = (r.count / r.of) * 100
           return (
             <div key={r.label} className="bg-black/[0.04] rounded-xl p-3">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-black text-sm font-bold">{r.label}</span>
+              <div className="mb-2">
+                <span className="block text-black text-sm font-bold">{r.label}</span>
+                <ElementTag element={r.element} size="xs" />
               </div>
               {/* Visual: filled/empty dots representing each space */}
               <div className="flex gap-1 mb-2">
@@ -244,7 +236,7 @@ function SpaceBreakdown({ spaces }) {
                     key={j}
                     className="h-4 flex-1 rounded-sm transition-all"
                     style={{
-                      backgroundColor: j < r.count ? r.color : 'rgba(0,0,0,0.08)',
+                      backgroundColor: j < r.count ? ELEMENTS[r.element].color : 'rgba(0,0,0,0.08)',
                     }}
                   />
                 ))}
@@ -254,7 +246,7 @@ function SpaceBreakdown({ spaces }) {
               </div>
               <p className="text-black font-bold text-lg mt-1">
                 {r.count}<span className="text-black/60 text-xs font-normal">/{r.of}</span>
-                {utilPct === 100 && <span className="text-orange-ink text-xs font-bold ml-2">Full</span>}
+                {utilPct === 100 && <span className="text-black/70 text-xs font-bold ml-2">Full</span>}
               </p>
             </div>
           )
@@ -286,8 +278,8 @@ function PartnerBreakdown({ partners }) {
 function StackedBar({ data, time, isActive, onClick }) {
   // A real button so the chart is keyboard- and screen-reader-operable, not just
   // clickable. The label spells out the distribution the bar encodes visually.
-  const label = data
-    .map((count, i) => (count > 0 ? `${count} in ${experienceTypes[i].name}` : null))
+  const label = studentKeys
+    .map((k) => (data[k] > 0 ? `${data[k]} in ${ELEMENTS[k].label}` : null))
     .filter(Boolean)
     .join(', ')
 
@@ -300,15 +292,15 @@ function StackedBar({ data, time, isActive, onClick }) {
       aria-label={`${time}: ${label}`}
       className="flex flex-col-reverse h-full w-full cursor-pointer rounded-sm"
     >
-      {data.map((value, i) => {
-        const pct = (value / 200) * 100
+      {studentKeys.map((k) => {
+        const pct = (data[k] / 200) * 100
         if (pct < 1) return null
         return (
           <motion.span
-            key={i}
+            key={k}
             animate={{ height: `${pct}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            style={{ backgroundColor: experienceTypes[i].color }}
+            style={{ backgroundColor: ELEMENTS[k].color }}
             className={`block w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-55'}`}
           />
         )
@@ -359,14 +351,7 @@ export default function WholeSchool() {
         </motion.div>
 
         {/* Legend */}
-        <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-6">
-          {experienceTypes.map((type) => (
-            <span key={type.name} className="flex items-center gap-1.5 text-xs text-black/85">
-              <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: type.color }} aria-hidden="true" />
-              {type.name}
-            </span>
-          ))}
-        </div>
+        <ElementLegend keys={studentKeys} className="justify-center mb-6" />
 
         {/* Time controls */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -377,7 +362,7 @@ export default function WholeSchool() {
               aria-pressed={activeIdx === i}
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
                 activeIdx === i
-                  ? 'bg-orange text-brown'
+                  ? 'bg-black/80 text-white'
                   : 'bg-black/[0.06] text-black hover:bg-black/10'
               }`}
             >
@@ -400,7 +385,7 @@ export default function WholeSchool() {
                   />
                 </div>
                 <p className={`text-[10px] md:text-xs mt-2 whitespace-nowrap transition-colors ${
-                  activeIdx === i ? 'text-orange-ink font-bold' : 'text-black/60'
+                  activeIdx === i ? 'text-black font-bold' : 'text-black/60'
                 }`}>
                   {s.time.replace(':00', '').replace(' am', 'a').replace(' pm', 'p')}
                 </p>
@@ -419,7 +404,7 @@ export default function WholeSchool() {
             {/* Panel header + tabs */}
             <div className="px-5 pt-4 pb-0 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
               <div className="flex items-center gap-3">
-                <span className="text-orange-ink font-bold text-lg">{slot.time}</span>
+                <span className="text-black font-bold text-lg">{slot.time}</span>
                 <span className="text-black/70 text-sm">200 students · 19 Summit staff · ~50 partner educators</span>
               </div>
               <div className="flex gap-1" role="tablist" aria-label="Resource view">
@@ -449,7 +434,7 @@ export default function WholeSchool() {
                 `timeSlots[].note`: this is the operational detail that makes the
                 200-student claim concrete. */}
             <div className="px-5 pt-3">
-              <p className="text-black/80 text-sm leading-relaxed border-l-2 border-orange pl-3">
+              <p className="text-black/80 text-sm leading-relaxed border-l-2 border-black/25 pl-3">
                 {slot.note}
               </p>
             </div>

@@ -1,5 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { ELEMENTS } from '../elements'
+import { ElementLegend } from './ElementTag'
 
 /*
  * A Week Built Around Amara: her week, built around her goals, her progress, and her
@@ -24,67 +26,65 @@ const traditional = [
   { time: '1:15', label: 'Period 6: Elective' },
 ]
 
-// type: academic | independent | community | realworld
+// type: a model element (academic | mentoring | ccl) or lunch
 const week = [
   {
     day: 'Mon',
     blocks: [
-      { time: '8:30', label: 'Community launch', type: 'community' },
+      { time: '8:30', label: 'Community launch', type: 'mentoring' },
       { time: '9:15', label: 'Lesson: linear functions', type: 'academic' },
       { time: '10:15', label: 'Writing conference', type: 'academic' },
-      { time: '11:00', label: 'Studio: creek water report', type: 'independent' },
+      { time: '11:00', label: 'Studio: creek water report', type: 'ccl' },
+      { time: '12:30', label: 'Lunch', type: 'lunch' },
       { time: '1:00', label: 'Science demo: water chemistry', type: 'academic' },
-      { time: '3:00', label: 'Reflection', type: 'community' },
+      { time: '3:00', label: 'Reflection', type: 'mentoring' },
     ],
   },
   {
     day: 'Tue',
     blocks: [
-      { time: '8:30', label: 'Community launch', type: 'community' },
-      { time: '9:15', label: 'Studio: creek report', type: 'independent' },
+      { time: '8:30', label: 'Community launch', type: 'mentoring' },
+      { time: '9:15', label: 'Studio: creek report', type: 'ccl' },
       { time: '10:30', label: 'Lesson: argument writing', type: 'academic', note: 'Added overnight' },
-      { time: '12:30', label: 'Job shadow at a local newsroom', type: 'realworld' },
-      { time: '3:00', label: 'Reflection', type: 'community' },
+      { time: '12:00', label: 'Lunch', type: 'lunch' },
+      { time: '12:30', label: 'Job shadow at a local newsroom', type: 'ccl' },
+      { time: '3:00', label: 'Reflection', type: 'mentoring' },
     ],
   },
   {
     day: 'Wed',
     field: true,
     blocks: [
-      { time: '8:30', label: 'Virtual check-in', type: 'community' },
-      { time: '9:00', label: 'Full day at the newsroom: reporting and drafting', type: 'realworld' },
-      { time: '3:00', label: 'Reflection, on site', type: 'community' },
+      { time: '8:30', label: 'Virtual check-in', type: 'mentoring' },
+      { time: '9:00', label: 'Full day at the newsroom: reporting and drafting', type: 'ccl' },
+      { time: '3:00', label: 'Reflection, on site', type: 'mentoring' },
     ],
   },
   {
     day: 'Thu',
     blocks: [
-      { time: '8:30', label: 'Community launch', type: 'community' },
+      { time: '8:30', label: 'Community launch', type: 'mentoring' },
       { time: '9:15', label: 'Peer critique: essays', type: 'academic' },
       { time: '10:30', label: 'Skills clinic: citations', type: 'academic' },
       { time: '11:30', label: 'Writing assessment', type: 'academic', note: 'Booked when she was ready' },
+      { time: '12:30', label: 'Lunch', type: 'lunch' },
       { time: '1:00', label: 'Reading circle', type: 'academic' },
-      { time: '3:00', label: 'Goal check with her mentor', type: 'community' },
+      { time: '3:00', label: 'Goal check with her mentor', type: 'mentoring' },
     ],
   },
   {
     day: 'Fri',
     blocks: [
-      { time: '8:30', label: 'Community launch', type: 'community' },
-      { time: '9:15', label: 'AI tutor: revision', type: 'independent' },
-      { time: '10:30', label: 'Exhibition prep', type: 'independent' },
-      { time: '1:00', label: 'Exhibition of learning', type: 'academic' },
-      { time: '2:30', label: 'Goal-setting with her mentor', type: 'community' },
+      { time: '8:30', label: 'Community launch', type: 'mentoring' },
+      { time: '9:15', label: 'AI tutor: revision', type: 'academic' },
+      { time: '10:30', label: 'Exhibition prep', type: 'ccl' },
+      { time: '12:30', label: 'Lunch', type: 'lunch' },
+      { time: '1:00', label: 'Exhibition of learning', type: 'ccl' },
+      { time: '2:30', label: 'Goal-setting with her mentor', type: 'mentoring' },
     ],
   },
 ]
 
-const typeStyle = {
-  academic: { bar: 'bg-indigo', label: 'Academic core' },
-  independent: { bar: 'bg-light-blue', label: 'Independent work' },
-  community: { bar: 'bg-orange', label: 'Mentoring and community' },
-  realworld: { bar: 'bg-teal', label: 'Real-world learning' },
-}
 
 const views = [
   { key: 'amara', label: 'Amara’s Week' },
@@ -138,9 +138,9 @@ export default function AWeek() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
-              className="bg-mint rounded-xl border-t-4 border-teal p-6"
+              className="bg-black/[0.03] rounded-xl border-t-4 border-black/15 p-6"
             >
-              <p className="text-sm font-bold text-teal-ink mb-1">{s.when}</p>
+              <p className="text-sm font-bold text-black/65 mb-1">{s.when}</p>
               <h3 className="text-lg font-bold text-indigo mb-2">{s.title}</h3>
               <p className="text-sm md:text-base text-black/75 leading-relaxed">{s.body}</p>
             </motion.li>
@@ -175,19 +175,12 @@ export default function AWeek() {
         <div role="tabpanel" id="week-tabpanel" aria-labelledby={`week-tab-${view}`} tabIndex={-1}>
           {view === 'amara' ? (
             <>
-              <ul className="flex flex-wrap gap-x-4 gap-y-1 mb-4" aria-label="Legend">
-                {Object.values(typeStyle).map((t) => (
-                  <li key={t.label} className="flex items-center gap-1.5 text-xs text-black/65">
-                    <span className={`w-3 h-2 rounded-sm ${t.bar}`} aria-hidden="true" />
-                    {t.label}
-                  </li>
-                ))}
-              </ul>
+              <ElementLegend keys={['academic', 'mentoring', 'ccl', 'lunch']} className="mb-4" />
               <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
                 {week.map((d) => (
                   <div
                     key={d.day}
-                    className={`rounded-xl border p-4 ${d.field ? 'bg-peach/30 border-orange/40' : 'bg-white border-black/10'}`}
+                    className={`rounded-xl border p-4 ${d.field ? 'bg-orange/10 border-orange/40' : 'bg-white border-black/10'}`}
                   >
                     <p className="font-bold text-indigo mb-3">
                       {d.day}
@@ -196,11 +189,14 @@ export default function AWeek() {
                     <ul className="space-y-2">
                       {d.blocks.map((b) => (
                         <li key={b.time + b.label} className="flex gap-2">
-                          <span className={`w-1 shrink-0 rounded-full ${typeStyle[b.type].bar}`} aria-hidden="true" />
+                          <span className="w-1 shrink-0 rounded-full" style={{ backgroundColor: ELEMENTS[b.type].color }} aria-hidden="true" />
                           <div>
-                            <p className="text-xs text-black/60 tabular-nums">{b.time}</p>
-                            <p className="text-sm text-black leading-snug">{b.label}</p>
-                            {b.note && <p className="text-xs font-bold text-orange-ink mt-0.5">{b.note}</p>}
+                            <p className="text-xs text-black/60 tabular-nums">
+                              {b.time}
+                              <span className="sr-only"> ({ELEMENTS[b.type].label})</span>
+                            </p>
+                            <p className={`text-sm leading-snug ${b.type === 'lunch' ? 'text-black/60' : 'text-black'}`}>{b.label}</p>
+                            {b.note && <p className="text-xs font-bold text-black/70 mt-0.5">{b.note}</p>}
                           </div>
                         </li>
                       ))}
@@ -209,12 +205,12 @@ export default function AWeek() {
                 ))}
               </div>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-orange pl-4">
+                <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-black/20 pl-4">
                   <span className="font-bold text-black">Tuesday, 10:30.</span> Her draft showed two
                   writing skills within reach, so a small-group lesson was added overnight. Her phone
                   showed the change that morning.
                 </p>
-                <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-orange pl-4">
+                <p className="text-sm md:text-base text-black/75 leading-relaxed border-l-4 border-black/20 pl-4">
                   <span className="font-bold text-black">Thursday, 11:30.</span> AI scored her essay
                   against the writing rubric, her content expert agreed, and the assessment was booked.
                 </p>

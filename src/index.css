@@ -11,6 +11,8 @@
   --color-tan-grey: #96a0ab;
   /* Pale teal-tinted section background */
   --color-mint: #ebf5f0;
+  /* Lunch: the one light neutral outside the three model elements */
+  --color-lunch: #d5d9de;
 
   /* Text-safe variants of the brand colors. Most of the palette is tuned for
      fills and fails WCAG AA as text on white: brand orange is 1.9:1, peach is

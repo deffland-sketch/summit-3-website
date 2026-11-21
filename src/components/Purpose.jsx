@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { ElementTag } from './ElementTag'
 
 /*
  * What Summit Already Has: the foundation Summit's next step builds on. A long-term mentor
@@ -71,20 +72,21 @@ export default function Purpose() {
           </p>
         </motion.div>
 
-        {/* The two experiences */}
+        {/* Mentoring and Career-Connected Learning, already personal at every school */}
         <div className="grid md:grid-cols-2 gap-5 mb-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6 flex flex-col"
+            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-teal p-6 flex flex-col"
           >
+            <ElementTag element="mentoring" size="xs" className="mb-2" />
             <h3 className="text-xl font-bold text-indigo mb-1">A Long-Term Mentor</h3>
-            <p className="text-sm font-bold italic text-orange-ink mb-4">Someone who knows you, and stays</p>
+            <p className="text-sm font-bold italic text-teal-ink mb-4">Someone who knows you, and stays</p>
             <p className="text-sm text-black/70 leading-relaxed mb-3">
-              Every student has a mentor who stays with them as they grow, with them every day in
-              community and one-on-one. Each student&rsquo;s mentor and core group of peers stay
-              constant all year.
+              Every student has a mentor who stays with them as they grow. One-on-one check-ins with
+              that mentor are a core part of mentoring, along with community time every day. Each
+              student&rsquo;s mentor and core group of peers stay constant all year.
             </p>
             <p className="text-sm text-black/70 leading-relaxed">
               Mentors guide each student&rsquo;s pathway with the student and their family, and
@@ -92,8 +94,8 @@ export default function Purpose() {
               has known a student for years hears things a new adult never would.
             </p>
             <div className="mt-auto pt-5">
-              <div className="rounded-lg bg-orange/10 px-4 py-3 flex items-baseline gap-3">
-                <p className="text-3xl font-bold text-orange-ink shrink-0">91%</p>
+              <div className="rounded-lg bg-teal/[0.08] px-4 py-3 flex items-baseline gap-3">
+                <p className="text-3xl font-bold text-teal-ink shrink-0">91%</p>
                 <p className="text-sm text-black/75 leading-snug">of Summit students trust their mentor</p>
               </div>
             </div>
@@ -103,43 +105,44 @@ export default function Purpose() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-teal p-6 flex flex-col"
+            className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6 flex flex-col"
           >
-            <h3 className="text-xl font-bold text-indigo mb-1">Expeditions</h3>
-            <p className="text-sm font-bold italic text-teal-ink mb-4">Real work in the real world</p>
+            <ElementTag element="ccl" size="xs" className="mb-2" />
+            <h3 className="text-xl font-bold text-indigo mb-1">Career-Connected Learning, Through Expeditions</h3>
+            <p className="text-sm font-bold italic text-orange-ink mb-4">Real work in the real world</p>
             <p className="text-sm text-black/70 leading-relaxed mb-4">
-              Expeditions put students inside real work with community organizations, companies,
-              and colleges. After every Expedition, students step back with their mentor and ask
+              Expeditions, Summit&rsquo;s career-connected learning program, put students inside real
+              work with community organizations, companies, and colleges. After every Expedition, students step back with their mentor and ask
               what it changed about how they see their future. Expeditions are graduated:
             </p>
             <ol className="space-y-2">
               {arc.map((a, i) => (
                 <li key={a.step} className="flex gap-3 items-start">
                   <span
-                    className="w-6 h-6 rounded-full bg-teal text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5"
+                    className="w-6 h-6 rounded-full bg-orange text-black text-xs font-bold flex items-center justify-center shrink-0 mt-0.5"
                     aria-hidden="true"
                   >
                     {i + 1}
                   </span>
                   <p className="text-sm text-black/70 leading-relaxed">
-                    <span className="font-bold text-teal-ink">{a.step}.</span> {a.desc}
+                    <span className="font-bold text-orange-ink">{a.step}.</span> {a.desc}
                   </p>
                 </li>
               ))}
             </ol>
             <div className="mt-auto pt-5">
-              <div className="rounded-lg bg-teal/[0.08] px-4 py-3">
+              <div className="rounded-lg bg-orange/10 px-4 py-3">
                 <div className="flex items-baseline gap-3">
-                  <p className="text-3xl font-bold text-teal-ink shrink-0">2,245</p>
+                  <p className="text-3xl font-bold text-orange-ink shrink-0">2,245</p>
                   <p className="text-sm text-black/75 leading-snug">
                     personalized placements this year across Summit&rsquo;s seven high schools in college courses,
                     internships, and industry credentials
                   </p>
                 </div>
-                <ul className="mt-3 pt-3 border-t border-teal/20 flex flex-wrap gap-x-3 gap-y-1 text-xs text-black/70">
+                <ul className="mt-3 pt-3 border-t border-orange/30 flex flex-wrap gap-x-3 gap-y-1 text-xs text-black/70">
                   {placements.map((p) => (
                     <li key={p} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-teal shrink-0" aria-hidden="true" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-orange shrink-0" aria-hidden="true" />
                       {p}
                     </li>
                   ))}
@@ -177,23 +180,23 @@ export default function Purpose() {
             community asked us to keep what works and build what students need next.
           </p>
           <div className="grid md:grid-cols-2 gap-5">
-            <div className="bg-white rounded-xl border border-black/8 border-t-4 border-t-indigo p-6">
+            <div className="bg-white rounded-xl border border-black/8 border-t-4 border-t-black/15 p-6">
               <h4 className="font-bold text-indigo mb-3">Keep</h4>
               <ul className="space-y-2">
                 {keep.map((k) => (
                   <li key={k} className="flex gap-2 text-sm md:text-base text-black/75">
-                    <span className="text-indigo font-bold" aria-hidden="true">•</span>
+                    <span className="text-black/50 font-bold" aria-hidden="true">•</span>
                     {k}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-xl border border-black/8 border-t-4 border-t-orange p-6">
-              <h4 className="font-bold text-orange-ink mb-3">Build</h4>
+            <div className="bg-white rounded-xl border border-black/8 border-t-4 border-t-black/15 p-6">
+              <h4 className="font-bold text-indigo mb-3">Build</h4>
               <ul className="space-y-2">
                 {build.map((k) => (
                   <li key={k} className="flex gap-2 text-sm md:text-base text-black/75">
-                    <span className="text-orange-ink font-bold" aria-hidden="true">•</span>
+                    <span className="text-black/50 font-bold" aria-hidden="true">•</span>
                     {k}
                   </li>
                 ))}
