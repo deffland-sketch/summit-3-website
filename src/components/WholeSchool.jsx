@@ -301,7 +301,7 @@ function StackedBar({ data, time, isActive, onClick }) {
             animate={{ height: `${pct}%` }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
             style={{ backgroundColor: ELEMENTS[k].color }}
-            className={`block w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-55'}`}
+            className={`block w-full first:rounded-b-sm last:rounded-t-sm transition-opacity ${isActive ? 'opacity-100' : 'opacity-75'}`}
           />
         )
       })}

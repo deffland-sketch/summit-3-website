@@ -34,7 +34,7 @@ export default function WhySummit() {
           <p>
             Summit's first chapter proved that students historically underserved by the education
             system could access rigorous, college-preparatory learning. Our second chapter pushed
-            further into learner-centered education: mentoring, student agency, self-direction, a
+            further into personalized learning: mentoring, student agency, self-direction, a
             model built around what individual students need. Now we have the opportunity to take
             another significant step.
           </p>

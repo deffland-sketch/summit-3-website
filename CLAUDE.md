@@ -2,70 +2,73 @@
 
 Single-page narrative website for Summit Public Schools' next step (flexing time around each student) — a pitch/concept note for funders and partners.
 
-**Naming:** the public name is "Summit's Next Step" (nav logo, page title, Hero). Never use "Summit 3.0" in rendered copy; the CEO prefers it retired. Where a sentence needs a subject, describe the model plainly ("flexible time", "Summit's learner-centered model"). Internal source documents keep their own titles (e.g. "How Summit 3.0 Works") in code comments.
+**Naming:** the public name is "Summit's Next Step" (nav logo, page title, Hero). Never use "Summit 3.0" in rendered copy; the CEO prefers it retired. Where a sentence needs a subject, describe the model plainly ("flexible time", "Summit's school model"). Internal source documents keep their own titles (e.g. "How Summit 3.0 Works") in code comments.
 
 ## Tech stack
 
 - React 19, Vite 8, Tailwind CSS v4, Framer Motion
 - Font: Arimo (Google Fonts)
-- No router — single scrolling page
+- No router. Two pages built as two Vite entries: the main narrative (`index.html` →
+  `src/main.jsx` → `App.jsx`) and How It Works (`how-it-works/index.html` →
+  `src/how-it-works.jsx` → `HowItWorks.jsx`, served at `/how-it-works/`)
 - `npm run dev` / `npm run build` / `npm run lint`
 
-## Section flow (in App.jsx)
+## The model: three elements
 
-Wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with a skip
-link and a sticky `Nav`. One story arc: why change, what Summit already has, the next
-step (flexing time), what it looks like, what makes it work, why Summit.
+The site is organized around three model elements, the one taxonomy and the one color coding:
+**Academic Core** (indigo, darkest), **Mentoring** (teal, medium), **Career-Connected Learning**
+(orange, lightest). Lunch is a light neutral gray outside the three, used only in schedules.
+All three exist at every Summit school today; mentoring and career-connected learning already
+flex around each student, and the academic core personalizes next by flexing time.
 
-1. **Hero** — H1 "Every student is equipped to lead a fulfilled life." with a row of the five
-   elements as labeled pills (Purpose · Financial Independence · Strong Relationships ·
-   Community · Health); "When time is flexible in service of each student,
-   students grow faster," theory-of-action subhead, earnings line, proof stats, pull quote
-2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, three constraint
-   cards, the Gallup preparedness stat
-3. **WhatStudentsBuild** (`#what-students-build`) — "What We Want for Every Student": three
-   outcomes plus the economic empowerment line
-4. **Purpose** (`#what-we-have`) — "What Summit Already Has": long-term mentor (guides each
-   student's pathway) with the 91% trust tile, graduated Expeditions with the 2,245 placements
-   tile and breakdown, "2 in 3" (top influence), a sources line at the bottom,
-   the Fall 2025 community Keep and Build lists
-5. **NextStep** (`#next-step`) — theory of action, today vs. where we are headed for time,
-   talent, technology, time by day/week/season with a "Live now" line, and the eight
-   experience types (`ExperienceTypes`, exported from `LearningExperiences.jsx`). Its "Live now"
-   line names Summit Sierra and links to `#sierra`
-6. **AWeek** (`#a-week`) — "A Week Built Around Amara": her week (Friday goals, built over the weekend, confirmed
-   Monday), tabbed against a traditional bell schedule. Partner sites are generic, not named
-6b. **Motivation** (`#purpose-to-motivation`, peach/10, placed after AWeek) — "Purpose, Relevance, and Competence Build
-   Motivation": Purpose + Relevance + Competence = Motivation, with visible operators. Mentor and
-   Expeditions build purpose, flexible time builds relevance, self-directed learning skills build
-   competence. The 69% Transcend stat, and a self-determination theory source line. Matches the
-   Sierra 11/9 site visit deck
-7. **WholeSchool** (`#whole-school`) — "The Whole School in a Day", on a light mint background: interactive chart of 200
-   students across a day, tabs for students/educators/spaces/partners. Staffing follows "How
-   Summit 3.0 Works" scaled to 200 at the same ratios. Partner names are real organizations,
-   labeled as hypothetical examples
-8. **Educators** (`#educators`, white background) — four capacities (mentoring, learning strategies coaching,
-   content expertise, project facilitation), partner educators, AI handles / adults do more
-   of, "Live now"
-9. **Technology** (`#how-it-works`) — "Technology Recommends. People Decide.": four-layer
-   stack, safety, how learning is verified, "Live now", and the one sentence that every
-   Summit school is moving toward flexible time at the pace its size allows
-9b. **Sierra** (`#sierra`, mint) — "Summit Sierra: The First Proof Point of Summit's Next Step",
-   with the eyebrow "The first proof point" (the one deliberate exception to the no-eyebrow rule).
-   Three of eight experience types (illustrative stacked bars), the day's shape plus the ownership
-   progression, foundation stat tiles, the listen/adjust/check-again loop with two examples, five
-   first-year measures and "How Results Set the Pace". Placed after Technology, right before
-   WhySummit
-10. **WhySummit** (`#why-summit`) — 2030 ambition verbatim, "prove," why now, outcome stats,
-    track record
-11. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios
+- `src/elements.js` defines each element's label, fill, ink, and Tailwind classes;
+  `ElementTag` / `ElementLegend` (`components/ElementTag.jsx`) pair every swatch with its label.
+- `src/learningExperiences.js` lists the learning experiences under each element (with the
+  learning-science notes used on How It Works). Academic Core leads with direct instruction,
+  practice and feedback, and discussion and dialogue, the three Sierra flexes first.
+- Color on the site means an element. Accents that are not elements (argument steps,
+  outcomes, stats, progressions, UI chrome) use neutral black tints, with indigo kept for
+  headings, links, and buttons.
+
+## Section flow
+
+Main page (`App.jsx`), wrapped in `<MotionConfig reducedMotion="user">` + `<main id="main">`, with
+a skip link, a sticky `Nav` (section links plus How It Works), and `SiteFooter`:
+
+1. **Hero** — H1 "Every student is equipped to lead a fulfilled life." with the five
+   fulfilled-life pills (Purposeful Work · Financial Independence · Strong Relationships ·
+   Community · Health, neutral dots), theory-of-action subhead, earnings line, stats, quote
+2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, constraint cards, Gallup stat
+3. **WhatStudentsGet** (`#what-students-get`) — what every student gets: the three element
+   cards (College-Ready Academic Core; A Long-Term Mentor with one-on-one check-ins and the 91%
+   tile; Career-Connected Learning through Expeditions with expose/explore/pursue and the 2,245
+   placements), the durable-skills and pathway outcomes, "2 in 3", Keep and Build, sources
+4. **NextStep** (`#next-step`, nav "What's next") — theory of action, the three elements and
+   where each stands, time by day/week/season (how the academic core flexes) with the Sierra
+   "Live now" link, and Learning Experiences in three element columns
+5. **Motivation** (`#purpose-to-motivation`, mint) — Purpose + Relevance + Competence =
+   Motivation (neutral accents), 69% stat, self-determination theory source line
+6. **AWeek** (`#a-week`) — "A Week Built Around Amara", blocks colored by element plus Lunch,
+   tabbed against a traditional bell schedule
+7. **WholeSchool** (`#whole-school`, mint) — 200 students across a day, counted by element
+   (Lunch at 12:30); educator roles and spaces tagged by the element they mainly serve.
+   Partner names are real organizations, labeled as hypothetical examples
+8. **Sierra** (`#sierra`, peach/10) — first proof point, eyebrow "The first proof point" (the one
+   exception to the no-eyebrow rule); three academic-core learning experiences in indigo shades
+9. **WhySummit** (`#why-summit`) — the 2030 sentence ("Summit will prove a school model where
+   every student gets what they need, when they need it, to attain economic empowerment and
+   lead a fulfilled life."), "prove," why now, outcome stats, track record
+10. **Close** (`#invitation`) — North Star headline, CTA, "Get in touch" email link, bios (do not edit bios)
+
+How It Works page (`HowItWorks.jsx`): **Educators** (`#educators`, four capacities and partner
+educators grouped by element, AI handles / adults do more of, "Live now"), **Technology**
+(`#technology`, four-layer stack, safety, verification, "Live now"), **LearningScience**
+(`#learning-science`, a note per learning experience plus the research citation).
 
 Never describe forms of flexible time by school type or group schools on the site. Sierra is
 named as the first proof point (its own section and the NextStep "Live now" line); other schools
-stay unnamed.
-`TheBuild.jsx` exists but is **not rendered** and holds older wording. The industrial
-model comparison, the three-student comparison, and One Model, Three Forms were retired
-in the Oct 30 2026 revision; they live in git history (tag pre-site-revision-2026-10-30).
+stay unnamed. The eight experience types, the Time/Talent/Technology table, and post-industrial
+framing were retired in Nov 2026; earlier versions live in git history.
 
 ## Colors
 
@@ -78,15 +81,16 @@ Defined **twice, intentionally**, and must be kept in sync:
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| Indigo | `#4b4b96` | primary, headings, pathway |
-| Teal | `#508278` | accents, practice/feedback |
-| Orange | `#f6aa40` | highlights, guidance, CTAs |
+| Indigo | `#4b4b96` | Academic Core; also headings, links, buttons |
+| Teal | `#508278` | Mentoring |
+| Orange | `#f6aa40` | Career-Connected Learning (and the Close CTA button) |
 | Peach | `#ffd2b4` | soft backgrounds |
-| Light Blue | `#96d2dc` | independent work, accents |
-| Brown | `#503c2d` | real-world experience fills, partner accents |
-| Red | `#e6553c` | presentation/performance |
-| Tan Grey | `#96a0ab` | wellbeing/community |
-| Mint | `#ebf5f0` | WholeSchool section background, soft panels |
+| Light Blue | `#96d2dc` | not used for categories |
+| Brown | `#503c2d` | Close CTA text |
+| Red | `#e6553c` | not used (never distinguish by red vs green) |
+| Tan Grey | `#96a0ab` | not used for categories |
+| Mint | `#ebf5f0` | section backgrounds |
+| Lunch | `#d5d9de` | Lunch in schedules (light neutral) |
 
 ### The `-ink` variants — read before styling text
 
@@ -113,13 +117,18 @@ pass there and `-ink` would be wrong.
   action are used verbatim. No em-dashes, no "not X but Y," no deficit framing of educators. Never:
   landed, deliver(ed/able), spine, ship(ping), seat, "accelerat*" for student outcomes, "pathways"
   for groups of schools, or participant counts for the Fall 2025 focus groups.
+- Model terms: "academic core" (never "academic foundations"); "Career-Connected Learning" is the
+  element and Expeditions is Summit's program within it; "practice and feedback" (never "applied
+  practice"); "learning experiences" (never "experience types", never "eight"). Educator roles
+  are "flexible enough for educators to specialize in certain capacities", never sized ("one or
+  two"). No "learner-centered" in new copy, no post-industrial framing.
 - "Pathway" is the single term for a student's plan for the life they want. Don't introduce a
   second term for it ("plan for their future" was retired). Mentors guide it; Expeditions shape it.
 - Section headings and card titles are title case; body text and labels stay sentence case. The
   Hero H1 and the Close North Star are sentences and stay sentence case. The five fulfilled-life
-  elements are "purpose, financial independence, strong relationships, community, and health"
-  everywhere (never "purposeful work").
-- Card pattern (set by `Purpose.jsx`): white cards with a single `border-t-4` brand-color
+  elements are "purposeful work, financial independence, strong relationships, community, and
+  health" everywhere.
+- Card pattern (set by `WhatStudentsGet.jsx`): white cards with a single `border-t-4` brand-color
   accent, on a tinted section background (or with a `border-black/8` outline on white).
   Body text at `text-sm` or larger, no lighter than `text-black/60`. Labels are sentence case:
   no `uppercase`, no letter-spacing.
@@ -132,8 +141,8 @@ pass there and `-ink` would be wrong.
 
 Keep these when editing — they were added deliberately:
 
-- One `<h1>` (Hero). Every `<section>` has an `id` and `aria-labelledby` pointing
-  at its own `<h2>`.
+- One `<h1>` per page (Hero; the How It Works title). Every `<section>` has an `id` and
+  `aria-labelledby` pointing at its own `<h2>`.
 - Anything clickable is a real `<button>` or `<a>`. The WholeSchool chart bars are
   buttons with `aria-label` spelling out the distribution they encode.
 - WholeSchool's tabs follow the WAI-ARIA tabs pattern (`role="tablist"/"tab"/

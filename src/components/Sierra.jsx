@@ -206,7 +206,7 @@ export default function Sierra() {
               </p>
             </div>
             {/* Mentoring spans both halves of the day */}
-            <div className="md:col-span-2 rounded-xl bg-teal/15 border-l-4 border-teal text-black px-5 py-4 flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
+            <div className="md:col-span-2 rounded-xl bg-teal/[0.08] border-l-4 border-teal text-black px-5 py-4 flex flex-col md:flex-row md:items-center gap-1 md:gap-6">
               <div className="shrink-0">
                 <p className="text-sm font-bold text-teal-ink">All day</p>
                 <p className="text-lg font-bold text-teal-ink">Mentoring</p>
