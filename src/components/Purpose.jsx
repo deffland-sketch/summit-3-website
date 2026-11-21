@@ -59,10 +59,10 @@ export default function Purpose() {
             What Summit Already Has
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
-            Mentoring and Expeditions are already deeply personal to each student. Every Summit
-            student has a mentor from middle school to graduation, takes part in Expeditions
-            connected to careers three times a year, and builds a personalized plan for life after
-            high school.
+            Mentoring and career-connected learning are already deeply personal to each student.
+            Every Summit student has a mentor from middle school to graduation, takes part in
+            career-connected learning through Expeditions three times a year, and builds a
+            personalized plan for life after high school.
           </p>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
             That plan is the student&rsquo;s pathway, and it changes as they grow. Before a student
@@ -203,7 +203,7 @@ export default function Purpose() {
           <p className="text-base text-black/75 leading-relaxed mt-5 max-w-3xl">
             These signals match what families across the country are asking for, and what employers
             now expect from graduates. Flexible time brings the same personalization students already
-            get from mentoring and Expeditions to the academic core.
+            get from mentoring and career-connected learning to the academic core.
           </p>
         </motion.div>
 

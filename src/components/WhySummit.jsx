@@ -39,9 +39,8 @@ export default function WhySummit() {
             another significant step.
           </p>
           <p>
-            By 2030, Summit Public Schools will prove that a learner-centered model can ensure every
-            student gets what they need, when they need it, to attain economic empowerment and lead
-            a fulfilled life in a rapidly changing world.
+            Summit will prove a school model where every student gets what they need, when they
+            need it, to attain economic empowerment and lead a fulfilled life.
           </p>
           <p>
             We mean <span className="font-bold text-indigo">prove</span>, deliberately: a model we
@@ -143,19 +142,6 @@ export default function WhySummit() {
             <p className="text-xs text-black/55 mt-1">Class of 2025</p>
           </motion.div>
         </div>
-
-        {/* Pull-quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.45 }}
-          className="max-w-3xl mx-auto mb-10 border-l-4 border-indigo pl-6 py-2"
-        >
-          <p className="text-2xl md:text-3xl font-bold text-indigo leading-snug">
-            Summit built the strongest version of a post-industrial school model it could a decade
-            ago, without the technology to fully realize it.
-          </p>
-        </motion.div>
 
         {/* Framing */}
         <motion.div

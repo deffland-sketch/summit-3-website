@@ -70,7 +70,7 @@ export default function Motivation() {
           <p className="text-base md:text-lg text-black/80 leading-relaxed mb-4">
             Students work hardest when school connects to a future they can picture, and when they
             have the skills to get there. Summit has long built purpose through mentoring and
-            Expeditions.
+            career-connected learning.
           </p>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
             Flexible time carries that purpose into the academic core, so a student&rsquo;s math,

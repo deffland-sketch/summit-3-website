@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 /*
- * Talent: four capacities, educators who typically focus on two, and partner
+ * Talent: four capacities, roles flexible enough to specialize, and partner
  * educators. Language follows the 2030 Strategy Source of Truth (Oct 2026).
  */
 
@@ -69,7 +69,7 @@ export default function Educators() {
           className="max-w-3xl mb-10"
         >
           <h2 id="educators-heading" className="text-3xl md:text-4xl font-bold text-indigo mb-5 leading-tight">
-            Four Capacities, and Roles Flexible Enough to Specialize in One or Two
+            Four Capacities, and Roles Flexible Enough to Specialize
           </h2>
           <p className="text-xl md:text-2xl font-bold text-indigo leading-snug mb-5">
             The right adult, in the right role, at the right moment.
@@ -77,8 +77,8 @@ export default function Educators() {
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
             Great educators are the foundation of every Summit school, and our community asked us to
             keep them at the center. Over time, one role has been asked to carry nearly everything.
-            Summit is developing expertise along four capacities and creating more flexible roles so
-            educators can specialize in one or two. Educators typically focus on two.
+            Summit is developing expertise along four capacities, with roles flexible enough for
+            educators to specialize in certain capacities.
           </p>
         </motion.div>
 

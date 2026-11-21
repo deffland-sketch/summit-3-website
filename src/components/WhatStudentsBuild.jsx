@@ -3,7 +3,7 @@ import { useRef } from 'react'
 
 const outcomes = [
   {
-    title: 'College-Ready Academic Foundations',
+    title: 'College-Ready Academic Core',
     subtitle: 'Understanding the world through math, science, history, and language.',
     body: 'Reading and writing with depth. Mathematical reasoning. Scientific inquiry. Civic and historical understanding. The disciplinary knowledge and ways of thinking that prepare students for college, careers, and a life of continued learning.',
     top: 'border-indigo',
@@ -19,7 +19,7 @@ const outcomes = [
   {
     title: 'A Pathway and a Clear Next Step',
     subtitle: 'Direction for life after high school, and a real first step toward it.',
-    body: 'Every student leaves with a pathway, their own plan for the life they want, and a clear next step they are ready to take: college, a credential, a first job, or a high-growth career, with the ability to support themselves along the way. The pathway grows out of years of mentoring and Expeditions, so students can explain why it fits them.',
+    body: 'Every student leaves with a pathway, their own plan for the life they want, and a clear next step they are ready to take: college, a credential, a first job, or a high-growth career, with the ability to support themselves along the way. The pathway grows out of years of mentoring and career-connected learning through Expeditions, so students can explain why it fits them.',
     note: 'Economic empowerment means a strong first job or credential, earnings that support independence, and real options.',
     top: 'border-orange',
     accent: 'text-orange-ink',
@@ -52,7 +52,7 @@ export default function WhatStudentsBuild() {
             What We Want for Every Student
           </h2>
           <p className="text-lg text-black/70 max-w-3xl mx-auto leading-relaxed">
-            Every Summit student builds the foundations of a fulfilled life: purpose,
+            Every Summit student builds the foundations of a fulfilled life: purposeful work,
             financial independence, strong relationships, community, and health. They leave with
             three things: the academics that open doors, the skills that make a life navigable, and
             a pathway toward what comes next.

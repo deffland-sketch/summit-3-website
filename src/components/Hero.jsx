@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 // The five elements of a fulfilled life, shown as labeled pills under the H1.
 const elements = [
-  { label: 'Purpose', dot: 'bg-indigo' },
+  { label: 'Purposeful Work', dot: 'bg-indigo' },
   { label: 'Financial Independence', dot: 'bg-teal' },
   { label: 'Strong Relationships', dot: 'bg-orange' },
   { label: 'Community', dot: 'bg-light-blue' },
@@ -49,7 +49,7 @@ export default function Hero() {
               className="text-lg md:text-xl text-black leading-relaxed mb-6"
             >
               <span className="block font-bold text-indigo mb-2">When time is flexible in service of each student, students grow faster.</span>
-              Summit’s next step personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and Expeditions are already deeply personal; the academic core is next.
+              Summit’s next step personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and career-connected learning, through Expeditions, are already deeply personal; the academic core is next.
             </motion.p>
 
 

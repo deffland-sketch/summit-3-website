@@ -19,7 +19,7 @@ const levers = [
   {
     name: 'Talent',
     today: 'One role asked to carry nearly everything.',
-    headed: 'Educators who build deep expertise in one or two of four capacities, in roles flexible enough to allow it.',
+    headed: 'Educators who develop expertise along four capacities, in roles flexible enough for educators to specialize in certain capacities.',
     color: 'text-teal-ink',
     bar: 'bg-teal',
   },
