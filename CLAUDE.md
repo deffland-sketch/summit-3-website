@@ -1,6 +1,6 @@
 # Summit's Next Step Website
 
-Single-page narrative website for Summit Public Schools' next step (flexing time around each student) — a pitch/concept note for funders and partners.
+Single-page narrative website for Summit Public Schools' next step (a school model where every learning experience is excellent and personal, with time flexing around each student, starting with the academic core) — a pitch/concept note for funders and partners.
 
 **Naming:** the public name is "Summit's Next Step" (nav logo, page title, Hero). Never use "Summit 3.0" in rendered copy; the CEO prefers it retired. Where a sentence needs a subject, describe the model plainly ("flexible time", "Summit's school model"). Internal source documents keep their own titles (e.g. "How Summit 3.0 Works") in code comments.
 
@@ -38,7 +38,7 @@ a skip link, a sticky `Nav` (section links plus How It Works), and `SiteFooter`:
 
 1. **Hero** — H1 "Every student is equipped to lead a fulfilled life." with the five
    fulfilled-life pills (Purposeful Work · Financial Independence · Strong Relationships ·
-   Community · Health, neutral dots), theory-of-action subhead, earnings line, stats, quote
+   Community · Health, neutral dots), strategy subhead ("Every student gets what they need, when they need it."), earnings line, stats, quote
 2. **WhyChange** (`#why-change`) — the concern, the 150-years time argument, constraint cards, Gallup stat
 3. **WhatWeWant** (`#what-we-want`, mint) — "What We Want for Every Student": the portrait of a
    graduate (College-Ready Academic Core, Durable Skills, A Pathway and a Clear Next Step),
@@ -47,14 +47,16 @@ a skip link, a sticky `Nav` (section links plus How It Works), and `SiteFooter`:
    Core; A Long-Term Mentor with one-on-one check-ins and the 91% tile; Career-Connected Learning
    through Expeditions with expose/explore/pursue and the 2,245 placements), "2 in 3", Keep and
    Build, sources
-4. **NextStep** (`#next-step`, nav "What's next") — theory of action, the three elements and
-   where each stands, time by day/week/season (how the academic core flexes) with the Sierra
+4. **NextStep** (`#next-step`, nav "What's next") — "Excellent and Personal Learning for Every
+   Student": the school model, What Excellent Learning Looks Like (the four quality elements:
+   strong teaching, high-quality tasks, responsive support, demonstrated mastery; neutral accents),
+   the three elements and where each stands, time by day/week/season (how the academic core flexes) with the Sierra
    "Live now" link, and Learning Experiences in three element columns
 5. **Motivation** (`#purpose-to-motivation`, mint, above Amara's week by choice) — Purpose + Relevance + Competence =
    Motivation (neutral accents), 69% stat, self-determination theory source line
 6. **AWeek** (`#a-week`) — "A Week Built Around Amara", blocks colored by element (Lunch gray, off the key),
    tabbed against a traditional bell schedule
-8. **Sierra** (`#sierra`, peach/10) — first proof point, eyebrow "The first proof point" (the one
+8. **Sierra** (`#sierra`, peach/10) — first proof point of the evolved Summit model (Cady's framing; never "the first school flexing time"), eyebrow "The first proof point" (the one
    exception to the no-eyebrow rule); three academic-core learning experiences in indigo shades
 9. **WhySummit** (`#why-summit`) — the 2030 sentence ("Summit will prove a school model where
    every student gets what they need, when they need it, to attain economic empowerment and

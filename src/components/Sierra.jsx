@@ -123,8 +123,8 @@ export default function Sierra() {
             Summit Sierra: The First Proof Point of Summit&rsquo;s Next Step
           </h2>
           <p className="text-base md:text-lg text-black/80 leading-relaxed">
-            Summit Sierra in Seattle is the first Summit school bringing flexible time to the academic
-            core. Sierra&rsquo;s design team of teachers and students chose this model together, and
+            Summit Sierra in Seattle is the first proof point of the evolved Summit model, furthest
+            ahead with a more personalized academic core. Sierra&rsquo;s design team of teachers and students chose this model together, and
             they are building it on a strong foundation.
           </p>
         </motion.div>

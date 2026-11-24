@@ -100,7 +100,8 @@ export default function Close() {
           </p>
           <p className="border-l-4 border-orange pl-5">
             Every Summit school already has the academic core, mentoring, and career-connected
-            learning. Personalizing the academic core is the next step, and it takes investment.
+            learning. Running that model with excellence at every school, and personalizing it,
+            starting with the academic core, is the next step, and it takes investment.
             Building the proof point that can move the system takes partners willing to fund it.
           </p>
           <p className="font-bold">

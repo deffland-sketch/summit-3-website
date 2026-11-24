@@ -49,8 +49,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="text-lg md:text-xl text-black leading-relaxed mb-6"
             >
-              <span className="block font-bold text-indigo mb-2">When time is flexible in service of each student, students grow faster.</span>
-              Summit’s next step personalizes the academic core by flexing time around each student, so every student gets what they need, when they need it. Mentoring and career-connected learning, through Expeditions, are already deeply personal; the academic core is next.
+              <span className="block font-bold text-indigo mb-2">Every student gets what they need, when they need it.</span>
+              Summit’s next step is a school model where every learning experience is excellent and personal to each student. Time flexes around each student, starting with the academic core.
             </motion.p>
 
 
