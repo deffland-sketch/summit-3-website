@@ -5,9 +5,8 @@ import { ElementTag } from './ElementTag'
 import { LearningExperiences } from './LearningExperiences'
 
 /*
- * The Next Step: the school model, what excellent learning looks like at every
- * Summit school (the four quality elements, neutral accents), the three model
- * elements (all at every school today; the academic core personalizes next), how
+ * The Next Step: the school model, the three model elements (all at every
+ * Summit school today; the academic core personalizes next), how
  * time flexes by day, week, and season, and the learning experiences under each
  * element. The "Live now" line points to Sierra (#sierra), the evolved model proof
  * point.
@@ -28,25 +27,6 @@ const elementStatus = {
     status: 'Already personal to each student, and still improving',
   },
 }
-
-const quality = [
-  {
-    name: 'Strong Teaching',
-    body: 'Skilled educators who know their students and plan learning that moves each of them forward.',
-  },
-  {
-    name: 'High-Quality Tasks',
-    body: 'Rigorous, meaningful work worth doing, in the academic core, mentoring, and career-connected learning.',
-  },
-  {
-    name: 'Responsive Support',
-    body: 'Help that comes when a student needs it, based on evidence of where they are.',
-  },
-  {
-    name: 'Demonstrated Mastery',
-    body: 'Students show what they know and can do, and move forward when they have it.',
-  },
-]
 
 const timescales = [
   {
@@ -95,28 +75,6 @@ export default function NextStep() {
           </p>
         </motion.div>
 
-        {/* What excellent learning looks like: the four quality elements, neutral accents */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          className="mb-16"
-        >
-          <h3 className="text-xl md:text-2xl font-bold text-indigo mb-3">
-            What Excellent Learning Looks Like at Every Summit School
-          </h3>
-          <p className="text-base md:text-lg text-black/80 leading-relaxed mb-6 max-w-3xl">
-            Every learning experience, in every element, is built on the same four things.
-          </p>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {quality.map((q) => (
-              <li key={q.name} className="bg-white rounded-xl border border-black/8 border-t-4 border-t-black/15 p-6">
-                <h4 className="text-lg font-bold text-black mb-2">{q.name}</h4>
-                <p className="text-sm md:text-base text-black/70 leading-relaxed">{q.body}</p>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
 
         {/* The three elements: all at every school today; the academic core is next */}
         <motion.div

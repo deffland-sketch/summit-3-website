@@ -48,9 +48,8 @@ a skip link, a sticky `Nav` (section links plus How It Works), and `SiteFooter`:
    through Expeditions with expose/explore/pursue and the 2,245 placements), "2 in 3", Keep and
    Build, sources
 4. **NextStep** (`#next-step`, nav "What's next") — "Excellent and Personal Learning for Every
-   Student": the school model, What Excellent Learning Looks Like (the four quality elements:
-   strong teaching, high-quality tasks, responsive support, demonstrated mastery; neutral accents),
-   the three elements and where each stands, time by day/week/season (how the academic core flexes) with the Sierra
+   Student": the school model, the three elements and where each stands (no
+   "what good looks like" framework on the site until it is built as part of codifying the model), time by day/week/season (how the academic core flexes) with the Sierra
    "Live now" link, and Learning Experiences in three element columns
 5. **Motivation** (`#purpose-to-motivation`, mint, above Amara's week by choice) — Purpose + Relevance + Competence =
    Motivation (neutral accents), 69% stat, self-determination theory source line
